@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Get ad free web with Pi-hole - 4rkal</title><meta name="Description" content="4rkal&#39;s personal blog"><meta property="og:title" content="Get ad free web with Pi-hole" />
+<meta property="og:description" content="n this article i will show you how to setup pi-hole. Pi-Hole will allow you to block in app ads improve your networks performance and monitor statistics. Pi-hole also allows you to create a vpn.
+What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/pihole/" /><meta property="og:image" content="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-25T21:17:13+03:00" />
+<meta property="article:modified_time" content="2023-02-25T21:17:13+03:00" /><meta property="og:site_name" content="My cool site" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"/>
+
+<meta name="twitter:title" content="Get ad free web with Pi-hole"/>
+<meta name="twitter:description" content="n this article i will show you how to setup pi-hole. Pi-Hole will allow you to block in app ads improve your networks performance and monitor statistics. Pi-hole also allows you to create a vpn.
+What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/pihole/" /><link rel="prev" href="http://example.org/posts/sssh/" /><link rel="next" href="http://example.org/posts/tails/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Get ad free web with Pi-hole",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/pihole\/"
+        },"image": ["https:\/\/miro.medium.com\/fit\/c\/96\/96\/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"],"genre": "posts","wordcount":  653 ,
+        "url": "http:\/\/example.org\/posts\/pihole\/","datePublished": "2023-02-25T21:17:13+03:00","dateModified": "2023-02-25T21:17:13+03:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "4rkal"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="4rkal"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        data-srcset="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 1.5x, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        title="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg" />4rkal</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://4rkal.medium.com" rel="noopener noreffer" target="_blank"> Medium </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="4rkal"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        data-srcset="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 1.5x, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        title="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg" />4rkal</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://4rkal.medium.com" title="" rel="noopener noreffer" target="_blank">Medium</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Get ad free web with Pi-hole</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>4rkal</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-25">2023-02-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;653 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>n this article i will show you how to setup pi-hole. Pi-Hole will allow you to block in app ads improve your networks performance and monitor statistics. Pi-hole also allows you to create a vpn.</p>
+<h1 id="what-is-pi-hole">What is Pi-hole?</h1>
+<p>Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine. Pi-hole has the ability to block traditional website advertisements as well as advertisements in unconventional places, such as smart TVs and mobile operating system advertisements.</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>A computer with linux (preferably something debian based)</li>
+<li>Preferably an ethernet cable</li>
+<li>Access to your routers admin portal</li>
+<li>A static ip</li>
+<li>An internet connection (its pretty difficult without one, trust me)</li>
+</ol>
+<h1 id="installation">Installation</h1>
+<p>The first thing we have to do is download the installer</p>
+<p>To do that type</p>
+<p><code>wget -O basic-install.sh https://install.pi-hole.net</code></p>
+<p>Now install it with</p>
+<p><code>sudo bash basic-install.sh</code></p>
+<p>Now you should see something like this</p>
+<a class="lightgallery" href="/../assets/pihole/1.webp" title="/../assets/pihole/1.webp" data-thumbnail="/../assets/pihole/1.webp">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/pihole/1.webp"
+            data-srcset="/../assets/pihole/1.webp, /../assets/pihole/1.webp 1.5x, /../assets/pihole/1.webp 2x"
+            data-sizes="auto"
+            alt="/../assets/pihole/1.webp" width="720" height="535" />
+    </a>
+<p>Just press ok</p>
+<a class="lightgallery" href="/../assets/pihole/2.webp" title="/../assets/pihole/2.webp" data-thumbnail="/../assets/pihole/2.webp">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/pihole/2.webp"
+            data-srcset="/../assets/pihole/2.webp, /../assets/pihole/2.webp 1.5x, /../assets/pihole/2.webp 2x"
+            data-sizes="auto"
+            alt="/../assets/pihole/2.webp" width="720" height="538" />
+    </a>
+<p>Just press ok again</p>
+<p>As i said before you have to have a static ip in order to setup the pihole so if you have one configured just press yes</p>
+<a class="lightgallery" href="/../assets/pihole/3.webp" title="/../assets/pihole/3.webp" data-thumbnail="/../assets/pihole/3.webp">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/pihole/3.webp"
+            data-srcset="/../assets/pihole/3.webp, /../assets/pihole/3.webp 1.5x, /../assets/pihole/3.webp 2x"
+            data-sizes="auto"
+            alt="/../assets/pihole/3.webp" width="720" height="537" />
+    </a>
+<p>Otherwise you will have to set one up.</p>
+<p>Now you will be prompted to select your upstream dns provider. You can select any of the dns providers on the list. I will just select google</p>
+<a class="lightgallery" href="/../assets/pihole/4.webp" title="/../assets/pihole/4.webp" data-thumbnail="/../assets/pihole/4.webp">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/pihole/4.webp"
+            data-srcset="/../assets/pihole/4.webp, /../assets/pihole/4.webp 1.5x, /../assets/pihole/4.webp 2x"
+            data-sizes="auto"
+            alt="/../assets/pihole/4.webp" width="720" height="535" />
+    </a>
+<p>And press ok</p>
+<p>After that you will have to select your list. I will just select the default one</p>
+<a class="lightgallery" href="/../assets/pihole/5.webp" title="/../assets/pihole/5.webp" data-thumbnail="/../assets/pihole/5.webp">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/pihole/5.webp"
+            data-srcset="/../assets/pihole/5.webp, /../assets/pihole/5.webp 1.5x, /../assets/pihole/5.webp 2x"
+            data-sizes="auto"
+            alt="/../assets/pihole/5.webp" width="720" height="538" />
+    </a>
+<p>Now you will have to select whether you want a web admin interface. Select on and then ok</p>
+<a class="lightgallery" href="/../assets/pihole/6.webp" title="/../assets/pihole/6.webp" data-thumbnail="/../assets/pihole/6.webp">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/pihole/6.webp"
+            data-srcset="/../assets/pihole/6.webp, /../assets/pihole/6.webp 1.5x, /../assets/pihole/6.webp 2x"
+            data-sizes="auto"
+            alt="/../assets/pihole/6.webp" width="1016" height="761" />
+    </a>
+<p>Now just select on and press ok</p>
+<a class="lightgallery" href="/../assets/pihole/7.webp" title="/../assets/pihole/7.webp" data-thumbnail="/../assets/pihole/7.webp">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/pihole/7.webp"
+            data-srcset="/../assets/pihole/7.webp, /../assets/pihole/7.webp 1.5x, /../assets/pihole/7.webp 2x"
+            data-sizes="auto"
+            alt="/../assets/pihole/7.webp" width="720" height="539" />
+    </a>
+<p>After that you can select if you want to log queries. You can select any option you want.</p>
+<a class="lightgallery" href="/../assets/pihole/8.webp" title="/../assets/pihole/8.webp" data-thumbnail="/../assets/pihole/8.webp">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/pihole/8.webp"
+            data-srcset="/../assets/pihole/8.webp, /../assets/pihole/8.webp 1.5x, /../assets/pihole/8.webp 2x"
+            data-sizes="auto"
+            alt="/../assets/pihole/8.webp" width="720" height="535" />
+    </a>
+<p>Now i recommend that you leave this as default but you don’t have to</p>
+<a class="lightgallery" href="/../assets/pihole/9.webp" title="/../assets/pihole/9.webp" data-thumbnail="/../assets/pihole/9.webp">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/pihole/9.webp"
+            data-srcset="/../assets/pihole/9.webp, /../assets/pihole/9.webp 1.5x, /../assets/pihole/9.webp 2x"
+            data-sizes="auto"
+            alt="/../assets/pihole/9.webp" width="720" height="536" />
+    </a>
+<p>Now it should start installing everything</p>
+<p>After the installation is finished you should see something like this</p>
+<a class="lightgallery" href="/../assets/pihole/10.webp" title="/../assets/pihole/10.webp" data-thumbnail="/../assets/pihole/10.webp">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/pihole/10.webp"
+            data-srcset="/../assets/pihole/10.webp, /../assets/pihole/10.webp 1.5x, /../assets/pihole/10.webp 2x"
+            data-sizes="auto"
+            alt="/../assets/pihole/10.webp" width="720" height="539" />
+    </a>
+<p>You have now successfully install pi-hole. You can head to the admin portal by going to the specified ip.</p>
+<p>To be able to use pi-hole you have 2 options</p>
+<ol>
+<li>Make the ip default dns for you hole network</li>
+<li>Manually add it on any device</li>
+</ol>
+<p>Ill go with the second option</p>
+<p>On windows:</p>
+<p>DNS settings are specified in the TCP/IP Properties window for the selected network connection.</p>
+<ol>
+<li>Go to the Control Panel</li>
+<li>Click Network and Internet &gt; Network and Sharing Center &gt; Change adapter settings</li>
+<li>Select the connection for which you want to configure</li>
+<li>Right-click Local Area Connection &gt; Properties</li>
+<li>Select the Networking tab</li>
+<li>Select Internet Protocol Version 4 (TCP/IPv4) or Internet Protocol Version 6 (TCP/IPv6)</li>
+<li>Click Properties</li>
+<li>Click Advanced</li>
+<li>Select the DNS tab</li>
+<li>Click OK</li>
+<li>Select Use the following DNS server addresses</li>
+<li>Replace those addresses with the IP addresses of your Pi</li>
+<li>Restart the connection you selected in step 3</li>
+<li>Repeat the procedure for additional network connections you want to change.</li>
+</ol>
+<p>On Linux its a lot easier just:
+In most modern Linux distributions, DNS settings are configured through Network Manager.</p>
+<ol>
+<li>Click System &gt; Preferences &gt; Network Connections</li>
+<li>Select the connection for which you want to configure and press <strong>Edit</strong></li>
+<li>Select the IPv4 Settings or IPv6 Settings tab</li>
+<li>If the selected method is Automatic (DHCP), open the dropdown and select Automatic (DHCP) addresses only instead. If the method is set to something else, do not change it.</li>
+<li>In the DNS servers field, enter your Pi’s IP addresses</li>
+<li>Click Apply to save the changes
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>If you are not using network manager<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Then your DNS settings are specified in <code>/etc/resolv.conf</code></div>
+        </div>
+    </div></li>
+</ol>
+<p>(source: pi-hole.net)</p>
+<p>Now if we head over to any websites with ads you should see that no ads appear</p>
+<p>Lets try speedtest.net</p>
+<p>If you have followed the steps correctly you should see something like this</p>
+<figure><a class="lightgallery" href="/../assets/pihole/ads.webp" title="/../assets/pihole/ads.webp" data-thumbnail="/../assets/pihole/ads.webp" data-sub-html="<h2>No ads!</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/pihole/ads.webp"
+            data-srcset="/../assets/pihole/ads.webp, /../assets/pihole/ads.webp 1.5x, /../assets/pihole/ads.webp 2x"
+            data-sizes="auto"
+            alt="/../assets/pihole/ads.webp" width="1100" height="707" />
+    </a><figcaption class="image-caption">No ads!</figcaption>
+    </figure>
+<p><strong>NO ADS</strong></p>
+<p>Enjoy the ad free web</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-02-25</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/pihole/" data-title="Get ad free web with Pi-hole" data-via="4rkal_"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://example.org/posts/pihole/" data-title="Get ad free web with Pi-hole"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://example.org/posts/pihole/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/sssh/" class="prev" rel="prev" title="Securing ssh with Key-Based authentication"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Securing ssh with Key-Based authentication</a>
+            <a href="/posts/tails/" class="next" rel="next" title="Become anonymous and somewhat untraceable with tails os">Become anonymous and somewhat untraceable with tails os<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">4rkal</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

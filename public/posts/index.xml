@@ -1,0 +1,100 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - 4rkal</title>
+        <link>http://example.org/posts/</link>
+        <description>All Posts | 4rkal</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>4rkal@proton.me (4rkal)</managingEditor>
+            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Mon, 06 Mar 2023 20:52:42 &#43;0300</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Python for Complete Beginners</title>
+    <link>http://example.org/posts/python/</link>
+    <pubDate>Mon, 06 Mar 2023 20:52:42 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://example.org/posts/python/</guid>
+    <description><![CDATA[Why you should use Python. Going over the basics of Python.
+In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&rsquo;s start by explaining what coding is.
+What is coding? Coding means writing instructions for computers and a finished set of instructions is known as a program. Computer programs control everything from smartphones to space rockets.]]></description>
+</item>
+<item>
+    <title>PocketBase self-hosted Firebase alternative</title>
+    <link>http://example.org/posts/pocketbase/</link>
+    <pubDate>Mon, 06 Mar 2023 20:44:46 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://example.org/posts/pocketbase/</guid>
+    <description><![CDATA[What is PocketBase PocketBase is an open source backend made in go consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.
+Install PocketBase The first thing that you will have to do is head to https://pocketbase.io and select the file for your operating system. Since I am using linux I will show how to set this up on linux but it should be pretty similar for any other os.]]></description>
+</item>
+<item>
+    <title>Why Monero is the ultimate form of a cryptocurrency</title>
+    <link>http://example.org/posts/whymonero/</link>
+    <pubDate>Mon, 06 Mar 2023 20:23:16 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://example.org/posts/whymonero/</guid>
+    <description><![CDATA[In this article I will tell you why monero fits my views of what a cryptocurrency should look like.
+What is monero? Monero is a decentralized cryptocurrency. It uses a public distributed ledger with privacy-enhancing technologies that obfuscate transactions to achieve anonymity and fungibility. Observers cannot decipher addresses trading monero, transaction amounts, address balances, or transaction histories.
+Monero works like any other currency but with some privacy and decentralization innovations.]]></description>
+</item>
+<item>
+    <title>Create a MultiBoot USB using ventoy</title>
+    <link>http://example.org/posts/ventoy/</link>
+    <pubDate>Mon, 06 Mar 2023 20:11:51 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://example.org/posts/ventoy/</guid>
+    <description><![CDATA[With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.
+Whats ventoy? Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .]]></description>
+</item>
+<item>
+    <title>Nmap(Network Mapper) For Beginners</title>
+    <link>http://example.org/posts/nmap/</link>
+    <pubDate>Sun, 05 Mar 2023 17:37:03 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://example.org/posts/nmap/</guid>
+    <description><![CDATA[Whether you want to scan your network for vulnerabilities or just want to see which ports you have open, nmap can be extremely useful.
+What is nmap Nmap (Network Mapper) is a network scanner created by Gordon Lyon . Nmap sends packets and examines the answers to find hosts and services on a computer network. For probing computer networks, Nmap offers a variety of functionalities, including host discovery, service detection, and operating system detection.]]></description>
+</item>
+<item>
+    <title>How Microsoft is monetizing the GitHub code base</title>
+    <link>http://example.org/posts/githubmon/</link>
+    <pubDate>Sun, 05 Mar 2023 17:21:56 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://example.org/posts/githubmon/</guid>
+    <description><![CDATA[Microsoft purchased GitHub in 2018, something many users are not aware of. After Microsoft’s acquisition of GitHub there have been many controversies like blocking private repositories and access to GitHub pages in certain countries and of course, GitHub Copilot.
+What is Github Copilot GitHub Copilot is an artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code.]]></description>
+</item>
+<item>
+    <title>Setup your own git server</title>
+    <link>http://example.org/posts/git/</link>
+    <pubDate>Sun, 05 Mar 2023 17:11:40 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://example.org/posts/git/</guid>
+    <description><![CDATA[There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .
+Requirements A computer for your server (running linux preferably debian) An internet connection (pretty hard without one) A second computer with git installed Setup The first thing you will have to do is install git via your package manager]]></description>
+</item>
+<item>
+    <title>Host your own private search engine — searX</title>
+    <link>http://example.org/posts/searx/</link>
+    <pubDate>Fri, 03 Mar 2023 23:21:53 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://example.org/posts/searx/</guid>
+    <description><![CDATA[We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
+What is searX? Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users.]]></description>
+</item>
+<item>
+    <title>Become anonymous and somewhat untraceable with tails os</title>
+    <link>http://example.org/posts/tails/</link>
+    <pubDate>Fri, 03 Mar 2023 23:03:40 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://example.org/posts/tails/</guid>
+    <description><![CDATA[In this article we will talk about what tails is and how to install and more.
+What is tails? Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.]]></description>
+</item>
+<item>
+    <title>Get ad free web with Pi-hole</title>
+    <link>http://example.org/posts/pihole/</link>
+    <pubDate>Sat, 25 Feb 2023 21:17:13 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://example.org/posts/pihole/</guid>
+    <description><![CDATA[n this article i will show you how to setup pi-hole. Pi-Hole will allow you to block in app ads improve your networks performance and monitor statistics. Pi-hole also allows you to create a vpn.
+What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine.]]></description>
+</item>
+</channel>
+</rss>

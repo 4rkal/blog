@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Why computers can’t represent 0.3 accurately - 4rkal</title><meta name="Description" content="4rkal&#39;s personal blog"><meta property="og:title" content="Why computers can’t represent 0.3 accurately" />
+<meta property="og:description" content="Most people know that adding up 0.1 &#43; 0.2 equals 0.3. However computers represent it as 0.30000000000000004 .
+Here is a screenshot of it in python3 0.1&#43;0.2 in python Your first thought might be that this is just some kind of error. Well its not
+Why does this happen? Fractions can be represented precisely in the base 10 system (used by humans) if a prime factor of the base is used (10)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/zeropointthree/" /><meta property="og:image" content="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-21T19:27:44+03:00" />
+<meta property="article:modified_time" content="2023-02-21T19:27:44+03:00" /><meta property="og:site_name" content="My cool site" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"/>
+
+<meta name="twitter:title" content="Why computers can’t represent 0.3 accurately"/>
+<meta name="twitter:description" content="Most people know that adding up 0.1 &#43; 0.2 equals 0.3. However computers represent it as 0.30000000000000004 .
+Here is a screenshot of it in python3 0.1&#43;0.2 in python Your first thought might be that this is just some kind of error. Well its not
+Why does this happen? Fractions can be represented precisely in the base 10 system (used by humans) if a prime factor of the base is used (10)."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/zeropointthree/" /><link rel="next" href="http://example.org/posts/selenium/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Why computers can’t represent 0.3 accurately",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/zeropointthree\/"
+        },"image": ["https:\/\/miro.medium.com\/fit\/c\/96\/96\/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"],"genre": "posts","wordcount":  221 ,
+        "url": "http:\/\/example.org\/posts\/zeropointthree\/","datePublished": "2023-02-21T19:27:44+03:00","dateModified": "2023-02-21T19:27:44+03:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "4rkal"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="4rkal"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        data-srcset="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 1.5x, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        title="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg" />4rkal</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://4rkal.medium.com" rel="noopener noreffer" target="_blank"> Medium </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="4rkal"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        data-srcset="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 1.5x, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        title="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg" />4rkal</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://4rkal.medium.com" title="" rel="noopener noreffer" target="_blank">Medium</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Why computers can’t represent 0.3 accurately</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>4rkal</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-21">2023-02-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;221 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p><strong>Most people know that adding up 0.1 + 0.2 equals 0.3. However computers represent it as 0.30000000000000004 .</strong></p>
+<p>Here is a screenshot of it in python3
+<figure><a class="lightgallery" href="/../assets/zeropointthree.png" title="/../assets/zeropointthree.png" data-thumbnail="/../assets/zeropointthree.png" data-sub-html="<h2>0.1&#43;0.2 in python</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/zeropointthree.png"
+            data-srcset="/../assets/zeropointthree.png, /../assets/zeropointthree.png 1.5x, /../assets/zeropointthree.png 2x"
+            data-sizes="auto"
+            alt="/../assets/zeropointthree.png" width="649" height="318" />
+    </a><figcaption class="image-caption">0.1+0.2 in python</figcaption>
+    </figure></p>
+<p>Your first thought might be that this is just some kind of error. Well its not</p>
+<h1 id="why-does-this-happen">Why does this happen?</h1>
+<p>Fractions can be represented precisely in the base 10 system (used by humans) if a prime factor of the base is used (10).</p>
+<ul>
+<li>2 and 5 are the prime factors of 10.</li>
+<li>1/2, 1/4, 1/5 (0.2), 1/8, and 1/10 (0.1) can be expressed precisely as a result of denominators use prime factors of 10.</li>
+<li>Whereas, 1/3, 1/6, and 1/7 are repeating decimals as a result of denominators use a prime factor of 3 or 7.
+On the other hand, fractions can be represented precisely in the base 2 (binary) system (used by computers) if a prime factor of the base is used.</li>
+<li>2 is the only prime factor of 2.</li>
+<li>So 1/2, 1/4, 1/8 can all be expressed precisely because the denominators use prime factors of 2.</li>
+<li>Whereas 1/5 (0.2) or 1/10 (0.1) are repeating decimals.
+When you perform math on these repeating decimals, you end up with leftovers which carry over when you convert the computer’s base-2 (binary) number into a more human-readable base-10 representation.</li>
+</ul>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Read more<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">0.300.com:<br>
+<!-- raw HTML omitted --><a href="https://0.30000000000000004.com/" target="_blank" rel="noopener noreffer ">https://0.30000000000000004.com/</a><!-- raw HTML omitted --><br>
+Wikipedia:<br>
+<!-- raw HTML omitted --><a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic" target="_blank" rel="noopener noreffer ">https://en.wikipedia.org/wiki/Floating-point_arithmetic</a><!-- raw HTML omitted --></div>
+        </div>
+    </div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-02-21</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/zeropointthree/" data-title="Why computers can’t represent 0.3 accurately" data-via="4rkal_"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://example.org/posts/zeropointthree/" data-title="Why computers can’t represent 0.3 accurately"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://example.org/posts/zeropointthree/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/posts/selenium/" class="next" rel="next" title="Automating your web browser with selenium">Automating your web browser with selenium<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">4rkal</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

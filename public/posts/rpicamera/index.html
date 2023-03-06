@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Raspberry pi security camera - 4rkal</title><meta name="Description" content="4rkal&#39;s personal blog"><meta property="og:title" content="Raspberry pi security camera" />
+<meta property="og:description" content="In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.
+Requirements Raspberry pi or any other computer Web cam Any kind of debian based distro installed on the pi/computer Setup In this article we will be using the motion package (https://motion-project.github.io/)
+To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/rpicamera/" /><meta property="og:image" content="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-25T20:03:25+03:00" />
+<meta property="article:modified_time" content="2023-02-25T20:03:25+03:00" /><meta property="og:site_name" content="My cool site" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"/>
+
+<meta name="twitter:title" content="Raspberry pi security camera"/>
+<meta name="twitter:description" content="In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.
+Requirements Raspberry pi or any other computer Web cam Any kind of debian based distro installed on the pi/computer Setup In this article we will be using the motion package (https://motion-project.github.io/)
+To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/rpicamera/" /><link rel="prev" href="http://example.org/posts/howsshworks/" /><link rel="next" href="http://example.org/posts/wreadme/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Raspberry pi security camera",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/rpicamera\/"
+        },"image": ["https:\/\/miro.medium.com\/fit\/c\/96\/96\/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"],"genre": "posts","wordcount":  273 ,
+        "url": "http:\/\/example.org\/posts\/rpicamera\/","datePublished": "2023-02-25T20:03:25+03:00","dateModified": "2023-02-25T20:03:25+03:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "4rkal"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="4rkal"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        data-srcset="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 1.5x, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        title="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg" />4rkal</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://4rkal.medium.com" rel="noopener noreffer" target="_blank"> Medium </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="4rkal"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        data-srcset="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 1.5x, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        title="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg" />4rkal</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://4rkal.medium.com" title="" rel="noopener noreffer" target="_blank">Medium</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Raspberry pi security camera</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>4rkal</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-25">2023-02-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;273 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>Raspberry pi or any other computer</li>
+<li>Web cam</li>
+<li>Any kind of debian based distro installed on the pi/computer</li>
+</ol>
+<h1 id="setup">Setup</h1>
+<p>In this article we will be using the motion package (<a href="https://motion-project.github.io/" target="_blank" rel="noopener noreffer ">https://motion-project.github.io/</a>)</p>
+<p>To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard. Also connect your web cam to the raspberry pi usb port.</p>
+<p>The first thing we will have to do is install motion, for that type the following command:<br>
+<code>apt install motion</code><br>
+Now start motion with:<br>
+<code>systemctl start motion</code><br>
+or<br>
+<code>service motion start</code><br>
+Now we are going to change some of the default settings . To do that type:<br>
+<code>nano /etc/motion/motion.conf</code><br>
+The first thing that we are going to change is<br>
+<code>webcontrol_localhost off</code><br>
+This will enable us to access the stream from other computers.</p>
+<p>To view the stream run:</p>
+<p><code>motion</code></p>
+<p>If you get a permission denied error try running</p>
+<p><code>sudo motion</code></p>
+<p>If you got to http://YOUR_IP:8080 you should see a live feed of the web cam</p>
+<p>You can change the port under webcontrol_port in the config file eg.
+<code>webcontrol_port 1234</code></p>
+<p>If you only want the live stream port you can go to http://your_ip:8081</p>
+<p>Again you can change that under stream_port.</p>
+<p>Now everything should be working fine. All motion detection files will be saved in /var/lib/motion</p>
+<p>You can also change loads of other settings. Here are my settings:https://pastebin.com/WGn0NfcW</p>
+<p>Read the documentation here: <a href="https://motion-project.github.io/motion_guide.html" target="_blank" rel="noopener noreffer ">https://motion-project.github.io/motion_guide.html</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-02-25</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/rpicamera/" data-title="Raspberry pi security camera" data-via="4rkal_"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://example.org/posts/rpicamera/" data-title="Raspberry pi security camera"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://example.org/posts/rpicamera/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/howsshworks/" class="prev" rel="prev" title="How SSH works"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>How SSH works</a>
+            <a href="/posts/wreadme/" class="next" rel="next" title="8 Steps for writing a good README file">8 Steps for writing a good README file<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">4rkal</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

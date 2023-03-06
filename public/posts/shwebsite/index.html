@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Self host your own website - 4rkal</title><meta name="Description" content="4rkal&#39;s personal blog"><meta property="og:title" content="Self host your own website" />
+<meta property="og:description" content="In this article i will show you how to self host your own website securely.
+Requirements A computer or microcomputer to host the website The computer needs to run linux An internet connection (Its pretty hard without one, trust me) Lets get started!
+Installation The first thing that we will have to do is setup our nginx site.
+We first have to be root
+sudo su
+If you dont have sudo installed try:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/shwebsite/" /><meta property="og:image" content="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-25T20:23:16+03:00" />
+<meta property="article:modified_time" content="2023-02-25T20:23:16+03:00" /><meta property="og:site_name" content="My cool site" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"/>
+
+<meta name="twitter:title" content="Self host your own website"/>
+<meta name="twitter:description" content="In this article i will show you how to self host your own website securely.
+Requirements A computer or microcomputer to host the website The computer needs to run linux An internet connection (Its pretty hard without one, trust me) Lets get started!
+Installation The first thing that we will have to do is setup our nginx site.
+We first have to be root
+sudo su
+If you dont have sudo installed try:"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/shwebsite/" /><link rel="prev" href="http://example.org/posts/wreadme/" /><link rel="next" href="http://example.org/posts/opensource/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Self host your own website",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/shwebsite\/"
+        },"image": ["https:\/\/miro.medium.com\/fit\/c\/96\/96\/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"],"genre": "posts","wordcount":  502 ,
+        "url": "http:\/\/example.org\/posts\/shwebsite\/","datePublished": "2023-02-25T20:23:16+03:00","dateModified": "2023-02-25T20:23:16+03:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "4rkal"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="4rkal"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        data-srcset="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 1.5x, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        title="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg" />4rkal</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://4rkal.medium.com" rel="noopener noreffer" target="_blank"> Medium </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="4rkal"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        data-srcset="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 1.5x, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        title="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg" />4rkal</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://4rkal.medium.com" title="" rel="noopener noreffer" target="_blank">Medium</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Self host your own website</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>4rkal</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-25">2023-02-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;502 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>In this article i will show you how to self host your own website securely.</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>A computer or microcomputer to host the website</li>
+<li>The computer needs to run linux</li>
+<li>An internet connection (Its pretty hard without one, trust me)</li>
+</ol>
+<p>Lets get started!</p>
+<h1 id="installation">Installation</h1>
+<p>The first thing that we will have to do is setup our nginx site.</p>
+<p>We first have to be root</p>
+<p><code>sudo su</code></p>
+<p>If you dont have sudo installed try:</p>
+<p><code>su -</code></p>
+<p>Now we will have to install nginx</p>
+<p><code>apt install nginx</code></p>
+<p>If you are using any other package manager install it using the package name nginx</p>
+<p>Now we will have to start the nginx service</p>
+<p><code>systemctl start nginx</code></p>
+<p>or</p>
+<p><code>service nginx start</code></p>
+<p>Lets find your ip with:</p>
+<p><code>ip a</code></p>
+<p>or</p>
+<p><code>ifconfig</code></p>
+<p>If you open a web browser and go to your ip you should see the default welcome to nginx site.</p>
+<p>Since we want to make our website as secure as possible we can hide the nginx version</p>
+<p>To do that type</p>
+<p>`sudo nano /etc/nginx/nginx.conf</p>
+<p>Now you should see the nginx configuration file.</p>
+<p>under</p>
+<pre tabindex="0"><code>http {
+##
+        # Basic Settings
+        ##
+sendfile on;
+        tcp_nopush on;
+        types_hash_max_size 2048;
+        # server_tokens off;
+</code></pre><p>uncomment <code>server_tokens off;</code></p>
+<p>Now restart your nginx service</p>
+<p><code>systemctl restart nginx</code></p>
+<p>We can now enter our html files inside of <code>/var/www/html</code></p>
+<p>To do that type:</p>
+<p><code>cd /usr/share/nginx/html</code></p>
+<p>and now we can create the index.html file</p>
+<p><code>nano index.html</code></p>
+<p>and paste/write your html code to index.html</p>
+<p>Now restart the nginx service again</p>
+<p><code>systemctl restart nginx</code></p>
+<h1 id="certbot">Certbot</h1>
+<p>Now we will install cerbot in order to get https</p>
+<p>To install certbot simply type</p>
+<p><code>apt install certbot python-certbot-nginx</code></p>
+<p>Now we will have to run certbot</p>
+<p><code>certbot --nginx</code></p>
+<p>Enter all the inf oand agree to the terms</p>
+<p>After that you will have to enter the name you would like to activate https for</p>
+<p>Just select the names</p>
+<p>After that select to redirect http to https</p>
+<h1 id="port-forwarding">Port forwarding</h1>
+<p>There are a few ways to port forward. In this article we will use noip.com.</p>
+<p>Head over to noip.com to get started (Use my referal <a href="https://www.noip.com/?fpr=4rkal" target="_blank" rel="noopener noreffer ">https://www.noip.com/?fpr=4rkal</a>)</p>
+<p>Create an account and register a hostname</p>
+<p>After that we will have to build the noip client on our computer for that paste these commands to your terminal</p>
+<pre tabindex="0"><code>cd /usr/local/src
+wget http://www.no-ip.com/client/linux/noip-duc-linux.tar.gz
+tar xzf noip-duc-linux.tar.gz
+cd noip-2.1.9–1
+make
+make install
+</code></pre><p>When you run make install you will be prompted to answer some questions like your login information and the update interval</p>
+<p>In the update interval just set it to 30</p>
+<p>Then if you don’t want to run something at a successful update type n if you do then type y.</p>
+<p>You will now also have to edit the nginx default settings</p>
+<p>to do that type</p>
+<p>`sudo nano /etc/nginx/sites-available/default</p>
+<p>Now you will have to change the server_name to the domain you registered at noip.com</p>
+<p>You can check if your configuration was successful by running</p>
+<p><code>nginx -t</code></p>
+<p>You can now restart the nginx service</p>
+<p><code>systemctl restart nginx</code></p>
+<p>Now if you head to your domain it should be working and ssl should be installed</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-02-25</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/shwebsite/" data-title="Self host your own website" data-via="4rkal_"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://example.org/posts/shwebsite/" data-title="Self host your own website"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://example.org/posts/shwebsite/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/wreadme/" class="prev" rel="prev" title="8 Steps for writing a good README file"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>8 Steps for writing a good README file</a>
+            <a href="/posts/opensource/" class="next" rel="next" title="The importance of open source software">The importance of open source software<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">4rkal</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Python for Complete Beginners - 4rkal</title><meta name="Description" content="4rkal&#39;s personal blog"><meta property="og:title" content="Python for Complete Beginners" />
+<meta property="og:description" content="Why you should use Python. Going over the basics of Python.
+In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&rsquo;s start by explaining what coding is.
+What is coding? Coding means writing instructions for computers and a finished set of instructions is known as a program. Computer programs control everything from smartphones to space rockets." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/python/" /><meta property="og:image" content="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-06T20:52:42+03:00" />
+<meta property="article:modified_time" content="2023-03-06T20:52:42+03:00" /><meta property="og:site_name" content="My cool site" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"/>
+
+<meta name="twitter:title" content="Python for Complete Beginners"/>
+<meta name="twitter:description" content="Why you should use Python. Going over the basics of Python.
+In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&rsquo;s start by explaining what coding is.
+What is coding? Coding means writing instructions for computers and a finished set of instructions is known as a program. Computer programs control everything from smartphones to space rockets."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/python/" /><link rel="prev" href="http://example.org/posts/pocketbase/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python for Complete Beginners",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/python\/"
+        },"image": ["https:\/\/miro.medium.com\/fit\/c\/96\/96\/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"],"genre": "posts","wordcount":  1713 ,
+        "url": "http:\/\/example.org\/posts\/python\/","datePublished": "2023-03-06T20:52:42+03:00","dateModified": "2023-03-06T20:52:42+03:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "4rkal"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="4rkal"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        data-srcset="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 1.5x, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        title="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg" />4rkal</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://4rkal.medium.com" rel="noopener noreffer" target="_blank"> Medium </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="4rkal"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        data-srcset="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 1.5x, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        title="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg" />4rkal</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://4rkal.medium.com" title="" rel="noopener noreffer" target="_blank">Medium</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Python for Complete Beginners</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>4rkal</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-06">2023-03-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1713 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;9 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>Why you should use Python. Going over the basics of Python.</p>
+<p>In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&rsquo;s start by explaining what coding is.</p>
+<h1 id="what-is-coding">What is coding?</h1>
+<p>Coding means writing instructions for computers and a finished set of instructions is known as a program. Computer programs control everything from smartphones to space rockets.</p>
+<h1 id="what-is-python">What is Python?</h1>
+<p>Python is a text-based computer language which means it’s made up of words and symbols (such as * and = ). Its language elements and object-oriented approach are meant to assist programmers in writing clear, logical code for both small and large-scale projects.</p>
+<h1 id="why-python">Why Python?</h1>
+<p>Python is one of the most popular computer languages and it’s very concise — that is, you don&rsquo;t need to type much in order to create programs that do a lot.</p>
+<h1 id="advantages-of-python">Advantages of python</h1>
+<ol>
+<li>Simple to read, learn, and write</li>
+</ol>
+<p>Python is a high-level programming language with a syntax that is similar to English. This makes the code easier to read and comprehend.</p>
+<p>Python is really simple to pick up and understand, which is why many people suggest it to newcomers. When compared to other prominent languages like C/C++ and Java, you require fewer lines of code to accomplish the same purpose.</p>
+<ol start="2">
+<li>Improved Productivity</li>
+</ol>
+<p>Python is an extremely useful programming language. Python’s simplicity allows developers to concentrate on solving the problem.</p>
+<p>They don’t need to spend a lot of time learning the programming language’s syntax or behaviour. You write less code and accomplish more.</p>
+<ol start="3">
+<li>Free and Open-Source</li>
+</ol>
+<p>Python comes under the OSI-approved open-source license. As a result, it is both free to use and distribute. You can get the source code, change it, and even share your own Python version.</p>
+<ol start="4">
+<li>Portability</li>
+</ol>
+<p>In many languages like C/C++, you need to change your code to run the program on different platforms. With Python, however, this is not the case. You only have to write it once and it may be used wherever.</p>
+<h1 id="downloading-python">Downloading Python</h1>
+<p><strong>On Linux</strong>
+You probably already know how to install it but I&rsquo;m gonna show it anyways.</p>
+<p>Open your terminal and type python or python3; if it does not work then run: (depending on your distro)
+<code>sudo apt install python3</code></p>
+<p><strong>Windows 10</strong>
+1 . First check if you already have Python installed. Go to the ‘Start’ menu and click on the ‘All programs’. If you see the word “Python” it means that you already have it installed. If you don&rsquo;t already have it installed go to <a href="https://python.org" target="_blank" rel="noopener noreffer ">https://python.org</a>, download the correct version for your computer and then install it.</p>
+<ol start="2">
+<li>Python comes in different versions. This course uses version 3 and upwards. I recommend always installing the latest version.</li>
+</ol>
+<h1 id="what-is-an-ide">What is an IDE?</h1>
+<p>IDE stands for the integrated development environment (IDE) and is software for building applications that combine common developer tools into a single Graphical User Interface (GUI).</p>
+<p>The IDE that we will be using in this series is called VS Code.</p>
+<h1 id="downloading-vs-code">Downloading VS Code</h1>
+<p>Go to <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">https://code.visualstudio.com/</a> and download the version that you want. Vs Code is available for Windows, Mac, and Linux. Follow the instructions on the website for installation.</p>
+<h1 id="starting-in-python">Starting in Python</h1>
+<p>It&rsquo;s traditional in the programming world to make the computer say ‘Hello World’ with your very first piece of code. In Python, this is very simple.</p>
+<ol>
+<li>Open Vs Code and click on File &gt; New File and name your file helloworld.py. The .py tells the computer that this is a Python program.</li>
+<li>In your project, in VS Code type :
+<code>print(&quot;Hello World!&quot;)</code></li>
+<li>Save your project and click on the run button at the top of your screen</li>
+<li>If you have done everything correctly you should see a Hello World message in your terminal.</li>
+</ol>
+<p>If it didn&rsquo;t work you should get a red error message something like this:</p>
+<p><code>SyntaxError: invalid syntax</code></p>
+<p>If that happens make sure that you have copied it exactly like above.</p>
+<h1 id="playing-with-numbers-in-python">Playing With numbers in Python</h1>
+<p>Python makes it easy to do maths. You just type in a question and get the answer</p>
+<p><strong>Adding Up</strong></p>
+<p>Open an empty project and type:</p>
+<p><code>print(2+2)</code></p>
+<p>You should see the answer:
+<code>4</code></p>
+<p><strong>Subtracting(and more)</strong>
+If you want to subtract, use the ‘-’ symbol like this:</p>
+<p><code>print(2 - 2)</code></p>
+<p>To multiply use the ‘*’ symbol:</p>
+<p><code>print(2 * 2)</code></p>
+<p>To divide, use the ‘/’ symbol</p>
+<p><code>print(2 / 2)</code></p>
+<h1 id="variables">Variables</h1>
+<p>A variable is like a labelled box that stores information. You can change this information but the label stays the same.</p>
+<h1 id="creating-a-variable">Creating a variable:</h1>
+<p>To tell the computer what you want your variable to be, you use the = sign. This is called assigning a value to a variable. It’s very simple, here&rsquo;s an example using fish.</p>
+<ol>
+<li>Open a new VS Code project and type:
+<code>fish = 5</code></li>
+</ol>
+<p>Imagine a cat gets hungry and eats two fish. To create another variable for the amount eaten, write the following:</p>
+<p><code>fishEaten = 2</code></p>
+<p>Press enter and then type:</p>
+<p><code>print(fish - fishEaten)</code></p>
+<p>Save and run your code and you should get the answer:
+<code>3</code></p>
+<h1 id="input-in-python">Input in Python</h1>
+<p>You can use the input() function to ask for information from the user.</p>
+<ol>
+<li>Open a new VS Code project and type:</li>
+</ol>
+<p><code>name = input(&quot;What is your name? &quot;)</code></p>
+<ol start="2">
+<li>Run the program and you should get the following message:</li>
+</ol>
+<p><code>What is your name? </code>
+3. Now let&rsquo;s try printing your name.</p>
+<p>Add the following to your program:</p>
+<p><code>print(name)</code></p>
+<p>You have successfully created an input field!</p>
+<p>This can be very useful in creating decision games.</p>
+<h1 id="making-decisions">Making Decisions</h1>
+<p>To write a program that allows you to make decisions the computer needs to react differently to different answers. For this, you need conditions to compare pieces of information, and conditionals to create different paths through the program.</p>
+<h1 id="what-are-conditions">What are Conditions?</h1>
+<p>A condition is a bit of code that compares two pieces of information. Conditions use operators to make these comparisons. For example, the operator == checks if two pieces of information are the same.</p>
+<ol>
+<li>Open a new Vs Code project and type:</li>
+</ol>
+<pre tabindex="0"><code>age = 10
+if age == 12:
+ print(&#34;True&#34;)
+else:
+ print(&#34;False&#34;)
+</code></pre><ol start="2">
+<li>Save and run and you should get False</li>
+</ol>
+<p>That is because ‘age’ is set to 10 and not 12</p>
+<h1 id="what-are-conditionals">What are conditionals</h1>
+<p>To use a condition in your code you need a command called a condition. Conditionals use conditions. Conditions show if something is True or False.</p>
+<h1 id="if">IF</h1>
+<p>One important condition is known as an if statement which tests whether a condition is true. If it is, the computer will follow the instructions after the if statement. If not, the computer will just skip it. In Python, if is a keyword. Dont use it as a variable name because the computer will think that it&rsquo;s an if statement and get confused.</p>
+<h1 id="implementing-the-if-condition">Implementing the if condition</h1>
+<ol>
+<li>Create a new VS Code project and type the following:</li>
+</ol>
+<p><code>user_reply = (&quot;Do you like python? (Type yes or no) &quot;)</code></p>
+<ol start="2">
+<li>Then we will implement the if condition by typing the following:</li>
+</ol>
+<pre tabindex="0"><code>if user_reply == &#34;yes&#34;
+   print(&#34;Python likes you to ! &#34;)
+</code></pre><h1 id="elif">ELIF</h1>
+<p>elif is short for else if. If the conditions of the if code isn’t met it “sweeps up” whatever is left.</p>
+<ol start="3">
+<li>Now type the following:</li>
+</ol>
+<pre tabindex="0"><code>elif user_reply == &#34;maybe&#34;:
+  print(&#34;Make up your mind!&#34;)
+</code></pre><h1 id="else">ELSE</h1>
+<p>When conditions for the if and elif code arent met, else goes into action and “sweeps up” whatever is left.</p>
+<p>Let&rsquo;s implement that:
+4. Now type the following:</p>
+<pre tabindex="0"><code>else:
+  print(&#34;Well python doesn&#39;t like you either&#34;)
+</code></pre><p>The complete code should look something like this:</p>
+<pre tabindex="0"><code>user_reply = (&#34;Do you like python? (Type yes or no) &#34;)
+if user_reply == &#34;yes&#34;
+   print(&#34;Python likes you to ! &#34;)
+elif user_reply == &#34;maybe&#34;:
+  print(&#34;Make up your mind!&#34;)
+else:
+  print(&#34;Well python doesn&#39;t like you either&#34;)
+</code></pre><p><strong>Don&rsquo;t forget to press the tab after if statements.</strong></p>
+<h1 id="randomness-in-python">Randomness in python</h1>
+<p>In python we can use the random function in order to generate random numbers. This can be extremely useful in a variety of things.</p>
+<p>The first thing we will have to do is import the random function</p>
+<p><code>import random</code></p>
+<p>After that we can print out a random number with the following</p>
+<p><code>print(random.randint(1,10))</code></p>
+<p>This will output a random number from 1–10</p>
+<p>randint stands for random integer.</p>
+<p>Here is the full code.</p>
+<pre tabindex="0"><code>import random
+print(random.randint(1,10))
+</code></pre><h1 id="loops-in-python">Loops in python</h1>
+<p>There are two types of loops in python</p>
+<ol>
+<li>While loop</li>
+<li>For loop</li>
+</ol>
+<p>While loops only stop when something changes. If it doesn&rsquo;t change they could go on forever.</p>
+<p>With for loops on the other hand you can define exactly when you want them to stop</p>
+<p>The most popular example of a while loop is</p>
+<p><code>while True:</code></p>
+<p>Which will run forever eg</p>
+<pre tabindex="0"><code>while True:
+    print(&#34;hi&#34;)
+</code></pre><p>This will run forever.</p>
+<p>With while loops on the other hand you can define exactly how many times you want the loop to run.</p>
+<pre tabindex="0"><code>for x in range(0,10):
+   print(&#34;Hi&#34;)
+</code></pre><p>This will print Hi exactly 10 times</p>
+<h1 id="guessing-game">Guessing game</h1>
+<p>Now lets combine what learned from above and from our previous articles to create a game</p>
+<p>The computer will select a random number from 1–10 and you will have to guess it.</p>
+<p>The first thing we will have to do is</p>
+<p><code>import random</code></p>
+<p>After that we will create a variable called number</p>
+<p><code>number = random.randint(1,10)</code></p>
+<p>After that we will create another variable called your_guess</p>
+<p><code>your_guess = int(input(&quot;Im thinking of a number from 1 to 10, can you guess which one?&quot;))</code></p>
+<p>We are using int as you will have to enter a number</p>
+<p>Now we will create a while loop that will keep the game running until you guess the number</p>
+<p><code>while your_guess != number:</code></p>
+<p>The code so far is</p>
+<pre tabindex="0"><code>import random
+number = random.randint(1,10)
+your_guess = int(input(&#34;Im thinking of a number from 1 to 10, can you guess which one?&#34;))
+while your_guess != number:
+    if your_guess &lt; number:
+        print(&#34;Your number was too low&#34;)
+    else:
+        print(&#34;You number was to high&#34;)
+</code></pre><p>And the following</p>
+<p><code>print(&quot;GG you found it&quot;)</code></p>
+<p>You code should now look like this</p>
+<pre tabindex="0"><code>import random
+number = random.randint(1,10)
+your_guess = int(input(&#34;Im thinking of a number from 1 to 10, can you guess which one?&#34;))
+while your_guess != number:
+    if your_guess &lt; number:
+        print(&#34;Your number was too low&#34;)
+    else:
+        print(&#34;You number was to high&#34;)
+    your_guess = int(input(&#34;Please try again... &#34;))
+print(&#34;GG you found it&#34;)
+</code></pre><p><strong>Thats it for now</strong></p>
+<p>Stay tuned for more</p>
+<p><strong>If you enjoyed this article please consider supporting me</strong></p>
+<p>Monero:
+<code>8AztDJtwb7iKaqP4KXRG39VibAacCY1mMfH3bNsVjhYMYbohtT5LKoTSRP6vJGtjeBSPEpFdHZx3ZL3iVowYdkqeQwPAG2o</code></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-03-06</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/python/" data-title="Python for Complete Beginners" data-via="4rkal_"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://example.org/posts/python/" data-title="Python for Complete Beginners"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://example.org/posts/python/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/pocketbase/" class="prev" rel="prev" title="PocketBase self-hosted Firebase alternative"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>PocketBase self-hosted Firebase alternative</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">4rkal</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

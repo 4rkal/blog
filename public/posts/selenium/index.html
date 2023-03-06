@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Automating your web browser with selenium - 4rkal</title><meta name="Description" content="4rkal&#39;s personal blog"><meta property="og:title" content="Automating your web browser with selenium" />
+<meta property="og:description" content="Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.
+In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.medium.com/f1df170bcc08/python-for-beginners)
+What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/selenium/" /><meta property="og:image" content="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-22T21:23:38+03:00" />
+<meta property="article:modified_time" content="2023-02-22T21:23:38+03:00" /><meta property="og:site_name" content="My cool site" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"/>
+
+<meta name="twitter:title" content="Automating your web browser with selenium"/>
+<meta name="twitter:description" content="Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.
+In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.medium.com/f1df170bcc08/python-for-beginners)
+What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/selenium/" /><link rel="prev" href="http://example.org/posts/zeropointthree/" /><link rel="next" href="http://example.org/posts/howsshworks/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Automating your web browser with selenium",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/selenium\/"
+        },"image": ["https:\/\/miro.medium.com\/fit\/c\/96\/96\/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"],"genre": "posts","wordcount":  899 ,
+        "url": "http:\/\/example.org\/posts\/selenium\/","datePublished": "2023-02-22T21:23:38+03:00","dateModified": "2023-02-22T21:23:38+03:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "4rkal"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="4rkal"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        data-srcset="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 1.5x, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        title="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg" />4rkal</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://4rkal.medium.com" rel="noopener noreffer" target="_blank"> Medium </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="4rkal"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        data-srcset="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 1.5x, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        title="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg" />4rkal</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://4rkal.medium.com" title="" rel="noopener noreffer" target="_blank">Medium</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Automating your web browser with selenium</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>4rkal</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-22">2023-02-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;899 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/selenium.png"
+        data-srcset="/selenium.png, /selenium.png 1.5x, /selenium.png 2x"
+        data-sizes="auto"
+        alt="/selenium.png"
+        title="/selenium.png" width="1010" height="247" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p><strong>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.</strong></p>
+<p>In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (<a href="https://4rkal.medium.com/f1df170bcc08/python-for-beginners" target="_blank" rel="noopener noreffer ">https://4rkal.medium.com/f1df170bcc08/python-for-beginners</a>)</p>
+<h1 id="what-is-selenium">What is selenium?</h1>
+<p>Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. You can use selenium in multiple programming languages including JavaScript (Node.js), C#, Groovy, Java, Perl, PHP, Python, Ruby and Scala and with multiple web browsers including firefox, internet explorer, safary, opera, chrome and edge. Selenium can be very useful for web scraping, automating boring and manual tasks and so much more.</p>
+<h1 id="setup">Setup</h1>
+<p>To install selenium you first have to install a browser driver. Here is the list of supported web browsers :</p>
+<ul>
+<li>Firefox</li>
+<li>Internet Explorer?</li>
+<li>Safari</li>
+<li>Opera</li>
+<li>Chrome</li>
+<li>Edge
+In this article we will be using firefox geckodriver. But you can use any of the browser drivers above.</li>
+</ul>
+<h1 id="downloading-geckodriver">Downloading geckodriver</h1>
+<p>To get started go to github.com/mozilla/geckodriver/releases
+Scroll down and select the package for your computer.
+I’ll use geckodriver-v0.31.0-linux64.tar.gz because I’m using a linux 64-bit computer.</p>
+<h1 id="installing-geckodriver">Installing geckodriver</h1>
+<p>The setup varies depending on your operating system.
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>If you are using Arch Linux<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">You can install geckodriver from the aur. Using your favourite aur helper</div>
+        </div>
+    </div>
+On linux:</p>
+<ol>
+<li>Unzip the file</li>
+<li>Make the file executable
+<code>chmod +x geckodriver</code></li>
+<li>Add the driver to your PATH so other tools can find it:
+<code>export PATH=$PATH:/path-to-extracted-file/</code>
+On windows:</li>
+<li>Unzip the file</li>
+<li>Paste the file in the directory that your script will run</li>
+</ol>
+<h1 id="installing-selenium">Installing selenium</h1>
+<p>To install selenium you have to have python and pip installed.Check out my article on python for <a href="https://4rkal.medium.com/python-for-beginners-f1df170bcc08" target="_blank" rel="noopener noreffer ">more</a><br>
+To install selenium open your cmd or terminal and type:<br>
+<code>pip install selenium</code>
+That should install it.\</p>
+<h1 id="basics-of-selenium">Basics of selenium</h1>
+<p>The first thing we have to do is to create a new file with the .py ending eg. main.py<br>
+After you have created it open it in your ide or editor of choice.\</p>
+<p>The first thing that we have to do is to import the selenium webdriver :
+<code> from selenium import webdriver</code><br>
+After that we have to specify what webdriver we are using. In our case its firefox
+<code> browser = webdriver.Firefox()</code><br>
+Now we need to specify the url that we want it to go to eg python.org</p>
+<pre tabindex="0"><code>browser.get(&#39;https://python.org&#39;)
+The full code so far is:\
+import selenium
+from selenium import webdriver
+browser = webdriver.Firefox()
+browser.get(&#39;https://python.org&#39;)
+</code></pre><p>Now we might want it to click on the Downloads button</p>
+<p>There are a few ways to do this</p>
+<h1 id="method-1-of-clicking-a-button">Method 1 of clicking a button</h1>
+<p>The first is with XPATH<br>
+To find the xpath of a button / object on a website you have to open your web browser go to the desired website and hit F12 to get the development tools. Now you should click on the select tool (See below)
+<figure><a class="lightgallery" href="/../assets/inspect.png" title="/../assets/inspect.png" data-thumbnail="/../assets/inspect.png" data-sub-html="<h2>Inspect element</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/inspect.png"
+            data-srcset="/../assets/inspect.png, /../assets/inspect.png 1.5x, /../assets/inspect.png 2x"
+            data-sizes="auto"
+            alt="/../assets/inspect.png" width="700" height="152" />
+    </a><figcaption class="image-caption">Inspect element</figcaption>
+    </figure>
+Click on it and after that hover above the downloads button with your mouse and click it. After that you should see a bit of code getting highlighted. Right click on the bit of code and select Copy then select Xpath
+<a class="lightgallery" href="/../assets/copy.png" title="/../assets/copy.png" data-thumbnail="/../assets/copy.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/copy.png"
+            data-srcset="/../assets/copy.png, /../assets/copy.png 1.5x, /../assets/copy.png 2x"
+            data-sizes="auto"
+            alt="/../assets/copy.png" width="700" height="620" />
+    </a>
+Now go back to the python file and type:<br>
+<code>driver.find_element(By.XPATH, 'XPATH_HERE')</code><br>
+This will throw an error, to fix that error simply add this at the top of the file<br>
+<code> from selenium.webdriver.common.by import By</code><br>
+Your code so far should look like this</p>
+<pre tabindex="0"><code>import selenium
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+browser = webdriver.Firefox()
+browser.get(&#39;https://python.org&#39;)
+browser.find_element(By.XPATH, &#39;/html/body/div/header/div/nav/ul/li[2]/a&#39;).click()
+</code></pre><h1 id="method-2">Method 2</h1>
+<p>XPATH with text
+The second method is a bit simpler but not as reliable as the first as there might be many objects with the same name.<br>
+To use this method type:
+<code>browser.find_element(By.XPATH, &quot;//*[contains(text(), 'Downloads')]&quot;).click()</code>
+Your code should look something like this</p>
+<pre tabindex="0"><code>import selenium
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+browser = webdriver.Firefox()
+browser.get(&#39;https://python.org&#39;)
+browser.find_element(By.XPATH, &#34;//*[contains(text(), &#39;Downloads&#39;)]&#34;).click()
+</code></pre><p>. . . . .</p>
+<p>There many methods on how to locate elements but the above i believe are the easiest.
+The methods are the following</p>
+<ul>
+<li>By.ID</li>
+<li>By.NAME</li>
+<li>By.XPATH</li>
+<li>By.LINK-TEXT</li>
+<li>By.TAG_NAME</li>
+<li>By.CLASS_NAME</li>
+<li>By.CSS_SELECTOR\</li>
+</ul>
+<p>Read more here: <a href="https://selenium-python.readthedocs.io/locating-elements.html" target="_blank" rel="noopener noreffer ">https://selenium-python.readthedocs.io/locating-elements.html</a></p>
+<h1 id="typing-text-into-input-fields">Typing text into input fields.</h1>
+<p>Typing text into input fields is pretty straight forward.<br>
+For that we will use any of the above methods. I&rsquo;m going to use xpath.<br>
+Find the xpath of any input field, I&rsquo;m going to use the google.com search field<br>
+Copy the xpath and type:<br>
+<code>a = browser.find_element(By.XPATH, &quot;XPATH_HERE&quot;)</code>
+Paste the xpath in XPATH_HERE</p>
+<p>To send keys we need to import the selenium.webdriver.common.keys library for that paste this line of code at the top of your file<br>
+<code>from selenium.webdriver.common.keys import Keys</code><br>
+Now type:<br>
+<code>a.send_keys(&quot;python&quot;)</code><br>
+After that we want to press the enter key for that type:<br>
+<code>a.send_keys(Keys.RETURN)</code><br>
+The full code should look something like this:</p>
+<pre tabindex="0"><code>import selenium
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+browser = webdriver.Firefox()
+browser.get(&#39;https://google.com&#39;)
+a = browser.find_element(By.XPATH, &#34;/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input&#34;)
+a.send_keys(&#34;python&#34;)
+a.send_keys(Keys.RETURN)
+</code></pre><p>GG you just automated your first google search!
+You might first need to accept cookies for that just follow the steps on how to click a button from above.<br>
+Read more about selenium here: <a href="https://selenium-python.readthedocs.io/" target="_blank" rel="noopener noreffer ">https://selenium-python.readthedocs.io/</a><br>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Websites can see if you use selenium<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Websites (instagram) can quite easily understand if you are using selenium and might blacklist/ban you. So always use carefully.</div>
+        </div>
+    </div>
+<em><strong>If you enjoyed this article consider <a href="../../donate" rel="">supporting me</a></strong></em></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-02-22</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/selenium/" data-title="Automating your web browser with selenium" data-via="4rkal_"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://example.org/posts/selenium/" data-title="Automating your web browser with selenium"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://example.org/posts/selenium/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/zeropointthree/" class="prev" rel="prev" title="Why computers can’t represent 0.3 accurately"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Why computers can’t represent 0.3 accurately</a>
+            <a href="/posts/howsshworks/" class="next" rel="next" title="How SSH works">How SSH works<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">4rkal</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
