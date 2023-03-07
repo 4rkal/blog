@@ -3,7 +3,7 @@ languageCode = 'en-us'
 title = '4rkal'
 theme = 'LoveIt'
 languageName = "English"
-paginate = 12
+paginate = 420
 [author]
 name = "4rkal"
 email = "4rkal@proton.me"
