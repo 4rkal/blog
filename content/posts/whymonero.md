@@ -1,6 +1,9 @@
 ---
 title: "Why Monero is the ultimate form of a cryptocurrency"
 date: 2023-03-06T20:23:16+03:00
+tags:
+- crypto
+- monero
 ---
 In this article I will tell you why monero fits my views of what a cryptocurrency should look like.
 

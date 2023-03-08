@@ -1,6 +1,8 @@
 ---
 title: "Self host your own website"
 date: 2023-02-25T20:23:16+03:00
+tags:
+- selfhosting
 ---
 In this article i will show you how to self host your own website securely.
 # Requirements

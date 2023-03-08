@@ -1,6 +1,9 @@
 ---
 title: "Become anonymous and somewhat untraceable with tails os"
 date: 2023-03-03T23:03:40+03:00
+tags:
+- tor
+- privacy
 ---
 In this article we will talk about what tails is and how to install and more.
 

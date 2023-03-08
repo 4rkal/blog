@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>crypto - Tag - 4rkal</title>
+        <link>http://example.org/tags/crypto/</link>
+        <description>crypto - Tag - 4rkal</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>4rkal@proton.me (4rkal)</managingEditor>
+            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Mon, 06 Mar 2023 20:23:16 &#43;0300</lastBuildDate><atom:link href="http://example.org/tags/crypto/" rel="self" type="application/rss+xml" /><item>
+    <title>Why Monero is the ultimate form of a cryptocurrency</title>
+    <link>http://example.org/posts/whymonero/</link>
+    <pubDate>Mon, 06 Mar 2023 20:23:16 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://example.org/posts/whymonero/</guid>
+    <description><![CDATA[In this article I will tell you why monero fits my views of what a cryptocurrency should look like.
+What is monero? Monero is a decentralized cryptocurrency. It uses a public distributed ledger with privacy-enhancing technologies that obfuscate transactions to achieve anonymity and fungibility. Observers cannot decipher addresses trading monero, transaction amounts, address balances, or transaction histories.
+Monero works like any other currency but with some privacy and decentralization innovations.]]></description>
+</item>
+</channel>
+</rss>

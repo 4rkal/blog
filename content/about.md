@@ -1,6 +1,7 @@
 ---
 title: "About"
 date: 2023-02-25T19:29:56+03:00
+weight : 1
 ---
 # About me
 Hi there I'm 4rkal. I created this blog in as free alternative to my {{< link "https://4rkal.medium.com" "medium blog" >}} 

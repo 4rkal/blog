@@ -1,6 +1,9 @@
 ---
 title: "Securing ssh with Key-Based authentication"
 date: 2023-02-25T21:08:47+03:00
+tags:
+- selfhosting
+- ssh
 ---
 SSH keys provide an extremely secure way of logging into your server.
 

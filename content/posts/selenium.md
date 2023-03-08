@@ -6,6 +6,8 @@ toc:
   auto: true
 featuredImage : "selenium.png"
 featuredImagePreview: ""
+tags:
+- automation
 ---
 **Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.**
 

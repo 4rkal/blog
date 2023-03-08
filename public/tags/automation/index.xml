@@ -1,0 +1,20 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>automation - Tag - 4rkal</title>
+        <link>http://example.org/tags/automation/</link>
+        <description>automation - Tag - 4rkal</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>4rkal@proton.me (4rkal)</managingEditor>
+            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Wed, 22 Feb 2023 21:23:38 &#43;0300</lastBuildDate><atom:link href="http://example.org/tags/automation/" rel="self" type="application/rss+xml" /><item>
+    <title>Automating your web browser with selenium</title>
+    <link>http://example.org/posts/selenium/</link>
+    <pubDate>Wed, 22 Feb 2023 21:23:38 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://example.org/posts/selenium/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/selenium.png" referrerpolicy="no-referrer">
+            </div>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.
+In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.medium.com/f1df170bcc08/python-for-beginners)
+What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation.]]></description>
+</item>
+</channel>
+</rss>

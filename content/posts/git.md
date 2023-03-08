@@ -1,6 +1,8 @@
 ---
 title: "Setup your own git server"
 date: 2023-03-05T17:11:40+03:00
+tags:
+- selfhosting
 ---
 There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .
 

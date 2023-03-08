@@ -1,6 +1,9 @@
 ---
 title: "Get ad free web with Pi-hole"
 date: 2023-02-25T21:17:13+03:00
+tags:
+- rpi
+- selfhosting
 ---
 n this article i will show you how to setup pi-hole. Pi-Hole will allow you to block in app ads improve your networks performance and monitor statistics. Pi-hole also allows you to create a vpn.
 

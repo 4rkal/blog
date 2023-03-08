@@ -1,0 +1,35 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>privacy - Tag - 4rkal</title>
+        <link>http://example.org/tags/privacy/</link>
+        <description>privacy - Tag - 4rkal</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>4rkal@proton.me (4rkal)</managingEditor>
+            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Mon, 06 Mar 2023 20:44:46 &#43;0300</lastBuildDate><atom:link href="http://example.org/tags/privacy/" rel="self" type="application/rss+xml" /><item>
+    <title>PocketBase self-hosted Firebase alternative</title>
+    <link>http://example.org/posts/pocketbase/</link>
+    <pubDate>Mon, 06 Mar 2023 20:44:46 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://example.org/posts/pocketbase/</guid>
+    <description><![CDATA[What is PocketBase PocketBase is an open source backend made in go consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.
+Install PocketBase The first thing that you will have to do is head to https://pocketbase.io and select the file for your operating system. Since I am using linux I will show how to set this up on linux but it should be pretty similar for any other os.]]></description>
+</item>
+<item>
+    <title>Host your own private search engine — searX</title>
+    <link>http://example.org/posts/searx/</link>
+    <pubDate>Fri, 03 Mar 2023 23:21:53 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://example.org/posts/searx/</guid>
+    <description><![CDATA[We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
+What is searX? Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users.]]></description>
+</item>
+<item>
+    <title>Become anonymous and somewhat untraceable with tails os</title>
+    <link>http://example.org/posts/tails/</link>
+    <pubDate>Fri, 03 Mar 2023 23:03:40 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://example.org/posts/tails/</guid>
+    <description><![CDATA[In this article we will talk about what tails is and how to install and more.
+What is tails? Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.]]></description>
+</item>
+</channel>
+</rss>

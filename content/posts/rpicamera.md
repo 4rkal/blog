@@ -1,6 +1,9 @@
 ---
 title: "Raspberry pi security camera"
 date: 2023-02-25T20:03:25+03:00
+tags:
+- rpi
+- selfhosting
 ---
 In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.
 # Requirements

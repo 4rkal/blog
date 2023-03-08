@@ -1,6 +1,9 @@
 ---
 title: "Host your own private search engine — searX"
 date: 2023-03-03T23:21:53+03:00
+tags:
+- selfhosting
+- privacy
 ---
 We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
 

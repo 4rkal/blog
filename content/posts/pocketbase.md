@@ -1,6 +1,9 @@
 ---
 title: "PocketBase self-hosted Firebase alternative"
 date: 2023-03-06T20:44:46+03:00
+tags:
+- selfhosting
+- privacy
 ---
 # What is PocketBase
 PocketBase is an open source backend made in go consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.

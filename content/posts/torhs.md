@@ -1,6 +1,9 @@
 ---
 title: "Setup a tor website (hidden service)"
 date: 2023-02-25T20:56:02+03:00
+tags:
+- tor
+- selfhosting
 ---
 In this article i will be showing you how to host your “dark web” aka Tor website for free.
 
