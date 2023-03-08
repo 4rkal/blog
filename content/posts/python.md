@@ -3,7 +3,6 @@ title: "Python for Complete Beginners"
 date: 2023-03-06T20:52:42+03:00
 tags:
 - python
-- forbeginners
 ---
 Why you should use Python. Going over the basics of Python.
 
