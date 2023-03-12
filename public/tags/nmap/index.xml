@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>nmap - Tag - 4rkal</title>
-        <link>http://example.org/tags/nmap/</link>
+        <link>http://4rkal.eu.org/tags/nmap/</link>
         <description>nmap - Tag - 4rkal</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>4rkal@proton.me (4rkal)</managingEditor>
-            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Sun, 05 Mar 2023 17:37:03 &#43;0300</lastBuildDate><atom:link href="http://example.org/tags/nmap/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Sun, 05 Mar 2023 17:37:03 &#43;0300</lastBuildDate><atom:link href="http://4rkal.eu.org/tags/nmap/" rel="self" type="application/rss+xml" /><item>
     <title>Nmap(Network Mapper) For Beginners</title>
-    <link>http://example.org/posts/nmap/</link>
+    <link>http://4rkal.eu.org/posts/nmap/</link>
     <pubDate>Sun, 05 Mar 2023 17:37:03 &#43;0300</pubDate>
     <author>4rkal</author>
-    <guid>http://example.org/posts/nmap/</guid>
+    <guid>http://4rkal.eu.org/posts/nmap/</guid>
     <description><![CDATA[Whether you want to scan your network for vulnerabilities or just want to see which ports you have open, nmap can be extremely useful.
 What is nmap Nmap (Network Mapper) is a network scanner created by Gordon Lyon . Nmap sends packets and examines the answers to find hosts and services on a computer network. For probing computer networks, Nmap offers a variety of functionalities, including host discovery, service detection, and operating system detection.]]></description>
 </item>
