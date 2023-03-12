@@ -11,6 +11,8 @@ BTC: `bc1qpzf7s0rj6sfjzsf43wwernrj6f97luxtyfvhg0`
 
 XMR: `8AztDJtwb7iKaqP4KXRG39VibAacCY1mMfH3bNsVjhYMYbohtT5LKoTSRP6vJGtjeBSPEpFdHZx3ZL3iVowYdkqeQwPAG2`
 
+XMR OpenAlias: `xmr.4rkal.eu.org`
+
 BCH: `bitcoincash:qp2uc6ufuymjng5fg4lxslssxus0hqfkmyad98gla5` 
 
 ERC20(ETH, MATIC etc) : `0x2A91a892ded237e09ff41e2d798D627C6C3B6fA0`
