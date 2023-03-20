@@ -115,3 +115,7 @@ rss = 10
   enabled=true
   keepStatic = false 
   auto=true 
+
+[sitemap]
+  changefreq = 'always'
+  filename = 'sitemap.xml'
