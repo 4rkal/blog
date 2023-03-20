@@ -4,6 +4,7 @@ title = '4rkal'
 theme = 'LoveIt'
 languageName = "English"
 paginate = 100
+enableRobotsTXT = true
 [author]
 name = "4rkal"
 email = "4rkal@proton.me"
