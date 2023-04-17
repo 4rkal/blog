@@ -9,12 +9,18 @@ Hugo is a fast and popular open-source static site generator used for creating s
 Download and install hugo
 
 On debian type
+
 `sudo apt install hugo`
+
 On arch type
+
 `sudo pacman -S hugo`
+
 On fedora type
+
 `sudo dnf install hugo`
 On windows:
+
 Navigate to https://github.com/gohugoio/hugo/releases/latest
 
 Find the windows version and download it.
@@ -283,7 +289,11 @@ https://developers.google.com/search
 
 For bing it should be pretty much the same process on https://www.bing.com/webmasters/
 
+**If you enjoyed this article please consider supporting me in any of the following ways.**
 
+Donate Monero
+
+`8AztDJtwb7iKaqP4KXRG39VibAacCY1mMfH3bNsVjhYMYbohtT5LKoTSRP6vJGtjeBSPEpFdHZx3ZL3iVowYdkqeQwPAG2o`
 
 
 
