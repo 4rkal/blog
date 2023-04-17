@@ -4,7 +4,16 @@
         <link>http://4rkal.eu.org/posts/</link>
         <description>All Posts | 4rkal</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>4rkal@proton.me (4rkal)</managingEditor>
-            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Mon, 06 Mar 2023 20:52:42 &#43;0300</lastBuildDate><atom:link href="http://4rkal.eu.org/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Thu, 23 Mar 2023 18:13:03 &#43;0300</lastBuildDate><atom:link href="http://4rkal.eu.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>How I setup this blog for free (domain, hosting, ssl) Complete Guide</title>
+    <link>http://4rkal.eu.org/posts/thisblog/</link>
+    <pubDate>Thu, 23 Mar 2023 18:13:03 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>http://4rkal.eu.org/posts/thisblog/</guid>
+    <description><![CDATA[In this article I’ll show you how I setup this blog completely for free. I’ll show you how to use hugo to write your blog, Cloudflare and eu.org for your domain and ssl, Render and github for the hosting and even how to get your blog on google.
+What is hugo? Hugo is a fast and popular open-source static site generator used for creating static websites without requiring a database or dynamic components.]]></description>
+</item>
+<item>
     <title>Python for Complete Beginners</title>
     <link>http://4rkal.eu.org/posts/python/</link>
     <pubDate>Mon, 06 Mar 2023 20:52:42 &#43;0300</pubDate>
@@ -86,15 +95,6 @@ What is searX? Searx is a free and open-source metasearch engine, available unde
     <guid>http://4rkal.eu.org/posts/tails/</guid>
     <description><![CDATA[In this article we will talk about what tails is and how to install and more.
 What is tails? Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.]]></description>
-</item>
-<item>
-    <title>Get ad free web with Pi-hole</title>
-    <link>http://4rkal.eu.org/posts/pihole/</link>
-    <pubDate>Sat, 25 Feb 2023 21:17:13 &#43;0300</pubDate>
-    <author>4rkal</author>
-    <guid>http://4rkal.eu.org/posts/pihole/</guid>
-    <description><![CDATA[n this article i will show you how to setup pi-hole. Pi-Hole will allow you to block in app ads improve your networks performance and monitor statistics. Pi-hole also allows you to create a vpn.
-What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine.]]></description>
 </item>
 </channel>
 </rss>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>How I setup this blog for free (domain, hosting, ssl) Complete Guide - 4rkal</title><meta name="Description" content="4rkal&#39;s personal blog"><meta property="og:title" content="How I setup this blog for free (domain, hosting, ssl) Complete Guide" />
+<meta property="og:description" content="In this article I’ll show you how I setup this blog completely for free. I’ll show you how to use hugo to write your blog, Cloudflare and eu.org for your domain and ssl, Render and github for the hosting and even how to get your blog on google.
+What is hugo? Hugo is a fast and popular open-source static site generator used for creating static websites without requiring a database or dynamic components." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://4rkal.eu.org/posts/thisblog/" /><meta property="og:image" content="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-23T18:13:03+03:00" />
+<meta property="article:modified_time" content="2023-03-23T18:13:03+03:00" /><meta property="og:site_name" content="My cool site" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"/>
+
+<meta name="twitter:title" content="How I setup this blog for free (domain, hosting, ssl) Complete Guide"/>
+<meta name="twitter:description" content="In this article I’ll show you how I setup this blog completely for free. I’ll show you how to use hugo to write your blog, Cloudflare and eu.org for your domain and ssl, Render and github for the hosting and even how to get your blog on google.
+What is hugo? Hugo is a fast and popular open-source static site generator used for creating static websites without requiring a database or dynamic components."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://4rkal.eu.org/posts/thisblog/" /><link rel="prev" href="http://4rkal.eu.org/posts/python/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How I setup this blog for free (domain, hosting, ssl) Complete Guide",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/4rkal.eu.org\/posts\/thisblog\/"
+        },"image": ["https:\/\/miro.medium.com\/fit\/c\/96\/96\/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"],"genre": "posts","wordcount":  1267 ,
+        "url": "http:\/\/4rkal.eu.org\/posts\/thisblog\/","datePublished": "2023-03-23T18:13:03+03:00","dateModified": "2023-03-23T18:13:03+03:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "4rkal"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="4rkal"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        data-srcset="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 1.5x, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        title="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg" />4rkal</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://4rkal.medium.com" rel="noopener noreffer" target="_blank"> Medium </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="4rkal"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        data-srcset="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 1.5x, https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+        title="https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg" />4rkal</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://4rkal.medium.com" title="" rel="noopener noreffer" target="_blank">Medium</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">How I setup this blog for free (domain, hosting, ssl) Complete Guide</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>4rkal</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-23">2023-03-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1267 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>In this article I’ll show you how I setup this blog completely for free. I’ll show you how to use hugo to write your blog, Cloudflare and eu.org for your domain and ssl, Render and github for the hosting and even how to get your blog on google.</p>
+<h1 id="what-is-hugo">What is hugo?</h1>
+<p>Hugo is a fast and popular open-source static site generator used for creating static websites without requiring a database or dynamic components.</p>
+<h1 id="hugo-setup">Hugo setup</h1>
+<p>Download and install hugo</p>
+<p>On debian type
+<code>sudo apt install hugo</code>
+On arch type
+<code>sudo pacman -S hugo</code>
+On fedora type
+<code>sudo dnf install hugo</code>
+On windows:
+Navigate to <a href="https://github.com/gohugoio/hugo/releases/latest" target="_blank" rel="noopener noreffer ">https://github.com/gohugoio/hugo/releases/latest</a></p>
+<p>Find the windows version and download it.</p>
+<p>Unzip the file to your desired directory</p>
+<p>Add this directory to the PATH environment variable</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Read more:<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Read more: <a href="https://gohugo.io/installation/windows/" target="_blank" rel="noopener noreffer ">https://gohugo.io/installation/windows/</a></div>
+        </div>
+    </div>
+<h1 id="creating-the-hugo-site">Creating the hugo site</h1>
+<p>Open up a terminal and type:</p>
+<p><code>hugo new site my_website</code></p>
+<p>And then cd into that directory</p>
+<p><code>cd my_website</code></p>
+<p>After that we will have to install a theme. I will be using the LoveIt theme but you can use any other theme</p>
+<p><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>All hugo themes:<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><a href="https://themes.gohugo.io/" target="_blank" rel="noopener noreffer ">https://themes.gohugo.io/</a></div>
+        </div>
+    </div>
+For the LoveIt theme:</p>
+<p>The first thing we will have to do is type</p>
+<p><code>git clone https://github.com/dillonzq/LoveIt.git themes/LoveIt</code></p>
+<p>You will have to have git installed if you don’t, follow the instructions on the page to download it.</p>
+<p>Now we will have to create some basic configuration. Every theme has its own so you should first check your themes documentation. Some basic settings work for all themes.</p>
+<p>Here is an example of the most basic settings for the LoveIt theme.</p>
+<pre tabindex="0"><code>baseURL = &#34;http://example.org/&#34;
+
+# Change the default theme to be use when building the site with Hugo
+theme = &#34;LoveIt&#34;
+
+# website title
+title = &#34;My New Hugo Site&#34;
+
+# language code [&#34;en&#34;, &#34;zh-CN&#34;, &#34;fr&#34;, &#34;pl&#34;, ...]
+languageCode = &#34;en&#34;
+# language name [&#34;English&#34;, &#34;简体中文&#34;, &#34;Français&#34;, &#34;Polski&#34;, ...]
+languageName = &#34;English&#34;
+
+# Author config
+[author]
+  name = &#34;xxxx&#34;
+  email = &#34;&#34;
+  link = &#34;&#34;
+
+# Menu config
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = &#34;posts&#34;
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = &#34;&#34;
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = &#34;&#34;
+    name = &#34;Posts&#34;
+    url = &#34;/posts/&#34;
+    # title will be shown when you hover on this menu link
+    title = &#34;&#34;
+  [[menu.main]]
+    weight = 2
+    identifier = &#34;tags&#34;
+    pre = &#34;&#34;
+    post = &#34;&#34;
+    name = &#34;Tags&#34;
+    url = &#34;/tags/&#34;
+    title = &#34;&#34;
+  [[menu.main]]
+    weight = 3
+    identifier = &#34;categories&#34;
+    pre = &#34;&#34;
+    post = &#34;&#34;
+    name = &#34;Categories&#34;
+    url = &#34;/categories/&#34;
+    title = &#34;&#34;
+
+# Markup related configuration in Hugo
+[markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+</code></pre><p>You can find my configuration <a href="https://github.com/4rkal/blog/blob/main/config.toml" target="_blank" rel="noopener noreffer ">here</a></p>
+<p>You can view your page live by running</p>
+<p><code>hugo serve</code></p>
+<p>Let’s move on to the next step.</p>
+<h1 id="adding-articles-to-our-blog">Adding articles to our blog</h1>
+<p>The first thing we will have to do is create a new file with any name ending in .md inside of our content folder. I like to separate my posts from other sections so I will create another folder inside of the content one called posts.</p>
+<p>You can run this command to add the file</p>
+<p><code>hugo new posts/first_post.md</code></p>
+<p>Now open the file that was just created using your favorite text editor.</p>
+<p>You should see something like this:</p>
+<pre tabindex="0"><code>---
+title: &#34;Epic title&#34;
+date: 2023-03-23T18:13:03+03:00
+draft: true
+---
+</code></pre><p>If you want the post to be publicly visible on your blog delete the draft line. or set it to false.</p>
+<p>Now if we want to add some content we will have to write it in markdown. Heres a great guide on some basic markdown syntax <a href="https://hugoloveit.com/basic-markdown-syntax/" target="_blank" rel="noopener noreffer ">https://hugoloveit.com/basic-markdown-syntax/</a></p>
+<p>Heres an example of some content</p>
+<pre tabindex="0"><code>---
+title: &#34;My First Post&#34;
+date: 2023-03-23T18:13:03+03:00
+draft: false
+---
+
+# Welcome to my blog!
+
+This is my first post. Here&#39;s a picture of my cat:
+
+![My cat](/images/cat.jpg)
+</code></pre><p>Using the above steps you can add all of your articles to the blog.</p>
+<p>Now that we are done with that let me show you how we will publish our blog.</p>
+<h1 id="domain">Domain</h1>
+<p>More like a sub-domain. Head to <a href="eu.org" rel="">eu.org</a> and get a free domain. Create an account and submit a request for a new domain. It might take some time even months to get accepted.</p>
+<p>I have already registered 4rkal.eu.org from there.</p>
+<p>Now we will have to get some ssl certificates using cloudflare.</p>
+<p>SSL certificates just make your site use https instead of http this is really great for seo and doesn’t make your site look sus.</p>
+<p>Head over to <a href="cloudflare.com" rel="">cloudflare.com</a> and create an account for free.</p>
+<p>After you are done with that go to your dashboard and select websites and then add a site.</p>
+<p>You should see something like this</p>
+<a class="lightgallery" href="/../assets/cloudflare.webp" title="/../assets/cloudflare.webp" data-thumbnail="/../assets/cloudflare.webp">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/cloudflare.webp"
+            data-srcset="/../assets/cloudflare.webp, /../assets/cloudflare.webp 1.5x, /../assets/cloudflare.webp 2x"
+            data-sizes="auto"
+            alt="/../assets/cloudflare.webp" width="786" height="208" />
+    </a>
+<p>Enter your websites url and click on add site.</p>
+<p>After that select the free plan and continue.</p>
+<p>Now it will review your dns records. Just select continue and confirm</p>
+<p>Now you will have to change your domain’s name servers.</p>
+<p>To do that head back to eu.org select your domain and click on the nameservers tab and select server names.</p>
+<p>Now in the input fields enter the name servers.</p>
+<p>The name servers will most probably be:</p>
+<pre tabindex="0"><code>nancy.ns.cloudflare.com
+uriah.ns.cloudflare.com
+</code></pre><p>Here’s how it should probably look:</p>
+<a class="lightgallery" href="/../assets/euorg.webp" title="/../assets/euorg.webp" data-thumbnail="/../assets/euorg.webp">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/euorg.webp"
+            data-srcset="/../assets/euorg.webp, /../assets/euorg.webp 1.5x, /../assets/euorg.webp 2x"
+            data-sizes="auto"
+            alt="/../assets/euorg.webp" width="786" height="313" />
+    </a>
+<p>Now click on the submit button.</p>
+<p>You should probably get</p>
+<pre tabindex="0"><code>No error, applying changes...
+
+Done
+</code></pre><p>If you get an error you probably screwed up one of the above steps. Just try again.</p>
+<p>After your name servers have been changed and everything is done, in your domain dashboard select SSL/TLS. Just select full encryption.</p>
+<h1 id="hosting-our-site">Hosting our site.</h1>
+<p>First create a github account. Head to github.com for that. You will also have to install <a href="https://git-scm.com/" target="_blank" rel="noopener noreffer ">git</a></p>
+<p>After you have done that navigate to your blog’s root directory and type:</p>
+<pre tabindex="0"><code>git init
+hugo
+git add .
+git commit -m &#34;first commmit&#34;
+git branch -M main
+</code></pre><p>Now go to github and create a new repository.</p>
+<p>You should now type:</p>
+<p><code>git remote add origin YOURURL</code></p>
+<p>instead of YOURURL enter the url to your github repo and add a .git ending</p>
+<p>eg</p>
+<p><code>git remote add origin https://github.com/4rkal/blog.git</code></p>
+<p>Now push the changes with</p>
+<p><code>git push -u origin main</code></p>
+<p>After that if you refresh the page of your github repo you should see everything there.</p>
+<p>Now head to <a href="render.com" rel="">render.com</a> and create an account</p>
+<p>On your dashboard select +New and then static site.</p>
+<p>Now you will be prompted to connect a github repository. Just connect your account and add that repository.</p>
+<p>eg</p>
+<a class="lightgallery" href="/../assets/render.webp" title="/../assets/render.webp" data-thumbnail="/../assets/render.webp">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/../assets/render.webp"
+            data-srcset="/../assets/render.webp, /../assets/render.webp 1.5x, /../assets/render.webp 2x"
+            data-sizes="auto"
+            alt="/../assets/render.webp" width="786" height="441" />
+    </a>
+<p>Now enter a service name eg myblog and in the publish directory just add</p>
+<p><code>public</code></p>
+<p>Then click on create static site.</p>
+<p>After it has been deployed successfully head over to the settings and in the custom domains tab click on add custom domain.</p>
+<p>In the field enter the domain that we registered with eu.org previously.</p>
+<p>Now go to cloudflare and in your domain dashboard select dns and click on add a new record.</p>
+<p>In the type dropdown select CNAME in the name field add @ and in the target add your blog’s url from render. Mine is <a href="https://blog-ygtj.onrender.com/" target="_blank" rel="noopener noreffer ">https://blog-ygtj.onrender.com/</a>. Also untick the proxy status.</p>
+<p>Now we will have to do the same but with the www.</p>
+<p>Just do the same steps as above but instead of @ just add <code>www</code></p>
+<p>That’s it. After a couple of minutes your blog should be live.</p>
+<h1 id="seo-google-and-bing">SEO Google and bing</h1>
+<p>If you want to get your website on google and bing it’s pretty easy</p>
+<p>If you want to get your website on google follow the guide listed here
+<a href="https://developers.google.com/search" target="_blank" rel="noopener noreffer ">https://developers.google.com/search</a></p>
+<p>For bing it should be pretty much the same process on <a href="https://www.bing.com/webmasters/" target="_blank" rel="noopener noreffer ">https://www.bing.com/webmasters/</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-03-23</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://4rkal.eu.org/posts/thisblog/" data-title="How I setup this blog for free (domain, hosting, ssl) Complete Guide" data-via="4rkal_"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://4rkal.eu.org/posts/thisblog/" data-title="How I setup this blog for free (domain, hosting, ssl) Complete Guide"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://4rkal.eu.org/posts/thisblog/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/python/" class="prev" rel="prev" title="Python for Complete Beginners"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Python for Complete Beginners</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">4rkal</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
