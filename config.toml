@@ -1,4 +1,4 @@
-baseURL = 'http://4rkal.eu.org/'
+baseURL = 'https://4rkal.eu.org/'
 languageCode = 'en-us'
 title = '4rkal'
 theme = 'LoveIt'
