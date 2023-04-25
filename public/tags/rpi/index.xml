@@ -1,24 +1,24 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>rpi - Tag - 4rkal</title>
-        <link>http://4rkal.eu.org/tags/rpi/</link>
+        <link>https://4rkal.eu.org/tags/rpi/</link>
         <description>rpi - Tag - 4rkal</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>4rkal@proton.me (4rkal)</managingEditor>
-            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Sat, 25 Feb 2023 21:17:13 &#43;0300</lastBuildDate><atom:link href="http://4rkal.eu.org/tags/rpi/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Sat, 25 Feb 2023 21:17:13 &#43;0300</lastBuildDate><atom:link href="https://4rkal.eu.org/tags/rpi/" rel="self" type="application/rss+xml" /><item>
     <title>Get ad free web with Pi-hole</title>
-    <link>http://4rkal.eu.org/posts/pihole/</link>
+    <link>https://4rkal.eu.org/posts/pihole/</link>
     <pubDate>Sat, 25 Feb 2023 21:17:13 &#43;0300</pubDate>
     <author>4rkal</author>
-    <guid>http://4rkal.eu.org/posts/pihole/</guid>
+    <guid>https://4rkal.eu.org/posts/pihole/</guid>
     <description><![CDATA[n this article i will show you how to setup pi-hole. Pi-Hole will allow you to block in app ads improve your networks performance and monitor statistics. Pi-hole also allows you to create a vpn.
 What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine.]]></description>
 </item>
 <item>
     <title>Raspberry pi security camera</title>
-    <link>http://4rkal.eu.org/posts/rpicamera/</link>
+    <link>https://4rkal.eu.org/posts/rpicamera/</link>
     <pubDate>Sat, 25 Feb 2023 20:03:25 &#43;0300</pubDate>
     <author>4rkal</author>
-    <guid>http://4rkal.eu.org/posts/rpicamera/</guid>
+    <guid>https://4rkal.eu.org/posts/rpicamera/</guid>
     <description><![CDATA[In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.
 Requirements Raspberry pi or any other computer Web cam Any kind of debian based distro installed on the pi/computer Setup In this article we will be using the motion package (https://motion-project.github.io/)
 To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard.]]></description>

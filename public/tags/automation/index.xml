@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>automation - Tag - 4rkal</title>
-        <link>http://4rkal.eu.org/tags/automation/</link>
+        <link>https://4rkal.eu.org/tags/automation/</link>
         <description>automation - Tag - 4rkal</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>4rkal@proton.me (4rkal)</managingEditor>
-            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Wed, 22 Feb 2023 21:23:38 &#43;0300</lastBuildDate><atom:link href="http://4rkal.eu.org/tags/automation/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Wed, 22 Feb 2023 21:23:38 &#43;0300</lastBuildDate><atom:link href="https://4rkal.eu.org/tags/automation/" rel="self" type="application/rss+xml" /><item>
     <title>Automating your web browser with selenium</title>
-    <link>http://4rkal.eu.org/posts/selenium/</link>
+    <link>https://4rkal.eu.org/posts/selenium/</link>
     <pubDate>Wed, 22 Feb 2023 21:23:38 &#43;0300</pubDate>
     <author>4rkal</author>
-    <guid>http://4rkal.eu.org/posts/selenium/</guid>
+    <guid>https://4rkal.eu.org/posts/selenium/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/selenium.png" referrerpolicy="no-referrer">
             </div>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.

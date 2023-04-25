@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Categories - Category - 4rkal</title>
-        <link>http://4rkal.eu.org/categories/</link>
+        <link>https://4rkal.eu.org/categories/</link>
         <description>Categories - Category - 4rkal</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>4rkal@proton.me (4rkal)</managingEditor>
-            <webMaster>4rkal@proton.me (4rkal)</webMaster><atom:link href="http://4rkal.eu.org/categories/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>4rkal@proton.me (4rkal)</webMaster><atom:link href="https://4rkal.eu.org/categories/" rel="self" type="application/rss+xml" /></channel>
 </rss>
