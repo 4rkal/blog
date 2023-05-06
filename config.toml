@@ -15,14 +15,14 @@ Reddit = "4rkal"
 RSS = true
 [params]
 defaultTheme = "dark"
-images = ["https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"]
+images = ["https://i.imgur.com/kjfjamG.jpeg"]
 description = "4rkal's personal blog"
 [params.header]
 desktopMode=  "fixed"
 mobileMode = "auto"
   [params.header.title]
   name = "4rkal"
-  logo = "https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
+  logo = "https://i.imgur.com/kjfjamG.jpeg"
 [outputs]
 home = ["HTML", "RSS", "JSON"]
 [params.search]
