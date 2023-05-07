@@ -19,4 +19,4 @@ ERC20(ETH, MATIC etc) : `0x2A91a892ded237e09ff41e2d798D627C6C3B6fA0`
 
 # URL Shorter
 This really wont earn me much but ill just put it here:
-
+https://adfoc.us/77724885350557
