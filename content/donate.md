@@ -20,3 +20,10 @@ ERC20(ETH, MATIC etc) : `0x2A91a892ded237e09ff41e2d798D627C6C3B6fA0`
 # URL Shorter
 This really wont earn me much but ill just put it here:
 https://adfoc.us/77724885350557
+
+# Exchange some crypto
+When you exchange crypto here I get a small comission.
+<iframe src="https://trocador.app/step1/?ref=VABs65VXR3" width="100%" height="100%" scrolling="yes"></iframe>
+Or use my link https://trocador.app/?ref=VABs65VXR3
+
+
