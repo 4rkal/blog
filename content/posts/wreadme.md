@@ -38,4 +38,5 @@ If your looking for contributors that can be pretty helpfull.
 
 The reference documentation can be added to the README depending on the size of the project. If it’s small and simple enough, the reference docs can be put in the README. For medium to big applications, at the very least, give a link to the API reference documentation.
 
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
 

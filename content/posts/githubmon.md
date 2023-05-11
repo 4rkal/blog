@@ -44,3 +44,5 @@ I personally don’t use or will ever use GitHub Copilot or recommend it to anyo
 
 PS if you don’t want GitHub to legally index your code, you could try one of these {{< link href="https://github.com/big-tech-sux/resistant-licenses" content=licenses >}}. They might work
 
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+

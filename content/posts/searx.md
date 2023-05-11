@@ -105,3 +105,5 @@ Now if you head to 127.0.0.1:8888 you should be able to see something like this
 {{< image src="../assets/searx.webp" caption="">}}
 **GG** you did it enjoy privacy (in search engines)
 
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+

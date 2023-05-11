@@ -131,3 +131,6 @@ If you have followed the steps correctly you should see something like this
 **NO ADS**
 
 Enjoy the ad free web
+
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+

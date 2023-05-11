@@ -84,5 +84,6 @@ I like to have a persistent volume so that i don’t lose all my files when i re
 
 That’s it for now
 
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
 
 

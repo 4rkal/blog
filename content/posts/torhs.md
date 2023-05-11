@@ -72,3 +72,6 @@ This page is easily customized, you can check out my article:
 [here]({{< ref "posts/shwebsite" >}})
 
 GG you did it you are now running a pretty anonymous website on the tor network.
+
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+

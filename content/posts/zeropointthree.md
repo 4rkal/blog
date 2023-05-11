@@ -33,3 +33,6 @@ When you perform math on these repeating decimals, you end up with leftovers whi
 Wikipedia:\
 {{< link "https://en.wikipedia.org/wiki/Floating-point_arithmetic" >}}
 {{< /admonition >}}
+
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+

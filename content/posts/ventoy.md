@@ -44,3 +44,6 @@ Select your usb device from the drop down and click on install.
 To use ventoy all you have to do is paste your iso files inside of the usb. No formatting etc.
 
 **GG** you have now installed ventoy
+
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+

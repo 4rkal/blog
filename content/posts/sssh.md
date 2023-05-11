@@ -89,3 +89,6 @@ Now try to ssh into your server from another machine or a vm and you should see 
 `server@192.168.1.13: Permission denied (publickey)`
 
 GG you have now secured your server
+
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+

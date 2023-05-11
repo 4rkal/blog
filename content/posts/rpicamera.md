@@ -51,3 +51,5 @@ You can also change loads of other settings. Here are my settings:https://pasteb
 
 Read the documentation here: https://motion-project.github.io/motion_guide.html
 
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+

@@ -31,3 +31,6 @@ Linus Torvalds
 5. **Lower Development costs** (For companies) You can reduce your costs by using open source software. You can save money on licensing and maintenance. The only costs you’d have to deal with are those for documentation, media, support etc.
 
 6. **Controll** With open source YOU are ultimately in controll. If you dont like something you can modify the source code to your liking.
+
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+

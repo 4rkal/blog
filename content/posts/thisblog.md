@@ -289,11 +289,8 @@ https://developers.google.com/search
 
 For bing it should be pretty much the same process on https://www.bing.com/webmasters/
 
-**If you enjoyed this article please consider supporting me in any of the following ways.**
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
 
-Donate Monero
-
-`8AztDJtwb7iKaqP4KXRG39VibAacCY1mMfH3bNsVjhYMYbohtT5LKoTSRP6vJGtjeBSPEpFdHZx3ZL3iVowYdkqeQwPAG2o`
 
 
 

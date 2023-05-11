@@ -59,3 +59,5 @@ Using a public network, machines can safely collaborate to build a cryptographic
 
 By carrying out the above processes, both machines determine the identical value, which is their secret key. The server then makes an attempt to verify the user's identity who made the access request.
 
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+

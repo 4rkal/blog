@@ -59,10 +59,7 @@ If you click on the settings icon you can see that you will be able to add appli
 
 That’s it for now if you want to learn more check out https://pocketbase.io/docs/
 
-Support me
-If you enjoyed this article please consider supporting me with the following ways:
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
 
-Donate Monero
-`8AztDJtwb7iKaqP4KXRG39VibAacCY1mMfH3bNsVjhYMYbohtT5LKoTSRP6vJGtjeBSPEpFdHZx3ZL3iVowYdkqeQwPAG2o`
 
 

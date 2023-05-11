@@ -318,7 +318,5 @@ print("GG you found it")
 
 Stay tuned for more
 
-**If you enjoyed this article please consider supporting me**
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
 
-Monero:
-`8AztDJtwb7iKaqP4KXRG39VibAacCY1mMfH3bNsVjhYMYbohtT5LKoTSRP6vJGtjeBSPEpFdHZx3ZL3iVowYdkqeQwPAG2o`

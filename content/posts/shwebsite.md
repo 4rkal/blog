@@ -148,3 +148,6 @@ You can now restart the nginx service
 `systemctl restart nginx`
 
 Now if you head to your domain it should be working and ssl should be installed
+
+***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+
