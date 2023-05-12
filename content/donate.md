@@ -17,6 +17,12 @@ BCH: `bitcoincash:qp2uc6ufuymjng5fg4lxslssxus0hqfkmyad98gla5`
 
 ERC20(ETH, MATIC etc) : `0x2A91a892ded237e09ff41e2d798D627C6C3B6fA0`
 
+# LiberaPay
+You can donate any currency through libera pay heres the link https://liberapay.com/4rkal/
+
+# Buy me a coffee
+I do also have a buy me a coffee setup
+heres the link: https://www.buymeacoffee.com/support4rkal
 # URL Shorter
 This really wont earn me much but ill just put it here:
 https://adfoc.us/77724885350557
