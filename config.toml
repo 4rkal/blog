@@ -97,11 +97,6 @@ home = ["HTML", "RSS", "JSON"]
     url = "/tags/"
     title = ""
   [[menu.main]]
-  weight = 4
-  identifier = "medium"
-  name = "Medium"
-  url = "https://4rkal.medium.com"
-  [[menu.main]]
   weight = 3
   identifier = "About"
   name = "About"
