@@ -56,7 +56,7 @@ You will have to have git installed if you don’t, follow the instructions on t
 
 Now we will have to create some basic configuration. Every theme has its own so you should first check your themes documentation. Some basic settings work for all themes.
 
-Here is an example of the most basic settings for the LoveIt theme.
+Here is an example of the most basic settings for the LoveIt theme. (it has to be saved in config.toml)
 
 ```
 baseURL = "http://example.org/"
