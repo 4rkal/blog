@@ -23,3 +23,4 @@ Twitter: `4rkal_`
 
 Email: `4rkal@proton.me`
 
+Email (cock.li): '4rkal@horsefucker.org'
