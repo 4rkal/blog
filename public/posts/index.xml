@@ -4,7 +4,16 @@
         <link>https://4rkal.eu.org/posts/</link>
         <description>All Posts | 4rkal</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>4rkal@proton.me (4rkal)</managingEditor>
-            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Thu, 23 Mar 2023 18:13:03 &#43;0300</lastBuildDate><atom:link href="https://4rkal.eu.org/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Wed, 04 Oct 2023 19:17:04 &#43;0300</lastBuildDate><atom:link href="https://4rkal.eu.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>SSH Remote Access NO Port-Forwarding NO Cloudflare n shit</title>
+    <link>https://4rkal.eu.org/posts/onionssh/</link>
+    <pubDate>Wed, 04 Oct 2023 19:17:04 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>https://4rkal.eu.org/posts/onionssh/</guid>
+    <description><![CDATA[In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.
+Requirements: A computer &ldquo;server&rdquo; (running linux) A internet connection Another computer to connect to your server (running linux) Why? If you want to access your server without portforwarding in a extremely secure fashion you will want to follow this tutorial. You will be connecting to the server via tor which will make it harder for anyone to find the url of the server and ill show you how to setup keybased auth for even more security!]]></description>
+</item>
+<item>
     <title>How I setup this blog for free (domain, hosting, ssl) Complete Guide</title>
     <link>https://4rkal.eu.org/posts/thisblog/</link>
     <pubDate>Thu, 23 Mar 2023 18:13:03 &#43;0300</pubDate>
@@ -86,15 +95,6 @@ Requirements A computer for your server (running linux preferably debian) An int
     <guid>https://4rkal.eu.org/posts/searx/</guid>
     <description><![CDATA[We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
 What is searX? Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users.]]></description>
-</item>
-<item>
-    <title>Become anonymous and somewhat untraceable with tails os</title>
-    <link>https://4rkal.eu.org/posts/tails/</link>
-    <pubDate>Fri, 03 Mar 2023 23:03:40 &#43;0300</pubDate>
-    <author>4rkal</author>
-    <guid>https://4rkal.eu.org/posts/tails/</guid>
-    <description><![CDATA[In this article we will talk about what tails is and how to install and more.
-What is tails? Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.]]></description>
 </item>
 </channel>
 </rss>
