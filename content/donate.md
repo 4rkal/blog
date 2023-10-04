@@ -3,7 +3,7 @@ title: "Donate"
 date: 2023-02-26T20:29:31+03:00
 ---
 # Donate
-I spend quite a lot of time writing these articles so if you enjoyed any of them Ill happily accept any donations . You can donate some cryptos (btc, xmr, bch , erc20) and even click on some url shorteners if your in the mood for it.
+I spend quite a lot of time writing these articles so if you enjoyed any of them Ill happily accept any donations . You can donate some cryptos (btc, xmr, bch , erc20)
 # Crypto
 Here are my crypto addresses:
 
