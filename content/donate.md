@@ -23,9 +23,6 @@ You can donate any currency through libera pay heres the link https://liberapay.
 # Buy me a coffee
 I do also have a buy me a coffee setup
 heres the link: https://www.buymeacoffee.com/support4rkal
-# URL Shorter
-This really wont earn me much but ill just put it here:
-https://adfoc.us/77724885350557
 
 # Exchange some crypto
 When you exchange crypto here I get a small comission.
