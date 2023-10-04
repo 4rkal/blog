@@ -128,16 +128,41 @@ What is coding? Coding means writing instructions for computers and a finished s
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-coding">What is coding?</a></li>
+    <li><a href="#what-is-python">What is Python?</a></li>
+    <li><a href="#why-python">Why Python?</a></li>
+    <li><a href="#advantages-of-python">Advantages of python</a></li>
+    <li><a href="#downloading-python">Downloading Python</a></li>
+    <li><a href="#what-is-an-ide">What is an IDE?</a></li>
+    <li><a href="#downloading-vs-code">Downloading VS Code</a></li>
+    <li><a href="#starting-in-python">Starting in Python</a></li>
+    <li><a href="#playing-with-numbers-in-python">Playing With numbers in Python</a></li>
+    <li><a href="#variables">Variables</a></li>
+    <li><a href="#creating-a-variable">Creating a variable:</a></li>
+    <li><a href="#input-in-python">Input in Python</a></li>
+    <li><a href="#making-decisions">Making Decisions</a></li>
+    <li><a href="#what-are-conditions">What are Conditions?</a></li>
+    <li><a href="#what-are-conditionals">What are conditionals</a></li>
+    <li><a href="#if">IF</a></li>
+    <li><a href="#implementing-the-if-condition">Implementing the if condition</a></li>
+    <li><a href="#elif">ELIF</a></li>
+    <li><a href="#else">ELSE</a></li>
+    <li><a href="#randomness-in-python">Randomness in python</a></li>
+    <li><a href="#loops-in-python">Loops in python</a></li>
+    <li><a href="#guessing-game">Guessing game</a></li>
+  </ul>
+</nav></div>
             </div><div class="content" id="content"><p>Why you should use Python. Going over the basics of Python.</p>
 <p>In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&rsquo;s start by explaining what coding is.</p>
-<h1 id="what-is-coding">What is coding?</h1>
+<h2 id="what-is-coding">What is coding?</h2>
 <p>Coding means writing instructions for computers and a finished set of instructions is known as a program. Computer programs control everything from smartphones to space rockets.</p>
-<h1 id="what-is-python">What is Python?</h1>
+<h2 id="what-is-python">What is Python?</h2>
 <p>Python is a text-based computer language which means it’s made up of words and symbols (such as * and = ). Its language elements and object-oriented approach are meant to assist programmers in writing clear, logical code for both small and large-scale projects.</p>
-<h1 id="why-python">Why Python?</h1>
+<h2 id="why-python">Why Python?</h2>
 <p>Python is one of the most popular computer languages and it’s very concise — that is, you don&rsquo;t need to type much in order to create programs that do a lot.</p>
-<h1 id="advantages-of-python">Advantages of python</h1>
+<h2 id="advantages-of-python">Advantages of python</h2>
 <ol>
 <li>Simple to read, learn, and write</li>
 </ol>
@@ -156,7 +181,7 @@ What is coding? Coding means writing instructions for computers and a finished s
 <li>Portability</li>
 </ol>
 <p>In many languages like C/C++, you need to change your code to run the program on different platforms. With Python, however, this is not the case. You only have to write it once and it may be used wherever.</p>
-<h1 id="downloading-python">Downloading Python</h1>
+<h2 id="downloading-python">Downloading Python</h2>
 <p><strong>On Linux</strong>
 You probably already know how to install it but I&rsquo;m gonna show it anyways.</p>
 <p>Open your terminal and type python or python3; if it does not work then run: (depending on your distro)
@@ -166,12 +191,12 @@ You probably already know how to install it but I&rsquo;m gonna show it anyways.
 <ol start="2">
 <li>Python comes in different versions. This course uses version 3 and upwards. I recommend always installing the latest version.</li>
 </ol>
-<h1 id="what-is-an-ide">What is an IDE?</h1>
+<h2 id="what-is-an-ide">What is an IDE?</h2>
 <p>IDE stands for the integrated development environment (IDE) and is software for building applications that combine common developer tools into a single Graphical User Interface (GUI).</p>
 <p>The IDE that we will be using in this series is called VS Code.</p>
-<h1 id="downloading-vs-code">Downloading VS Code</h1>
+<h2 id="downloading-vs-code">Downloading VS Code</h2>
 <p>Go to <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">https://code.visualstudio.com/</a> and download the version that you want. Vs Code is available for Windows, Mac, and Linux. Follow the instructions on the website for installation.</p>
-<h1 id="starting-in-python">Starting in Python</h1>
+<h2 id="starting-in-python">Starting in Python</h2>
 <p>It&rsquo;s traditional in the programming world to make the computer say ‘Hello World’ with your very first piece of code. In Python, this is very simple.</p>
 <ol>
 <li>Open Vs Code and click on File &gt; New File and name your file helloworld.py. The .py tells the computer that this is a Python program.</li>
@@ -183,7 +208,7 @@ You probably already know how to install it but I&rsquo;m gonna show it anyways.
 <p>If it didn&rsquo;t work you should get a red error message something like this:</p>
 <p><code>SyntaxError: invalid syntax</code></p>
 <p>If that happens make sure that you have copied it exactly like above.</p>
-<h1 id="playing-with-numbers-in-python">Playing With numbers in Python</h1>
+<h2 id="playing-with-numbers-in-python">Playing With numbers in Python</h2>
 <p>Python makes it easy to do maths. You just type in a question and get the answer</p>
 <p><strong>Adding Up</strong></p>
 <p>Open an empty project and type:</p>
@@ -197,9 +222,9 @@ If you want to subtract, use the ‘-’ symbol like this:</p>
 <p><code>print(2 * 2)</code></p>
 <p>To divide, use the ‘/’ symbol</p>
 <p><code>print(2 / 2)</code></p>
-<h1 id="variables">Variables</h1>
+<h2 id="variables">Variables</h2>
 <p>A variable is like a labelled box that stores information. You can change this information but the label stays the same.</p>
-<h1 id="creating-a-variable">Creating a variable:</h1>
+<h2 id="creating-a-variable">Creating a variable:</h2>
 <p>To tell the computer what you want your variable to be, you use the = sign. This is called assigning a value to a variable. It’s very simple, here&rsquo;s an example using fish.</p>
 <ol>
 <li>Open a new VS Code project and type:
@@ -211,7 +236,7 @@ If you want to subtract, use the ‘-’ symbol like this:</p>
 <p><code>print(fish - fishEaten)</code></p>
 <p>Save and run your code and you should get the answer:
 <code>3</code></p>
-<h1 id="input-in-python">Input in Python</h1>
+<h2 id="input-in-python">Input in Python</h2>
 <p>You can use the input() function to ask for information from the user.</p>
 <ol>
 <li>Open a new VS Code project and type:</li>
@@ -226,9 +251,9 @@ If you want to subtract, use the ‘-’ symbol like this:</p>
 <p><code>print(name)</code></p>
 <p>You have successfully created an input field!</p>
 <p>This can be very useful in creating decision games.</p>
-<h1 id="making-decisions">Making Decisions</h1>
+<h2 id="making-decisions">Making Decisions</h2>
 <p>To write a program that allows you to make decisions the computer needs to react differently to different answers. For this, you need conditions to compare pieces of information, and conditionals to create different paths through the program.</p>
-<h1 id="what-are-conditions">What are Conditions?</h1>
+<h2 id="what-are-conditions">What are Conditions?</h2>
 <p>A condition is a bit of code that compares two pieces of information. Conditions use operators to make these comparisons. For example, the operator == checks if two pieces of information are the same.</p>
 <ol>
 <li>Open a new Vs Code project and type:</li>
@@ -242,11 +267,11 @@ else:
 <li>Save and run and you should get False</li>
 </ol>
 <p>That is because ‘age’ is set to 10 and not 12</p>
-<h1 id="what-are-conditionals">What are conditionals</h1>
+<h2 id="what-are-conditionals">What are conditionals</h2>
 <p>To use a condition in your code you need a command called a condition. Conditionals use conditions. Conditions show if something is True or False.</p>
-<h1 id="if">IF</h1>
+<h2 id="if">IF</h2>
 <p>One important condition is known as an if statement which tests whether a condition is true. If it is, the computer will follow the instructions after the if statement. If not, the computer will just skip it. In Python, if is a keyword. Dont use it as a variable name because the computer will think that it&rsquo;s an if statement and get confused.</p>
-<h1 id="implementing-the-if-condition">Implementing the if condition</h1>
+<h2 id="implementing-the-if-condition">Implementing the if condition</h2>
 <ol>
 <li>Create a new VS Code project and type the following:</li>
 </ol>
@@ -256,14 +281,14 @@ else:
 </ol>
 <pre tabindex="0"><code>if user_reply == &#34;yes&#34;
    print(&#34;Python likes you to ! &#34;)
-</code></pre><h1 id="elif">ELIF</h1>
+</code></pre><h2 id="elif">ELIF</h2>
 <p>elif is short for else if. If the conditions of the if code isn’t met it “sweeps up” whatever is left.</p>
 <ol start="3">
 <li>Now type the following:</li>
 </ol>
 <pre tabindex="0"><code>elif user_reply == &#34;maybe&#34;:
   print(&#34;Make up your mind!&#34;)
-</code></pre><h1 id="else">ELSE</h1>
+</code></pre><h2 id="else">ELSE</h2>
 <p>When conditions for the if and elif code arent met, else goes into action and “sweeps up” whatever is left.</p>
 <p>Let&rsquo;s implement that:
 4. Now type the following:</p>
@@ -278,7 +303,7 @@ elif user_reply == &#34;maybe&#34;:
 else:
   print(&#34;Well python doesn&#39;t like you either&#34;)
 </code></pre><p><strong>Don&rsquo;t forget to press the tab after if statements.</strong></p>
-<h1 id="randomness-in-python">Randomness in python</h1>
+<h2 id="randomness-in-python">Randomness in python</h2>
 <p>In python we can use the random function in order to generate random numbers. This can be extremely useful in a variety of things.</p>
 <p>The first thing we will have to do is import the random function</p>
 <p><code>import random</code></p>
@@ -289,7 +314,7 @@ else:
 <p>Here is the full code.</p>
 <pre tabindex="0"><code>import random
 print(random.randint(1,10))
-</code></pre><h1 id="loops-in-python">Loops in python</h1>
+</code></pre><h2 id="loops-in-python">Loops in python</h2>
 <p>There are two types of loops in python</p>
 <ol>
 <li>While loop</li>
@@ -307,7 +332,7 @@ print(random.randint(1,10))
 <pre tabindex="0"><code>for x in range(0,10):
    print(&#34;Hi&#34;)
 </code></pre><p>This will print Hi exactly 10 times</p>
-<h1 id="guessing-game">Guessing game</h1>
+<h2 id="guessing-game">Guessing game</h2>
 <p>Now lets combine what learned from above and from our previous articles to create a game</p>
 <p>The computer will select a random number from 1–10 and you will have to guess it.</p>
 <p>The first thing we will have to do is</p>
