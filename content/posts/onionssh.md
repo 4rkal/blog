@@ -110,7 +110,7 @@ Restart the tor service
 
 To connect to the server run the following command:
 
-`torify ssh NAME`
+`ssh NAME`
 
 With NAME being the name that you gave to the server in the config file.
 
