@@ -32,7 +32,7 @@ If you enter the wrong device this could lead to data loss. Be carefull
 {{< /admonition>}}
 After the image is written you will have to boot to your usb. 
 
-First you will however it is recommended that you disconnect any ethernet/other cables plugged in so that it is trully offline.
+First however it is recommended that you disconnect any ethernet/other cables plugged in so that it is trully offline.
 
 You can also [disable wifi and bluetooth from the bios](https://www.google.com/search?q=disable+wifi+and+bluetooth+bios) . "Advanced" users only don't be retarded
 
