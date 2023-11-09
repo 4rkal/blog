@@ -4,9 +4,19 @@
         <link>https://4rkal.eu.org/</link>
         <description>4rkal&#39;s personal blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>4rkal@proton.me (4rkal)</managingEditor>
-            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Wed, 11 Oct 2023 21:34:20 &#43;0300</lastBuildDate>
+            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Tue, 07 Nov 2023 18:03:15 &#43;0200</lastBuildDate>
             <atom:link href="https://4rkal.eu.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Easy monero cold storage</title>
+    <link>https://4rkal.eu.org/posts/coldstorage/</link>
+    <pubDate>Tue, 07 Nov 2023 18:03:15 &#43;0200</pubDate>
+    <author>4rkal</author>
+    <guid>https://4rkal.eu.org/posts/coldstorage/</guid>
+    <description><![CDATA[In this article I will show you how to &ldquo;easily&rdquo; generate a live archlinux usb with the monero gui pre-installed.
+Requirements An archlinux install A usb Setup In this guide I will show you how to build a custom archlinux iso with monerogui installed. I will not be providing any pre-built images.
+The first thing you will have to do is install archuseriso. You can install it from the aur using this command:]]></description>
+</item>
+<item>
     <title>SSH Remote Access NO Port-Forwarding NO Cloudflare</title>
     <link>https://4rkal.eu.org/posts/onionssh/</link>
     <pubDate>Wed, 04 Oct 2023 19:17:04 &#43;0300</pubDate>
@@ -88,15 +98,6 @@ What is Github Copilot GitHub Copilot is an artificial intelligence tool develop
     <guid>https://4rkal.eu.org/posts/git/</guid>
     <description><![CDATA[There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .
 Requirements A computer for your server (running linux preferably debian) An internet connection (pretty hard without one) A second computer with git installed Setup The first thing you will have to do is install git via your package manager]]></description>
-</item>
-<item>
-    <title>Host your own private search engine — searX</title>
-    <link>https://4rkal.eu.org/posts/searx/</link>
-    <pubDate>Fri, 03 Mar 2023 23:21:53 &#43;0300</pubDate>
-    <author>4rkal</author>
-    <guid>https://4rkal.eu.org/posts/searx/</guid>
-    <description><![CDATA[We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
-What is searX? Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users.]]></description>
 </item>
 </channel>
 </rss>
