@@ -26,7 +26,6 @@ heres the link: https://www.buymeacoffee.com/support4rkal
 
 # Exchange some crypto
 When you exchange crypto here I get a small comission.
-<iframe src="https://trocador.app/step1/?ref=VABs65VXR3" width="100%" height="100%" scrolling="yes"></iframe>
-Or use my link https://trocador.app/?ref=VABs65VXR3
+Or use my link [clearnet](https://trocador.app/?ref=VABs65VXR3) or [tor](http://trocadorfyhlu27aefre5u7zri66gudtzdyelymftvr4yjwcxhfaqsid.onion/?ref=VABs65VXR3)
 
 
