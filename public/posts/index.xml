@@ -4,7 +4,17 @@
         <link>https://4rkal.eu.org/posts/</link>
         <description>All Posts | 4rkal</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>4rkal@proton.me (4rkal)</managingEditor>
-            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Tue, 07 Nov 2023 18:03:15 &#43;0200</lastBuildDate><atom:link href="https://4rkal.eu.org/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Thu, 14 Dec 2023 21:00:30 &#43;0300</lastBuildDate><atom:link href="https://4rkal.eu.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Ultimate Monero ColdStorage Guide (Feather X Anonero)</title>
+    <link>https://4rkal.eu.org/posts/feathernero/</link>
+    <pubDate>Thu, 14 Dec 2023 21:00:30 &#43;0300</pubDate>
+    <author>4rkal</author>
+    <guid>https://4rkal.eu.org/posts/feathernero/</guid>
+    <description><![CDATA[In this comprehensive guide, I will walk you through the process of easily setting up Monero cold storage using an old computer and your smartphone, using animated QR codes. No USB needed!
+Requirements An old laptop/computer with a webcam (to be kept offline). Called offline or cold computer. An android smartphone. Your main computer Required reads Before starting this article you must read:
+Key concepts Monero offline transaction signing details Cold computer setup Your offline computer/laptop will be signing all of the transactions.]]></description>
+</item>
+<item>
     <title>Easy monero cold storage</title>
     <link>https://4rkal.eu.org/posts/coldstorage/</link>
     <pubDate>Tue, 07 Nov 2023 18:03:15 &#43;0200</pubDate>
@@ -87,15 +97,6 @@ What is nmap Nmap (Network Mapper) is a network scanner created by Gordon Lyon .
     <guid>https://4rkal.eu.org/posts/githubmon/</guid>
     <description><![CDATA[Microsoft purchased GitHub in 2018, something many users are not aware of. After Microsoft’s acquisition of GitHub there have been many controversies like blocking private repositories and access to GitHub pages in certain countries and of course, GitHub Copilot.
 What is Github Copilot GitHub Copilot is an artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code.]]></description>
-</item>
-<item>
-    <title>Setup your own git server</title>
-    <link>https://4rkal.eu.org/posts/git/</link>
-    <pubDate>Sun, 05 Mar 2023 17:11:40 &#43;0300</pubDate>
-    <author>4rkal</author>
-    <guid>https://4rkal.eu.org/posts/git/</guid>
-    <description><![CDATA[There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .
-Requirements A computer for your server (running linux preferably debian) An internet connection (pretty hard without one) A second computer with git installed Setup The first thing you will have to do is install git via your package manager]]></description>
 </item>
 </channel>
 </rss>

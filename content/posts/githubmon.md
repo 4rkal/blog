@@ -22,11 +22,8 @@ Analyzing a huge amount of code without any security features has led to many pr
 
 https://github.com/community/community/discussions/9584?sort=top?sort=top
 
-{{< tweet 1529178272638152704 >}}
+{{< tweet user="4rkal_"id="1529178272638152704" >}}
 
-And other random things
-
-{{< tweet 1410749018183933952 >}}
 
 Last but not least by using GitHub copilot you agree to the ToS which clearly states
 ```

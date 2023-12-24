@@ -8,25 +8,22 @@
     <language>en-us</language>
     <managingEditor>4rkal@proton.me (4rkal)</managingEditor>
     <webMaster>4rkal@proton.me (4rkal)</webMaster>
-    <lastBuildDate>Wed, 11 Oct 2023 21:34:20 +0300</lastBuildDate><atom:link href="https://4rkal.eu.org/updates/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Oct 2023 21:34:20 +0300</lastBuildDate>
+    <atom:link href="https://4rkal.eu.org/updates/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Created the monero archive</title>
       <link>https://4rkal.eu.org/updates/monero-archive/</link>
-      <pubDate>Wed, 11 Oct 2023 21:34:20 +0300</pubDate>
-      <author>4rkal@proton.me (4rkal)</author>
+      <pubDate>Wed, 11 Oct 2023 21:34:20 +0300</pubDate><author>4rkal@proton.me (4rkal)</author>
       <guid>https://4rkal.eu.org/updates/monero-archive/</guid>
       <description>Created the monero archive (tor)</description>
     </item>
-    
     <item>
       <title>Hacktoberfest 2023</title>
       <link>https://4rkal.eu.org/updates/hacktoberfest23/</link>
-      <pubDate>Wed, 11 Oct 2023 21:30:30 +0300</pubDate>
-      <author>4rkal@proton.me (4rkal)</author>
+      <pubDate>Wed, 11 Oct 2023 21:30:30 +0300</pubDate><author>4rkal@proton.me (4rkal)</author>
       <guid>https://4rkal.eu.org/updates/hacktoberfest23/</guid>
       <description>I am participating in hacktoberfest 2023
 Got a tree planted in my name here</description>
     </item>
-    
   </channel>
 </rss>
