@@ -7,15 +7,11 @@ I spend quite a lot of time writing these articles so if you enjoyed any of them
 # Crypto
 Here are my crypto addresses:
 
-BTC: `bc1qpzf7s0rj6sfjzsf43wwernrj6f97luxtyfvhg0`
-
 XMR: `8AztDJtwb7iKaqP4KXRG39VibAacCY1mMfH3bNsVjhYMYbohtT5LKoTSRP6vJGtjeBSPEpFdHZx3ZL3iVowYdkqeQwPAG2`
 
 XMR OpenAlias: `xmr.4rkal.eu.org`
 
-BCH: `bitcoincash:qp2uc6ufuymjng5fg4lxslssxus0hqfkmyad98gla5` 
-
-ERC20(ETH, MATIC etc) : `0x2A91a892ded237e09ff41e2d798D627C6C3B6fA0`
+Altcoins: donate altcoins here: [clearnet](https://trocador.app/en/anonpay/?ticker_to=xmr&network_to=Mainnet&name=4rkal&donation=True&buttonbgcolor=FF0000&address=82V3G48DKzy7u2kg89J3SgSmy36S9vdUcTHrQuN3YRkcEGYSW5VWYPTK4KrSDBdvLH5Ctyt9uG8GwKaYe5tcNm7uTG7c4A7) [tor](http://trocadorfyhlu27aefre5u7zri66gudtzdyelymftvr4yjwcxhfaqsid.onion/en/anonpay/?ticker_to=xmr&network_to=Mainnet&name=4rkal&donation=True&buttonbgcolor=FF0000&address=82V3G48DKzy7u2kg89J3SgSmy36S9vdUcTHrQuN3YRkcEGYSW5VWYPTK4KrSDBdvLH5Ctyt9uG8GwKaYe5tcNm7uTG7c4A7)
 
 # LiberaPay
 You can donate any currency through libera pay heres the link https://liberapay.com/4rkal/
