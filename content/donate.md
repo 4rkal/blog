@@ -11,7 +11,7 @@ XMR: `8AztDJtwb7iKaqP4KXRG39VibAacCY1mMfH3bNsVjhYMYbohtT5LKoTSRP6vJGtjeBSPEpFdHZ
 
 XMR OpenAlias: `xmr.4rkal.eu.org`
 
-Altcoins: donate altcoins here: [clearnet](https://trocador.app/en/anonpay/?ticker_to=xmr&network_to=Mainnet&name=4rkal&donation=True&buttonbgcolor=FF0000&address=82V3G48DKzy7u2kg89J3SgSmy36S9vdUcTHrQuN3YRkcEGYSW5VWYPTK4KrSDBdvLH5Ctyt9uG8GwKaYe5tcNm7uTG7c4A7) [tor](http://trocadorfyhlu27aefre5u7zri66gudtzdyelymftvr4yjwcxhfaqsid.onion/en/anonpay/?ticker_to=xmr&network_to=Mainnet&name=4rkal&donation=True&buttonbgcolor=FF0000&address=82V3G48DKzy7u2kg89J3SgSmy36S9vdUcTHrQuN3YRkcEGYSW5VWYPTK4KrSDBdvLH5Ctyt9uG8GwKaYe5tcNm7uTG7c4A7)
+Altcoins: via trocador on [clearnet](https://trocador.app/en/anonpay/?ticker_to=xmr&network_to=Mainnet&name=4rkal&donation=True&buttonbgcolor=FF0000&address=82V3G48DKzy7u2kg89J3SgSmy36S9vdUcTHrQuN3YRkcEGYSW5VWYPTK4KrSDBdvLH5Ctyt9uG8GwKaYe5tcNm7uTG7c4A7) or [tor](http://trocadorfyhlu27aefre5u7zri66gudtzdyelymftvr4yjwcxhfaqsid.onion/en/anonpay/?ticker_to=xmr&network_to=Mainnet&name=4rkal&donation=True&buttonbgcolor=FF0000&address=82V3G48DKzy7u2kg89J3SgSmy36S9vdUcTHrQuN3YRkcEGYSW5VWYPTK4KrSDBdvLH5Ctyt9uG8GwKaYe5tcNm7uTG7c4A7)
 
 # LiberaPay
 You can donate any currency through libera pay heres the link https://liberapay.com/4rkal/
