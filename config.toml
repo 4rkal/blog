@@ -15,7 +15,6 @@ Reddit = "4rkal"
 RSS = true
 [params]
 defaultTheme = "dark"
-plausibleAnalytics = "https://stats.4rkal.eu.org/js/script.js"
 images = ["https://i.imgur.com/kjfjamG.jpeg"]
 description = "4rkal's personal blog"
 [params.header]
@@ -129,4 +128,5 @@ rss = 10
 
 [markup.goldmark.renderer]
 unsafe = true
-
+[params.analytics.plausible]
+ dataDomain = "4rkal.eu.org"
