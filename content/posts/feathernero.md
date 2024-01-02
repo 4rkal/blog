@@ -65,10 +65,11 @@ We will now be installing the anonero software. We will be using NERO from the A
 4. Open fdroid and in the settings scroll down and enable `Use Tor` option
 5. Again in the settings that click on the repositories section and add the following:
 
-`http://anonero5wmhraxqsvzq2ncgptq6gq45qoto6fnkfwughfl4gbt44swad.onion/fdroid/repo?fingerprint=C5705FF724538F6925B6093517F53C6C6BB6CF82518ED40EB4B8CBBB87DC0D1D`
+    `http://anonero5wmhraxqsvzq2ncgptq6gq45qoto6fnkfwughfl4gbt44swad.onion/fdroid/repo?fingerprint=C5705FF724538F6925B6093517F53C6C6BB6CF82518ED40EB4B8CBBB87DC0D1D`
 
-Source: [anonero.io](https://anonero.io)
-
+    Source: [anonero.io](https://anonero.io)
+6. Click on  latest and then search for NERO
+7. Click on install
 That's it ; )
 
 ### Updating NERO
