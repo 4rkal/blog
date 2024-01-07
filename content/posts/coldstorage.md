@@ -42,7 +42,7 @@ Now you have two options
 1. Boot into persistent.
 2. Boot into memory. 
 
-When booting into persistent your files will be saved. This however does also involve your wallet file. If you want to be able to sign transactions do this
+When booting into persistent your files will be saved. This however does also involve your wallet file. 
 
 For the more secure option you can select boot into memory. This will delete all the traces of the wallet after reboot. You will have to write the seed down and manually enter it upon every boot if you want to authorize transactions. 
 

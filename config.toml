@@ -16,7 +16,7 @@ RSS = true
 [params]
 defaultTheme = "dark"
 images = ["https://i.imgur.com/kjfjamG.jpeg"]
-description = "4rkal's personal blog"
+Description = "4rkal's personal blog"
 [params.header]
 desktopMode=  "fixed"
 mobileMode = "auto"
