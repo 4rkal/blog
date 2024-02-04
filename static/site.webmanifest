@@ -1,0 +1,10 @@
+{
+  "name": "4rkal's blog",
+  "short_name": "4rkal",
+  "description": "I’m 4rkal. I created this blog as free alternative to my medium blog. I generaly post random stuff I stumble upon. Mostly about linux, privacy , cryptos and programming.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#66CC99"
+}
+
