@@ -25,12 +25,9 @@ Bitcoin has a block size limit which results in more expensive transactions and 
 
 Also bitcoin has a {{< link href="https://bitinfocharts.com/comparison/bitcoin-confirmationtime.html#3m" content="high block time" >}} which means that transactions take longer to be confirmed and executed. Bitcoins block time is ~10 minutes while {{< link href="https://bitinfocharts.com/comparison/monero-confirmationtime.html#3y" content="monero's block time" >}} is ~2 minutes
 
-With bitcoin and many other cryptos halving occurs approximately every 4 years. This however is a double edged sword because not halving the rewards will result in constant inflation and infinity supply. On the other hand by halving rewards miners are less motivated to secure the network. Monero has chosen to keep the block rewards at a constant 0.6 xmr reward, thus securing that miners will keep on mining. This inflation however is very easily predicted.
+Bitcoin has halving once every 4 years. The halving halves the amount mined (printed) bitcoin in every block. This by itself increases price volatility and transaction fee volatility.
 
-Like any other technology, right now monero is being used for illegal activity. Mostly because of its privacy additions. This haslead to a ~600k bounty by the irs (https://www.forbes.com/sites/kellyphillipserb/2020/09/14/irs-will-pay-up-to-625000-if-you-can-crack-monero-other-privacy-coins/)
-
-All of this activity is ofcourse free advertising for he project.
-
+Monero has chosen 0.6 XMR block reward forever. Any good currency want to have as little volatility as possible. Monero is a currency not a "number go up coin".
 # Conclusion
 Monero is basicly what people think bitcoin is. Heres a great vid about it (https://www.youtube.com/watch?v=ak5TFr26BaE).
 
