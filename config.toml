@@ -109,7 +109,7 @@ ShowReadingTime = true
 ShowWordCount = true
 ShowShareButtons = true
 ShowCodeCopyButtons = true
-
+defaultTheme = "dark"
 
 [params.logo]
 icon = "4rkal.png"
