@@ -10,7 +10,31 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Dec 2023 21:00:30 +0300</lastBuildDate><atom:link href="https://4rkal.eu.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Aug 2024 16:17:31 +0300</lastBuildDate><atom:link href="https://4rkal.eu.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>New look, new start</title>
+      <link>https://4rkal.eu.org/posts/newlook/</link>
+      <pubDate>Sun, 11 Aug 2024 16:17:31 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/newlook/</guid>
+      <description>I recently switched from the hugo LoveIt theme to PaperModX . Why the switch? The LoveIt theme hasn&amp;rsquo;t been updated in 2+ years. PaperModX has a more modern look LoveIt doesn&amp;rsquo;t work that well with obsidian. The overall switch wen&amp;rsquo;t pretty smoothly. You can see the changes I made in this commit.
+More articles to come! The theme wasn&amp;rsquo;t the only change that I made. After a pretty long break, I have decided to start publishing articles regularly again!</description>
+      <content:encoded><![CDATA[<h4 id="i-recently-switched-from-the-hugo-loveithttpsgithubcomdillonzqloveit-theme-to-papermodxhttpsgithubcomreorxhugo-papermodx-">I recently switched from the hugo <a href="https://github.com/dillonzq/LoveIt">LoveIt</a> theme to <a href="https://github.com/reorx/hugo-PaperModX/">PaperModX</a> .</h4>
+<h2 id="why-the-switch">Why the switch?</h2>
+<ul>
+<li>The LoveIt theme hasn&rsquo;t been updated in 2+ years.</li>
+<li>PaperModX has a more modern look</li>
+<li>LoveIt doesn&rsquo;t work that well with <a href="https://obsidian.md">obsidian</a>.</li>
+</ul>
+<p>The overall switch wen&rsquo;t pretty smoothly. You can see the changes I made in this <a href="https://github.com/4rkal/blog">commit</a>.</p>
+<h2 id="more-articles-to-come">More articles to come!</h2>
+<p>The theme wasn&rsquo;t the only change that I made. After a pretty long break, I have decided to start publishing articles regularly again!</p>
+<p>So, stay tuned - There&rsquo;s more content to come!</p>
+<p>Subscribe to my RSS feed to stay up to date <a href="../../index.xml">here</a></p>
+<p>There&rsquo;s also going to be a newsletter soon™️</p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Ultimate Monero ColdStorage Guide (Feather X Anonero)</title>
       <link>https://4rkal.eu.org/posts/feathernero/</link>
