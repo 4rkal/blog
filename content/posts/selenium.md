@@ -1,13 +1,15 @@
 ---
-title: "Automating your web browser with selenium"
+title: Automating your web browser with selenium
 date: 2023-02-22T21:23:38+03:00
 toc:
   enable: true
   auto: true
-featuredImage : "selenium.png"
+featuredImage: selenium.png
 featuredImagePreview: ""
 tags:
-- automation
+  - automation
+  - programming
+  - python
 ---
 **Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.**
 
@@ -29,9 +31,10 @@ Scroll down and select the package for your computer.
 I’ll use geckodriver-v0.31.0-linux64.tar.gz because I’m using a linux 64-bit computer.
 # Installing geckodriver
 The setup varies depending on your operating system.
-{{< admonition type=tip title="If you are using Arch Linux" open=true >}}
+
+If you are using Arch Linux:
 You can install geckodriver from the aur. Using your favourite aur helper
-{{< /admonition >}}
+
 On linux:
 1. Unzip the file
 2. Make the file executable
@@ -42,7 +45,7 @@ On windows:
 1. Unzip the file
 2. Paste the file in the directory that your script will run
 # Installing selenium
-To install selenium you have to have python and pip installed.Check out my article on python for {{< link "https://4rkal.medium.com/python-for-beginners-f1df170bcc08" more >}}  
+To install selenium you have to have python and pip installed.Check out my article on python for [more](../posts/python)
 To install selenium open your cmd or terminal and type:\
 ```pip install selenium```
 That should install it.\
@@ -71,9 +74,9 @@ There are a few ways to do this
 # Method 1 of clicking a button
 The first is with XPATH\
 To find the xpath of a button / object on a website you have to open your web browser go to the desired website and hit F12 to get the development tools. Now you should click on the select tool (See below)
-{{< image src="../assets/inspect.png" caption="Inspect element ">}}
+![Inspect element](../assets/inspect.png)
 Click on it and after that hover above the downloads button with your mouse and click it. After that you should see a bit of code getting highlighted. Right click on the bit of code and select Copy then select Xpath
-{{< image src="../assets/copy.png" >}}
+![1](../assets/copy.png)
 Now go back to the python file and type:\
 ```driver.find_element(By.XPATH, 'XPATH_HERE')```\
 This will throw an error, to fix that error simply add this at the top of the file\
@@ -144,7 +147,5 @@ a.send_keys(Keys.RETURN)
 GG you just automated your first google search!
 You might first need to accept cookies for that just follow the steps on how to click a button from above.\
 Read more about selenium here: https://selenium-python.readthedocs.io/\
-{{< admonition type=warning title="Websites can see if you use selenium" open=true >}}
-Websites (instagram) can quite easily understand if you are using selenium and might blacklist/ban you. So always use carefully.
-{{< /admonition >}}
-***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+
+***If you enjoyed this article consider [supporting me](../../donate)**

@@ -1,13 +1,15 @@
 ---
-title: "Easy monero cold storage"
+title: Easy monero cold storage
 date: 2023-11-07T18:03:15+02:00
+tags:
+  - "crypto"
 ---
 
 In this article I will show you how to "easily" generate a live archlinux usb with the monero gui pre-installed.
 
 ## Requirements
 
-1. An archlinux install 
+1. An arch[[linux]] install 
 2. A usb
 
 ## Setup
@@ -27,9 +29,9 @@ After that is finished building you can use your favourite image writter to writ
 `sudo dd if=out/aui-xfce*.img of=/dev/CHANGEME`
 
 You will have to write that to your usb, so in /dev/CHANGEME just put your usb. You can find it by running `lsblk`
-{{< admonition type=warning title="Don't be stupid" open=true >}}
-If you enter the wrong device this could lead to data loss. Be carefull
-{{< /admonition>}}
+**Don't be stupid**
+If you enter the wrong device this could lead to data loss. Be careful!
+
 After the image is written you will have to boot to your usb. 
 
 First however it is recommended that you disconnect any ethernet/other cables plugged in so that it is trully offline.
@@ -58,9 +60,8 @@ Select advanced > Click on `Create a new wallet` . You can select whatever you w
 
 Now you will be prompted with your recovery phrase. Write it down on PHYSICAL PAPER and keep it in a safe place. Also note the height and or creation date.
 
-{{< admonition type=danger title="Write it down!" open=true >}}
+Write it down!
 If you don't write down your seed and keep it in a secure place you will lose access to your monero!
-{{< /admonition >}}
 
 Then click next. Now select a strong password. Alteast 12 chars!. Remeber it!
 
@@ -82,4 +83,3 @@ You now have a cold wallet for offline signing on your usb and a view-only walle
 ## Signing transactions
 
 I won't cover doing this in this article. But you can find out more about how to send transactions from cold storage [here](https://monerodocs.org/cold-storage/offline-transaction-signing/)
-

@@ -1,9 +1,10 @@
 ---
-title: "Become anonymous and somewhat untraceable with tails os"
+title: Become anonymous and somewhat untraceable with tails os
 date: 2023-03-03T23:03:40+03:00
 tags:
-- tor
-- privacy
+  - tor
+  - privacy
+  - linux
 ---
 In this article we will talk about what tails is and how to install and more.
 
@@ -17,13 +18,13 @@ As the tails website states (https://tails.boum.org/). Tails is intended for Act
 1. A computer (minimum of 2GB ram , 64-bit x86–64 compatible processor)
 2. A usb stick with 8GB+ of space
 
-{{< admonition type=tip title="Read more" open=true >}}
+
 Read more https://tails.boum.org/doc/about/requirements/index.en.html
-{{< /admonition >}}
+
 # Installation
-{{< admonition type=warning title="Warning" open=true >}}
-Back up all your files USB files as they will get deleted.
-{{< /admonition >}}
+
+Back up all your files USB files as they will get deleted!
+
 The first thing you will have to do is to head to https://tails.boum.org/install/index.en.html
 Now select your operating system
 
@@ -62,7 +63,7 @@ Now you should be booted into tails
 
 You will probably see a screen that looks something like this
 
-{{< image src="../assets/tails.webp" caption="">}}
+![](../assets/tails.webp)
 
 Here you will have to set your language and region. We can also press on the + icon to add a admin password mac address anonymization etc. I will just put the admin password and the unsafe browser. You can select anything you want. However remember that changing some of these settings will make you less anonymous.
 
@@ -70,13 +71,13 @@ Once you are ready select start tails
 
 Now you will see
 
-{{< image src="../assets/tails2.webp" caption="">}}
+![](../assets/tails2.webp)
 
 Here you can select anything you want. I will just select the first option.
 
 Now you should see this:
 
-{{< image src="../assets/tails3.webp" caption="">}}
+![](../assets/tails3.webp)
 
 GG you did it. One more step though
 
@@ -84,6 +85,6 @@ I like to have a persistent volume so that i don’t lose all my files when i re
 
 That’s it for now
 
-***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+***If you enjoyed this article consider [supporting me](../../donate)**
 
 

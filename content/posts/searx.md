@@ -1,9 +1,10 @@
 ---
-title: "Host your own private search engine — searX"
+title: Host your own private search engine — searX
 date: 2023-03-03T23:21:53+03:00
 tags:
-- selfhosting
-- privacy
+  - selfhosting
+  - privacy
+  - linux
 ---
 We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
 
@@ -102,8 +103,8 @@ SEARX_SETTINGS_PATH="/etc/searx/settings.yml"
 Finally run the web app
 `python searx/webapp.py`
 Now if you head to 127.0.0.1:8888 you should be able to see something like this
-{{< image src="../assets/searx.webp" caption="">}}
+![1](../assets/searx.webp)
 **GG** you did it enjoy privacy (in search engines)
 
-***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+***If you enjoyed this article consider [supporting me](../../donate)**
 

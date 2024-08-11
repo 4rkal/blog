@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>linux on 4rkal</title>
+    <link>https://4rkal.eu.org/tags/linux/</link>
+    <description>Recent content in linux on 4rkal</description>
+    <image>
+      <url>https://4rkal.eu.org/4rkal.png</url>
+      <link>https://4rkal.eu.org/4rkal.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Oct 2023 19:17:04 +0300</lastBuildDate><atom:link href="https://4rkal.eu.org/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH Remote Access NO Port-Forwarding NO Cloudflare</title>
+      <link>https://4rkal.eu.org/posts/onionssh/</link>
+      <pubDate>Wed, 04 Oct 2023 19:17:04 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/onionssh/</guid>
+      <description>In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.
+Requirements: A computer &amp;ldquo;server&amp;rdquo; (running linux) A internet connection Another computer to connect to your server (running linux) Why? If you want to access your server without portforwarding in a extremely secure fashion you will want to follow this tutorial. You will be connecting to the server via tor which will make it harder for anyone to find the url of the server and ill show you how to setup keybased auth for even more security!</description>
+      <content:encoded><![CDATA[<p>In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.</p>
+<h2 id="requirements">Requirements:</h2>
+<ol>
+<li>A computer &ldquo;server&rdquo; (running linux)</li>
+<li>A internet connection</li>
+<li>Another computer to connect to your server (running linux)</li>
+</ol>
+<h2 id="why">Why?</h2>
+<p>If you want to access your server without portforwarding in a extremely secure fashion you will want to follow this tutorial. You will be connecting to the server via tor which will make it harder for anyone to find the url of the server and ill show you how to setup keybased auth for even more security!</p>
+<h2 id="setup">Setup</h2>
+<p>You will have to install the following packages (ssh, tor)</p>
+<p>On debian</p>
+<p><code>sudo apt install openssh-client</code></p>
+<p>On arch</p>
+<p><code>sudo pacman -S openssh</code></p>
+<p>After that enable the ssh service</p>
+<p>Debian:</p>
+<p><code>sudo systemctl enable ssh</code></p>
+<p>Arch:</p>
+<p><code>sudo systemctl enable sshd</code></p>
+<p>If you want to check if this worked just use another computer and run</p>
+<p><code>ssh USER@IP</code></p>
+<p>for example I run</p>
+<p><code>ssh arkal@192.168.1.69</code></p>
+<p>After this you can enable KeyBased authentication for more security</p>
+<p>Here is my article how to enable that :</p>
+<p><a href="https://4rkal.eu.org/posts/sssh/">Enable keybased authentication</a></p>
+<p>After you have done that you want to edit your torrc file. Using your favorite text editor</p>
+<p><code>sudo vim /etc/tor/torrc</code></p>
+<p>Now you will want to navigate to the part that says HiddenService. And paste the following</p>
+<pre tabindex="0"><code>HiddenServiceDir /var/lib/tor/ssh/
+HiddenServicePort 22 127.0.0.1:22
+</code></pre><p>Save your file and exit the editor (for nano cntrl s, cntrl x)</p>
+<p>Now you want will have to restart the tor service</p>
+<p><code>sudo systemctl restart tor</code></p>
+<p>After that run the following:</p>
+<p><code>sudo cat /var/lib/tor/ssh/hostname</code></p>
+<p>You should see a string of letters and characters ending in .onion </p>
+<p>Now on your other machine:</p>
+<h2 id="connecting-to-the-server">Connecting to the server</h2>
+<p>On your main machine you will have to do the following:</p>
+<p>Have ssh, tor, and socat installed</p>
+<p>After you have installed them you will have to edit the ssh config</p>
+<p><code>vim .ssh/config</code></p>
+<p>And paste the following</p>
+<pre tabindex="0"><code>Host NAME
+ Hostname URL.onion
+ User USER
+ Port 22
+ Proxycommand socat - SOCKS4A:127.0.0.1:%h:%p,socksport=9050
+</code></pre><p>You will have to change the NAME, URL and USER. The user is the user you want to connect as to your server and the url is the url you that ends in .onion from above.</p>
+<p>Now save the file and exit.</p>
+<p>Now edit the torrc file. Using your favorite text editor:</p>
+<p><code>vim /etc/tor/torrc</code></p>
+<p>Find the line that says SOCKSPort and uncomment it</p>
+<p><code>SOCKSPort 9050</code></p>
+<p>Restart the tor service</p>
+<p><code>systemctl restart tor</code></p>
+<p>To connect to the server run the following command:</p>
+<p><code>ssh NAME</code></p>
+<p>With NAME being the name that you gave to the server in the config file.</p>
+<p><strong>If this article helped you out consider <a href="https://4rkal.eu.org/donate">supporting me</a></strong></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Create a MultiBoot USB using ventoy</title>
+      <link>https://4rkal.eu.org/posts/ventoy/</link>
+      <pubDate>Mon, 06 Mar 2023 20:11:51 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/ventoy/</guid>
+      <description>With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.
+Whats ventoy? Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .</description>
+      <content:encoded><![CDATA[<p>With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.</p>
+<h1 id="whats-ventoy">Whats ventoy?</h1>
+<p>Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .iso to the USB drive and boot from them directly. Ventoy will present the user with a boot menu to select one of these files.</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>a computer</li>
+<li>a internet connection (pretty hard without one)</li>
+<li>a usb (min 8gb)</li>
+</ol>
+<h1 id="installation">Installation</h1>
+<p>Ventoy is available on both linux and windows.</p>
+<p>The first thing you will have to do is head to ventoy.net . On the download page select your operating system and click on download.</p>
+<h1 id="on-linux">On linux</h1>
+<p>After you have extracted the file open the folder and click on the VentoyGUI .</p>
+<p>Depending on your processor type select the file ending in either aarch64 i386 mips64el or x86_64. (It will most probably be x86_64).</p>
+<p>After that you should see something like this:
+<img loading="lazy" src="/../assets/ventoy.webp" type="" alt=""  /></p>
+<p>Select your device from the devices tab</p>
+<p>Then click on install.</p>
+<h1 id="on-windows">On windows</h1>
+<p>Download the file and unzip it</p>
+<p>Then click on the file called Ventoy2Disk.exe</p>
+<p>You should see something like this</p>
+<p><img loading="lazy" src="/../assets/ventoy-win.webp" type="" alt=""  /></p>
+<p>Select your usb device from the drop down and click on install.</p>
+<h1 id="using-ventoy">Using ventoy</h1>
+<p>To use ventoy all you have to do is paste your iso files inside of the usb. No formatting etc.</p>
+<p><strong>GG</strong> you have now installed ventoy</p>
+<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Setup your own git server</title>
+      <link>https://4rkal.eu.org/posts/git/</link>
+      <pubDate>Sun, 05 Mar 2023 17:11:40 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/git/</guid>
+      <description>There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .
+Requirements A computer for your server (running [[linux]] preferably debian) An internet connection (pretty hard without one) A second computer with git installed Setup The first thing you will have to do is install git via your package manager</description>
+      <content:encoded><![CDATA[<p>There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>A computer for your server (running [[linux]] preferably debian)</li>
+<li>An internet connection (pretty hard without one)</li>
+<li>A second computer with git installed</li>
+</ol>
+<h1 id="setup">Setup</h1>
+<p>The first thing you will have to do is install git via your package manager</p>
+<p>If you are using apt</p>
+<p><code>sudo apt install git</code></p>
+<p>On dnf</p>
+<p><code>sudo dnf install git</code></p>
+<p>pacman</p>
+<p><code>sudo pacman -S git</code></p>
+<p>After that create a user called git</p>
+<p><code>sudo useradd git</code></p>
+<p>You will have to enter some information, you can leave everything except the password blank.</p>
+<p>Now login to your git user</p>
+<p><code>su git</code></p>
+<p>Now to make our server more secure we are going to use ssh keys.</p>
+<pre tabindex="0"><code>mkdir .ssh
+chmod 700 .ssh/
+touch .ssh/authorized_keys
+chmod 600 .ssh/authorized_keys
+</code></pre><p>Now on the computer which you want to commit from you will have to generate a ssh key
+On your main machine type.
+<a href="../sssh">My article on keybased auth</a></p>
+<p><code>ssh-keygen</code></p>
+<p>After that you will have to copy your ssh public key to the authorized_keys</p>
+<p><code>ssh-copy-id user@ip</code></p>
+<p>(To find out your ip you can type ifconfig)</p>
+<p>Now if you try to connect to your server you should be able to login without a password.</p>
+<p><code>ssh git@ip</code></p>
+<p>Now you will have to create the folder where all your git repos will be saved.</p>
+<p>I will save mine in ~/git , but you can save them wherever you want</p>
+<p><code>mkdir ~/git</code></p>
+<p>Now we have to give the ownership of the git folder to the git user</p>
+<p><code>chown git:git git</code></p>
+<p>Now for every repository you will have to create a folder.</p>
+<p>eg.</p>
+<p><code>mkdir ~/git/my_cool_project.git</code></p>
+<p>Now run</p>
+<p><code>cd ~/git/my_cool_project.git</code></p>
+<p>And initiate the git repository</p>
+<p><code>git init --bare</code></p>
+<p>Now you can create a couple of files inside of your project (to test it out).</p>
+<p><code>touch stuff.txt</code></p>
+<p>Now you can test if your repository is working by cloning the files from another machine running git.</p>
+<p><code>git clone git@ip:~/git/my_cool_project.git</code></p>
+<p>You will probably get</p>
+<p><code>warning: You appear to have cloned an empty repository.</code></p>
+<p>That is because you haven&rsquo;t committed anything.</p>
+<pre tabindex="0"><code>git add .
+git commit -m &#34;first commit&#34;
+</code></pre><p>Now if you test that again it should work.</p>
+<p><strong>GG</strong> you did it, you have now successfully set up your own git server</p>
+<p>***If you enjoyed this article consider <a href="../../donate">supporting me</a></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Host your own private search engine — searX</title>
+      <link>https://4rkal.eu.org/posts/searx/</link>
+      <pubDate>Fri, 03 Mar 2023 23:21:53 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/searx/</guid>
+      <description>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
+What is searX? Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users.</description>
+      <content:encoded><![CDATA[<p>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.</p>
+<h1 id="what-is-searx">What is searX?</h1>
+<p>Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users. In order to do this, Searx does not provide the search engines from which it receives results with users’ IP addresses or search histories. Tracking cookies served by the search engines are blocked, preventing user-profiling-based results modification.</p>
+<p>Users can run private instances of Searx on their own computer, but there are also many public, user-run, Searx instances.</p>
+<p>In this article i will show you how to run your own searX instance.</p>
+<h1 id="what-is-a-metasearch-engine">What is a metasearch engine?</h1>
+<p>A web search engine’s data is used by a metasearch engine, an online information retrieval tool, to create its own results. Metasearch engines automatically query search engines eg Google after receiving user input. The users are shown sufficient data that has been gathered, sorted, and presented.</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>An computer (preferably running linux). Check out my article on how to install linux here <a href="https://4rkal.medium.com/install-a-debian-server-54add9133eec">https://4rkal.medium.com/install-a-debian-server-54add9133eec</a></li>
+<li>an internet connection</li>
+</ol>
+<h1 id="installing-on-windows">Installing on windows</h1>
+<p>To install on windows you will have to install wsl and follow the setup guide for linux bellow</p>
+<p>To see how to install wsl head to <a href="https://docs.microsoft.com/en-us/windows/wsl/install">https://docs.microsoft.com/en-us/windows/wsl/install</a></p>
+<h1 id="installing-on-linux-debian">Installing on Linux (debian)</h1>
+<p>First update your system
+<code>sudo apt-get update &amp;&amp; sudo apt-get upgrade</code>
+Now install required packages
+<code>sudo apt install -y python3-dev python3-babel python3-venv uwsgi uwsgi-plugin-python3 git build-essential libxslt-dev zlib1g-dev libffi-dev libssl-dev </code>
+Now you will have to create a new user called searx</p>
+<pre tabindex="0"><code>sudo -H useradd --shell /bin/bash --system \
+    --home-dir &#34;/usr/local/searx&#34; \
+    --comment &#39;Privacy-respecting metasearch engine&#39; searx
+
+sudo -H mkdir &#34;/usr/local/searx&#34;
+sudo -H chown -R &#34;searx:searx&#34; &#34;/usr/local/searx&#34;
+</code></pre><p>Now change user to searx</p>
+<p><code>git clone &quot;https://github.com/searx/searx.git&quot; &quot;/usr/local/searx/searx-src&quot;t</code></p>
+<p>Now create a virtual environment</p>
+<p><code>echo &quot;. /usr/local/searx/searx-pyenv/bin/activate&quot; &gt;&gt;  &quot;/usr/local/searx/.profile&quot;</code></p>
+<p>To install searx’s dependencies, exit the searx bash session you opened above and restart a new. Before install, first check if your virtualenv was sourced from the login (~/.profile):</p>
+<p>Update dependencies</p>
+<pre tabindex="0"><code>pip install -U pip
+pip install -U setuptools
+pip install -U wheel
+pip install -U pyyaml
+</code></pre><p>Jump to searx’s working tree and install searx into virtualenv</p>
+<pre tabindex="0"><code>cd &#34;/usr/local/searx/searx-src&#34;
+pip install -e .
+</code></pre><p>Now go back to your default user</p>
+<p><code>exit</code></p>
+<p>And type
+<code>sudo -H mkdir -p &quot;/etc/searx&quot;</code></p>
+<p>Then</p>
+<pre tabindex="0"><code>sudo -H cp &#34;/usr/local/searx/searx-src/utils/templates/etc/searx/use_default_settings.yml&#34; \
+             &#34;/etc/searx/settings.yml&#34;
+</code></pre><p>Now you can edit your settings file</p>
+<p><code>sudo nano /etc/searx/settings.yml</code></p>
+<p>You can change the secret_key</p>
+<p>I will change the port and bind_address but you can change whatever you want.</p>
+<p>Now log back in to your searx user</p>
+<p><code>sudo -H -u searx -i</code></p>
+<p>Change directory</p>
+<p><code>cd /usr/local/searx/searx-src</code></p>
+<p>Export the settings path</p>
+<pre tabindex="0"><code>export 
+SEARX_SETTINGS_PATH=&#34;/etc/searx/settings.yml&#34;
+</code></pre><p>Finally run the web app
+<code>python searx/webapp.py</code>
+Now if you head to 127.0.0.1:8888 you should be able to see something like this
+<img loading="lazy" src="/../assets/searx.webp" type="" alt="1"  />
+<strong>GG</strong> you did it enjoy privacy (in search engines)</p>
+<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Become anonymous and somewhat untraceable with tails os</title>
+      <link>https://4rkal.eu.org/posts/tails/</link>
+      <pubDate>Fri, 03 Mar 2023 23:03:40 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/tails/</guid>
+      <description>In this article we will talk about what tails is and how to install and more.
+What is tails? Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</description>
+      <content:encoded><![CDATA[<p>In this article we will talk about what tails is and how to install and more.</p>
+<h1 id="what-is-tails">What is tails?</h1>
+<p>Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</p>
+<h1 id="what-is-the-tor-network">What is the tor network?</h1>
+<p>Tor, short for The Onion Router, is free and open-source software for enabling anonymous communication. It directs Internet traffic through a free, worldwide, volunteer overlay network, consisting of more than six thousand relays,to conceal a user’s location and usage from anyone performing network surveillance or traffic analysis. Using Tor makes it more difficult to trace a user’s Internet activity.</p>
+<h1 id="who-is-tails-intended-for">Who is tails intended for?</h1>
+<p>As the tails website states (<a href="https://tails.boum.org/)">https://tails.boum.org/)</a>. Tails is intended for Activists who use Tails to hide their identities, avoid censorship, and communicate securely. Journalists and their sources use Tails to publish sensitive information and access the Internet from unsafe places. Domestic violence survivors use Tails to escape surveillance at home. You whenever you need extra privacy in this digital world.</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>A computer (minimum of 2GB ram , 64-bit x86–64 compatible processor)</li>
+<li>A usb stick with 8GB+ of space</li>
+</ol>
+<p>Read more <a href="https://tails.boum.org/doc/about/requirements/index.en.html">https://tails.boum.org/doc/about/requirements/index.en.html</a></p>
+<h1 id="installation">Installation</h1>
+<p>Back up all your files USB files as they will get deleted!</p>
+<p>The first thing you will have to do is to head to <a href="https://tails.boum.org/install/index.en.html">https://tails.boum.org/install/index.en.html</a>
+Now select your operating system</p>
+<p>Ill walk you through the installation for windows and linux.
+This should probably bethe same with linux
+After you have clicked on the windows logo you should be prompted with the requirements and a step by step guide.</p>
+<p>The first thing you will have to do is to download the tails usb image.</p>
+<p>After that i highly recommend that you verify your download</p>
+<p>Just click on select and select it.</p>
+<p>Now you will have to download balena etcher. Just click on download balena etcher and double click the installer.</p>
+<p>At this moment plug in your usb (if you have any important files on the usb you have to back the up or they will be lost)</p>
+<p>Now click the flash from file button and select the file you downloaded (it ends in .img)</p>
+<p>Click the Select target button to select your USB stick.</p>
+<p>And now select flash.</p>
+<p>This could take a while so just sit back and relax.</p>
+<h1 id="using-tails">Using tails</h1>
+<p>After your installation is finished just reboot your computer and hit F12 or F2 depending on your computer.</p>
+<p>Now you should see a screen thats says something like please select your boot device. You will have to select your usb and hit enter</p>
+<p>Now you should see the grub loader</p>
+<p>Select Tails and hit enter</p>
+<p>Now you should be booted into tails</p>
+<p>You will probably see a screen that looks something like this</p>
+<p><img loading="lazy" src="/../assets/tails.webp" type="" alt=""  /></p>
+<p>Here you will have to set your language and region. We can also press on the + icon to add a admin password mac address anonymization etc. I will just put the admin password and the unsafe browser. You can select anything you want. However remember that changing some of these settings will make you less anonymous.</p>
+<p>Once you are ready select start tails</p>
+<p>Now you will see</p>
+<p><img loading="lazy" src="/../assets/tails2.webp" type="" alt=""  /></p>
+<p>Here you can select anything you want. I will just select the first option.</p>
+<p>Now you should see this:</p>
+<p><img loading="lazy" src="/../assets/tails3.webp" type="" alt=""  /></p>
+<p>GG you did it. One more step though</p>
+<p>I like to have a persistent volume so that i don’t lose all my files when i reboot. To do that open the configure persistent volume app and follow the steps there.</p>
+<p>That’s it for now</p>
+<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Get ad free web with Pi-hole</title>
+      <link>https://4rkal.eu.org/posts/pihole/</link>
+      <pubDate>Sat, 25 Feb 2023 21:17:13 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/pihole/</guid>
+      <description>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&amp;rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.
+What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine.</description>
+      <content:encoded><![CDATA[<p>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.</p>
+<h1 id="what-is-pi-hole">What is Pi-hole?</h1>
+<p>Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine. Pi-hole has the ability to block traditional website advertisements as well as advertisements in unconventional places, such as smart TVs and mobile operating system advertisements.</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>A computer with Linux (preferably something Debian-based)</li>
+<li>Preferably an Ethernet cable</li>
+<li>Access to your router&rsquo;s admin portal</li>
+<li>A static IP</li>
+<li>An internet connection (it&rsquo;s pretty difficult without one, trust me)</li>
+</ol>
+<h1 id="installation">Installation</h1>
+<p>The first thing we have to do is download the installer.</p>
+<p>To do that, type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -O basic-install.sh https://install.pi-hole.net
+</span></span></code></pre></div><p>Now, install it with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo bash basic-install.sh
+</span></span></code></pre></div><p>Now you should see something like this:</p>
+<p><img loading="lazy" src="/../assets/pihole/1.webp" type="" alt="Installation Step 1"  /></p>
+<p>Just press OK.</p>
+<p><img loading="lazy" src="/../assets/pihole/2.webp" type="" alt="Installation Step 2"  /></p>
+<p>Just press OK again.</p>
+<p>As I said before, you have to have a static IP in order to set up the Pi-hole, so if you have one configured, just press Yes.</p>
+<p><img loading="lazy" src="/../assets/pihole/3.webp" type="" alt="Static IP Setup"  /></p>
+<p>Otherwise, you will have to set one up.</p>
+<p>Now you will be prompted to select your upstream DNS provider. You can select any of the DNS providers on the list. I will just select Google.</p>
+<p><img loading="lazy" src="/../assets/pihole/4.webp" type="" alt="DNS Provider Selection"  /></p>
+<p>And press OK.</p>
+<p>After that, you will have to select your list. I will just select the default one.</p>
+<p><img loading="lazy" src="/../assets/pihole/5.webp" type="" alt="List Selection"  /></p>
+<p>Now you will have to select whether you want a web admin interface. Select On and then OK.</p>
+<p><img loading="lazy" src="/../assets/pihole/6.webp" type="" alt="Web Admin Interface"  /></p>
+<p>Now just select On and press OK.</p>
+<p><img loading="lazy" src="/../assets/pihole/7.webp" type="" alt="Web Admin Interface Confirmation"  /></p>
+<p>After that, you can select if you want to log queries. You can select any option you want.</p>
+<p><img loading="lazy" src="/../assets/pihole/8.webp" type="" alt="Log Queries"  /></p>
+<p>Now, I recommend that you leave this as default, but you don’t have to.</p>
+<p><img loading="lazy" src="/../assets/pihole/9.webp" type="" alt="Default Settings"  /></p>
+<p>Now it should start installing everything.</p>
+<p>After the installation is finished, you should see something like this:</p>
+<p><img loading="lazy" src="/../assets/pihole/10.webp" type="" alt="Installation Complete"  /></p>
+<p>You have now successfully installed Pi-hole. You can head to the admin portal by going to the specified IP.</p>
+<p>To be able to use Pi-hole, you have two options:</p>
+<ol>
+<li>Make the IP the default DNS for your whole network</li>
+<li>Manually add it on any device</li>
+</ol>
+<p>I&rsquo;ll go with the second option.</p>
+<h3 id="on-windows">On Windows:</h3>
+<p>DNS settings are specified in the TCP/IP Properties window for the selected network connection.</p>
+<ol>
+<li>Go to the Control Panel</li>
+<li>Click Network and Internet &gt; Network and Sharing Center &gt; Change adapter settings</li>
+<li>Select the connection for which you want to configure</li>
+<li>Right-click Local Area Connection &gt; Properties</li>
+<li>Select the Networking tab</li>
+<li>Select Internet Protocol Version 4 (TCP/IPv4) or Internet Protocol Version 6 (TCP/IPv6)</li>
+<li>Click Properties</li>
+<li>Click Advanced</li>
+<li>Select the DNS tab</li>
+<li>Click OK</li>
+<li>Select Use the following DNS server addresses</li>
+<li>Replace those addresses with the IP addresses of your Pi</li>
+<li>Restart the connection you selected in step 3</li>
+<li>Repeat the procedure for additional network connections you want to change</li>
+</ol>
+<h3 id="on-linux">On Linux:</h3>
+<p>In most modern Linux distributions, DNS settings are configured through Network Manager.</p>
+<ol>
+<li>Click System &gt; Preferences &gt; Network Connections</li>
+<li>Select the connection for which you want to configure and press <strong>Edit</strong></li>
+<li>Select the IPv4 Settings or IPv6 Settings tab</li>
+<li>If the selected method is Automatic (DHCP), open the dropdown and select Automatic (DHCP) addresses only instead. If the method is set to something else, do not change it.</li>
+<li>In the DNS servers field, enter your Pi’s IP addresses</li>
+<li>Click Apply to save the changes</li>
+</ol>
+<blockquote>
+<p><strong>Warning:</strong> If you are not using Network Manager, your DNS settings are specified in <code>/etc/resolv.conf</code>.</p>
+</blockquote>
+<p>Now, if we head over to any websites with ads, you should see that no ads appear.</p>
+<p>Let&rsquo;s try speedtest.net.</p>
+<p>If you have followed the steps correctly, you should see something like this:</p>
+<p><img loading="lazy" src="/../assets/pihole/ads.webp" type="" alt="No Ads!"  /></p>
+<p><strong>NO ADS</strong></p>
+<p>Enjoy the ad-free web.</p>
+<p><em><strong>If you enjoyed this article, consider <a href="../../donate">supporting me</a>.</strong></em></p>
+<pre tabindex="0"><code></code></pre>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Securing ssh with Key-Based authentication</title>
+      <link>https://4rkal.eu.org/posts/sssh/</link>
+      <pubDate>Sat, 25 Feb 2023 21:08:47 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/sssh/</guid>
+      <description>SSH keys provide an extremely secure way of logging into your server.
+SSH Password Based VS Key Based Authentication Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts.</description>
+      <content:encoded><![CDATA[<p>SSH keys provide an extremely secure way of logging into your server.</p>
+<h1 id="ssh-password-based-vs-key-based-authentication">SSH Password Based VS Key Based Authentication</h1>
+<p>Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts. The solution to that is ssh key based authentication.</p>
+<h1 id="how-does-key-based-authentication-work">How does Key Based Authentication work?</h1>
+<p>SSH key pairs are two cryptographically secure keys that allow a client to connect to an SSH server. A public key and a private key make up each key pair.The client keeps the private key, which should be kept completely confidential.</p>
+<p>If the attacker has access to the private key, they will be able to enter into servers using the corresponding public key without requiring further authentication. A passphrase can be used to encrypt the key on disc as an extra precaution.</p>
+<p>The related public key can be freely shared without causing any harm. The public key can be used to encrypt communications that can only be decrypted with the private key. This attribute is used to verify the authenticity of the key pair. The public key is placed on a distant server that you wish to use SSH to access. The key is saved in a special file called /.ssh/authorized keys in the user account you’ll be login into.</p>
+<p>When a client uses SSH keys to authenticate, the server can check if the client has the private key. A shell session is started or the requested command is executed if the client can verify ownership of the private key.</p>
+<h1 id="setting-up">Setting up</h1>
+<p>The first thing we will have to to do is generate an SSH key pair on your local computer.</p>
+<p>To do that type</p>
+<p><code>ssh-keygen</code></p>
+<p>You should see something like this</p>
+<pre tabindex="0"><code>Generating public/private rsa key pair.
+Enter file in which to save the key (/home/4rkal/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase):
+</code></pre><p>If you want to you can enter a passphrase to encrypt the private key.</p>
+<p>After that your key should be generated.</p>
+<p>Now you will have to copy your public key to your server.</p>
+<p>To do that type</p>
+<p><code>ssh-copy-id username@host_ip</code></p>
+<p>(find your servers ip by typing ifconfig in your server)</p>
+<p>eg.</p>
+<p>`ssh-copy-id <a href="mailto:server@192.168.1.13">server@192.168.1.13</a>'</p>
+<p>Try to ssh into your server by typing</p>
+<p><code>ssh username@host_ip</code></p>
+<p>You should be able to login into your server without the password. However, brute force attacks continue to threaten your server. Now we have to disable password based authentication.</p>
+<p>First login to your ssh server by typing
+<code>ssh username@host_ip</code></p>
+<p>Now we have edit the ssh config</p>
+<p>sudo nano /etc/ssh/sshd_config</p>
+<p>You should see a large file that starts with</p>
+<pre tabindex="0"><code>#       $OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
+</code></pre><p>At this point press cntrl w and search for <code>PasswordAuthentication</code></p>
+<p>Uncomment the line that says</p>
+<p><code>#PasswordAuthentication yes</code></p>
+<p>And change it to</p>
+<p><code>PasswordAuthentication no</code></p>
+<p>Now press cntrl s to save and cntrl x to exit</p>
+<p>After that restart the ssh service with</p>
+<p><code>sudo service ssh restart</code></p>
+<p>Now try to ssh into your server from another machine or a vm and you should see something like this</p>
+<p><code>server@192.168.1.13: Permission denied (publickey)</code></p>
+<p>GG you have now secured your server</p>
+<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Setup a tor website (hidden service)</title>
+      <link>https://4rkal.eu.org/posts/torhs/</link>
+      <pubDate>Sat, 25 Feb 2023 20:56:02 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/torhs/</guid>
+      <description>In this article i will be showing you how to host your “dark web” aka Tor website for free.
+What is Tor? Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</description>
+      <content:encoded><![CDATA[<p>In this article i will be showing you how to host your “dark web” aka Tor website for free.</p>
+<h1 id="what-is-tor">What is Tor?</h1>
+<p>Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</p>
+<h1 id="why-use-tor">Why use Tor?</h1>
+<p>Tor is useful for anyone who wants to keep their internet activities out of the hands of advertisers, ISPs, and websites. That includes people getting around censorship restrictions in their country, people looking to hide their IP address, or anyone else who doesn’t want their browsing habits linked to them.</p>
+<p>The Tor network may also host webpages that only other Tor users can view. In other words, you’ve entered the Dark Web, which consists of websites that aren’t indexed by the standard crawlers you use to look for products to purchase, and quiz answers etc . On the Dark Web, you can discover everything from free textbooks to drugs — and worse — as long as you know the secret URL that leads to these sites.</p>
+<h1 id="tor-websites">Tor Websites</h1>
+<p>Just like any other website, you will need to know the address of an onion service in order to connect to it. An onion address is a string of 56 mostly random letters and numbers, followed by “.onion”.</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>A linux machine (debian preferably)</li>
+<li>An internet connection (pretty hard without one,trust me)</li>
+</ol>
+<h1 id="installation">Installation</h1>
+<p>The first thing we will have to do is install Tor</p>
+<p><code>apt install tor</code></p>
+<p>Now we will have to enable tor hidden service(which is the website) for that type:</p>
+<p><code>sudo nano /etc/tor/torrc</code></p>
+<p>You should see a large configuration file, search for <code>HiddenService</code></p>
+<p>You will have to uncoment:</p>
+<pre tabindex="0"><code>#HiddenServiceDir /var/lib/tor/hidden_service/
+#HiddenServicePort 80 127.0.0.1:80
+</code></pre><p>Now press cntrl s and then cntrl x to exit</p>
+<p>After that start the tor service by running</p>
+<p><code>sudo service tor start</code></p>
+<p>or</p>
+<p><code>sudo systemctl start tor</code></p>
+<p>Now we also have to install nginx to be able to run our website to do that type</p>
+<p><code>sudo apt install nginx</code></p>
+<p>Start the nginx service with the systemctl or service command</p>
+<p>Now we also have to install nginx to be able to run our website to do that type</p>
+<p><code>sudo cat /var/lib/tor/hidden_service/hostname</code></p>
+<p>You should see a address that looks something like this</p>
+<p><code>tiur7p652svsaemdewbsxnnkrj3b35ny2rx454od5wk5ivfqhijm2qd.onion</code></p>
+<p>Now open your tor browser and paste your address and press enter.</p>
+<p>You will most probably be greeted by the default nginx site.</p>
+<p>This page is easily customized, you can check out my article:
+<a href="https://4rkal.eu.org/posts/shwebsite/">here</a></p>
+<p>GG you did it you are now running a pretty anonymous website on the tor network.</p>
+<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Self host your own website</title>
+      <link>https://4rkal.eu.org/posts/shwebsite/</link>
+      <pubDate>Sat, 25 Feb 2023 20:23:16 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/shwebsite/</guid>
+      <description>In this article i will show you how to self host your own website securely.
+Requirements A computer or microcomputer to host the website The computer needs to run linux An internet connection (Its pretty hard without one, trust me) Lets get started!
+Installation The first thing that we will have to do is setup our nginx site.
+We first have to be root
+sudo su
+If you dont have sudo installed try:</description>
+      <content:encoded><![CDATA[<p>In this article i will show you how to self host your own website securely.</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>A computer or microcomputer to host the website</li>
+<li>The computer needs to run linux</li>
+<li>An internet connection (Its pretty hard without one, trust me)</li>
+</ol>
+<p>Lets get started!</p>
+<h1 id="installation">Installation</h1>
+<p>The first thing that we will have to do is setup our nginx site.</p>
+<p>We first have to be root</p>
+<p><code>sudo su</code></p>
+<p>If you dont have sudo installed try:</p>
+<p><code>su -</code></p>
+<p>Now we will have to install nginx</p>
+<p><code>apt install nginx</code></p>
+<p>If you are using any other package manager install it using the package name nginx</p>
+<p>Now we will have to start the nginx service</p>
+<p><code>systemctl start nginx</code></p>
+<p>or</p>
+<p><code>service nginx start</code></p>
+<p>Lets find your ip with:</p>
+<p><code>ip a</code></p>
+<p>or</p>
+<p><code>ifconfig</code></p>
+<p>If you open a web browser and go to your ip you should see the default welcome to nginx site.</p>
+<p>Since we want to make our website as secure as possible we can hide the nginx version</p>
+<p>To do that type</p>
+<p>`sudo nano /etc/nginx/nginx.conf</p>
+<p>Now you should see the nginx configuration file.</p>
+<p>under</p>
+<pre tabindex="0"><code>http {
+##
+        # Basic Settings
+        ##
+sendfile on;
+        tcp_nopush on;
+        types_hash_max_size 2048;
+        # server_tokens off;
+</code></pre><p>uncomment <code>server_tokens off;</code></p>
+<p>Now restart your nginx service</p>
+<p><code>systemctl restart nginx</code></p>
+<p>We can now enter our html files inside of <code>/var/www/html</code></p>
+<p>To do that type:</p>
+<p><code>cd /usr/share/nginx/html</code></p>
+<p>and now we can create the index.html file</p>
+<p><code>nano index.html</code></p>
+<p>and paste/write your html code to index.html</p>
+<p>Now restart the nginx service again</p>
+<p><code>systemctl restart nginx</code></p>
+<h1 id="certbot">Certbot</h1>
+<p>Now we will install cerbot in order to get https</p>
+<p>To install certbot simply type</p>
+<p><code>apt install certbot python-certbot-nginx</code></p>
+<p>Now we will have to run certbot</p>
+<p><code>certbot --nginx</code></p>
+<p>Enter all the inf oand agree to the terms</p>
+<p>After that you will have to enter the name you would like to activate https for</p>
+<p>Just select the names</p>
+<p>After that select to redirect http to https</p>
+<h1 id="port-forwarding">Port forwarding</h1>
+<p>There are a few ways to port forward. In this article we will use noip.com.</p>
+<p>Head over to noip.com to get started (Use my referal <a href="https://www.noip.com/?fpr=4rkal">https://www.noip.com/?fpr=4rkal</a>)</p>
+<p>Create an account and register a hostname</p>
+<p>After that we will have to build the noip client on our computer for that paste these commands to your terminal</p>
+<pre tabindex="0"><code>cd /usr/local/src
+wget http://www.no-ip.com/client/linux/noip-duc-linux.tar.gz
+tar xzf noip-duc-linux.tar.gz
+cd noip-2.1.9–1
+make
+make install
+</code></pre><p>When you run make install you will be prompted to answer some questions like your login information and the update interval</p>
+<p>In the update interval just set it to 30</p>
+<p>Then if you don’t want to run something at a successful update type n if you do then type y.</p>
+<p>You will now also have to edit the nginx default settings</p>
+<p>to do that type</p>
+<p>`sudo nano /etc/nginx/sites-available/default</p>
+<p>Now you will have to change the server_name to the domain you registered at noip.com</p>
+<p>You can check if your configuration was successful by running</p>
+<p><code>nginx -t</code></p>
+<p>You can now restart the nginx service</p>
+<p><code>systemctl restart nginx</code></p>
+<p>Now if you head to your domain it should be working and ssl should be installed</p>
+<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Raspberry pi security camera</title>
+      <link>https://4rkal.eu.org/posts/rpicamera/</link>
+      <pubDate>Sat, 25 Feb 2023 20:03:25 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/rpicamera/</guid>
+      <description>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.
+Requirements Raspberry pi or any other computer Web cam Any kind of debian based distro installed on the pi/computer Setup In this article we will be using the motion package (https://motion-project.github.io/)
+To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard.</description>
+      <content:encoded><![CDATA[<p>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>Raspberry pi or any other computer</li>
+<li>Web cam</li>
+<li>Any kind of debian based distro installed on the pi/computer</li>
+</ol>
+<h1 id="setup">Setup</h1>
+<p>In this article we will be using the motion package (<a href="https://motion-project.github.io/">https://motion-project.github.io/</a>)</p>
+<p>To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard. Also connect your web cam to the raspberry pi usb port.</p>
+<p>The first thing we will have to do is install motion, for that type the following command:<br>
+<code>apt install motion</code><br>
+Now start motion with:<br>
+<code>systemctl start motion</code><br>
+or<br>
+<code>service motion start</code><br>
+Now we are going to change some of the default settings . To do that type:<br>
+<code>nano /etc/motion/motion.conf</code><br>
+The first thing that we are going to change is<br>
+<code>webcontrol_localhost off</code><br>
+This will enable us to access the stream from other computers.</p>
+<p>To view the stream run:</p>
+<p><code>motion</code></p>
+<p>If you get a permission denied error try running</p>
+<p><code>sudo motion</code></p>
+<p>If you got to http://YOUR_IP:8080 you should see a live feed of the web cam</p>
+<p>You can change the port under webcontrol_port in the config file eg.
+<code>webcontrol_port 1234</code></p>
+<p>If you only want the live stream port you can go to http://your_ip:8081</p>
+<p>Again you can change that under stream_port.</p>
+<p>Now everything should be working fine. All motion detection files will be saved in /var/lib/motion</p>
+<p>You can also change loads of other settings. Here are my settings:https://pastebin.com/WGn0NfcW</p>
+<p>Read the documentation here: <a href="https://motion-project.github.io/motion_guide.html">https://motion-project.github.io/motion_guide.html</a></p>
+<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>How SSH works</title>
+      <link>https://4rkal.eu.org/posts/howsshworks/</link>
+      <pubDate>Sat, 25 Feb 2023 19:36:25 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/howsshworks/</guid>
+      <description>If you work in the IT industry, you’ve undoubtedly heard of ssh. But how does it work?
+SSH (secure shell) is a network protocol that allows two computers to connect securely over the internet. SSH uses encryption to prevent hackers from reading data sent between two connected devices.
+SSH is divided into three layers:
+The transport layer The connection layer The authentication layer During and after authentication, the transport layer establishes safe and secure communication between a client and a server.</description>
+      <content:encoded><![CDATA[<p>If you work in the IT industry, you’ve undoubtedly heard of ssh. But how does it work?<br>
+SSH (secure shell) is a network protocol that allows two computers to connect securely over the internet. SSH uses encryption to prevent hackers from reading data sent between two connected devices.<br>
+SSH is divided into three layers:</p>
+<ol>
+<li>The transport layer</li>
+<li>The connection layer</li>
+<li>The authentication layer</li>
+</ol>
+<p>During and after authentication, the transport layer establishes safe and secure communication between a client and a server. It is in charge of data encryption, decryption, and integrity assurance. It also provides data compression and caching, which helps to speed up data communication.</p>
+<p>The authentication layer informs the client about the available authentication methods. It’s also in charge of the whole user authentication procedure.</p>
+<p>After the authentication is successful, the connection layer oversees the communication between the machines. It manages communication channel opening and closure, as well as multiple channels for multiple sessions.</p>
+<h1 id="session-encryption">Session Encryption</h1>
+<p>The server sends the client a list of supported encryption protocols after receiving a connection request. The public key is used by the server as an authentication technique.</p>
+<p>The client compares the protocols to the ones it already knows. If there are two protocols that are compatible, the machines agree to use one of them to establish the connection.</p>
+<p>On the first connection attempt, the client compares the server’s public key to the private key saved in its system. If the keys are identical, the client and server agree to communicate using symmetric encryption during the SSH session. They communicate utilizing an asymmetrically encrypted mechanism based on the Diffie-Hellman (DH) key exchange algorithm for this purpose.
+There are different ciphers that can be used for SSH depending on the applications being used. Some of them include:</p>
+<ul>
+<li>CHACHA20</li>
+<li>AES-GCM</li>
+<li>Blowfish-CBC</li>
+<li>AES128-CTR</li>
+<li>AES192-CTR</li>
+<li>AES256-CTR</li>
+<li>Arcfour</li>
+<li>Cast128-CBC</li>
+</ul>
+<h1 id="different-encryption-techniques">Different Encryption Techniques</h1>
+<p>SSH uses a variety of data manipulation techniques at various points in the transaction to ensure the security of information transmission. These include symmetrical and asymmetrical encryption, as well as hashing.</p>
+<h1 id="symmetrical-encryption">Symmetrical Encryption</h1>
+<p>Symmetric encryption creates a single key that is exchanged between two machines. The key is then used by the machines for both encryption and decryption. This approach is rapid and resource-light, and it is used by SSH for each session. When the client and server are deciding which algorithm to employ for an SSH session, the first algorithm on the client’s list that the server supports is always used.</p>
+<h1 id="asymmetrical-encryption">Asymmetrical Encryption</h1>
+<p>Any party can have access to the public key. Although it is linked to its paired key, the private key cannot be deduced from the public key. The public key and private key have a mathematical relationship that allows the public key to encrypt messages that can only be decrypted by the private key. This is a one-way ability, which means that the public key cannot decode the communications it sends or decrypt anything the private key sends it.</p>
+<p>The private key should be kept completely confidential and never shared with anybody else. This is a necessary condition for the public key paradigm to function.The only component that can decrypt communications encrypted with the accompanying public key is the private key. Any entity capable of decrypting these messages has demonstrated control over the private key as a result of this fact.</p>
+<h1 id="hashing">Hashing</h1>
+<p>r key defining characteristics are that they are never supposed to be reversed, that they are nearly hard to predictably alter, and that they are practically unique.</p>
+<p>If you use the same hashing function and message, you should get the same hash; if you change any part of the data, you should get a completely different hash. A user should not be able to deduce the actual message from a hash, but they should be able to determine whether a message produced a hash.</p>
+<h1 id="session-encryption-negotiation">Session Encryption Negotiation</h1>
+<p>The server sends the client a list of supported encryption protocols after receiving a connection request. The public key is used by the server as an authentication technique.</p>
+<p>The client evaluates the protocols in comparison to its own. The machines choose one to create the connection using if there are any compatible protocols.</p>
+<p>On the initial connection attempt, the client checks the server&rsquo;s public key to the saved copy of its own private key. The client and server consent to using symmetric encryption to communicate during an SSH session if the keys match. They converse utilizing an asymmetric encryption method that makes use of the Diffie-Hellman (DH) key exchange algorithm.</p>
+<p>Using a public network, machines can safely collaborate to build a cryptographic key thanks to the DH algorithm. The machines go through the following processes to create a key:</p>
+<ul>
+<li>The machines agree on two numbers: a modulus and a base number. To prevent brute force key decryption, the chosen modulus is a prime number of at least 600 digits.</li>
+<li>In order to solve the equation involving the two public numbers, the machines independently select one number.</li>
+<li>The calculated values are exchanged between the server and the client.</li>
+<li>Now, utilizing the information obtained from the other machine, each machine computes something.</li>
+</ul>
+<p>By carrying out the above processes, both machines determine the identical value, which is their secret key. The server then makes an attempt to verify the user&rsquo;s identity who made the access request.</p>
+<p>***If you enjoyed this article consider <a href="../../donate">supporting me</a></p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,7 +1,9 @@
 ---
-title: "Ultimate Monero ColdStorage Guide (Feather X Anonero)"
+title: Ultimate Monero ColdStorage Guide (Feather X Anonero)
 date: 2023-12-14T21:00:30+03:00
-description: "In this comprehensive guide, I will walk you through the process of easily setting up Monero cold storage using an old computer and your smartphone, using animated QR codes. No USB needed!"
+description: In this comprehensive guide, I will walk you through the process of easily setting up Monero cold storage using an old computer and your smartphone, using animated QR codes. No USB needed!
+tags:
+  - "crypto"
 ---
 
 In this comprehensive guide, I will walk you through the process of easily setting up Monero cold storage using an old computer and your smartphone, using animated QR codes. No USB needed!
@@ -22,7 +24,7 @@ Your offline computer/laptop will be signing all of the transactions. It should 
 
 I highly recommend that you use a linux distribution and NOT windows for cold storage. Linux is free and opensource. I highly recommend pepermintOS or MX linux as they are lightweight and pretty easy to setup. 
 
-I will not be guiding you on how to install linux. But here are some resourses to help you get started:
+I will not be guiding you on how to install [[linux]]. But here are some resourses to help you get started:
 
 - [Installing PeperMintOS](https://peppermintos.com/guide/downloading/) <--  somewhat 32 bit support, lightweight
 
@@ -125,9 +127,6 @@ To sign/broadcast a transaction follow these steps
 On your phone:
 1. Open NERO and enter your pin
 2. In the send tab enter the desired address and amount 
-{{< admonition type=tip title="Sending whole balance" open=false >}}
-If you want to send your whole balance you can click on `Available Balance`
-{{< /admonition >}}
 3. Click on continue, you should now see an animated QR code.
 
 On your cold computer

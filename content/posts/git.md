@@ -1,13 +1,14 @@
 ---
-title: "Setup your own git server"
+title: Setup your own git server
 date: 2023-03-05T17:11:40+03:00
 tags:
-- selfhosting
+  - "selfhosting"
+  - "linux"
 ---
 There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .
 
 # Requirements
-1. A computer for your server (running linux preferably debian)
+1. A computer for your server (running [[linux]] preferably debian)
 2. An internet connection (pretty hard without one)
 3. A second computer with git installed
 
@@ -46,7 +47,7 @@ chmod 600 .ssh/authorized_keys
 
 Now on the computer which you want to commit from you will have to generate a ssh key
 On your main machine type.
-{{< link href="../sssh" content="My article on keybased auth" >}}
+[My article on keybased auth](../sssh)
 
 `ssh-keygen`
 
@@ -107,5 +108,5 @@ Now if you test that again it should work.
 
 **GG** you did it, you have now successfully set up your own git server
 
-***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+***If you enjoyed this article consider [supporting me](../../donate)
 

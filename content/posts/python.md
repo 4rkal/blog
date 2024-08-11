@@ -1,8 +1,9 @@
 ---
-title: "Python for Complete Beginners"
+title: Python for Complete Beginners
 date: 2023-03-06T20:52:42+03:00
 tags:
-- python
+  - python
+  - programming
 ---
 Why you should use Python. Going over the basics of Python.
 
@@ -318,5 +319,5 @@ print("GG you found it")
 
 Stay tuned for more
 
-***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+***If you enjoyed this article consider [supporting me](../../donate)***
 

@@ -3,14 +3,14 @@ title: "About"
 date: 2023-02-25T19:29:56+03:00
 weight : 1
 ---
-# About me
-Hi there I'm 4rkal. I created {{< link "../" "this blog" >}} as free alternative to my {{< link "https://4rkal.medium.com" "medium blog" >}} 
 
-I generaly post random stuff I stumble upon. Mostly about linux, privacy , cryptos and programming. 
+### Hi there 👋
+I'm 4rkal. I created this blog as free alternative to my [medium](https://4rkal.medium.com)
 
-I also post random thoughts on {{< link "../../thoughts" "the thoughts part" >}} of this blog
+I generaly post random stuff I stumble upon. Mostly about [linux](../../tags/linux), [privacy](../../tags/privacy) , [crypto](../../tags/crypto) and [programming](../../tags/programming). 
 
-If you like my blog Ill happily accept {{< link "../../donate" "donations" >}}
+
+If you like my blog I'll happily accept [donations](../../donate)
 
 # Socials
 Heres how you can reach me:

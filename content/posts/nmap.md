@@ -1,9 +1,10 @@
 ---
-title: "Nmap(Network Mapper) For Beginners"
+title: Nmap(Network Mapper) For Beginners
 date: 2023-03-05T17:37:03+03:00
 tags:
-- nmap
-- networking
+  - nmap
+  - networking
+  - "article"
 ---
 Whether you want to scan your network for vulnerabilities or just want to see which ports you have open, nmap can be extremely useful.
 # What is nmap
@@ -59,9 +60,7 @@ Instead of ip type the ip we found from above
 
 Now you should see a large list of all the ips connected to your network.
 
-{{< admonition type=tip title="-sn Flag" open=false >}}
 -sn flag stands for no port scan
-{{< /admonition >}}
 
 Now we can also get all the ports open on all the ips on your local network
 
@@ -88,9 +87,6 @@ Now lets say that you want to find out what operating system a specified device 
 To do that type
 
 `sudo nmap -O IP`
-{{< admonition type=warning title="Sudo will not work on windows" open=true >}}
-On windows run your terminal as administrator
-{{< /admonition >}}
 
 Eg. 
 
@@ -106,9 +102,9 @@ Running: Linux 2.6.X
 OS CPE: cpe:/o:linux:linux_kernel:2.6.32
 OS details: Linux 2.6.32
 ```
-{{< admonition type=tip title="Tip" open=true >}}
+
 You can press enter while running a scan to see how much time is left
-{{< /admonition >}}
+
 
 Lets say that you dont want anyone monitoring a network be able to trace back the scan to you.
 
@@ -131,5 +127,5 @@ eg
 Thats all for now
 
 **GG** You have now learnt the basics of nmap
-***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+***If you enjoyed this article consider [supporting me](../../donate)
 

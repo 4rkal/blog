@@ -1,8 +1,9 @@
 ---
-title: "Self host your own website"
+title: Self host your own website
 date: 2023-02-25T20:23:16+03:00
 tags:
-- selfhosting
+  - selfhosting
+  - linux
 ---
 In this article i will show you how to self host your own website securely.
 # Requirements
@@ -149,5 +150,5 @@ You can now restart the nginx service
 
 Now if you head to your domain it should be working and ssl should be installed
 
-***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+***If you enjoyed this article consider [supporting me](../../donate)**
 

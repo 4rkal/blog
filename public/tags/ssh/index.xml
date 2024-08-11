@@ -1,28 +1,206 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Ssh - Tag - 4rkal</title>
-        <link>https://4rkal.eu.org/tags/ssh/</link>
-        <description>Ssh - Tag - 4rkal</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>4rkal@proton.me (4rkal)</managingEditor>
-            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Sat, 25 Feb 2023 21:08:47 &#43;0300</lastBuildDate><atom:link href="https://4rkal.eu.org/tags/ssh/" rel="self" type="application/rss+xml" /><item>
-    <title>Securing ssh with Key-Based authentication</title>
-    <link>https://4rkal.eu.org/posts/sssh/</link>
-    <pubDate>Sat, 25 Feb 2023 21:08:47 &#43;0300</pubDate>
-    <author>4rkal</author>
-    <guid>https://4rkal.eu.org/posts/sssh/</guid>
-    <description><![CDATA[SSH keys provide an extremely secure way of logging into your server.
-SSH Password Based VS Key Based Authentication Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts.]]></description>
-</item>
-<item>
-    <title>How SSH works</title>
-    <link>https://4rkal.eu.org/posts/howsshworks/</link>
-    <pubDate>Sat, 25 Feb 2023 19:36:25 &#43;0300</pubDate>
-    <author>4rkal</author>
-    <guid>https://4rkal.eu.org/posts/howsshworks/</guid>
-    <description><![CDATA[If you work in the IT industry, you’ve undoubtedly heard of ssh. But how does it work?
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ssh on 4rkal</title>
+    <link>https://4rkal.eu.org/tags/ssh/</link>
+    <description>Recent content in ssh on 4rkal</description>
+    <image>
+      <url>https://4rkal.eu.org/4rkal.png</url>
+      <link>https://4rkal.eu.org/4rkal.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Oct 2023 19:17:04 +0300</lastBuildDate><atom:link href="https://4rkal.eu.org/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH Remote Access NO Port-Forwarding NO Cloudflare</title>
+      <link>https://4rkal.eu.org/posts/onionssh/</link>
+      <pubDate>Wed, 04 Oct 2023 19:17:04 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/onionssh/</guid>
+      <description>In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.
+Requirements: A computer &amp;ldquo;server&amp;rdquo; (running linux) A internet connection Another computer to connect to your server (running linux) Why? If you want to access your server without portforwarding in a extremely secure fashion you will want to follow this tutorial. You will be connecting to the server via tor which will make it harder for anyone to find the url of the server and ill show you how to setup keybased auth for even more security!</description>
+      <content:encoded><![CDATA[<p>In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.</p>
+<h2 id="requirements">Requirements:</h2>
+<ol>
+<li>A computer &ldquo;server&rdquo; (running linux)</li>
+<li>A internet connection</li>
+<li>Another computer to connect to your server (running linux)</li>
+</ol>
+<h2 id="why">Why?</h2>
+<p>If you want to access your server without portforwarding in a extremely secure fashion you will want to follow this tutorial. You will be connecting to the server via tor which will make it harder for anyone to find the url of the server and ill show you how to setup keybased auth for even more security!</p>
+<h2 id="setup">Setup</h2>
+<p>You will have to install the following packages (ssh, tor)</p>
+<p>On debian</p>
+<p><code>sudo apt install openssh-client</code></p>
+<p>On arch</p>
+<p><code>sudo pacman -S openssh</code></p>
+<p>After that enable the ssh service</p>
+<p>Debian:</p>
+<p><code>sudo systemctl enable ssh</code></p>
+<p>Arch:</p>
+<p><code>sudo systemctl enable sshd</code></p>
+<p>If you want to check if this worked just use another computer and run</p>
+<p><code>ssh USER@IP</code></p>
+<p>for example I run</p>
+<p><code>ssh arkal@192.168.1.69</code></p>
+<p>After this you can enable KeyBased authentication for more security</p>
+<p>Here is my article how to enable that :</p>
+<p><a href="https://4rkal.eu.org/posts/sssh/">Enable keybased authentication</a></p>
+<p>After you have done that you want to edit your torrc file. Using your favorite text editor</p>
+<p><code>sudo vim /etc/tor/torrc</code></p>
+<p>Now you will want to navigate to the part that says HiddenService. And paste the following</p>
+<pre tabindex="0"><code>HiddenServiceDir /var/lib/tor/ssh/
+HiddenServicePort 22 127.0.0.1:22
+</code></pre><p>Save your file and exit the editor (for nano cntrl s, cntrl x)</p>
+<p>Now you want will have to restart the tor service</p>
+<p><code>sudo systemctl restart tor</code></p>
+<p>After that run the following:</p>
+<p><code>sudo cat /var/lib/tor/ssh/hostname</code></p>
+<p>You should see a string of letters and characters ending in .onion </p>
+<p>Now on your other machine:</p>
+<h2 id="connecting-to-the-server">Connecting to the server</h2>
+<p>On your main machine you will have to do the following:</p>
+<p>Have ssh, tor, and socat installed</p>
+<p>After you have installed them you will have to edit the ssh config</p>
+<p><code>vim .ssh/config</code></p>
+<p>And paste the following</p>
+<pre tabindex="0"><code>Host NAME
+ Hostname URL.onion
+ User USER
+ Port 22
+ Proxycommand socat - SOCKS4A:127.0.0.1:%h:%p,socksport=9050
+</code></pre><p>You will have to change the NAME, URL and USER. The user is the user you want to connect as to your server and the url is the url you that ends in .onion from above.</p>
+<p>Now save the file and exit.</p>
+<p>Now edit the torrc file. Using your favorite text editor:</p>
+<p><code>vim /etc/tor/torrc</code></p>
+<p>Find the line that says SOCKSPort and uncomment it</p>
+<p><code>SOCKSPort 9050</code></p>
+<p>Restart the tor service</p>
+<p><code>systemctl restart tor</code></p>
+<p>To connect to the server run the following command:</p>
+<p><code>ssh NAME</code></p>
+<p>With NAME being the name that you gave to the server in the config file.</p>
+<p><strong>If this article helped you out consider <a href="https://4rkal.eu.org/donate">supporting me</a></strong></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Securing ssh with Key-Based authentication</title>
+      <link>https://4rkal.eu.org/posts/sssh/</link>
+      <pubDate>Sat, 25 Feb 2023 21:08:47 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/sssh/</guid>
+      <description>SSH keys provide an extremely secure way of logging into your server.
+SSH Password Based VS Key Based Authentication Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts.</description>
+      <content:encoded><![CDATA[<p>SSH keys provide an extremely secure way of logging into your server.</p>
+<h1 id="ssh-password-based-vs-key-based-authentication">SSH Password Based VS Key Based Authentication</h1>
+<p>Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts. The solution to that is ssh key based authentication.</p>
+<h1 id="how-does-key-based-authentication-work">How does Key Based Authentication work?</h1>
+<p>SSH key pairs are two cryptographically secure keys that allow a client to connect to an SSH server. A public key and a private key make up each key pair.The client keeps the private key, which should be kept completely confidential.</p>
+<p>If the attacker has access to the private key, they will be able to enter into servers using the corresponding public key without requiring further authentication. A passphrase can be used to encrypt the key on disc as an extra precaution.</p>
+<p>The related public key can be freely shared without causing any harm. The public key can be used to encrypt communications that can only be decrypted with the private key. This attribute is used to verify the authenticity of the key pair. The public key is placed on a distant server that you wish to use SSH to access. The key is saved in a special file called /.ssh/authorized keys in the user account you’ll be login into.</p>
+<p>When a client uses SSH keys to authenticate, the server can check if the client has the private key. A shell session is started or the requested command is executed if the client can verify ownership of the private key.</p>
+<h1 id="setting-up">Setting up</h1>
+<p>The first thing we will have to to do is generate an SSH key pair on your local computer.</p>
+<p>To do that type</p>
+<p><code>ssh-keygen</code></p>
+<p>You should see something like this</p>
+<pre tabindex="0"><code>Generating public/private rsa key pair.
+Enter file in which to save the key (/home/4rkal/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase):
+</code></pre><p>If you want to you can enter a passphrase to encrypt the private key.</p>
+<p>After that your key should be generated.</p>
+<p>Now you will have to copy your public key to your server.</p>
+<p>To do that type</p>
+<p><code>ssh-copy-id username@host_ip</code></p>
+<p>(find your servers ip by typing ifconfig in your server)</p>
+<p>eg.</p>
+<p>`ssh-copy-id <a href="mailto:server@192.168.1.13">server@192.168.1.13</a>'</p>
+<p>Try to ssh into your server by typing</p>
+<p><code>ssh username@host_ip</code></p>
+<p>You should be able to login into your server without the password. However, brute force attacks continue to threaten your server. Now we have to disable password based authentication.</p>
+<p>First login to your ssh server by typing
+<code>ssh username@host_ip</code></p>
+<p>Now we have edit the ssh config</p>
+<p>sudo nano /etc/ssh/sshd_config</p>
+<p>You should see a large file that starts with</p>
+<pre tabindex="0"><code>#       $OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
+</code></pre><p>At this point press cntrl w and search for <code>PasswordAuthentication</code></p>
+<p>Uncomment the line that says</p>
+<p><code>#PasswordAuthentication yes</code></p>
+<p>And change it to</p>
+<p><code>PasswordAuthentication no</code></p>
+<p>Now press cntrl s to save and cntrl x to exit</p>
+<p>After that restart the ssh service with</p>
+<p><code>sudo service ssh restart</code></p>
+<p>Now try to ssh into your server from another machine or a vm and you should see something like this</p>
+<p><code>server@192.168.1.13: Permission denied (publickey)</code></p>
+<p>GG you have now secured your server</p>
+<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>How SSH works</title>
+      <link>https://4rkal.eu.org/posts/howsshworks/</link>
+      <pubDate>Sat, 25 Feb 2023 19:36:25 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/howsshworks/</guid>
+      <description>If you work in the IT industry, you’ve undoubtedly heard of ssh. But how does it work?
 SSH (secure shell) is a network protocol that allows two computers to connect securely over the internet. SSH uses encryption to prevent hackers from reading data sent between two connected devices.
 SSH is divided into three layers:
-The transport layer The connection layer The authentication layer During and after authentication, the transport layer establishes safe and secure communication between a client and a server.]]></description>
-</item>
-</channel>
+The transport layer The connection layer The authentication layer During and after authentication, the transport layer establishes safe and secure communication between a client and a server.</description>
+      <content:encoded><![CDATA[<p>If you work in the IT industry, you’ve undoubtedly heard of ssh. But how does it work?<br>
+SSH (secure shell) is a network protocol that allows two computers to connect securely over the internet. SSH uses encryption to prevent hackers from reading data sent between two connected devices.<br>
+SSH is divided into three layers:</p>
+<ol>
+<li>The transport layer</li>
+<li>The connection layer</li>
+<li>The authentication layer</li>
+</ol>
+<p>During and after authentication, the transport layer establishes safe and secure communication between a client and a server. It is in charge of data encryption, decryption, and integrity assurance. It also provides data compression and caching, which helps to speed up data communication.</p>
+<p>The authentication layer informs the client about the available authentication methods. It’s also in charge of the whole user authentication procedure.</p>
+<p>After the authentication is successful, the connection layer oversees the communication between the machines. It manages communication channel opening and closure, as well as multiple channels for multiple sessions.</p>
+<h1 id="session-encryption">Session Encryption</h1>
+<p>The server sends the client a list of supported encryption protocols after receiving a connection request. The public key is used by the server as an authentication technique.</p>
+<p>The client compares the protocols to the ones it already knows. If there are two protocols that are compatible, the machines agree to use one of them to establish the connection.</p>
+<p>On the first connection attempt, the client compares the server’s public key to the private key saved in its system. If the keys are identical, the client and server agree to communicate using symmetric encryption during the SSH session. They communicate utilizing an asymmetrically encrypted mechanism based on the Diffie-Hellman (DH) key exchange algorithm for this purpose.
+There are different ciphers that can be used for SSH depending on the applications being used. Some of them include:</p>
+<ul>
+<li>CHACHA20</li>
+<li>AES-GCM</li>
+<li>Blowfish-CBC</li>
+<li>AES128-CTR</li>
+<li>AES192-CTR</li>
+<li>AES256-CTR</li>
+<li>Arcfour</li>
+<li>Cast128-CBC</li>
+</ul>
+<h1 id="different-encryption-techniques">Different Encryption Techniques</h1>
+<p>SSH uses a variety of data manipulation techniques at various points in the transaction to ensure the security of information transmission. These include symmetrical and asymmetrical encryption, as well as hashing.</p>
+<h1 id="symmetrical-encryption">Symmetrical Encryption</h1>
+<p>Symmetric encryption creates a single key that is exchanged between two machines. The key is then used by the machines for both encryption and decryption. This approach is rapid and resource-light, and it is used by SSH for each session. When the client and server are deciding which algorithm to employ for an SSH session, the first algorithm on the client’s list that the server supports is always used.</p>
+<h1 id="asymmetrical-encryption">Asymmetrical Encryption</h1>
+<p>Any party can have access to the public key. Although it is linked to its paired key, the private key cannot be deduced from the public key. The public key and private key have a mathematical relationship that allows the public key to encrypt messages that can only be decrypted by the private key. This is a one-way ability, which means that the public key cannot decode the communications it sends or decrypt anything the private key sends it.</p>
+<p>The private key should be kept completely confidential and never shared with anybody else. This is a necessary condition for the public key paradigm to function.The only component that can decrypt communications encrypted with the accompanying public key is the private key. Any entity capable of decrypting these messages has demonstrated control over the private key as a result of this fact.</p>
+<h1 id="hashing">Hashing</h1>
+<p>r key defining characteristics are that they are never supposed to be reversed, that they are nearly hard to predictably alter, and that they are practically unique.</p>
+<p>If you use the same hashing function and message, you should get the same hash; if you change any part of the data, you should get a completely different hash. A user should not be able to deduce the actual message from a hash, but they should be able to determine whether a message produced a hash.</p>
+<h1 id="session-encryption-negotiation">Session Encryption Negotiation</h1>
+<p>The server sends the client a list of supported encryption protocols after receiving a connection request. The public key is used by the server as an authentication technique.</p>
+<p>The client evaluates the protocols in comparison to its own. The machines choose one to create the connection using if there are any compatible protocols.</p>
+<p>On the initial connection attempt, the client checks the server&rsquo;s public key to the saved copy of its own private key. The client and server consent to using symmetric encryption to communicate during an SSH session if the keys match. They converse utilizing an asymmetric encryption method that makes use of the Diffie-Hellman (DH) key exchange algorithm.</p>
+<p>Using a public network, machines can safely collaborate to build a cryptographic key thanks to the DH algorithm. The machines go through the following processes to create a key:</p>
+<ul>
+<li>The machines agree on two numbers: a modulus and a base number. To prevent brute force key decryption, the chosen modulus is a prime number of at least 600 digits.</li>
+<li>In order to solve the equation involving the two public numbers, the machines independently select one number.</li>
+<li>The calculated values are exchanged between the server and the client.</li>
+<li>Now, utilizing the information obtained from the other machine, each machine computes something.</li>
+</ul>
+<p>By carrying out the above processes, both machines determine the identical value, which is their secret key. The server then makes an attempt to verify the user&rsquo;s identity who made the access request.</p>
+<p>***If you enjoyed this article consider <a href="../../donate">supporting me</a></p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
 </rss>

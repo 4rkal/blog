@@ -1,20 +1,151 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Automation - Tag - 4rkal</title>
-        <link>https://4rkal.eu.org/tags/automation/</link>
-        <description>Automation - Tag - 4rkal</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>4rkal@proton.me (4rkal)</managingEditor>
-            <webMaster>4rkal@proton.me (4rkal)</webMaster><lastBuildDate>Wed, 22 Feb 2023 21:23:38 &#43;0300</lastBuildDate><atom:link href="https://4rkal.eu.org/tags/automation/" rel="self" type="application/rss+xml" /><item>
-    <title>Automating your web browser with selenium</title>
-    <link>https://4rkal.eu.org/posts/selenium/</link>
-    <pubDate>Wed, 22 Feb 2023 21:23:38 &#43;0300</pubDate>
-    <author>4rkal</author>
-    <guid>https://4rkal.eu.org/posts/selenium/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/selenium.png" referrerpolicy="no-referrer">
-            </div>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.
-In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.medium.com/f1df170bcc08/python-for-beginners)
-What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation.]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>automation on 4rkal</title>
+    <link>https://4rkal.eu.org/tags/automation/</link>
+    <description>Recent content in automation on 4rkal</description>
+    <image>
+      <url>https://4rkal.eu.org/4rkal.png</url>
+      <link>https://4rkal.eu.org/4rkal.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Feb 2023 21:23:38 +0300</lastBuildDate><atom:link href="https://4rkal.eu.org/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating your web browser with selenium</title>
+      <link>https://4rkal.eu.org/posts/selenium/</link>
+      <pubDate>Wed, 22 Feb 2023 21:23:38 +0300</pubDate>
+      
+      <guid>https://4rkal.eu.org/posts/selenium/</guid>
+      <description>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.
+In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.medium.com/f1df170bcc08/python-for-beginners)
+What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation.</description>
+      <content:encoded><![CDATA[<p><strong>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.</strong></p>
+<p>In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (<a href="https://4rkal.medium.com/f1df170bcc08/python-for-beginners">https://4rkal.medium.com/f1df170bcc08/python-for-beginners</a>)</p>
+<h1 id="what-is-selenium">What is selenium?</h1>
+<p>Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. You can use selenium in multiple programming languages including JavaScript (Node.js), C#, Groovy, Java, Perl, PHP, Python, Ruby and Scala and with multiple web browsers including firefox, internet explorer, safary, opera, chrome and edge. Selenium can be very useful for web scraping, automating boring and manual tasks and so much more.</p>
+<h1 id="setup">Setup</h1>
+<p>To install selenium you first have to install a browser driver. Here is the list of supported web browsers :</p>
+<ul>
+<li>Firefox</li>
+<li>Internet Explorer?</li>
+<li>Safari</li>
+<li>Opera</li>
+<li>Chrome</li>
+<li>Edge
+In this article we will be using firefox geckodriver. But you can use any of the browser drivers above.</li>
+</ul>
+<h1 id="downloading-geckodriver">Downloading geckodriver</h1>
+<p>To get started go to github.com/mozilla/geckodriver/releases
+Scroll down and select the package for your computer.
+I’ll use geckodriver-v0.31.0-linux64.tar.gz because I’m using a linux 64-bit computer.</p>
+<h1 id="installing-geckodriver">Installing geckodriver</h1>
+<p>The setup varies depending on your operating system.</p>
+<p>If you are using Arch Linux:
+You can install geckodriver from the aur. Using your favourite aur helper</p>
+<p>On linux:</p>
+<ol>
+<li>Unzip the file</li>
+<li>Make the file executable
+<code>chmod +x geckodriver</code></li>
+<li>Add the driver to your PATH so other tools can find it:
+<code>export PATH=$PATH:/path-to-extracted-file/</code>
+On windows:</li>
+<li>Unzip the file</li>
+<li>Paste the file in the directory that your script will run</li>
+</ol>
+<h1 id="installing-selenium">Installing selenium</h1>
+<p>To install selenium you have to have python and pip installed.Check out my article on python for <a href="../posts/python">more</a>
+To install selenium open your cmd or terminal and type:<br>
+<code>pip install selenium</code>
+That should install it.\</p>
+<h1 id="basics-of-selenium">Basics of selenium</h1>
+<p>The first thing we have to do is to create a new file with the .py ending eg. main.py<br>
+After you have created it open it in your ide or editor of choice.\</p>
+<p>The first thing that we have to do is to import the selenium webdriver :
+<code> from selenium import webdriver</code><br>
+After that we have to specify what webdriver we are using. In our case its firefox
+<code> browser = webdriver.Firefox()</code><br>
+Now we need to specify the url that we want it to go to eg python.org</p>
+<pre tabindex="0"><code>browser.get(&#39;https://python.org&#39;)
+The full code so far is:\
+import selenium
+from selenium import webdriver
+browser = webdriver.Firefox()
+browser.get(&#39;https://python.org&#39;)
+</code></pre><p>Now we might want it to click on the Downloads button</p>
+<p>There are a few ways to do this</p>
+<h1 id="method-1-of-clicking-a-button">Method 1 of clicking a button</h1>
+<p>The first is with XPATH<br>
+To find the xpath of a button / object on a website you have to open your web browser go to the desired website and hit F12 to get the development tools. Now you should click on the select tool (See below)
+<img loading="lazy" src="/../assets/inspect.png" type="" alt="Inspect element"  />
+Click on it and after that hover above the downloads button with your mouse and click it. After that you should see a bit of code getting highlighted. Right click on the bit of code and select Copy then select Xpath
+<img loading="lazy" src="/../assets/copy.png" type="" alt="1"  />
+Now go back to the python file and type:<br>
+<code>driver.find_element(By.XPATH, 'XPATH_HERE')</code><br>
+This will throw an error, to fix that error simply add this at the top of the file<br>
+<code> from selenium.webdriver.common.by import By</code><br>
+Your code so far should look like this</p>
+<pre tabindex="0"><code>import selenium
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+browser = webdriver.Firefox()
+browser.get(&#39;https://python.org&#39;)
+browser.find_element(By.XPATH, &#39;/html/body/div/header/div/nav/ul/li[2]/a&#39;).click()
+</code></pre><h1 id="method-2">Method 2</h1>
+<p>XPATH with text
+The second method is a bit simpler but not as reliable as the first as there might be many objects with the same name.<br>
+To use this method type:
+<code>browser.find_element(By.XPATH, &quot;//*[contains(text(), 'Downloads')]&quot;).click()</code>
+Your code should look something like this</p>
+<pre tabindex="0"><code>import selenium
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+browser = webdriver.Firefox()
+browser.get(&#39;https://python.org&#39;)
+browser.find_element(By.XPATH, &#34;//*[contains(text(), &#39;Downloads&#39;)]&#34;).click()
+</code></pre><p>. . . . .</p>
+<p>There many methods on how to locate elements but the above i believe are the easiest.
+The methods are the following</p>
+<ul>
+<li>By.ID</li>
+<li>By.NAME</li>
+<li>By.XPATH</li>
+<li>By.LINK-TEXT</li>
+<li>By.TAG_NAME</li>
+<li>By.CLASS_NAME</li>
+<li>By.CSS_SELECTOR\</li>
+</ul>
+<p>Read more here: <a href="https://selenium-python.readthedocs.io/locating-elements.html">https://selenium-python.readthedocs.io/locating-elements.html</a></p>
+<h1 id="typing-text-into-input-fields">Typing text into input fields.</h1>
+<p>Typing text into input fields is pretty straight forward.<br>
+For that we will use any of the above methods. I&rsquo;m going to use xpath.<br>
+Find the xpath of any input field, I&rsquo;m going to use the google.com search field<br>
+Copy the xpath and type:<br>
+<code>a = browser.find_element(By.XPATH, &quot;XPATH_HERE&quot;)</code>
+Paste the xpath in XPATH_HERE</p>
+<p>To send keys we need to import the selenium.webdriver.common.keys library for that paste this line of code at the top of your file<br>
+<code>from selenium.webdriver.common.keys import Keys</code><br>
+Now type:<br>
+<code>a.send_keys(&quot;python&quot;)</code><br>
+After that we want to press the enter key for that type:<br>
+<code>a.send_keys(Keys.RETURN)</code><br>
+The full code should look something like this:</p>
+<pre tabindex="0"><code>import selenium
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+browser = webdriver.Firefox()
+browser.get(&#39;https://google.com&#39;)
+a = browser.find_element(By.XPATH, &#34;/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input&#34;)
+a.send_keys(&#34;python&#34;)
+a.send_keys(Keys.RETURN)
+</code></pre><p>GG you just automated your first google search!
+You might first need to accept cookies for that just follow the steps on how to click a button from above.<br>
+Read more about selenium here: <a href="https://selenium-python.readthedocs.io/">https://selenium-python.readthedocs.io/</a>\</p>
+<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
 </rss>

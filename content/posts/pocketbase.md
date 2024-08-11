@@ -1,9 +1,9 @@
 ---
-title: "PocketBase self-hosted Firebase alternative"
+title: PocketBase self-hosted Firebase alternative
 date: 2023-03-06T20:44:46+03:00
 tags:
-- selfhosting
-- privacy
+  - selfhosting
+  - privacy
 ---
 # What is PocketBase
 PocketBase is an open source backend made in go consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.
@@ -44,22 +44,22 @@ Now if you head to http://127.0.0.1:8090/ you should see the website that we ent
 
 If you go to http://127.0.0.1:8090/_/ it will take you to an admin portal. There you should create a account. After you have setted up your account you should see something like this.
 
-{{< image src="../assets/pocketbase.webp" caption="">}}
+![1](../assets/pocketbase.webp)
 
 Here you can add and create users
 
 
-{{< image src="../assets/pocketbase2.webp" caption="">}}
+![2](../assets/pocketbase2.webp)
 
 And also create custom collections eg
 
-{{< image src="../assets/pocketbase3.webp" caption="">}}
+![2](../assets/pocketbase3.webp)
 
 If you click on the settings icon you can see that you will be able to add applications, mail settings, file storage (s3) , export/import collections, add or remove auth providers, token options and add/remove admins.
 
 That’s it for now if you want to learn more check out https://pocketbase.io/docs/
 
-***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+***If you enjoyed this article consider [supporting me](../../donate)***
 
 
 

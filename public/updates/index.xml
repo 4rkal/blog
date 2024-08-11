@@ -1,28 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Updates on 4rkal</title>
     <link>https://4rkal.eu.org/updates/</link>
     <description>Recent content in Updates on 4rkal</description>
-    <generator>Hugo</generator>
+    <image>
+      <url>https://4rkal.eu.org/4rkal.png</url>
+      <link>https://4rkal.eu.org/4rkal.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>4rkal@proton.me (4rkal)</managingEditor>
-    <webMaster>4rkal@proton.me (4rkal)</webMaster>
-    <lastBuildDate>Wed, 11 Oct 2023 21:34:20 +0300</lastBuildDate>
-    <atom:link href="https://4rkal.eu.org/updates/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Oct 2023 21:34:20 +0300</lastBuildDate><atom:link href="https://4rkal.eu.org/updates/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Created the monero archive</title>
       <link>https://4rkal.eu.org/updates/monero-archive/</link>
-      <pubDate>Wed, 11 Oct 2023 21:34:20 +0300</pubDate><author>4rkal@proton.me (4rkal)</author>
+      <pubDate>Wed, 11 Oct 2023 21:34:20 +0300</pubDate>
+      
       <guid>https://4rkal.eu.org/updates/monero-archive/</guid>
       <description>Created the monero archive (tor)</description>
+      <content:encoded><![CDATA[<p>Created the <a href="http://archivetqvrw5cje5alvnpw6xynykae3uaswynheyxxtbwusx72q6nqd.onion/">monero archive</a> (tor)</p>
+]]></content:encoded>
     </item>
+    
     <item>
       <title>Hacktoberfest 2023</title>
       <link>https://4rkal.eu.org/updates/hacktoberfest23/</link>
-      <pubDate>Wed, 11 Oct 2023 21:30:30 +0300</pubDate><author>4rkal@proton.me (4rkal)</author>
+      <pubDate>Wed, 11 Oct 2023 21:30:30 +0300</pubDate>
+      
       <guid>https://4rkal.eu.org/updates/hacktoberfest23/</guid>
-      <description>I am participating in hacktoberfest 2023&#xA;Got a tree planted in my name here</description>
+      <description>I am participating in hacktoberfest 2023
+Got a tree planted in my name here</description>
+      <content:encoded><![CDATA[<p>I am participating in hacktoberfest 2023</p>
+<p>Got a tree planted in my name <a href="https://tree-nation.com/trees/view/5247885">here</a></p>
+]]></content:encoded>
     </item>
+    
   </channel>
 </rss>

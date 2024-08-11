@@ -1,6 +1,7 @@
 ---
-title: "How I setup this blog for free (domain, hosting, ssl) Complete Guide"
+title: How I setup this blog for free (domain, hosting, ssl) Complete Guide
 date: 2023-03-23T18:13:03+03:00
+tags:
 ---
 In this article I’ll show you how I setup this blog completely for free. I’ll show you how to use hugo to write your blog, Cloudflare and eu.org for your domain and ssl, Render and github for the hosting and even how to get your blog on google.
 # What is hugo?
@@ -29,9 +30,9 @@ Unzip the file to your desired directory
 
 Add this directory to the PATH environment variable
 
-{{< admonition type=tip title="Read more:" open=true >}}
+
 Read more: https://gohugo.io/installation/windows/
-{{< /admonition >}}
+
 # Creating the hugo site
 Open up a terminal and type:
 
@@ -43,9 +44,9 @@ And then cd into that directory
 
 After that we will have to install a theme. I will be using the LoveIt theme but you can use any other theme
 
-{{< admonition type=tip title="All hugo themes:" open=true >}}
+All hugo themes
 https://themes.gohugo.io/
-{{< /admonition >}}
+
 For the LoveIt theme:
 
 The first thing we will have to do is type
@@ -116,7 +117,7 @@ languageName = "English"
     noClasses = false
 ```
 
-You can find my configuration {{< link "https://github.com/4rkal/blog/blob/main/config.toml" here >}}
+You can find my configuration [here](https://github.com/4rkal/blog/blob/main/config.toml)
 
 You can view your page live by running
 
@@ -168,7 +169,7 @@ Using the above steps you can add all of your articles to the blog.
 Now that we are done with that let me show you how we will publish our blog.
 
 # Domain
-More like a sub-domain. Head to {{< link eu.org >}} and get a free domain. Create an account and submit a request for a new domain. It might take some time even months to get accepted.
+More like a sub-domain. Head to eu.org and get a free domain. Create an account and submit a request for a new domain. It might take some time even months to get accepted.
 
 I have already registered 4rkal.eu.org from there.
 
@@ -176,13 +177,13 @@ Now we will have to get some ssl certificates using cloudflare.
 
 SSL certificates just make your site use https instead of http this is really great for seo and doesn’t make your site look sus.
 
-Head over to {{< link cloudflare.com>}} and create an account for free.
+Head over to cloudflare.com and create an account for free.
 
 After you are done with that go to your dashboard and select websites and then add a site.
 
 You should see something like this
 
-{{< image src="../assets/cloudflare.webp" caption="">}}
+![](../assets/cloudflare.webp)
 
 Enter your websites url and click on add site.
 
@@ -205,7 +206,7 @@ uriah.ns.cloudflare.com
 
 Here’s how it should probably look:
 
-{{< image src="../assets/euorg.webp" caption="">}}
+![](../assets/euorg.webp)
 
 Now click on the submit button.
 
@@ -222,7 +223,7 @@ If you get an error you probably screwed up one of the above steps. Just try aga
 After your name servers have been changed and everything is done, in your domain dashboard select SSL/TLS. Just select full encryption.
 
 # Hosting our site.
-First create a github account. Head to github.com for that. You will also have to install {{< link "https://git-scm.com/" git>}}
+First create a github account. Head to github.com for that. You will also have to install [git](https://git-scm.com/)
 
 After you have done that navigate to your blog’s root directory and type:
 ```
@@ -251,7 +252,7 @@ Now push the changes with
 
 After that if you refresh the page of your github repo you should see everything there.
 
-Now head to {{< link render.com >}} and create an account
+Now head to [render.com](render.com) and create an account
 
 On your dashboard select +New and then static site.
 
@@ -259,7 +260,7 @@ Now you will be prompted to connect a github repository. Just connect your accou
 
 eg
 
-{{< image src="../assets/render.webp" caption="">}}
+![](../assets/render.webp)
 
 Now enter a service name eg myblog and in the publish directory just add
 
@@ -289,7 +290,7 @@ https://developers.google.com/search
 
 For bing it should be pretty much the same process on https://www.bing.com/webmasters/
 
-***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+***If you enjoyed this article consider [supporting me](../../donate)**
 
 
 

@@ -1,8 +1,9 @@
 ---
-title: "How SSH works"
+title: How SSH works
 date: 2023-02-25T19:36:25+03:00
 tags:
-- ssh
+  - "ssh"
+  - "linux"
 ---
 If you work in the IT industry, you’ve undoubtedly heard of ssh. But how does it work?\
 SSH (secure shell) is a network protocol that allows two computers to connect securely over the internet. SSH uses encryption to prevent hackers from reading data sent between two connected devices.\
@@ -59,5 +60,5 @@ Using a public network, machines can safely collaborate to build a cryptographic
 
 By carrying out the above processes, both machines determine the identical value, which is their secret key. The server then makes an attempt to verify the user's identity who made the access request.
 
-***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+***If you enjoyed this article consider [supporting me](../../donate)
 

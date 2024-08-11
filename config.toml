@@ -1,81 +1,16 @@
 baseURL = 'https://4rkal.eu.org/'
 languageCode = 'en-us'
 title = '4rkal'
-theme = "LoveIt"
+theme = "PaperModX"
 languageName = "English"
 paginate = 100
 enableRobotsTXT = true
-[author]
-name = "4rkal"
-email = "4rkal@proton.me"
-[params.social]
-Twitter = "4rkal_"
-Github = "4rkal"
-Reddit = "4rkal"
-RSS = true
-[params]
 defaultTheme = "dark"
-images = ["https://i.imgur.com/kjfjamG.jpeg"]
-Description = "4rkal's personal blog"
 [params.header]
 desktopMode=  "fixed"
 mobileMode = "auto"
-  [params.header.title]
-  name = "4rkal"
-  logo = "https://i.imgur.com/kjfjamG.jpeg"
 [outputs]
 home = ["HTML", "RSS", "JSON"]
-[params.search]
-  enable = true
-  # type of search engine ["lunr", "algolia"]
-  type = "lunr"
-  # max index length of the chunked content
-  contentLength = 4000
-  # placeholder of the search bar
-  placeholder = ""
-  # LoveIt NEW | 0.2.1 max number of results length
-  maxResultLength = 10
-  # LoveIt NEW | 0.2.3 snippet length of the result
-  snippetLength = 30
-  # LoveIt NEW | 0.2.1 HTML tag name of the highlight part in results
-  highlightTag = "em"
-  # LoveIt NEW | 0.2.4 whether to use the absolute URL based on the baseURL in search index
-  absoluteURL = false
-  [params.search.algolia]
-    index = ""
-    appID = ""
-    searchKey = ""
- [params.seo]
-    # image URL
-    image = "https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
-    # thumbnail URL
-    thumbnailUrl = ""
-   [params.page.share]
-      enable = true
-      Twitter = true
-      Facebook = false 
-      Linkedin = false 
-      Whatsapp = false
-      Pinterest = false
-      Tumblr = false
-      HackerNews = true
-      Reddit = true 
-      VK = false
-      Buffer = false
-      Xing = false
-      Line = false 
-      Instapaper = false
-      Pocket = false
-      Flipboard = false
-      Weibo = false 
-      Blogger = false
-      Baidu = false
-      Odnoklassniki = false
-      Evernote = false
-      Skype = false
-      Trello = false
-      Mix = false
-
 [menu]
   [[menu.main]]
     weight = 1
@@ -111,16 +46,43 @@ home = ["HTML", "RSS", "JSON"]
  identifier = "Donate"
  name = "Donate"
  url = "/donate/"
-[params.home]
-rss = 10
-  [params.home.profile]
-  enabled = true
-  subtitle = "Programmer, crypto enthusiast."
-  avatarURL = "https://miro.medium.com/fit/c/96/96/1*GdbqNZk6c1ZxofwoXxehGA.jpeg"
-[params.page.toc]
-  enabled=true
-  keepStatic = false 
-  auto=true 
+ 
+ [[menu.main]]
+  weight = 6
+  identifier = "Search"
+  name = "Search"
+  url = "/search/"
+  title = "Search the site"
+
+
+
+[params.homeInfoParams]
+Title = "Welcome to 4rkal's blog 👋"
+Content = "I'm **4rkal**. I generally post random stuff I stumble upon. Mostly about [<u>**linux**</u>](../../tags/linux), [<u>**privacy**</u>](../../tags/privacy), [<u>**crypto**</u>](../../tags/crypto), and [<u>**programming**</u>](../../tags/programming). I also love [<u>**selfhosting**</u>](../../tags/selfhosting) stuff."
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/4rkal"
+
+[[params.socialIcons]]
+name = "twitter"
+url = "https://x.com/4rkal_"
+
+[[params.socialIcons]]
+name = "email"
+url = "mailto:4rkal@horsefucker.org"
+
+[[params.socialIcons]]
+name = "monero"
+url = "/donate/"
+
+[[params.socialIcons]]
+name = "pgpkey"
+url = ""
+
+[[params.socialIcons]]
+name= "rss"
+url="/index.xml"
 
 [sitemap]
   changefreq = 'always'
@@ -129,4 +91,25 @@ rss = 10
 [markup.goldmark.renderer]
 unsafe = true
 [params.analytics.plausible]
- dataDomain = "4rkal.eu.org"
+dataDomain = "4rkal.eu.org"
+
+[label]
+text = "Home"
+icon = "/favicon.ico"
+iconHeight = 35
+iconWidth = 35
+
+[params]
+description = "4rkal's blog"
+images = ["4rkal.png"]
+favicon = "4rkal.png"
+TocOpen = true
+TocSide = "left"
+ShowReadingTime = true
+ShowWordCount = true
+ShowShareButtons = true
+ShowCodeCopyButtons = true
+
+
+[params.logo]
+icon = "4rkal.png"

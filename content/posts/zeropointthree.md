@@ -1,17 +1,16 @@
 ---
-title: "Why computers can’t represent 0.3 accurately"
+title: Why computers can’t represent 0.3 accurately
 date: 2023-02-21T19:27:44+03:00
-image : ../assets/zeropointthree.png
+image: ../assets/zeropointthree.png
 resources:
-- name: zeropointthree
-  src:  ../assets/zeropointthree.png
-
-
+  - name: zeropointthree
+    src: ../assets/zeropointthree.png
+tags:
 ---
 **Most people know that adding up 0.1 + 0.2 equals 0.3. However computers represent it as 0.30000000000000004 .**
 
 Here is a screenshot of it in python3
-{{< image src="../assets/zeropointthree.png" caption="0.1+0.2 in python">}}
+![0.1+0.2 in python](../assets/zeropointthree.png)
 
 Your first thought might be that this is just some kind of error. Well its not
 
@@ -27,12 +26,10 @@ On the other hand, fractions can be represented precisely in the base 2 (binary)
 - Whereas 1/5 (0.2) or 1/10 (0.1) are repeating decimals.
 When you perform math on these repeating decimals, you end up with leftovers which carry over when you convert the computer’s base-2 (binary) number into a more human-readable base-10 representation.
 
-{{< admonition type=tip title="Read more" open=true >}}
-0.300.com:\
-{{< link "https://0.30000000000000004.com/" >}}\
+Read more:
+0.300.com
 Wikipedia:\
-{{< link "https://en.wikipedia.org/wiki/Floating-point_arithmetic" >}}
-{{< /admonition >}}
+https://en.wikipedia.org/wiki/Floating-point_arithmetic
 
-***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+**If you enjoyed this article consider [donating](../donate)**
 

@@ -1,6 +1,8 @@
 ---
-title: "Create a MultiBoot USB using ventoy"
+title: Create a MultiBoot USB using ventoy
 date: 2023-03-06T20:11:51+03:00
+tags:
+  - linux
 ---
 With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.
 
@@ -23,7 +25,7 @@ After you have extracted the file open the folder and click on the VentoyGUI .
 Depending on your processor type select the file ending in either aarch64 i386 mips64el or x86_64. (It will most probably be x86_64).
 
 After that you should see something like this:
-{{< image src="../assets/ventoy.webp" caption="">}}
+![](../assets/ventoy.webp)
 
 Select your device from the devices tab
 
@@ -36,7 +38,7 @@ Then click on the file called Ventoy2Disk.exe
 
 You should see something like this
 
-{{< image src="../assets/ventoy-win.webp" caption="">}}
+![](../assets/ventoy-win.webp)
 
 Select your usb device from the drop down and click on install.
 
@@ -45,5 +47,5 @@ To use ventoy all you have to do is paste your iso files inside of the usb. No f
 
 **GG** you have now installed ventoy
 
-***If you enjoyed this article consider {{< link "../../donate" "supporting me" >}}***  
+***If you enjoyed this article consider [supporting me](../../donate)**
 
