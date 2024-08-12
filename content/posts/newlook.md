@@ -17,6 +17,8 @@ For anyone wondering this what [the website used to look like](https://web.archi
 ## More articles to come!
 The theme wasn't the only change that I made. After a pretty long break, I have decided to start publishing articles regularly again! 
 
+I will also start to update any outdated articles
+
 So, stay tuned - There's more content to come!
 
 Subscribe to my RSS feed to stay up to date [here](../../index.xml)
