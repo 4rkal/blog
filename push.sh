@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ~/Documents/blog2
+cd ~/Documents/blog
 
 hugo
 

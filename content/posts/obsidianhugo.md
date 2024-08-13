@@ -1,8 +1,8 @@
 ---
 title: My Obsidian + Hugo blogging setup (Auto publishing with hotkeys)
-description: In this post I go through how I have setup my obsidian and hugo blogging workflow
+description: In this post I go through how I have setup my Obsidian and Hugo blogging workflow. I use a single vault and auto publish my articles with hotkeys.
 date: 2024-08-13T17:15:57+03:00
-draft: false
+draft: true
 ---
 If you clicked on this article you post probably know what these two technologies are but if you don't here's a quick explanation:
 
@@ -153,8 +153,9 @@ I also want to be able to automatically publish my articles. But I also want it 
 I wrote a small script that does exactly that:
 ```shell
 #!/bin/bash
+cd ~/Documents/blog
 
-hugo 
+hugo
 
 git add .
 git commit -m "new"
@@ -167,11 +168,20 @@ Don't forget to make the script executable by running
 
 `chmod +x ./script.sh`
 
+Then create a new shell command (as we did before) and enter the path to your script.
+
+In my case that is:
+
+`~/Documents/blog2/push.sh`
+
+Then enter a hotkey and you're done!
 ## Conclusion
 I can now simply open my obsidian vault, create a new file, insert my template and have all the info automatically entered. 
 
 I then write my article inside of obsidian
 
-Run my hotkey and copy all the files into the 
+Run my hotkey and copy all the files into the hugo directory
+
+Hit another key and my blog is published!
 
 **If you enjoyed this article consider [supporting me](https://4rkal.eu.org/donate)**
