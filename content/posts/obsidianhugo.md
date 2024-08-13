@@ -14,7 +14,7 @@ Obsidian works on all platforms. So you can write articles from basically any pl
 I have been taking all of my notes in it for a couple of months now and it's amazing!
 
 ### Hugo
-[Hugo](https://gohugo.io) is a ultra fast static website generator made in golang. I have been using hugo for my blog for almost 2 years now. I recently switched the theme of my my blog. Read more about the change [New Look, new start](https://4rkal.eu.org/posts/newlook?utm_source=internal&utm_campaign=obsidianhugo). 
+[Hugo](https://gohugo.io) is an ultra fast static website generator made in golang. I have been using hugo for my blog for almost 2 years now. I recently switched the theme of my my blog. Read more about the change [New Look, new start](https://4rkal.eu.org/posts/newlook?utm_source=internal&utm_campaign=obsidianhugo). 
 
 # Setup
 In this article I will not be showing how to setup these two technologies but merely how to get them to work together. 
