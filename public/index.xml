@@ -292,6 +292,13 @@ Requirements: A computer &amp;ldquo;server&amp;rdquo; (running linux) A internet
 <p>After this you can enable KeyBased authentication for more security</p>
 <p>Here is my article how to enable that :</p>
 <p><a href="https://4rkal.eu.org/posts/sssh/">Enable keybased authentication</a></p>
+<p>Now we will have to install and setup tor</p>
+<p>On debian:</p>
+<p><code>sudo apt install tor</code></p>
+<p>On arch</p>
+<p><code>sudo pacman -S tor</code></p>
+<p>Start tor with</p>
+<p><code>sudo systemctl start tor</code></p>
 <p>After you have done that you want to edit your torrc file. Using your favorite text editor</p>
 <p><code>sudo vim /etc/tor/torrc</code></p>
 <p>Now you will want to navigate to the part that says HiddenService. And paste the following</p>
