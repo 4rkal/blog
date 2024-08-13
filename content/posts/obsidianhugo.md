@@ -4,7 +4,7 @@ description: In this post I go through how I have setup my Obsidian and Hugo blo
 date: 2024-08-13T17:15:57+03:00
 draft: false
 ---
-If you clicked on this article you post probably know what these two technologies are but if you don't here's a quick explanation:
+If you clicked on this article you probably know what these two technologies are but if you don't here's a quick explanation:
 
 ### Obsidian
 [Obsidian](https://obsidian.md) is a feature packed markdown editor. But it's not just a markdown editor. It's a way to manage knowledge. It's great for organizing your thoughts in a flexible, non-linear way. 
@@ -14,12 +14,12 @@ Obsidian works on all platforms. So you can write articles from basically any pl
 I have been taking all of my notes in it for a couple of months now and it's amazing!
 
 ### Hugo
-[Hugo](https://gohugo.io) is a ultra fast static website generator made in golang. I have been using hugo for my blog for almost 2 years now. I recently switched the theme of my my blog. Read more about the change [New Look, new start](https://4rkal.eu.org/posts/newlook/). 
+[Hugo](https://gohugo.io) is a ultra fast static website generator made in golang. I have been using hugo for my blog for almost 2 years now. I recently switched the theme of my my blog. Read more about the change [New Look, new start](https://4rkal.eu.org/posts/newlook?utm_source=internal&utm_campaign=obsidianhugo). 
 
 # Setup
 In this article I will not be showing how to setup these two technologies but merely how to get them to work together. 
 
-If you wan't to learn how I setup this whole blog using hugo read:
+If you wan't to learn how I setup this whole blog using hugo, cloudflare and render.com read:
 [How I setup this blog for free (domain, hosting, ssl) Complete Guide](https://4rkal.eu.org/posts/thisblog?utm_source=internal&utm_campaign=obsidianhugo)
 
 If you wan't a good guide on how to use obsidian read:
@@ -68,7 +68,7 @@ This means that people can not propose changes to any of my articles
 ### Mistake #2
 
 I wanted to have my folders synced. I tried writing a couple of bash scripts that automatically synced the two folders using a cronjob. 
-However having that constantly running the background is a waste of resources when I am not running.
+However having that constantly running the background is a waste of resources when I am not writing.
 Simply running the scripts via cli is just not that smooth.
 
 # The Sauce
@@ -87,9 +87,10 @@ vault/Blog
 
 After that I copied over all of my files from the content directory to the Blog.
 
-I then started writing this very article
+*I then started writing this very article*
 
-However I needed some way to setup a simple template to contain all of the required hugo front matter. 
+## Obsidian templates
+I needed some way to setup a simple template to contain all of the required hugo front matter. 
 
 That is quite easy.
 
@@ -110,9 +111,9 @@ draft: true
 **If you enjoyed this article consider [supporting me](https://4rkal.eu.org/donate)**
 ```
 
-I have all the required front matter including a title, description and a date in the format the hugo asks.
+I have all the required front matter including a title, description and a date in the format that hugo asks.
 
-I also added a small donation text that I include at the bottom of every article so that it can be added automatically. 
+I also added a small donation text that I include at the bottom of every article.
 
 This means that I can automatically insert this template into any file and start writing!
 
@@ -151,7 +152,7 @@ My hotkey is `CTR + 0`, simply because that was available.
 Now every time that I run the hotkey it copies over all of my files to the hugo folder ready to be published
 
 ## Auto publishing scripts
-I also want to be able to automatically publish my articles. But I also want it to run as a hotkey.
+I also want to be able to automatically publish my articles. But I want it to happening by hitting a hotkey.
 
 I wrote a small script that does exactly that:
 ```shell
@@ -169,9 +170,9 @@ This script will build my website, commit and push to my github repo, where it i
 
 Don't forget to make the script executable by running
 
-`chmod +x ./script.sh`
+`chmod +x ./YOURSCRIPT.sh`
 
-Then create a new shell command (as we did before) and enter the path to your script.
+Then create a new shell command for the shellcommand plugin (as we did before) and enter the path to your script.
 
 In my case that is:
 
