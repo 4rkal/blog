@@ -47,6 +47,8 @@ After that we will have to install a theme. I will be using the LoveIt theme but
 All hugo themes
 https://themes.gohugo.io/
 
+**NOTE: I now use a completely different theme [New look, new start](https://4rkal.eu.org/posts/newlook/)** 
+
 For the LoveIt theme:
 
 The first thing we will have to do is type
