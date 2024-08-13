@@ -137,7 +137,7 @@ On Linux/MacOS that is:
 
 `cp -a ~/folder1/. ~/folder2/` 
 
-in my case that is `cp -a ~/Documents/vault/Blog/. ~/Documents/blog2/content/`
+in my case that is `cp -a ~/Documents/vault/Blog/. ~/Documents/blog/content/`
 
 On windows it most probably is:
 
@@ -152,7 +152,7 @@ My hotkey is `CTR + 0`, simply because that was available.
 Now every time that I run the hotkey it copies over all of my files to the hugo folder ready to be published
 
 ## Auto publishing scripts
-I also want to be able to automatically publish my articles. But I want it to happening by hitting a hotkey.
+I also want to be able to automatically publish my articles. But I want it to happen when hitting a hotkey.
 
 I wrote a small script that does exactly that:
 ```shell
@@ -176,7 +176,7 @@ Then create a new shell command for the shellcommand plugin (as we did before) a
 
 In my case that is:
 
-`~/Documents/blog2/push.sh`
+`~/Documents/blog/push.sh`
 
 Then enter a hotkey and you're done!
 ## Conclusion

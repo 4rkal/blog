@@ -109,7 +109,7 @@ draft: true
 </ol>
 <p>On Linux/MacOS that is:</p>
 <p><code>cp -a ~/folder1/. ~/folder2/</code></p>
-<p>in my case that is <code>cp -a ~/Documents/vault/Blog/. ~/Documents/blog2/content/</code></p>
+<p>in my case that is <code>cp -a ~/Documents/vault/Blog/. ~/Documents/blog/content/</code></p>
 <p>On windows it most probably is:</p>
 <p><code>robocopy &quot;%USERPROFILE%\folder1&quot; &quot;%USERPROFILE%\folder2&quot; /E /COPYALL</code></p>
 <p>After that we need to set a hotkey that will run the command</p>
@@ -117,7 +117,7 @@ draft: true
 <p>My hotkey is <code>CTR + 0</code>, simply because that was available.</p>
 <p>Now every time that I run the hotkey it copies over all of my files to the hugo folder ready to be published</p>
 <h2 id="auto-publishing-scripts">Auto publishing scripts</h2>
-<p>I also want to be able to automatically publish my articles. But I want it to happening by hitting a hotkey.</p>
+<p>I also want to be able to automatically publish my articles. But I want it to happen when hitting a hotkey.</p>
 <p>I wrote a small script that does exactly that:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>cd ~/Documents/blog
@@ -132,7 +132,7 @@ draft: true
 <p><code>chmod +x ./YOURSCRIPT.sh</code></p>
 <p>Then create a new shell command for the shellcommand plugin (as we did before) and enter the path to your script.</p>
 <p>In my case that is:</p>
-<p><code>~/Documents/blog2/push.sh</code></p>
+<p><code>~/Documents/blog/push.sh</code></p>
 <p>Then enter a hotkey and you&rsquo;re done!</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>I can now simply open my obsidian vault, create a new file, insert my template and have all the info automatically entered.</p>
