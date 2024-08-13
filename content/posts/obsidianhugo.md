@@ -2,7 +2,7 @@
 title: My Obsidian + Hugo blogging setup (Auto publishing with hotkeys)
 description: In this post I go through how I have setup my Obsidian and Hugo blogging workflow. I use a single vault and auto publish my articles with hotkeys.
 date: 2024-08-13T17:15:57+03:00
-draft: true
+draft: false
 ---
 If you clicked on this article you post probably know what these two technologies are but if you don't here's a quick explanation:
 
@@ -118,7 +118,9 @@ This means that I can automatically insert this template into any file and start
 ## Folder Syncing
 Now I want all of my files in my vault/Blog directory to be copied over to the blog/content
 
-Thank's to a helpful discord user I found the [obsidian-shellcommands](https://github.com/Taitava/obsidian-shellcommands) plugin.
+Thank's to a helpful discord user I found the [obsidian-shellcommands](https://github.com/Taitava/obsidian-shellcommands) plugin. 
+
+**NOTE:** this plugin does not currently work very well with the flatpak version of obsidian (since flatpak isolates the environment) . Using another alternative (.deb or appimage) seems to work.
 
 It allows you to run shell commands in the background with a hotkey.
 
