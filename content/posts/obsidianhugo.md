@@ -30,7 +30,8 @@ My goals for the setup are:
 1. Using a single [obsidian vault](https://help.obsidian.md/Getting+started/Create+a+vault)
 2. Have an easy to use [obsidian template](https://help.obsidian.md/Plugins/Templates) that I can use for my blog posts.
 3. Keep my personal vault folders private.
-4. Have all markdown files in a [public github repository](https://github.com/4rkal/blog/), so that people can propose changes
+4. Auto publish using obsidian hotkeys.
+5. Have all markdown files in a [public github repository](https://github.com/4rkal/blog/), so that people can propose changes
 
 # Existing setup
 The way that my current work flow works is:
