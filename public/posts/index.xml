@@ -90,7 +90,7 @@ draft: true
 ---
 
 
-**If you enjoyed this article consider [supporting me](https://4rkal.eu.org/donate)**
+**If you enjoyed this article consider [supporting me](https://4rkal.com/donate)**
 </code></pre><p>I have all the required front matter including a title, description and a date in the format that hugo asks.</p>
 <p>I also added a small donation text that I include at the bottom of every article.</p>
 <p>This means that I can automatically insert this template into any file and start writing!</p>
@@ -127,7 +127,7 @@ draft: true
 </span></span><span style="display:flex;"><span>git add .
 </span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;new&#34;</span>
 </span></span><span style="display:flex;"><span>git push -u origin main
-</span></span></code></pre></div><p>This script will build my website, commit and push to my github repo, where it is picked up and published. Read <a href="https://4rkal.eu.org/posts/thisblog?utm_source=internal&amp;utm_campaign=obsidianhugo">How I setup this blog for free (domain, hosting, ssl) Complete Guide</a> to learn how to setup your own blog for free.</p>
+</span></span></code></pre></div><p>This script will build my website, commit and push to my github repo, where it is picked up and published. Read <a href="https://4rkal.com/posts/thisblog?utm_source=internal&amp;utm_campaign=obsidianhugo">How I setup this blog for free (domain, hosting, ssl) Complete Guide</a> to learn how to setup your own blog for free.</p>
 <p>Don&rsquo;t forget to make the script executable by running</p>
 <p><code>chmod +x ./YOURSCRIPT.sh</code></p>
 <p>Then create a new shell command for the shellcommand plugin (as we did before) and enter the path to your script.</p>
@@ -139,7 +139,7 @@ draft: true
 <p>I then write my article inside of obsidian</p>
 <p>Run my hotkey and copy all the files into the hugo directory</p>
 <p>Hit another key and my blog is published!</p>
-<p><strong>If you enjoyed this article consider <a href="https://4rkal.eu.org/donate">supporting me</a></strong></p>
+<p><strong>If you enjoyed this article consider <a href="https://4rkal.com/donate">supporting me</a></strong></p>
 ]]></content:encoded>
     </item>
     
