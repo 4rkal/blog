@@ -7,7 +7,15 @@
     <changefreq>always</changefreq>
   </url><url>
     <loc>https://4rkal.eu.org/</loc>
-    <lastmod>2024-08-13T17:15:57+03:00</lastmod>
+    <lastmod>2024-08-14T16:41:25+03:00</lastmod>
+    <changefreq>always</changefreq>
+  </url><url>
+    <loc>https://4rkal.eu.org/updates/newdomain/</loc>
+    <lastmod>2024-08-14T16:41:25+03:00</lastmod>
+    <changefreq>always</changefreq>
+  </url><url>
+    <loc>https://4rkal.eu.org/updates/</loc>
+    <lastmod>2024-08-14T16:41:25+03:00</lastmod>
     <changefreq>always</changefreq>
   </url><url>
     <loc>https://4rkal.eu.org/posts/obsidianhugo/</loc>
@@ -39,10 +47,6 @@
     <changefreq>always</changefreq>
   </url><url>
     <loc>https://4rkal.eu.org/updates/monero-archive/</loc>
-    <lastmod>2023-10-11T21:34:20+03:00</lastmod>
-    <changefreq>always</changefreq>
-  </url><url>
-    <loc>https://4rkal.eu.org/updates/</loc>
     <lastmod>2023-10-11T21:34:20+03:00</lastmod>
     <changefreq>always</changefreq>
   </url><url>
