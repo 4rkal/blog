@@ -50,7 +50,7 @@ After this you can enable KeyBased authentication for more security
 
 Here is my article how to enable that :
 
-[Enable keybased authentication](https://4rkal.eu.org/posts/sssh/)
+[Enable keybased authentication](https://4rkal.com/posts/sssh/)
 
 Now we need to install tor:
 
@@ -132,4 +132,4 @@ To connect to the server run the following command:
 
 With NAME being the name that you gave to the server in the config file.
 
-**If this article helped you out consider [supporting me](https://4rkal.eu.org/donate)**
+**If this article helped you out consider [supporting me](https://4rkal.com/donate)**
