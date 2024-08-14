@@ -1,152 +1,152 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tags on 4rkal</title>
-    <link>https://4rkal.eu.org/tags/</link>
-    <description>Recent content in Tags on 4rkal</description>
+    <title>Tags on 4rkal&#39;s blog</title>
+    <link>https://4rkal.com/tags/</link>
+    <description>Recent content in Tags on 4rkal&#39;s blog</description>
     <image>
-      <url>https://4rkal.eu.org/4rkal.png</url>
-      <link>https://4rkal.eu.org/4rkal.png</link>
+      <url>https://4rkal.com/4rkal.png</url>
+      <link>https://4rkal.com/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Dec 2023 21:00:30 +0300</lastBuildDate><atom:link href="https://4rkal.eu.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Dec 2023 21:00:30 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>crypto</title>
-      <link>https://4rkal.eu.org/tags/crypto/</link>
+      <link>https://4rkal.com/tags/crypto/</link>
       <pubDate>Thu, 14 Dec 2023 21:00:30 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/tags/crypto/</guid>
+      <guid>https://4rkal.com/tags/crypto/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
       <title>article</title>
-      <link>https://4rkal.eu.org/tags/article/</link>
+      <link>https://4rkal.com/tags/article/</link>
       <pubDate>Wed, 04 Oct 2023 19:17:04 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/tags/article/</guid>
+      <guid>https://4rkal.com/tags/article/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
       <title>linux</title>
-      <link>https://4rkal.eu.org/tags/linux/</link>
+      <link>https://4rkal.com/tags/linux/</link>
       <pubDate>Wed, 04 Oct 2023 19:17:04 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/tags/linux/</guid>
+      <guid>https://4rkal.com/tags/linux/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
       <title>ssh</title>
-      <link>https://4rkal.eu.org/tags/ssh/</link>
+      <link>https://4rkal.com/tags/ssh/</link>
       <pubDate>Wed, 04 Oct 2023 19:17:04 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/tags/ssh/</guid>
+      <guid>https://4rkal.com/tags/ssh/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
       <title>programming</title>
-      <link>https://4rkal.eu.org/tags/programming/</link>
+      <link>https://4rkal.com/tags/programming/</link>
       <pubDate>Mon, 06 Mar 2023 20:52:42 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/tags/programming/</guid>
+      <guid>https://4rkal.com/tags/programming/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
       <title>python</title>
-      <link>https://4rkal.eu.org/tags/python/</link>
+      <link>https://4rkal.com/tags/python/</link>
       <pubDate>Mon, 06 Mar 2023 20:52:42 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/tags/python/</guid>
+      <guid>https://4rkal.com/tags/python/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
       <title>privacy</title>
-      <link>https://4rkal.eu.org/tags/privacy/</link>
+      <link>https://4rkal.com/tags/privacy/</link>
       <pubDate>Mon, 06 Mar 2023 20:44:46 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/tags/privacy/</guid>
+      <guid>https://4rkal.com/tags/privacy/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
       <title>selfhosting</title>
-      <link>https://4rkal.eu.org/tags/selfhosting/</link>
+      <link>https://4rkal.com/tags/selfhosting/</link>
       <pubDate>Mon, 06 Mar 2023 20:44:46 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/tags/selfhosting/</guid>
+      <guid>https://4rkal.com/tags/selfhosting/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
       <title>monero</title>
-      <link>https://4rkal.eu.org/tags/monero/</link>
+      <link>https://4rkal.com/tags/monero/</link>
       <pubDate>Mon, 06 Mar 2023 20:23:16 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/tags/monero/</guid>
+      <guid>https://4rkal.com/tags/monero/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
       <title>networking</title>
-      <link>https://4rkal.eu.org/tags/networking/</link>
+      <link>https://4rkal.com/tags/networking/</link>
       <pubDate>Sun, 05 Mar 2023 17:37:03 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/tags/networking/</guid>
+      <guid>https://4rkal.com/tags/networking/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
       <title>nmap</title>
-      <link>https://4rkal.eu.org/tags/nmap/</link>
+      <link>https://4rkal.com/tags/nmap/</link>
       <pubDate>Sun, 05 Mar 2023 17:37:03 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/tags/nmap/</guid>
+      <guid>https://4rkal.com/tags/nmap/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
       <title>tor</title>
-      <link>https://4rkal.eu.org/tags/tor/</link>
+      <link>https://4rkal.com/tags/tor/</link>
       <pubDate>Fri, 03 Mar 2023 23:03:40 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/tags/tor/</guid>
+      <guid>https://4rkal.com/tags/tor/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
       <title>rpi</title>
-      <link>https://4rkal.eu.org/tags/rpi/</link>
+      <link>https://4rkal.com/tags/rpi/</link>
       <pubDate>Sat, 25 Feb 2023 21:17:13 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/tags/rpi/</guid>
+      <guid>https://4rkal.com/tags/rpi/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
       <title>automation</title>
-      <link>https://4rkal.eu.org/tags/automation/</link>
+      <link>https://4rkal.com/tags/automation/</link>
       <pubDate>Wed, 22 Feb 2023 21:23:38 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/tags/automation/</guid>
+      <guid>https://4rkal.com/tags/automation/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>

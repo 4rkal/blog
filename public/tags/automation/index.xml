@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>automation on 4rkal</title>
-    <link>https://4rkal.eu.org/tags/automation/</link>
-    <description>Recent content in automation on 4rkal</description>
+    <title>automation on 4rkal&#39;s blog</title>
+    <link>https://4rkal.com/tags/automation/</link>
+    <description>Recent content in automation on 4rkal&#39;s blog</description>
     <image>
-      <url>https://4rkal.eu.org/4rkal.png</url>
-      <link>https://4rkal.eu.org/4rkal.png</link>
+      <url>https://4rkal.com/4rkal.png</url>
+      <link>https://4rkal.com/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Feb 2023 21:23:38 +0300</lastBuildDate><atom:link href="https://4rkal.eu.org/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Feb 2023 21:23:38 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automating your web browser with selenium</title>
-      <link>https://4rkal.eu.org/posts/selenium/</link>
+      <link>https://4rkal.com/posts/selenium/</link>
       <pubDate>Wed, 22 Feb 2023 21:23:38 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/posts/selenium/</guid>
+      <guid>https://4rkal.com/posts/selenium/</guid>
       <description>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.
 In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.medium.com/f1df170bcc08/python-for-beginners)
 What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation.</description>

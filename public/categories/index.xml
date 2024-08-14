@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Categories on 4rkal</title>
-    <link>https://4rkal.eu.org/categories/</link>
-    <description>Recent content in Categories on 4rkal</description>
+    <title>Categories on 4rkal&#39;s blog</title>
+    <link>https://4rkal.com/categories/</link>
+    <description>Recent content in Categories on 4rkal&#39;s blog</description>
     <image>
-      <url>https://4rkal.eu.org/4rkal.png</url>
-      <link>https://4rkal.eu.org/4rkal.png</link>
+      <url>https://4rkal.com/4rkal.png</url>
+      <link>https://4rkal.com/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://4rkal.eu.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://4rkal.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

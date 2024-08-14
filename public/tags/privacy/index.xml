@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>privacy on 4rkal</title>
-    <link>https://4rkal.eu.org/tags/privacy/</link>
-    <description>Recent content in privacy on 4rkal</description>
+    <title>privacy on 4rkal&#39;s blog</title>
+    <link>https://4rkal.com/tags/privacy/</link>
+    <description>Recent content in privacy on 4rkal&#39;s blog</description>
     <image>
-      <url>https://4rkal.eu.org/4rkal.png</url>
-      <link>https://4rkal.eu.org/4rkal.png</link>
+      <url>https://4rkal.com/4rkal.png</url>
+      <link>https://4rkal.com/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Mar 2023 20:44:46 +0300</lastBuildDate><atom:link href="https://4rkal.eu.org/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Mar 2023 20:44:46 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PocketBase self-hosted Firebase alternative</title>
-      <link>https://4rkal.eu.org/posts/pocketbase/</link>
+      <link>https://4rkal.com/posts/pocketbase/</link>
       <pubDate>Mon, 06 Mar 2023 20:44:46 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/posts/pocketbase/</guid>
+      <guid>https://4rkal.com/posts/pocketbase/</guid>
       <description>What is PocketBase PocketBase is an open source backend made in go consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.
 Install PocketBase The first thing that you will have to do is head to https://pocketbase.io and select the file for your operating system. Since I am using linux I will show how to set this up on linux but it should be pretty similar for any other os.</description>
       <content:encoded><![CDATA[<h1 id="what-is-pocketbase">What is PocketBase</h1>
@@ -57,10 +57,10 @@ Install PocketBase The first thing that you will have to do is head to https://p
     
     <item>
       <title>How Microsoft is monetizing the GitHub code base</title>
-      <link>https://4rkal.eu.org/posts/githubmon/</link>
+      <link>https://4rkal.com/posts/githubmon/</link>
       <pubDate>Sun, 05 Mar 2023 17:21:56 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/posts/githubmon/</guid>
+      <guid>https://4rkal.com/posts/githubmon/</guid>
       <description>Microsoft purchased GitHub in 2018, something many users are not aware of. After Microsoft’s acquisition of GitHub there have been many controversies like blocking private repositories and access to GitHub pages in certain countries and of course, GitHub Copilot.
 What is Github Copilot GitHub Copilot is an artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code.</description>
       <content:encoded><![CDATA[<p>Microsoft purchased GitHub in 2018, something many users are not aware of. After Microsoft’s acquisition of GitHub there have been many controversies like blocking private repositories and access to GitHub pages in certain countries and of course, GitHub Copilot.</p>
@@ -94,10 +94,10 @@ Read more:
     
     <item>
       <title>Host your own private search engine — searX</title>
-      <link>https://4rkal.eu.org/posts/searx/</link>
+      <link>https://4rkal.com/posts/searx/</link>
       <pubDate>Fri, 03 Mar 2023 23:21:53 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/posts/searx/</guid>
+      <guid>https://4rkal.com/posts/searx/</guid>
       <description>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
 What is searX? Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users.</description>
       <content:encoded><![CDATA[<p>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.</p>
@@ -169,10 +169,10 @@ Now if you head to 127.0.0.1:8888 you should be able to see something like this
     
     <item>
       <title>Become anonymous and somewhat untraceable with tails os</title>
-      <link>https://4rkal.eu.org/posts/tails/</link>
+      <link>https://4rkal.com/posts/tails/</link>
       <pubDate>Fri, 03 Mar 2023 23:03:40 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/posts/tails/</guid>
+      <guid>https://4rkal.com/posts/tails/</guid>
       <description>In this article we will talk about what tails is and how to install and more.
 What is tails? Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</description>
       <content:encoded><![CDATA[<p>In this article we will talk about what tails is and how to install and more.</p>

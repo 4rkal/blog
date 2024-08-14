@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>networking on 4rkal</title>
-    <link>https://4rkal.eu.org/tags/networking/</link>
-    <description>Recent content in networking on 4rkal</description>
+    <title>networking on 4rkal&#39;s blog</title>
+    <link>https://4rkal.com/tags/networking/</link>
+    <description>Recent content in networking on 4rkal&#39;s blog</description>
     <image>
-      <url>https://4rkal.eu.org/4rkal.png</url>
-      <link>https://4rkal.eu.org/4rkal.png</link>
+      <url>https://4rkal.com/4rkal.png</url>
+      <link>https://4rkal.com/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Mar 2023 17:37:03 +0300</lastBuildDate><atom:link href="https://4rkal.eu.org/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Mar 2023 17:37:03 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nmap(Network Mapper) For Beginners</title>
-      <link>https://4rkal.eu.org/posts/nmap/</link>
+      <link>https://4rkal.com/posts/nmap/</link>
       <pubDate>Sun, 05 Mar 2023 17:37:03 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/posts/nmap/</guid>
+      <guid>https://4rkal.com/posts/nmap/</guid>
       <description>Whether you want to scan your network for vulnerabilities or just want to see which ports you have open, nmap can be extremely useful.
 What is nmap Nmap (Network Mapper) is a network scanner created by Gordon Lyon . Nmap sends packets and examines the answers to find hosts and services on a computer network. For probing computer networks, Nmap offers a variety of functionalities, including host discovery, service detection, and operating system detection.</description>
       <content:encoded><![CDATA[<p>Whether you want to scan your network for vulnerabilities or just want to see which ports you have open, nmap can be extremely useful.</p>

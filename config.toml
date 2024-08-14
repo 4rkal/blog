@@ -1,65 +1,81 @@
-baseURL = 'https://4rkal.eu.org/'
-languageCode = 'en-us'
-title = '4rkal'
+baseURL = "https://4rkal.com/"
+languageCode = "en-us"
+title = "4rkal's blog"
 theme = "PaperModX"
 languageName = "English"
 paginate = 100
 enableRobotsTXT = true
 defaultTheme = "dark"
+
+# SEO-related settings
+[params]
+description = "4rkal's blog about linux, privacy, crypto, and programming."
+images = ["4rkal.png"]
+favicon = "4rkal.png"
+TocOpen = true
+TocSide = "left"
+ShowReadingTime = true
+ShowWordCount = true
+ShowShareButtons = true
+ShowCodeCopyButtons = true
+defaultTheme = "dark"
+canonicalURL = "{{ .Permalink }}"
+
+# Header settings
 [params.header]
-desktopMode=  "fixed"
+desktopMode = "fixed"
 mobileMode = "auto"
-[outputs]
-home = ["HTML", "RSS", "JSON"]
+
+# Menu configuration
 [menu]
   [[menu.main]]
     weight = 1
     identifier = "posts"
-    # you can add extra information before the name (HTML format is supported), such as icons
-    pre = ""
-    # you can add extra information after the name (HTML format is supported), such as icons
-    post = ""
     name = "Posts"
     url = "/posts/"
-    # title will be shown when you hover on this menu link
-    title = ""
+    title = "Posts"
+
   [[menu.main]]
     weight = 2
     identifier = "tags"
-    pre = ""
-    post = ""
     name = "Tags"
     url = "/tags/"
-    title = ""
+    title = "Tags"
+
   [[menu.main]]
-  weight = 3
-  identifier = "About"
-  name = "About"
-  url = "/about/"
+    weight = 3
+    identifier = "About"
+    name = "About"
+    url = "/about/"
+    title = "About"
+
   [[menu.main]]
-  weight =4
-  identifier = "Updates"
-  name = "Updates"
-  url = "/updates/"
- [[menu.main]]
- weight = 5
- identifier = "Donate"
- name = "Donate"
- url = "/donate/"
- 
- [[menu.main]]
-  weight = 6
-  identifier = "Search"
-  name = "Search"
-  url = "/search/"
-  title = "Search the site"
+    weight = 4
+    identifier = "Updates"
+    name = "Updates"
+    url = "/updates/"
+    title = "Updates"
 
+  [[menu.main]]
+    weight = 5
+    identifier = "Donate"
+    name = "Donate"
+    url = "/donate/"
+    title = "Donate"
 
+  [[menu.main]]
+    weight = 6
+    identifier = "Search"
+    name = "Search"
+    url = "/search/"
+    title = "Search the site"
 
+# Home Info Params
 [params.homeInfoParams]
 Title = "Welcome to 4rkal's blog 👋"
 Content = "I'm **4rkal**. I post interesting things I stumble upon. Mostly about [<u>**linux**</u>](../../tags/linux), [<u>**privacy**</u>](../../tags/privacy), [<u>**crypto**</u>](../../tags/crypto), and [<u>**programming**</u>](../../tags/programming). I also love [<u>**selfhosting**</u>](../../tags/selfhosting) stuff."
 
+# Social Icons
 [[params.socialIcons]]
 name = "github"
 url = "https://github.com/4rkal"
@@ -78,32 +94,35 @@ url = "/donate/"
 
 [[params.socialIcons]]
 name = "pgpkey"
-url = ""
+url = "/about/"
 
 [[params.socialIcons]]
-name= "rss"
-url="/index.xml"
+name = "rss"
+url = "/index.xml"
 
+# Sitemap settings
 [sitemap]
-  changefreq = 'always'
-  filename = 'sitemap.xml'
+  changefreq = "always"
+  filename = "sitemap.xml"
+  priority = 0.5
 
+# Markup settings
 [markup.goldmark.renderer]
 unsafe = true
-[params.analytics.plausible]
-dataDomain = "4rkal.eu.org"
 
-[params]
-description = "4rkal's blog"
-images = ["4rkal.png"]
-favicon = "4rkal.png"
-TocOpen = true
-TocSide = "left"
-ShowReadingTime = true
-ShowWordCount = true
-ShowShareButtons = true
-ShowCodeCopyButtons = true
-defaultTheme = "dark"
-
+# Logo settings
 [params.logo]
 icon = "4rkal.png"
+
+[params.opengraph]
+enable = true
+title = "{{ .Title }} - 4rkal's blog"
+description = "{{ .Params.description }}"
+image = "{{ .Params.images }}"
+
+[params.twitter]
+enable = true
+card = "summary_large_image"
+title = "{{ .Title }} - 4rkal's blog"
+description = "{{ .Params.description }}"
+image = "{{ .Params.images }}"

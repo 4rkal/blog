@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>selfhosting on 4rkal</title>
-    <link>https://4rkal.eu.org/tags/selfhosting/</link>
-    <description>Recent content in selfhosting on 4rkal</description>
+    <title>selfhosting on 4rkal&#39;s blog</title>
+    <link>https://4rkal.com/tags/selfhosting/</link>
+    <description>Recent content in selfhosting on 4rkal&#39;s blog</description>
     <image>
-      <url>https://4rkal.eu.org/4rkal.png</url>
-      <link>https://4rkal.eu.org/4rkal.png</link>
+      <url>https://4rkal.com/4rkal.png</url>
+      <link>https://4rkal.com/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Mar 2023 20:44:46 +0300</lastBuildDate><atom:link href="https://4rkal.eu.org/tags/selfhosting/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Mar 2023 20:44:46 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/selfhosting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PocketBase self-hosted Firebase alternative</title>
-      <link>https://4rkal.eu.org/posts/pocketbase/</link>
+      <link>https://4rkal.com/posts/pocketbase/</link>
       <pubDate>Mon, 06 Mar 2023 20:44:46 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/posts/pocketbase/</guid>
+      <guid>https://4rkal.com/posts/pocketbase/</guid>
       <description>What is PocketBase PocketBase is an open source backend made in go consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.
 Install PocketBase The first thing that you will have to do is head to https://pocketbase.io and select the file for your operating system. Since I am using linux I will show how to set this up on linux but it should be pretty similar for any other os.</description>
       <content:encoded><![CDATA[<h1 id="what-is-pocketbase">What is PocketBase</h1>
@@ -57,10 +57,10 @@ Install PocketBase The first thing that you will have to do is head to https://p
     
     <item>
       <title>Setup your own git server</title>
-      <link>https://4rkal.eu.org/posts/git/</link>
+      <link>https://4rkal.com/posts/git/</link>
       <pubDate>Sun, 05 Mar 2023 17:11:40 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/posts/git/</guid>
+      <guid>https://4rkal.com/posts/git/</guid>
       <description>There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .
 Requirements A computer for your server (running [[linux]] preferably debian) An internet connection (pretty hard without one) A second computer with git installed Setup The first thing you will have to do is install git via your package manager</description>
       <content:encoded><![CDATA[<p>There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .</p>
@@ -126,10 +126,10 @@ git commit -m &#34;first commit&#34;
     
     <item>
       <title>Host your own private search engine — searX</title>
-      <link>https://4rkal.eu.org/posts/searx/</link>
+      <link>https://4rkal.com/posts/searx/</link>
       <pubDate>Fri, 03 Mar 2023 23:21:53 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/posts/searx/</guid>
+      <guid>https://4rkal.com/posts/searx/</guid>
       <description>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
 What is searX? Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users.</description>
       <content:encoded><![CDATA[<p>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.</p>
@@ -201,10 +201,10 @@ Now if you head to 127.0.0.1:8888 you should be able to see something like this
     
     <item>
       <title>Get ad free web with Pi-hole</title>
-      <link>https://4rkal.eu.org/posts/pihole/</link>
+      <link>https://4rkal.com/posts/pihole/</link>
       <pubDate>Sat, 25 Feb 2023 21:17:13 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/posts/pihole/</guid>
+      <guid>https://4rkal.com/posts/pihole/</guid>
       <description>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&amp;rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.
 What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine.</description>
       <content:encoded><![CDATA[<p>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.</p>
@@ -298,10 +298,10 @@ What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tra
     
     <item>
       <title>Securing ssh with Key-Based authentication</title>
-      <link>https://4rkal.eu.org/posts/sssh/</link>
+      <link>https://4rkal.com/posts/sssh/</link>
       <pubDate>Sat, 25 Feb 2023 21:08:47 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/posts/sssh/</guid>
+      <guid>https://4rkal.com/posts/sssh/</guid>
       <description>SSH keys provide an extremely secure way of logging into your server.
 SSH Password Based VS Key Based Authentication Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts.</description>
       <content:encoded><![CDATA[<p>SSH keys provide an extremely secure way of logging into your server.</p>
@@ -354,10 +354,10 @@ Enter passphrase (empty for no passphrase):
     
     <item>
       <title>Setup a tor website (hidden service)</title>
-      <link>https://4rkal.eu.org/posts/torhs/</link>
+      <link>https://4rkal.com/posts/torhs/</link>
       <pubDate>Sat, 25 Feb 2023 20:56:02 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/posts/torhs/</guid>
+      <guid>https://4rkal.com/posts/torhs/</guid>
       <description>In this article i will be showing you how to host your “dark web” aka Tor website for free.
 What is Tor? Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</description>
       <content:encoded><![CDATA[<p>In this article i will be showing you how to host your “dark web” aka Tor website for free.</p>
@@ -397,7 +397,7 @@ What is Tor? Tor — short for the Onion Routing project — is an open-source p
 <p>Now open your tor browser and paste your address and press enter.</p>
 <p>You will most probably be greeted by the default nginx site.</p>
 <p>This page is easily customized, you can check out my article:
-<a href="https://4rkal.eu.org/posts/shwebsite/">here</a></p>
+<a href="https://4rkal.com/posts/shwebsite/">here</a></p>
 <p>GG you did it you are now running a pretty anonymous website on the tor network.</p>
 <p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
 ]]></content:encoded>
@@ -405,10 +405,10 @@ What is Tor? Tor — short for the Onion Routing project — is an open-source p
     
     <item>
       <title>Self host your own website</title>
-      <link>https://4rkal.eu.org/posts/shwebsite/</link>
+      <link>https://4rkal.com/posts/shwebsite/</link>
       <pubDate>Sat, 25 Feb 2023 20:23:16 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/posts/shwebsite/</guid>
+      <guid>https://4rkal.com/posts/shwebsite/</guid>
       <description>In this article i will show you how to self host your own website securely.
 Requirements A computer or microcomputer to host the website The computer needs to run linux An internet connection (Its pretty hard without one, trust me) Lets get started!
 Installation The first thing that we will have to do is setup our nginx site.
@@ -504,10 +504,10 @@ make install
     
     <item>
       <title>Raspberry pi security camera</title>
-      <link>https://4rkal.eu.org/posts/rpicamera/</link>
+      <link>https://4rkal.com/posts/rpicamera/</link>
       <pubDate>Sat, 25 Feb 2023 20:03:25 +0300</pubDate>
       
-      <guid>https://4rkal.eu.org/posts/rpicamera/</guid>
+      <guid>https://4rkal.com/posts/rpicamera/</guid>
       <description>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.
 Requirements Raspberry pi or any other computer Web cam Any kind of debian based distro installed on the pi/computer Setup In this article we will be using the motion package (https://motion-project.github.io/)
 To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard.</description>
