@@ -58,7 +58,7 @@ home = ["HTML", "RSS", "JSON"]
 
 [params.homeInfoParams]
 Title = "Welcome to 4rkal's blog 👋"
-Content = "I'm **4rkal**. I generally post random stuff I stumble upon. Mostly about [<u>**linux**</u>](../../tags/linux), [<u>**privacy**</u>](../../tags/privacy), [<u>**crypto**</u>](../../tags/crypto), and [<u>**programming**</u>](../../tags/programming). I also love [<u>**selfhosting**</u>](../../tags/selfhosting) stuff."
+Content = "I'm **4rkal**. I post interesting things I stumble upon. Mostly about [<u>**linux**</u>](../../tags/linux), [<u>**privacy**</u>](../../tags/privacy), [<u>**crypto**</u>](../../tags/crypto), and [<u>**programming**</u>](../../tags/programming). I also love [<u>**selfhosting**</u>](../../tags/selfhosting) stuff."
 
 [[params.socialIcons]]
 name = "github"
