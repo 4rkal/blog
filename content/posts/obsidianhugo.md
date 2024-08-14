@@ -108,7 +108,7 @@ draft: true
 ---
 
 
-**If you enjoyed this article consider [supporting me](https://4rkal.eu.org/donate)**
+**If you enjoyed this article consider [supporting me](https://4rkal.com/donate)**
 ```
 
 I have all the required front matter including a title, description and a date in the format that hugo asks.
@@ -166,7 +166,7 @@ git commit -m "new"
 git push -u origin main
 
 ```
-This script will build my website, commit and push to my github repo, where it is picked up and published. Read [How I setup this blog for free (domain, hosting, ssl) Complete Guide](https://4rkal.eu.org/posts/thisblog?utm_source=internal&utm_campaign=obsidianhugo) to learn how to setup your own blog for free.
+This script will build my website, commit and push to my github repo, where it is picked up and published. Read [How I setup this blog for free (domain, hosting, ssl) Complete Guide](https://4rkal.com/posts/thisblog?utm_source=internal&utm_campaign=obsidianhugo) to learn how to setup your own blog for free.
 
 Don't forget to make the script executable by running
 
@@ -188,4 +188,4 @@ Run my hotkey and copy all the files into the hugo directory
 
 Hit another key and my blog is published!
 
-**If you enjoyed this article consider [supporting me](https://4rkal.eu.org/donate)**
+**If you enjoyed this article consider [supporting me](https://4rkal.com/donate)**
