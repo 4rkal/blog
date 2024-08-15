@@ -2,7 +2,6 @@
 title: The importance of open source software
 date: 2023-02-25T20:43:23+03:00
 tags:
-  - article
 ---
 As the linuxfoundation states about 95% of cloud providers run kubernetes which is an open sourced solution, the Apache Web server powers millions of websites including netflix.com, spotify.com and more. Most of the Internets core functions are based on open source technology. But what is it and why is it so important?
 

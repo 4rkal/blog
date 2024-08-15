@@ -3,7 +3,6 @@ title: SSH Remote Access NO Port-Forwarding NO Cloudflare
 date: 2023-10-04T19:17:04+03:00
 draft: false
 tags:
-  - article
   - "ssh"
   - "linux"
 ---
