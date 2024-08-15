@@ -13,7 +13,8 @@ tags:
 ---
 **Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.**
 
-In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn't work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.medium.com/f1df170bcc08/python-for-beginners)
+In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn't work anymore. If you’re a complete beginner, read my python article to understand the basics. [Python for Complete Beginners
+](https://4rkal.com/posts/python/)
 # What is selenium?
 Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. You can use selenium in multiple programming languages including JavaScript (Node.js), C#, Groovy, Java, Perl, PHP, Python, Ruby and Scala and with multiple web browsers including firefox, internet explorer, safary, opera, chrome and edge. Selenium can be very useful for web scraping, automating boring and manual tasks and so much more.
 # Setup
