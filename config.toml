@@ -9,7 +9,8 @@ defaultTheme = "dark"
 
 # SEO-related settings
 [params]
-description = "4rkal's blog about linux, privacy, crypto, and programming."
+description = "4rkal's blog on Software Development, Linux, Crypto, and Selfhosting."
+keywords = ["Software Developer", "Linux", "Crypto", "Selfhosting", "Privacy", "Programming", "Obsidian", "Golang", "Monero"]
 images = ["4rkal.png"]
 favicon = "4rkal.png"
 TocOpen = true
@@ -72,8 +73,8 @@ mobileMode = "auto"
 
 # Home Info Params
 [params.homeInfoParams]
-Title = "Welcome to 4rkal's blog 👋"
-Content = "I'm **4rkal**. I post interesting things I stumble upon. Mostly about [<u>**linux**</u>](../../tags/linux), [<u>**privacy**</u>](../../tags/privacy), [<u>**crypto**</u>](../../tags/crypto), and [<u>**programming**</u>](../../tags/programming). I also love [<u>**selfhosting**</u>](../../tags/selfhosting) stuff."
+Title = "Hi, I'm 4rkal"
+Content = "I post interesting things I stumble upon. Mostly about [<u>**linux**</u>](../../tags/linux), [<u>**privacy**</u>](../../tags/privacy), [<u>**crypto**</u>](../../tags/crypto), and [<u>**programming**</u>](../../tags/programming). I also love [<u>**selfhosting**</u>](../../tags/selfhosting) stuff."
 
 # Social Icons
 [[params.socialIcons]]
