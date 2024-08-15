@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>git on 4rkal&#39;s blog</title>
+    <link>https://4rkal.com/tags/git/</link>
+    <description>Recent content in git on 4rkal&#39;s blog</description>
+    <image>
+      <url>https://4rkal.com/4rkal.png</url>
+      <link>https://4rkal.com/4rkal.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Mar 2023 17:11:40 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup your own git server</title>
+      <link>https://4rkal.com/posts/git/</link>
+      <pubDate>Sun, 05 Mar 2023 17:11:40 +0300</pubDate>
+      
+      <guid>https://4rkal.com/posts/git/</guid>
+      <description>There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .
+Requirements A computer for your server (running [[linux]] preferably debian) An internet connection (pretty hard without one) A second computer with git installed Setup The first thing you will have to do is install git via your package manager</description>
+      <content:encoded><![CDATA[<p>There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>A computer for your server (running [[linux]] preferably debian)</li>
+<li>An internet connection (pretty hard without one)</li>
+<li>A second computer with git installed</li>
+</ol>
+<h1 id="setup">Setup</h1>
+<p>The first thing you will have to do is install git via your package manager</p>
+<p>If you are using apt</p>
+<p><code>sudo apt install git</code></p>
+<p>On dnf</p>
+<p><code>sudo dnf install git</code></p>
+<p>pacman</p>
+<p><code>sudo pacman -S git</code></p>
+<p>After that create a user called git</p>
+<p><code>sudo useradd git</code></p>
+<p>You will have to enter some information, you can leave everything except the password blank.</p>
+<p>Now login to your git user</p>
+<p><code>su git</code></p>
+<p>Now to make our server more secure we are going to use ssh keys.</p>
+<pre tabindex="0"><code>mkdir .ssh
+chmod 700 .ssh/
+touch .ssh/authorized_keys
+chmod 600 .ssh/authorized_keys
+</code></pre><p>Now on the computer which you want to commit from you will have to generate a ssh key
+On your main machine type.
+<a href="../sssh">My article on keybased auth</a></p>
+<p><code>ssh-keygen</code></p>
+<p>After that you will have to copy your ssh public key to the authorized_keys</p>
+<p><code>ssh-copy-id user@ip</code></p>
+<p>(To find out your ip you can type ifconfig)</p>
+<p>Now if you try to connect to your server you should be able to login without a password.</p>
+<p><code>ssh git@ip</code></p>
+<p>Now you will have to create the folder where all your git repos will be saved.</p>
+<p>I will save mine in ~/git , but you can save them wherever you want</p>
+<p><code>mkdir ~/git</code></p>
+<p>Now we have to give the ownership of the git folder to the git user</p>
+<p><code>chown git:git git</code></p>
+<p>Now for every repository you will have to create a folder.</p>
+<p>eg.</p>
+<p><code>mkdir ~/git/my_cool_project.git</code></p>
+<p>Now run</p>
+<p><code>cd ~/git/my_cool_project.git</code></p>
+<p>And initiate the git repository</p>
+<p><code>git init --bare</code></p>
+<p>Now you can create a couple of files inside of your project (to test it out).</p>
+<p><code>touch stuff.txt</code></p>
+<p>Now you can test if your repository is working by cloning the files from another machine running git.</p>
+<p><code>git clone git@ip:~/git/my_cool_project.git</code></p>
+<p>You will probably get</p>
+<p><code>warning: You appear to have cloned an empty repository.</code></p>
+<p>That is because you haven&rsquo;t committed anything.</p>
+<pre tabindex="0"><code>git add .
+git commit -m &#34;first commit&#34;
+</code></pre><p>Now if you test that again it should work.</p>
+<p><strong>GG</strong> you did it, you have now successfully set up your own git server</p>
+<p>***If you enjoyed this article consider <a href="../../donate">supporting me</a></p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

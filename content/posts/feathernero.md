@@ -4,6 +4,7 @@ date: 2023-12-14T21:00:30+03:00
 description: In this comprehensive guide, I will walk you through the process of easily setting up Monero cold storage using an old computer and your smartphone, using animated QR codes. No USB needed!
 tags:
   - "crypto"
+  - "monero"
 ---
 
 In this comprehensive guide, I will walk you through the process of easily setting up Monero cold storage using an old computer and your smartphone, using animated QR codes. No USB needed!

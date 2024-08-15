@@ -56,6 +56,82 @@ Install PocketBase The first thing that you will have to do is head to https://p
     </item>
     
     <item>
+      <title>Nmap(Network Mapper) For Beginners</title>
+      <link>https://4rkal.com/posts/nmap/</link>
+      <pubDate>Sun, 05 Mar 2023 17:37:03 +0300</pubDate>
+      
+      <guid>https://4rkal.com/posts/nmap/</guid>
+      <description>Whether you want to scan your network for vulnerabilities or just want to see which ports you have open, nmap can be extremely useful.
+What is nmap Nmap (Network Mapper) is a network scanner created by Gordon Lyon . Nmap sends packets and examines the answers to find hosts and services on a computer network. For probing computer networks, Nmap offers a variety of functionalities, including host discovery, service detection, and operating system detection.</description>
+      <content:encoded><![CDATA[<p>Whether you want to scan your network for vulnerabilities or just want to see which ports you have open, nmap can be extremely useful.</p>
+<h1 id="what-is-nmap">What is nmap</h1>
+<p>Nmap (Network Mapper) is a network scanner created by Gordon Lyon . Nmap sends packets and examines the answers to find hosts and services on a computer network. For probing computer networks, Nmap offers a variety of functionalities, including host discovery, service detection, and operating system detection. Scripts that offer more sophisticated service discovery, vulnerability detection, and other features can extend these features. During a scan, Nmap can adjust to changing network conditions, such as latency and congestion.</p>
+<h1 id="installation">Installation</h1>
+<p>Nmap is available for linux, windows , mac os and even bsd</p>
+<p>If you are using linux you can install it using your package manager.</p>
+<p>On apt</p>
+<p><code>sudo apt install nmap</code></p>
+<p>On dnf</p>
+<p><code>sudo dnf install nmap</code></p>
+<p>With pacman</p>
+<p><code>sudo pacman -S nmap</code></p>
+<p>On windows you have to download the executable from the nmap website.</p>
+<p><a href="https://nmap.org/download.html">https://nmap.org/download.html</a></p>
+<p>The same goes for mac and any other os</p>
+<h1 id="getting-started">Getting Started</h1>
+<p>The first thing I will show you how to do is find all the ip addresses connected to your local network.</p>
+<p>The first thing you will have to do is find your inet ip</p>
+<p>On Linux type</p>
+<p><code>ip a</code></p>
+<p>On windows</p>
+<p><code>ipconfig</code></p>
+<p>You should see a lot of information, try to find inet. It should look something like this</p>
+<p><code>inet 192.168.1.28/24</code></p>
+<p>and copy the ip</p>
+<p>Now type</p>
+<p><code>nmap -sn IP</code></p>
+<p>Instead of ip type the ip we found from above</p>
+<p>Now you should see a large list of all the ips connected to your network.</p>
+<p>-sn flag stands for no port scan</p>
+<p>Now we can also get all the ports open on all the ips on your local network</p>
+<p>To do that type</p>
+<p><code>nmap IP</code></p>
+<p>Instead of ip type the ip we found from above</p>
+<p>Now if you have any computers on your local networks with open ports you should see them now</p>
+<p>Eg.</p>
+<p>I have a ssh port open on one of my machines so I can see</p>
+<pre tabindex="0"><code>PORT   STATE SERVICE
+22/tcp open  ssh
+</code></pre><p>If you are running a web server ports 80 and 443 should be open.</p>
+<p>Now lets say that you want to find out what operating system a specified device on your network is running.</p>
+<p>To do that type</p>
+<p><code>sudo nmap -O IP</code></p>
+<p>Eg.</p>
+<p><code>sudo nmap -O 192.168.1.16</code></p>
+<p>In my case my device is running linux and you can even find out what kernel version your device is running</p>
+<pre tabindex="0"><code>PORT   STATE SERVICE
+22/tcp open  ssh
+Device type: general purpose
+Running: Linux 2.6.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6.32
+OS details: Linux 2.6.32
+</code></pre><p>You can press enter while running a scan to see how much time is left</p>
+<p>Lets say that you dont want anyone monitoring a network be able to trace back the scan to you.</p>
+<p>For that we can use decoy mode</p>
+<p>To use decoy mode add -D followed by any random ip to any nmap command.</p>
+<p>eg</p>
+<p><code>sudo nmap -D 192.168.1.11 192.168.1.16</code></p>
+<p>This will make it so that it looks like both your ip and 192.168.1.11 are performing a port scan on 192.168.1.16</p>
+<p>You can also add multiple ips by adding commas</p>
+<p>eg</p>
+<p><code>sudo nmap -D 192.168.1.11,192.168.1.12 192.168.1.16</code></p>
+<p>Thats all for now</p>
+<p><strong>GG</strong> You have now learnt the basics of nmap
+***If you enjoyed this article consider <a href="../../donate">supporting me</a></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
       <title>Setup your own git server</title>
       <link>https://4rkal.com/posts/git/</link>
       <pubDate>Sun, 05 Mar 2023 17:11:40 +0300</pubDate>
