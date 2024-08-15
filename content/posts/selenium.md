@@ -45,7 +45,7 @@ On windows:
 1. Unzip the file
 2. Paste the file in the directory that your script will run
 # Installing selenium
-To install selenium you have to have python and pip installed.Check out my article on python for [more](../posts/python)
+To install selenium you have to have python and pip installed.Check out my article on python for [more](../python)
 To install selenium open your cmd or terminal and type:\
 ```pip install selenium```
 That should install it.\
