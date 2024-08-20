@@ -239,16 +239,16 @@ print(&#34;GG you found it&#34;)
     </item>
     
     <item>
-      <title>Automating your web browser with selenium</title>
+      <title>Automating your web browser with python and selenium</title>
       <link>https://4rkal.com/posts/selenium/</link>
       <pubDate>Wed, 22 Feb 2023 21:23:38 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/selenium/</guid>
       <description>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.
-In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. Python for Complete Beginners What is selenium?</description>
+In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.medium.com/f1df170bcc08/python-for-beginners)
+What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation.</description>
       <content:encoded><![CDATA[<p><strong>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.</strong></p>
-<p>In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. <a href="https://4rkal.com/posts/python/">Python for Complete Beginners
-</a></p>
+<p>In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (<a href="https://4rkal.medium.com/f1df170bcc08/python-for-beginners">https://4rkal.medium.com/f1df170bcc08/python-for-beginners</a>)</p>
 <h1 id="what-is-selenium">What is selenium?</h1>
 <p>Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. You can use selenium in multiple programming languages including JavaScript (Node.js), C#, Groovy, Java, Perl, PHP, Python, Ruby and Scala and with multiple web browsers including firefox, internet explorer, safary, opera, chrome and edge. Selenium can be very useful for web scraping, automating boring and manual tasks and so much more.</p>
 <h1 id="setup">Setup</h1>
@@ -282,7 +282,7 @@ On windows:</li>
 <li>Paste the file in the directory that your script will run</li>
 </ol>
 <h1 id="installing-selenium">Installing selenium</h1>
-<p>To install selenium you have to have python and pip installed.Check out my article on python for <a href="../python">more</a>
+<p>To install selenium you have to have python and pip installed.Check out my article on python for <a href="../posts/python">more</a>
 To install selenium open your cmd or terminal and type:<br>
 <code>pip install selenium</code>
 That should install it.\</p>

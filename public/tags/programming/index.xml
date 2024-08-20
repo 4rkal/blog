@@ -10,7 +10,57 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Mar 2023 20:52:42 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Aug 2024 12:25:15 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Improving Golang API request performance</title>
+      <link>https://4rkal.com/posts/goapi/</link>
+      <pubDate>Sat, 17 Aug 2024 12:25:15 +0300</pubDate>
+      
+      <guid>https://4rkal.com/posts/goapi/</guid>
+      <description>In this post I&amp;#39;ll show you how I improved the performance of my go based cryptocurrency exchange aggregator. By making small changes, like using goroutines, switching JSON libraries and reusing HTTP handlers.</description>
+      <content:encoded><![CDATA[<h1 id="the-project">The project</h1>
+<p>I recently started working on a <em>cryptocurrency exchange aggregator</em>. Basically I send out requests to a bunch of different exchanges and compare rates. This has to be made as fast as possible.
+In this post, I’ll some show some tweaks that I made in order to boost my performance significantly.</p>
+<p>However keep in mind that I am not an expert (especially in go) and I am just sharing my findings from my own personal project.</p>
+<h1 id="improvements">Improvements</h1>
+<p>These improvements come in order of biggest improvement of runtime.</p>
+<h3 id="1-using-goroutines">1. Using goroutines</h3>
+<p>In any Go program, goroutines are essential for speed. The biggest boost I made was by sending requests concurrently. Since I need to hit up 12 different exchanges, sending these requests at the same time dropped my runtime from around 24 seconds to just ~3.</p>
+<p>Goroutines are amazing and extremely easy to use. You should include them wherever possible. But always be careful of <a href="https://go.dev/doc/articles/race_detector">Data Races</a></p>
+<h3 id="2-upgrading-the-json-library">2. Upgrading the JSON Library</h3>
+<p>I swapped out <code>encoding/json</code> for <code>github.com/json-iterator/go</code>.
+<code>jsoniter</code> is a fast JSON processing library that works as a drop-in replacement for the standard library, so I didn’t have to change any code, just a library switch.</p>
+<p><strong>Benchmark Results</strong></p>
+<p>To measure the performance improvements, I ran some benchmarks comparing <code>encoding/json</code> and <code>jsoniter</code>. Here’s a summary of the results:</p>
+<pre tabindex="0"><code>goos: linux
+goarch: amd64
+pkg: apiSpeedImprove
+cpu: AMD Ryzen 5 7640U w/ Radeon 760M Graphics      
+BenchmarkEncodingJSON-12          140383              7381 ns/op
+BenchmarkJSONIter-12              974605              1217 ns/op
+PASS
+ok      apiSpeedImprove 3.216s
+</code></pre><p>So, <code>jsoniter</code> is about 6 times faster than the standard library.</p>
+<h3 id="3-reusing-http-handlers">3. Reusing HTTP Handlers</h3>
+<p>I started reusing HTTP handlers instead of creating new ones for each request. By setting up a handler once and reusing it, I cut down on the overhead of making new handlers for each request.</p>
+<p><strong>Benchmark Results</strong></p>
+<p>Here are the results of the benchmarks comparing reused handlers versus creating new handlers for each request:</p>
+<pre tabindex="0"><code>goos: linux
+goarch: amd64
+pkg: apiSpeedImprove/httpReuse
+cpu: AMD Ryzen 5 7640U w/ Radeon 760M Graphics      
+BenchmarkReusedHandler-12                   2179            505189 ns/op
+BenchmarkNewHandlerPerRequest-12            2341            507525 ns/op
+PASS
+ok      apiSpeedImprove/httpReuse       7.270s
+</code></pre><p>Reusing HTTP handlers gave a slight performance boost compared to making a new handler for each request.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>With these tweaks I managed to cut the time it took to gather all the info from 24 seconds initially to about 2 seconds. Pretty solid improvement!</p>
+<p>If you are interested the code for my benchmarks, it is available <a href="https://git.4rkal.com/4rkal/goapiperf">here</a></p>
+<p><strong>If you enjoyed this post and want to support my work, you can <a href="https://4rkal.com/donate">donate here</a>.</strong></p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Python for Complete Beginners</title>
       <link>https://4rkal.com/posts/python/</link>
@@ -276,16 +326,16 @@ Read more:
     </item>
     
     <item>
-      <title>Automating your web browser with selenium</title>
+      <title>Automating your web browser with python and selenium</title>
       <link>https://4rkal.com/posts/selenium/</link>
       <pubDate>Wed, 22 Feb 2023 21:23:38 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/selenium/</guid>
       <description>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.
-In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. Python for Complete Beginners What is selenium?</description>
+In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.medium.com/f1df170bcc08/python-for-beginners)
+What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation.</description>
       <content:encoded><![CDATA[<p><strong>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.</strong></p>
-<p>In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. <a href="https://4rkal.com/posts/python/">Python for Complete Beginners
-</a></p>
+<p>In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (<a href="https://4rkal.medium.com/f1df170bcc08/python-for-beginners">https://4rkal.medium.com/f1df170bcc08/python-for-beginners</a>)</p>
 <h1 id="what-is-selenium">What is selenium?</h1>
 <p>Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. You can use selenium in multiple programming languages including JavaScript (Node.js), C#, Groovy, Java, Perl, PHP, Python, Ruby and Scala and with multiple web browsers including firefox, internet explorer, safary, opera, chrome and edge. Selenium can be very useful for web scraping, automating boring and manual tasks and so much more.</p>
 <h1 id="setup">Setup</h1>
@@ -319,7 +369,7 @@ On windows:</li>
 <li>Paste the file in the directory that your script will run</li>
 </ol>
 <h1 id="installing-selenium">Installing selenium</h1>
-<p>To install selenium you have to have python and pip installed.Check out my article on python for <a href="../python">more</a>
+<p>To install selenium you have to have python and pip installed.Check out my article on python for <a href="../posts/python">more</a>
 To install selenium open your cmd or terminal and type:<br>
 <code>pip install selenium</code>
 That should install it.\</p>

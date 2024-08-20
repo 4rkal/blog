@@ -45,7 +45,7 @@ Requirements: A computer &amp;ldquo;server&amp;rdquo; (running linux) A internet
 <p><code>ssh arkal@192.168.1.69</code></p>
 <p>After this you can enable KeyBased authentication for more security</p>
 <p>Here is my article how to enable that :</p>
-<p><a href="https://4rkal.com/posts/sssh/">Enable keybased authentication</a></p>
+<p><a href="https://4rkal.eu.org/posts/sssh/">Enable keybased authentication</a></p>
 <p>Now we need to install tor:</p>
 <p>On debian</p>
 <p><code>sudo apt install tor</code></p>
@@ -87,7 +87,7 @@ HiddenServicePort 22 127.0.0.1:22
 <p>To connect to the server run the following command:</p>
 <p><code>ssh NAME</code></p>
 <p>With NAME being the name that you gave to the server in the config file.</p>
-<p><strong>If this article helped you out consider <a href="https://4rkal.com/donate">supporting me</a></strong></p>
+<p><strong>If this article helped you out consider <a href="https://4rkal.eu.org/donate">supporting me</a></strong></p>
 ]]></content:encoded>
     </item>
     
@@ -677,9 +677,9 @@ This will enable us to access the stream from other computers.</p>
 <p>If you only want the live stream port you can go to http://your_ip:8081</p>
 <p>Again you can change that under stream_port.</p>
 <p>Now everything should be working fine. All motion detection files will be saved in /var/lib/motion</p>
-<p>You can also change loads of other settings. Here are my settings:https://pastebin.com/WGn0NfcW</p>
+<p>You can also change loads of other settings. Here are my settings: <a href="https://pastebin.com/WGn0NfcW">https://pastebin.com/WGn0NfcW</a></p>
 <p>Read the documentation here: <a href="https://motion-project.github.io/motion_guide.html">https://motion-project.github.io/motion_guide.html</a></p>
-<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
+<p><em>If you enjoyed this article consider <a href="https://4rkal.com/donate">supporting me</a></em>*</p>
 ]]></content:encoded>
     </item>
     

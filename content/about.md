@@ -18,6 +18,7 @@ Here’s what I'm currently working on:
 
 1. **[This Blog](.)** - Continuously updating with new content.
 2. **[CypherGoat](https://github.com/CypherGoat)** / [RubyTrades](x.com/ruby_trades)- A cryptocurrency instant swap aggregator.
+3. [Videiro.com](https://videiro.com) - Your go-to platform for video editor recruitment. I am currently working on the webapp. 
 
 ## Get in Touch
 

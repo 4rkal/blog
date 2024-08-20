@@ -10,73 +10,118 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Mar 2023 17:11:40 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Aug 2024 19:21:15 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Setup your own git server</title>
-      <link>https://4rkal.com/posts/git/</link>
-      <pubDate>Sun, 05 Mar 2023 17:11:40 +0300</pubDate>
+      <title>Selfhost your own gitea instance - selfhosted, lightweight github alternative</title>
+      <link>https://4rkal.com/posts/gitea/</link>
+      <pubDate>Mon, 19 Aug 2024 19:21:15 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/git/</guid>
-      <description>There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .
-Requirements A computer for your server (running [[linux]] preferably debian) An internet connection (pretty hard without one) A second computer with git installed Setup The first thing you will have to do is install git via your package manager</description>
-      <content:encoded><![CDATA[<p>There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .</p>
-<h1 id="requirements">Requirements</h1>
-<ol>
-<li>A computer for your server (running [[linux]] preferably debian)</li>
-<li>An internet connection (pretty hard without one)</li>
-<li>A second computer with git installed</li>
-</ol>
+      <guid>https://4rkal.com/posts/gitea/</guid>
+      <description>In this article I&amp;rsquo;ll walk you through how you can run your own gitea instance. But first
+What is gitea? Gitea is a painless selfhosted Git service. It is written in go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.
+Why use gitea (vs GitHub, GitLab etc) I started running my own gitea instance since I wanted somewhere private to host my Obsidian notes.</description>
+      <content:encoded><![CDATA[<p>In this article I&rsquo;ll walk you through how you can run your own gitea instance. But first</p>
+<h2 id="what-is-gitea">What is gitea?</h2>
+<p>Gitea is a painless selfhosted Git service. It is written in go and is extremely lightweight. I run a gitea instance on my <a href="https://libre.computer/products/aml-s905x-cc/">Le Potato</a> and it barely uses any resources.</p>
+<h2 id="why-use-gitea-vs-github-gitlab-etc">Why use gitea (vs GitHub, GitLab etc)</h2>
+<p>I started running my own gitea instance since I wanted somewhere private to host my <a href="https://obsidian.md">Obsidian</a> notes. I did not want to have them in a private GitHub repo since it&rsquo;s not on my own hardware. GitLab is harder to spin up and has a lot of features that I do not need.</p>
+<p>If you want an easy to spin up private git service gitea is your way to go.</p>
 <h1 id="setup">Setup</h1>
-<p>The first thing you will have to do is install git via your package manager</p>
-<p>If you are using apt</p>
-<p><code>sudo apt install git</code></p>
-<p>On dnf</p>
-<p><code>sudo dnf install git</code></p>
-<p>pacman</p>
-<p><code>sudo pacman -S git</code></p>
-<p>After that create a user called git</p>
-<p><code>sudo useradd git</code></p>
-<p>You will have to enter some information, you can leave everything except the password blank.</p>
-<p>Now login to your git user</p>
-<p><code>su git</code></p>
-<p>Now to make our server more secure we are going to use ssh keys.</p>
-<pre tabindex="0"><code>mkdir .ssh
-chmod 700 .ssh/
-touch .ssh/authorized_keys
-chmod 600 .ssh/authorized_keys
-</code></pre><p>Now on the computer which you want to commit from you will have to generate a ssh key
-On your main machine type.
-<a href="../sssh">My article on keybased auth</a></p>
-<p><code>ssh-keygen</code></p>
-<p>After that you will have to copy your ssh public key to the authorized_keys</p>
-<p><code>ssh-copy-id user@ip</code></p>
-<p>(To find out your ip you can type ifconfig)</p>
-<p>Now if you try to connect to your server you should be able to login without a password.</p>
-<p><code>ssh git@ip</code></p>
-<p>Now you will have to create the folder where all your git repos will be saved.</p>
-<p>I will save mine in ~/git , but you can save them wherever you want</p>
-<p><code>mkdir ~/git</code></p>
-<p>Now we have to give the ownership of the git folder to the git user</p>
-<p><code>chown git:git git</code></p>
-<p>Now for every repository you will have to create a folder.</p>
-<p>eg.</p>
-<p><code>mkdir ~/git/my_cool_project.git</code></p>
-<p>Now run</p>
-<p><code>cd ~/git/my_cool_project.git</code></p>
-<p>And initiate the git repository</p>
-<p><code>git init --bare</code></p>
-<p>Now you can create a couple of files inside of your project (to test it out).</p>
-<p><code>touch stuff.txt</code></p>
-<p>Now you can test if your repository is working by cloning the files from another machine running git.</p>
-<p><code>git clone git@ip:~/git/my_cool_project.git</code></p>
-<p>You will probably get</p>
-<p><code>warning: You appear to have cloned an empty repository.</code></p>
-<p>That is because you haven&rsquo;t committed anything.</p>
-<pre tabindex="0"><code>git add .
-git commit -m &#34;first commit&#34;
-</code></pre><p>Now if you test that again it should work.</p>
-<p><strong>GG</strong> you did it, you have now successfully set up your own git server</p>
-<p>***If you enjoyed this article consider <a href="../../donate">supporting me</a></p>
+<p>In this guide I will be using debian 12. The setup should be the same on any other distribution since we will be using docker.</p>
+<h2 id="installing-and-setting-up-docker">Installing and setting up docker</h2>
+<p>The first thing you will need is docker installed on your system.</p>
+<p><a href="https://docs.docker.com/engine/install/debian/">Install docker on debian</a></p>
+<p>Also make sure to add your user to the docker group</p>
+<pre tabindex="0"><code>usermod -aG docker $USER
+</code></pre><p>Now reboot</p>
+<h2 id="docker-composeyml">Docker-compose.yml</h2>
+<p>Once we have docker installed. We have to get gitea up and running</p>
+<p>First create a new directory. This will host our docker-compose file.</p>
+<p><code>mkdir gitea</code></p>
+<p>Then create/edit docker-compose.yml in your favourite text editor.</p>
+<p><code>vim docker-compose.yml</code></p>
+<p>Then paste the following content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">gitea</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">external</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">server</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">gitea/gitea:latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">gitea</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">USER_UID=1000</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">USER_GID=1000</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">gitea</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./gitea:/data</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/etc/timezone:/etc/timezone:ro</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/etc/localtime:/etc/localtime:ro</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;3000:3000&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;222:22&#34;</span>
+</span></span></code></pre></div><p>You can change any of the default ports eg switching 3000 to 8000 can be done like this:</p>
+<pre tabindex="0"><code>ports:
+- &#34;8080:3000&#34;
+</code></pre><p>You can setup gitea using a <a href="https://docs.gitea.com/installation/install-with-docker#postgresql-database">PostgreSQL</a> or <a href="https://docs.gitea.com/installation/install-with-docker#mysql-database">MySQL</a> database. But at least for my needs a simple SQLite3 database is more than enough.</p>
+<p>Since I want my repositories to still exist even if the container is deleted I will use named volumes. The configuration file with named volumes should look something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">gitea</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">external</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">gitea</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">local</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">server</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">gitea/gitea:latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">gitea</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">gitea</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">gitea:/data</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/etc/timezone:/etc/timezone:ro</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/etc/localtime:/etc/localtime:ro</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;3000:3000&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;222:22&#34;</span>
+</span></span></code></pre></div><h2 id="starting-the-container-and-additional-configuration">Starting the container and additional configuration</h2>
+<p>Now you can start the container by typing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker compose up -d
+</span></span></code></pre></div><p>The -d flag will run it in detach mode. If you want to see the logs live you can remove it.</p>
+<p>After docker is done pulling, gitea should be up and running.</p>
+<p>Now open up:</p>
+<p><code>localhost:3000</code> or <code>yourserverip:3000</code></p>
+<p>And you should see something like this:</p>
+<p>![[Pasted image 20240819202313.png]]</p>
+<p>Fill in all of the required information. Since I will be using my subdomain <code>git.4rkal.com</code> I set the server domain and gitea base url to that.</p>
+<p>Here you will also have the option to enable sending emails for email verification and notifications. I will be enabling that by using a free (shitposting) email from <a href="https://cock.li">cock.li</a>.</p>
+<p>After you have entered all the required info click on <code>Install Gitea</code>.</p>
+<p>After the installation is complete you should be up and running</p>
+<h1 id="make-publicly-accessible-with-cloudflare-tunnels-optional">Make publicly accessible with cloudflare tunnels (optional)</h1>
+<p>I will be making my instance publicly accessible using cloudflare tunnels.</p>
+<p>To do this you will need a cloudflare account and a domain pointed to cloudflare.</p>
+<p>First head to the <a href="https://one.dash.cloudflare.com/">Zero Trust Dashboard</a></p>
+<p>Under <code>Networks</code> click on <code>Tunnels</code> and then <code>Create a tunnel</code></p>
+<p>Once created you should <code>Install and run a connector</code>, follow the instructions on the page for your specific setup.</p>
+<p>After the connector is running you should click on the <code>Public Hostname</code> tab and <code>Add a public hostname</code>.</p>
+<p>Now you should see something like this:
+![[Pasted image 20240819203954.png]]</p>
+<p>Fill in the info as I have.</p>
+<p>You can  create a new subdomain eg git or gitea</p>
+<p>The service type should be <code>HTTP</code> and the url should be <code>yourserverurl:3000</code></p>
+<p>Now if you head to the domain that you specified you should see gitea up and running.</p>
+<p>In my case you can access my public gitea instance at <a href="https://git.4rkal.com">git.4rkal.com</a></p>
+<p>Congratulations, you now have your very own gitea instance!</p>
+<p><strong>If you enjoyed this article consider <a href="https://4rkal.eu.org/donate">supporting me</a></strong></p>
 ]]></content:encoded>
     </item>
     

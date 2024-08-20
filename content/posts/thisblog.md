@@ -47,7 +47,7 @@ After that we will have to install a theme. I will be using the LoveIt theme but
 All hugo themes
 https://themes.gohugo.io/
 
-**NOTE: I now use a completely different theme [New look, new start](https://4rkal.com/posts/newlook/)** 
+**NOTE: I now use a completely different theme [New look, new start](https://4rkal.eu.org/posts/newlook/)** 
 
 For the LoveIt theme:
 
@@ -254,7 +254,7 @@ Now push the changes with
 
 After that if you refresh the page of your github repo you should see everything there.
 
-Now head to [render.com](https://render.com) and create an account
+Now head to [render.com](render.com) and create an account
 
 On your dashboard select +New and then static site.
 

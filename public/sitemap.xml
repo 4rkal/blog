@@ -8,7 +8,52 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://4rkal.com/</loc>
-    <lastmod>2024-08-14T16:41:25+03:00</lastmod>
+    <lastmod>2024-08-19T19:21:15+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/git/</loc>
+    <lastmod>2024-08-19T19:21:15+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/posts/</loc>
+    <lastmod>2024-08-19T19:21:15+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/posts/gitea/</loc>
+    <lastmod>2024-08-19T19:21:15+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/selfhosting/</loc>
+    <lastmod>2024-08-19T19:21:15+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/</loc>
+    <lastmod>2024-08-19T19:21:15+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/cyphergoat/</loc>
+    <lastmod>2024-08-17T12:25:15+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/golang/</loc>
+    <lastmod>2024-08-17T12:25:15+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/posts/goapi/</loc>
+    <lastmod>2024-08-17T12:25:15+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/programming/</loc>
+    <lastmod>2024-08-17T12:25:15+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -27,7 +72,7 @@
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://4rkal.com/posts/</loc>
+    <loc>https://4rkal.com/tags/obsidian/</loc>
     <lastmod>2024-08-13T17:15:57+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -38,16 +83,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://4rkal.com/tags/crypto/</loc>
-    <lastmod>2023-12-14T21:00:30+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/monero/</loc>
-    <lastmod>2023-12-14T21:00:30+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/</loc>
     <lastmod>2023-12-14T21:00:30+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -72,6 +107,11 @@
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://4rkal.com/tags/article/</loc>
+    <lastmod>2023-10-04T19:17:04+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://4rkal.com/tags/linux/</loc>
     <lastmod>2023-10-04T19:17:04+03:00</lastmod>
     <changefreq>always</changefreq>
@@ -89,11 +129,6 @@
   </url><url>
     <loc>https://4rkal.com/posts/thisblog/</loc>
     <lastmod>2023-03-23T18:13:03+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/programming/</loc>
-    <lastmod>2023-03-06T20:52:42+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -117,8 +152,8 @@
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://4rkal.com/tags/selfhosting/</loc>
-    <lastmod>2023-03-06T20:44:46+03:00</lastmod>
+    <loc>https://4rkal.com/tags/monero/</loc>
+    <lastmod>2023-03-06T20:23:16+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -149,11 +184,6 @@
   </url><url>
     <loc>https://4rkal.com/posts/githubmon/</loc>
     <lastmod>2023-03-05T17:21:56+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/git/</loc>
-    <lastmod>2023-03-05T17:11:40+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>

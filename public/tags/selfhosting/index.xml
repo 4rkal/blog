@@ -10,7 +10,121 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Mar 2023 20:44:46 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/selfhosting/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Aug 2024 19:21:15 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/selfhosting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Selfhost your own gitea instance - selfhosted, lightweight github alternative</title>
+      <link>https://4rkal.com/posts/gitea/</link>
+      <pubDate>Mon, 19 Aug 2024 19:21:15 +0300</pubDate>
+      
+      <guid>https://4rkal.com/posts/gitea/</guid>
+      <description>In this article I&amp;rsquo;ll walk you through how you can run your own gitea instance. But first
+What is gitea? Gitea is a painless selfhosted Git service. It is written in go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.
+Why use gitea (vs GitHub, GitLab etc) I started running my own gitea instance since I wanted somewhere private to host my Obsidian notes.</description>
+      <content:encoded><![CDATA[<p>In this article I&rsquo;ll walk you through how you can run your own gitea instance. But first</p>
+<h2 id="what-is-gitea">What is gitea?</h2>
+<p>Gitea is a painless selfhosted Git service. It is written in go and is extremely lightweight. I run a gitea instance on my <a href="https://libre.computer/products/aml-s905x-cc/">Le Potato</a> and it barely uses any resources.</p>
+<h2 id="why-use-gitea-vs-github-gitlab-etc">Why use gitea (vs GitHub, GitLab etc)</h2>
+<p>I started running my own gitea instance since I wanted somewhere private to host my <a href="https://obsidian.md">Obsidian</a> notes. I did not want to have them in a private GitHub repo since it&rsquo;s not on my own hardware. GitLab is harder to spin up and has a lot of features that I do not need.</p>
+<p>If you want an easy to spin up private git service gitea is your way to go.</p>
+<h1 id="setup">Setup</h1>
+<p>In this guide I will be using debian 12. The setup should be the same on any other distribution since we will be using docker.</p>
+<h2 id="installing-and-setting-up-docker">Installing and setting up docker</h2>
+<p>The first thing you will need is docker installed on your system.</p>
+<p><a href="https://docs.docker.com/engine/install/debian/">Install docker on debian</a></p>
+<p>Also make sure to add your user to the docker group</p>
+<pre tabindex="0"><code>usermod -aG docker $USER
+</code></pre><p>Now reboot</p>
+<h2 id="docker-composeyml">Docker-compose.yml</h2>
+<p>Once we have docker installed. We have to get gitea up and running</p>
+<p>First create a new directory. This will host our docker-compose file.</p>
+<p><code>mkdir gitea</code></p>
+<p>Then create/edit docker-compose.yml in your favourite text editor.</p>
+<p><code>vim docker-compose.yml</code></p>
+<p>Then paste the following content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">gitea</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">external</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">server</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">gitea/gitea:latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">gitea</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">USER_UID=1000</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">USER_GID=1000</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">gitea</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./gitea:/data</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/etc/timezone:/etc/timezone:ro</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/etc/localtime:/etc/localtime:ro</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;3000:3000&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;222:22&#34;</span>
+</span></span></code></pre></div><p>You can change any of the default ports eg switching 3000 to 8000 can be done like this:</p>
+<pre tabindex="0"><code>ports:
+- &#34;8080:3000&#34;
+</code></pre><p>You can setup gitea using a <a href="https://docs.gitea.com/installation/install-with-docker#postgresql-database">PostgreSQL</a> or <a href="https://docs.gitea.com/installation/install-with-docker#mysql-database">MySQL</a> database. But at least for my needs a simple SQLite3 database is more than enough.</p>
+<p>Since I want my repositories to still exist even if the container is deleted I will use named volumes. The configuration file with named volumes should look something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">gitea</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">external</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">gitea</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">local</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">server</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">gitea/gitea:latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">gitea</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">gitea</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">gitea:/data</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/etc/timezone:/etc/timezone:ro</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/etc/localtime:/etc/localtime:ro</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;3000:3000&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;222:22&#34;</span>
+</span></span></code></pre></div><h2 id="starting-the-container-and-additional-configuration">Starting the container and additional configuration</h2>
+<p>Now you can start the container by typing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker compose up -d
+</span></span></code></pre></div><p>The -d flag will run it in detach mode. If you want to see the logs live you can remove it.</p>
+<p>After docker is done pulling, gitea should be up and running.</p>
+<p>Now open up:</p>
+<p><code>localhost:3000</code> or <code>yourserverip:3000</code></p>
+<p>And you should see something like this:</p>
+<p>![[Pasted image 20240819202313.png]]</p>
+<p>Fill in all of the required information. Since I will be using my subdomain <code>git.4rkal.com</code> I set the server domain and gitea base url to that.</p>
+<p>Here you will also have the option to enable sending emails for email verification and notifications. I will be enabling that by using a free (shitposting) email from <a href="https://cock.li">cock.li</a>.</p>
+<p>After you have entered all the required info click on <code>Install Gitea</code>.</p>
+<p>After the installation is complete you should be up and running</p>
+<h1 id="make-publicly-accessible-with-cloudflare-tunnels-optional">Make publicly accessible with cloudflare tunnels (optional)</h1>
+<p>I will be making my instance publicly accessible using cloudflare tunnels.</p>
+<p>To do this you will need a cloudflare account and a domain pointed to cloudflare.</p>
+<p>First head to the <a href="https://one.dash.cloudflare.com/">Zero Trust Dashboard</a></p>
+<p>Under <code>Networks</code> click on <code>Tunnels</code> and then <code>Create a tunnel</code></p>
+<p>Once created you should <code>Install and run a connector</code>, follow the instructions on the page for your specific setup.</p>
+<p>After the connector is running you should click on the <code>Public Hostname</code> tab and <code>Add a public hostname</code>.</p>
+<p>Now you should see something like this:
+![[Pasted image 20240819203954.png]]</p>
+<p>Fill in the info as I have.</p>
+<p>You can  create a new subdomain eg git or gitea</p>
+<p>The service type should be <code>HTTP</code> and the url should be <code>yourserverurl:3000</code></p>
+<p>Now if you head to the domain that you specified you should see gitea up and running.</p>
+<p>In my case you can access my public gitea instance at <a href="https://git.4rkal.com">git.4rkal.com</a></p>
+<p>Congratulations, you now have your very own gitea instance!</p>
+<p><strong>If you enjoyed this article consider <a href="https://4rkal.eu.org/donate">supporting me</a></strong></p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>PocketBase self-hosted Firebase alternative</title>
       <link>https://4rkal.com/posts/pocketbase/</link>
@@ -52,82 +166,6 @@ Install PocketBase The first thing that you will have to do is head to https://p
 <p>If you click on the settings icon you can see that you will be able to add applications, mail settings, file storage (s3) , export/import collections, add or remove auth providers, token options and add/remove admins.</p>
 <p>That’s it for now if you want to learn more check out <a href="https://pocketbase.io/docs/">https://pocketbase.io/docs/</a></p>
 <p><em><strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></em></p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Nmap(Network Mapper) For Beginners</title>
-      <link>https://4rkal.com/posts/nmap/</link>
-      <pubDate>Sun, 05 Mar 2023 17:37:03 +0300</pubDate>
-      
-      <guid>https://4rkal.com/posts/nmap/</guid>
-      <description>Whether you want to scan your network for vulnerabilities or just want to see which ports you have open, nmap can be extremely useful.
-What is nmap Nmap (Network Mapper) is a network scanner created by Gordon Lyon . Nmap sends packets and examines the answers to find hosts and services on a computer network. For probing computer networks, Nmap offers a variety of functionalities, including host discovery, service detection, and operating system detection.</description>
-      <content:encoded><![CDATA[<p>Whether you want to scan your network for vulnerabilities or just want to see which ports you have open, nmap can be extremely useful.</p>
-<h1 id="what-is-nmap">What is nmap</h1>
-<p>Nmap (Network Mapper) is a network scanner created by Gordon Lyon . Nmap sends packets and examines the answers to find hosts and services on a computer network. For probing computer networks, Nmap offers a variety of functionalities, including host discovery, service detection, and operating system detection. Scripts that offer more sophisticated service discovery, vulnerability detection, and other features can extend these features. During a scan, Nmap can adjust to changing network conditions, such as latency and congestion.</p>
-<h1 id="installation">Installation</h1>
-<p>Nmap is available for linux, windows , mac os and even bsd</p>
-<p>If you are using linux you can install it using your package manager.</p>
-<p>On apt</p>
-<p><code>sudo apt install nmap</code></p>
-<p>On dnf</p>
-<p><code>sudo dnf install nmap</code></p>
-<p>With pacman</p>
-<p><code>sudo pacman -S nmap</code></p>
-<p>On windows you have to download the executable from the nmap website.</p>
-<p><a href="https://nmap.org/download.html">https://nmap.org/download.html</a></p>
-<p>The same goes for mac and any other os</p>
-<h1 id="getting-started">Getting Started</h1>
-<p>The first thing I will show you how to do is find all the ip addresses connected to your local network.</p>
-<p>The first thing you will have to do is find your inet ip</p>
-<p>On Linux type</p>
-<p><code>ip a</code></p>
-<p>On windows</p>
-<p><code>ipconfig</code></p>
-<p>You should see a lot of information, try to find inet. It should look something like this</p>
-<p><code>inet 192.168.1.28/24</code></p>
-<p>and copy the ip</p>
-<p>Now type</p>
-<p><code>nmap -sn IP</code></p>
-<p>Instead of ip type the ip we found from above</p>
-<p>Now you should see a large list of all the ips connected to your network.</p>
-<p>-sn flag stands for no port scan</p>
-<p>Now we can also get all the ports open on all the ips on your local network</p>
-<p>To do that type</p>
-<p><code>nmap IP</code></p>
-<p>Instead of ip type the ip we found from above</p>
-<p>Now if you have any computers on your local networks with open ports you should see them now</p>
-<p>Eg.</p>
-<p>I have a ssh port open on one of my machines so I can see</p>
-<pre tabindex="0"><code>PORT   STATE SERVICE
-22/tcp open  ssh
-</code></pre><p>If you are running a web server ports 80 and 443 should be open.</p>
-<p>Now lets say that you want to find out what operating system a specified device on your network is running.</p>
-<p>To do that type</p>
-<p><code>sudo nmap -O IP</code></p>
-<p>Eg.</p>
-<p><code>sudo nmap -O 192.168.1.16</code></p>
-<p>In my case my device is running linux and you can even find out what kernel version your device is running</p>
-<pre tabindex="0"><code>PORT   STATE SERVICE
-22/tcp open  ssh
-Device type: general purpose
-Running: Linux 2.6.X
-OS CPE: cpe:/o:linux:linux_kernel:2.6.32
-OS details: Linux 2.6.32
-</code></pre><p>You can press enter while running a scan to see how much time is left</p>
-<p>Lets say that you dont want anyone monitoring a network be able to trace back the scan to you.</p>
-<p>For that we can use decoy mode</p>
-<p>To use decoy mode add -D followed by any random ip to any nmap command.</p>
-<p>eg</p>
-<p><code>sudo nmap -D 192.168.1.11 192.168.1.16</code></p>
-<p>This will make it so that it looks like both your ip and 192.168.1.11 are performing a port scan on 192.168.1.16</p>
-<p>You can also add multiple ips by adding commas</p>
-<p>eg</p>
-<p><code>sudo nmap -D 192.168.1.11,192.168.1.12 192.168.1.16</code></p>
-<p>Thats all for now</p>
-<p><strong>GG</strong> You have now learnt the basics of nmap
-***If you enjoyed this article consider <a href="../../donate">supporting me</a></p>
 ]]></content:encoded>
     </item>
     
@@ -618,9 +656,9 @@ This will enable us to access the stream from other computers.</p>
 <p>If you only want the live stream port you can go to http://your_ip:8081</p>
 <p>Again you can change that under stream_port.</p>
 <p>Now everything should be working fine. All motion detection files will be saved in /var/lib/motion</p>
-<p>You can also change loads of other settings. Here are my settings:https://pastebin.com/WGn0NfcW</p>
+<p>You can also change loads of other settings. Here are my settings: <a href="https://pastebin.com/WGn0NfcW">https://pastebin.com/WGn0NfcW</a></p>
 <p>Read the documentation here: <a href="https://motion-project.github.io/motion_guide.html">https://motion-project.github.io/motion_guide.html</a></p>
-<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
+<p><em>If you enjoyed this article consider <a href="https://4rkal.com/donate">supporting me</a></em>*</p>
 ]]></content:encoded>
     </item>
     
