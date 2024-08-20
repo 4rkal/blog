@@ -101,7 +101,7 @@ Why use gitea (vs GitHub, GitLab etc) I started running my own gitea instance si
 <p>Now open up:</p>
 <p><code>localhost:3000</code> or <code>yourserverip:3000</code></p>
 <p>And you should see something like this:</p>
-<p>![[Pasted image 20240819202313.png]]</p>
+<p><img loading="lazy" src="/../assets/gitea.png" type="" alt="Gitea Setup Dashboard"  /></p>
 <p>Fill in all of the required information. Since I will be using my subdomain <code>git.4rkal.com</code> I set the server domain and gitea base url to that.</p>
 <p>Here you will also have the option to enable sending emails for email verification and notifications. I will be enabling that by using a free (shitposting) email from <a href="https://cock.li">cock.li</a>.</p>
 <p>After you have entered all the required info click on <code>Install Gitea</code>.</p>
@@ -114,7 +114,7 @@ Why use gitea (vs GitHub, GitLab etc) I started running my own gitea instance si
 <p>Once created you should <code>Install and run a connector</code>, follow the instructions on the page for your specific setup.</p>
 <p>After the connector is running you should click on the <code>Public Hostname</code> tab and <code>Add a public hostname</code>.</p>
 <p>Now you should see something like this:
-![[Pasted image 20240819203954.png]]</p>
+<img loading="lazy" src="/../assets/gitea2.png" type="" alt="Zero Trust Dashboard"  /></p>
 <p>Fill in the info as I have.</p>
 <p>You can  create a new subdomain eg git or gitea</p>
 <p>The service type should be <code>HTTP</code> and the url should be <code>yourserverurl:3000</code></p>

@@ -126,7 +126,7 @@ Now open up:
 
 And you should see something like this:
 
-![[Pasted image 20240819202313.png]]
+![Gitea Setup Dashboard](../assets/gitea.png)
 
 Fill in all of the required information. Since I will be using my subdomain `git.4rkal.com` I set the server domain and gitea base url to that.
 
@@ -150,7 +150,7 @@ Once created you should `Install and run a connector`, follow the instructions o
 After the connector is running you should click on the `Public Hostname` tab and `Add a public hostname`.
 
 Now you should see something like this:
-![[Pasted image 20240819203954.png]]
+![Zero Trust Dashboard](../assets/gitea2.png)
 
 Fill in the info as I have. 
 
