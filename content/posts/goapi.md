@@ -1,5 +1,5 @@
 ---
-title: Improving Golang API request performance
+title: Improving Go API request performance
 description: In this post I'll show you how I improved the performance of my go based cryptocurrency exchange aggregator. By making small changes, like using goroutines, switching JSON libraries and reusing HTTP handlers.
 date: 2024-08-17T12:25:15+03:00
 draft: false
@@ -7,9 +7,6 @@ tags:
   - programming
   - golang
   - cyphergoat
-cover:
-  image: "../assets/goapi.png"
-  relative: false
 ---
 # The project
 I recently started working on a *cryptocurrency exchange aggregator*. Basically I send out requests to a bunch of different exchanges and compare rates. This has to be made as fast as possible.
