@@ -10,12 +10,12 @@ tags:
 In this article I'll walk you through how you can run your own gitea instance. But first
 
 ## What is gitea?
-Gitea is a painless selfhosted Git service. It is written in go and is extremely lightweight. I run a gitea instance on my [Le Potato](https://libre.computer/products/aml-s905x-cc/) and it barely uses any resources. 
+Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my [Le Potato](https://libre.computer/products/aml-s905x-cc/) and it barely uses any resources. 
 
 ## Why use gitea (vs GitHub, GitLab etc)
-I started running my own gitea instance since I wanted somewhere private to host my [Obsidian](https://obsidian.md) notes. I did not want to have them in a private GitHub repo since it's not on my own hardware. GitLab is harder to spin up and has a lot of features that I do not need.
+I started running my own Gitea instance because I wanted a private place to host my [Obsidian](https://obsidian.md) notes. I did not want to have them in a private GitHub repository since it's not on my own hardware. GitLab is harder to spin up and has a lot of features that I do not need.
 
-If you want an easy to spin up private git service gitea is your way to go.
+If you want an easy to spin up, private git service gitea is your way to go.
 
 # Setup
 In this guide I will be using debian 12. The setup should be the same on any other distribution since we will be using docker.
@@ -25,7 +25,8 @@ The first thing you will need is docker installed on your system.
 
 [Install docker on debian](https://docs.docker.com/engine/install/debian/)
 
-Also make sure to add your user to the docker group
+Also make sure to add your user to the docker group. This will allow you to run docker commands without sudo.
+
 ```
 usermod -aG docker $USER
 ```
@@ -33,7 +34,7 @@ usermod -aG docker $USER
 Now reboot
 
 ## Docker-compose.yml
-Once we have docker installed. We have to get gitea up and running
+Once docker is installed. We have to get gitea up and running
 
 First create a new directory. This will host our docker-compose file.
 
@@ -149,7 +150,7 @@ Once created you should `Install and run a connector`, follow the instructions o
 
 After the connector is running you should click on the `Public Hostname` tab and `Add a public hostname`.
 
-Now you should see something like this:
+Now you should see something like this: 
 ![Zero Trust Dashboard](../assets/gitea2.png)
 
 Fill in the info as I have. 
@@ -164,4 +165,4 @@ In my case you can access my public gitea instance at [git.4rkal.com](https://gi
 
 Congratulations, you now have your very own gitea instance!
 
-**If you enjoyed this article consider [supporting me](https://4rkal.eu.org/donate)**
+**If you enjoyed this article, consider [supporting me](https://4rkal.eu.org/donate)**
