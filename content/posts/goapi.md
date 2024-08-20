@@ -7,6 +7,9 @@ tags:
   - programming
   - golang
   - cyphergoat
+cover:
+  image: "../assets/gitea.png"
+  relative: true
 ---
 # The project
 I recently started working on a *cryptocurrency exchange aggregator*. Basically I send out requests to a bunch of different exchanges and compare rates. This has to be made as fast as possible.
