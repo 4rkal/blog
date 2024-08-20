@@ -8,8 +8,8 @@
 <title>Selfhost your own gitea instance - selfhosted, lightweight github alternative | 4rkal&#39;s blog</title>
 <meta name="keywords" content="git, selfhosting">
 <meta name="description" content="In this article I&rsquo;ll walk you through how you can run your own gitea instance. But first
-What is gitea? Gitea is a painless selfhosted Git service. It is written in go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.
-Why use gitea (vs GitHub, GitLab etc) I started running my own gitea instance since I wanted somewhere private to host my Obsidian notes.">
+What is gitea? Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.
+Why use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance because I wanted a private place to host my Obsidian notes.">
 <meta name="author" content="">
 <link rel="canonical" href="https://4rkal.com/posts/gitea/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.0a90869f9adff91d63c37aa07061eeb9751d3e9e2da5e381733f6e45bd046239.css" integrity="sha256-CpCGn5rf&#43;R1jw3qgcGHuuXUdPp4tpeOBcz9uRb0EYjk=" rel="preload stylesheet" as="style">
@@ -18,12 +18,12 @@ Why use gitea (vs GitHub, GitLab etc) I started running my own gitea instance si
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Selfhost your own gitea instance - selfhosted, lightweight github alternative | 4rkal&#39;s blog" />
 <meta name="twitter:description" content="In this article I&rsquo;ll walk you through how you can run your own gitea instance. But first
-What is gitea? Gitea is a painless selfhosted Git service. It is written in go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.
-Why use gitea (vs GitHub, GitLab etc) I started running my own gitea instance since I wanted somewhere private to host my Obsidian notes." />
+What is gitea? Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.
+Why use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance because I wanted a private place to host my Obsidian notes." />
 <meta property="og:title" content="Selfhost your own gitea instance - selfhosted, lightweight github alternative | 4rkal&#39;s blog" />
 <meta property="og:description" content="In this article I&rsquo;ll walk you through how you can run your own gitea instance. But first
-What is gitea? Gitea is a painless selfhosted Git service. It is written in go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.
-Why use gitea (vs GitHub, GitLab etc) I started running my own gitea instance since I wanted somewhere private to host my Obsidian notes." />
+What is gitea? Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.
+Why use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance because I wanted a private place to host my Obsidian notes." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://4rkal.com/posts/gitea/" />
     <meta property="og:image" content="https://4rkal.com/4rkal.png"/>
@@ -58,11 +58,11 @@ Why use gitea (vs GitHub, GitLab etc) I started running my own gitea instance si
   "@type": "BlogPosting",
   "headline": "Selfhost your own gitea instance - selfhosted, lightweight github alternative | 4rkal's blog",
   "name": "Selfhost your own gitea instance - selfhosted, lightweight github alternative",
-  "description": "In this article I\u0026rsquo;ll walk you through how you can run your own gitea instance. But first\nWhat is gitea? Gitea is a painless selfhosted Git service. It is written in go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.\nWhy use gitea (vs GitHub, GitLab etc) I started running my own gitea instance since I wanted somewhere private to host my Obsidian notes.",
+  "description": "In this article I\u0026rsquo;ll walk you through how you can run your own gitea instance. But first\nWhat is gitea? Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.\nWhy use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance because I wanted a private place to host my Obsidian notes.",
   "keywords": [
     "git", "selfhosting"
   ],
-  "wordCount" : "686",
+  "wordCount" : "696",
   "inLanguage": "en",
   "datePublished": "2024-08-19T19:21:15+03:00",
   "dateModified": "2024-08-19T19:21:15+03:00",
@@ -238,7 +238,7 @@ function toggleThemeListener() {
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
   <span class="post-tags"><a href="https://4rkal.com/tags/git/">git</a><a href="https://4rkal.com/tags/selfhosting/">selfhosting</a></span></span><span class="meta-item">
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" style="user-select: text;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" style="user-select: text;"></path><polyline points="14 2 14 8 20 8" style="user-select: text;"></polyline><line x1="16" y1="13" x2="8" y2="13" style="user-select: text;"></line><line x1="16" y1="17" x2="8" y2="17" style="user-select: text;"></line><polyline points="10 9 9 9 8 9" style="user-select: text;"></polyline></svg>
-  <span>686 words</span></span><span class="meta-item">
+  <span>696 words</span></span><span class="meta-item">
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 15"></polyline></svg>
   <span>4 min</span></span>
 
@@ -248,20 +248,20 @@ function toggleThemeListener() {
   </header> 
   <div class="post-content"><p>In this article I&rsquo;ll walk you through how you can run your own gitea instance. But first</p>
 <h2 id="what-is-gitea">What is gitea?<a hidden class="anchor" aria-hidden="true" href="#what-is-gitea">¶</a></h2>
-<p>Gitea is a painless selfhosted Git service. It is written in go and is extremely lightweight. I run a gitea instance on my <a href="https://libre.computer/products/aml-s905x-cc/">Le Potato</a> and it barely uses any resources.</p>
+<p>Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my <a href="https://libre.computer/products/aml-s905x-cc/">Le Potato</a> and it barely uses any resources.</p>
 <h2 id="why-use-gitea-vs-github-gitlab-etc">Why use gitea (vs GitHub, GitLab etc)<a hidden class="anchor" aria-hidden="true" href="#why-use-gitea-vs-github-gitlab-etc">¶</a></h2>
-<p>I started running my own gitea instance since I wanted somewhere private to host my <a href="https://obsidian.md">Obsidian</a> notes. I did not want to have them in a private GitHub repo since it&rsquo;s not on my own hardware. GitLab is harder to spin up and has a lot of features that I do not need.</p>
-<p>If you want an easy to spin up private git service gitea is your way to go.</p>
+<p>I started running my own Gitea instance because I wanted a private place to host my <a href="https://obsidian.md">Obsidian</a> notes. I did not want to have them in a private GitHub repository since it&rsquo;s not on my own hardware. GitLab is harder to spin up and has a lot of features that I do not need.</p>
+<p>If you want an easy to spin up, private git service gitea is your way to go.</p>
 <h1 id="setup">Setup<a hidden class="anchor" aria-hidden="true" href="#setup">¶</a></h1>
 <p>In this guide I will be using debian 12. The setup should be the same on any other distribution since we will be using docker.</p>
 <h2 id="installing-and-setting-up-docker">Installing and setting up docker<a hidden class="anchor" aria-hidden="true" href="#installing-and-setting-up-docker">¶</a></h2>
 <p>The first thing you will need is docker installed on your system.</p>
 <p><a href="https://docs.docker.com/engine/install/debian/">Install docker on debian</a></p>
-<p>Also make sure to add your user to the docker group</p>
+<p>Also make sure to add your user to the docker group. This will allow you to run docker commands without sudo.</p>
 <pre tabindex="0"><code>usermod -aG docker $USER
 </code></pre><p>Now reboot</p>
 <h2 id="docker-composeyml">Docker-compose.yml<a hidden class="anchor" aria-hidden="true" href="#docker-composeyml">¶</a></h2>
-<p>Once we have docker installed. We have to get gitea up and running</p>
+<p>Once docker is installed. We have to get gitea up and running</p>
 <p>First create a new directory. This will host our docker-compose file.</p>
 <p><code>mkdir gitea</code></p>
 <p>Then create/edit docker-compose.yml in your favourite text editor.</p>
@@ -347,7 +347,7 @@ function toggleThemeListener() {
 <p>Now if you head to the domain that you specified you should see gitea up and running.</p>
 <p>In my case you can access my public gitea instance at <a href="https://git.4rkal.com">git.4rkal.com</a></p>
 <p>Congratulations, you now have your very own gitea instance!</p>
-<p><strong>If you enjoyed this article consider <a href="https://4rkal.eu.org/donate">supporting me</a></strong></p>
+<p><strong>If you enjoyed this article, consider <a href="https://4rkal.eu.org/donate">supporting me</a></strong></p>
 
 
   </div>

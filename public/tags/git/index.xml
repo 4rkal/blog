@@ -18,24 +18,24 @@
       
       <guid>https://4rkal.com/posts/gitea/</guid>
       <description>In this article I&amp;rsquo;ll walk you through how you can run your own gitea instance. But first
-What is gitea? Gitea is a painless selfhosted Git service. It is written in go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.
-Why use gitea (vs GitHub, GitLab etc) I started running my own gitea instance since I wanted somewhere private to host my Obsidian notes.</description>
+What is gitea? Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.
+Why use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance because I wanted a private place to host my Obsidian notes.</description>
       <content:encoded><![CDATA[<p>In this article I&rsquo;ll walk you through how you can run your own gitea instance. But first</p>
 <h2 id="what-is-gitea">What is gitea?</h2>
-<p>Gitea is a painless selfhosted Git service. It is written in go and is extremely lightweight. I run a gitea instance on my <a href="https://libre.computer/products/aml-s905x-cc/">Le Potato</a> and it barely uses any resources.</p>
+<p>Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my <a href="https://libre.computer/products/aml-s905x-cc/">Le Potato</a> and it barely uses any resources.</p>
 <h2 id="why-use-gitea-vs-github-gitlab-etc">Why use gitea (vs GitHub, GitLab etc)</h2>
-<p>I started running my own gitea instance since I wanted somewhere private to host my <a href="https://obsidian.md">Obsidian</a> notes. I did not want to have them in a private GitHub repo since it&rsquo;s not on my own hardware. GitLab is harder to spin up and has a lot of features that I do not need.</p>
-<p>If you want an easy to spin up private git service gitea is your way to go.</p>
+<p>I started running my own Gitea instance because I wanted a private place to host my <a href="https://obsidian.md">Obsidian</a> notes. I did not want to have them in a private GitHub repository since it&rsquo;s not on my own hardware. GitLab is harder to spin up and has a lot of features that I do not need.</p>
+<p>If you want an easy to spin up, private git service gitea is your way to go.</p>
 <h1 id="setup">Setup</h1>
 <p>In this guide I will be using debian 12. The setup should be the same on any other distribution since we will be using docker.</p>
 <h2 id="installing-and-setting-up-docker">Installing and setting up docker</h2>
 <p>The first thing you will need is docker installed on your system.</p>
 <p><a href="https://docs.docker.com/engine/install/debian/">Install docker on debian</a></p>
-<p>Also make sure to add your user to the docker group</p>
+<p>Also make sure to add your user to the docker group. This will allow you to run docker commands without sudo.</p>
 <pre tabindex="0"><code>usermod -aG docker $USER
 </code></pre><p>Now reboot</p>
 <h2 id="docker-composeyml">Docker-compose.yml</h2>
-<p>Once we have docker installed. We have to get gitea up and running</p>
+<p>Once docker is installed. We have to get gitea up and running</p>
 <p>First create a new directory. This will host our docker-compose file.</p>
 <p><code>mkdir gitea</code></p>
 <p>Then create/edit docker-compose.yml in your favourite text editor.</p>
@@ -121,7 +121,7 @@ Why use gitea (vs GitHub, GitLab etc) I started running my own gitea instance si
 <p>Now if you head to the domain that you specified you should see gitea up and running.</p>
 <p>In my case you can access my public gitea instance at <a href="https://git.4rkal.com">git.4rkal.com</a></p>
 <p>Congratulations, you now have your very own gitea instance!</p>
-<p><strong>If you enjoyed this article consider <a href="https://4rkal.eu.org/donate">supporting me</a></strong></p>
+<p><strong>If you enjoyed this article, consider <a href="https://4rkal.eu.org/donate">supporting me</a></strong></p>
 ]]></content:encoded>
     </item>
     
