@@ -94,8 +94,8 @@ name = "monero"
 url = "/donate/"
 
 [[params.socialIcons]]
-name = "pgpkey"
-url = "/about/"
+name = "youtube"
+url = "https://www.youtube.com/@4rkal"
 
 [[params.socialIcons]]
 name = "rss"
