@@ -87,7 +87,7 @@ url = "https://x.com/4rkal_"
 
 [[params.socialIcons]]
 name = "email"
-url = "mailto:4rkal@horsefucker.org"
+url = "/about/#get-in-touch"
 
 [[params.socialIcons]]
 name = "monero"
