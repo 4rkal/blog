@@ -126,86 +126,6 @@ Why use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance be
     </item>
     
     <item>
-      <title>SSH Remote Access NO Port-Forwarding NO Cloudflare</title>
-      <link>https://4rkal.com/posts/onionssh/</link>
-      <pubDate>Wed, 04 Oct 2023 19:17:04 +0300</pubDate>
-      
-      <guid>https://4rkal.com/posts/onionssh/</guid>
-      <description>In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.
-Requirements: A computer &amp;ldquo;server&amp;rdquo; (running linux) A internet connection Another computer to connect to your server (running linux) Why? If you want to access your server without portforwarding in a extremely secure fashion you will want to follow this tutorial. You will be connecting to the server via tor which will make it harder for anyone to find the url of the server and ill show you how to setup keybased auth for even more security!</description>
-      <content:encoded><![CDATA[<p>In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.</p>
-<h2 id="requirements">Requirements:</h2>
-<ol>
-<li>A computer &ldquo;server&rdquo; (running linux)</li>
-<li>A internet connection</li>
-<li>Another computer to connect to your server (running linux)</li>
-</ol>
-<h2 id="why">Why?</h2>
-<p>If you want to access your server without portforwarding in a extremely secure fashion you will want to follow this tutorial. You will be connecting to the server via tor which will make it harder for anyone to find the url of the server and ill show you how to setup keybased auth for even more security!</p>
-<h2 id="setup">Setup</h2>
-<p>You will have to install the following packages (ssh, tor)</p>
-<p>On debian</p>
-<p><code>sudo apt install openssh-client</code></p>
-<p>On arch</p>
-<p><code>sudo pacman -S openssh</code></p>
-<p>After that enable the ssh service</p>
-<p>Debian:</p>
-<p><code>sudo systemctl enable ssh</code></p>
-<p>Arch:</p>
-<p><code>sudo systemctl enable sshd</code></p>
-<p>If you want to check if this worked just use another computer and run</p>
-<p><code>ssh USER@IP</code></p>
-<p>for example I run</p>
-<p><code>ssh arkal@192.168.1.69</code></p>
-<p>After this you can enable KeyBased authentication for more security</p>
-<p>Here is my article how to enable that :</p>
-<p><a href="https://4rkal.eu.org/posts/sssh/">Enable keybased authentication</a></p>
-<p>Now we need to install tor:</p>
-<p>On debian</p>
-<p><code>sudo apt install tor</code></p>
-<p>On arch</p>
-<p><code>sudo pacman -S tor</code></p>
-<p>Then start and enable the tor service with</p>
-<p><code>sudo systemctl start tor &amp;&amp; sudo systemctl enable tor</code></p>
-<p>After you have done that you want to edit your torrc file. Using your favorite text editor</p>
-<p><code>sudo vim /etc/tor/torrc</code></p>
-<p>Now you will want to navigate to the part that says HiddenService. And paste the following</p>
-<pre tabindex="0"><code>HiddenServiceDir /var/lib/tor/ssh/
-HiddenServicePort 22 127.0.0.1:22
-</code></pre><p>Save your file and exit the editor (for nano cntrl s, cntrl x)</p>
-<p>Now you want will have to restart the tor service</p>
-<p><code>sudo systemctl restart tor</code></p>
-<p>After that run the following:</p>
-<p><code>sudo cat /var/lib/tor/ssh/hostname</code></p>
-<p>You should see a string of letters and characters ending in .onion </p>
-<p>Now on your other machine:</p>
-<h2 id="connecting-to-the-server">Connecting to the server</h2>
-<p>On your main machine you will have to do the following:</p>
-<p>Have ssh, tor, and socat installed</p>
-<p>After you have installed them you will have to edit the ssh config</p>
-<p><code>vim .ssh/config</code></p>
-<p>And paste the following</p>
-<pre tabindex="0"><code>Host NAME
- Hostname URL.onion
- User USER
- Port 22
- Proxycommand socat - SOCKS4A:127.0.0.1:%h:%p,socksport=9050
-</code></pre><p>You will have to change the NAME, URL and USER. The user is the user you want to connect as to your server and the url is the url you that ends in .onion from above.</p>
-<p>Now save the file and exit.</p>
-<p>Now edit the torrc file. Using your favorite text editor:</p>
-<p><code>vim /etc/tor/torrc</code></p>
-<p>Find the line that says SOCKSPort and uncomment it</p>
-<p><code>SOCKSPort 9050</code></p>
-<p>Restart the tor service</p>
-<p><code>systemctl restart tor</code></p>
-<p>To connect to the server run the following command:</p>
-<p><code>ssh NAME</code></p>
-<p>With NAME being the name that you gave to the server in the config file.</p>
-<p><strong>If this article helped you out consider <a href="https://4rkal.eu.org/donate">supporting me</a></strong></p>
-]]></content:encoded>
-    </item>
-    
-    <item>
       <title>PocketBase self-hosted Firebase alternative</title>
       <link>https://4rkal.com/posts/pocketbase/</link>
       <pubDate>Mon, 06 Mar 2023 20:44:46 +0300</pubDate>
@@ -736,9 +656,9 @@ This will enable us to access the stream from other computers.</p>
 <p>If you only want the live stream port you can go to http://your_ip:8081</p>
 <p>Again you can change that under stream_port.</p>
 <p>Now everything should be working fine. All motion detection files will be saved in /var/lib/motion</p>
-<p>You can also change loads of other settings. Here are my settings: <a href="https://pastebin.com/WGn0NfcW">https://pastebin.com/WGn0NfcW</a></p>
+<p>You can also change loads of other settings. Here are my settings:https://pastebin.com/WGn0NfcW</p>
 <p>Read the documentation here: <a href="https://motion-project.github.io/motion_guide.html">https://motion-project.github.io/motion_guide.html</a></p>
-<p><em>If you enjoyed this article consider <a href="https://4rkal.com/donate">supporting me</a></em>*</p>
+<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
 ]]></content:encoded>
     </item>
     

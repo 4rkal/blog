@@ -72,11 +72,6 @@
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://4rkal.com/tags/obsidian/</loc>
-    <lastmod>2024-08-13T17:15:57+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://4rkal.com/posts/newlook/</loc>
     <lastmod>2024-08-11T16:17:31+03:00</lastmod>
     <changefreq>always</changefreq>
@@ -104,6 +99,11 @@
   </url><url>
     <loc>https://4rkal.com/updates/hacktoberfest23/</loc>
     <lastmod>2023-10-11T21:30:30+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/article/</loc>
+    <lastmod>2023-10-04T19:17:04+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>

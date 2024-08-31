@@ -677,9 +677,9 @@ This will enable us to access the stream from other computers.</p>
 <p>If you only want the live stream port you can go to http://your_ip:8081</p>
 <p>Again you can change that under stream_port.</p>
 <p>Now everything should be working fine. All motion detection files will be saved in /var/lib/motion</p>
-<p>You can also change loads of other settings. Here are my settings: <a href="https://pastebin.com/WGn0NfcW">https://pastebin.com/WGn0NfcW</a></p>
+<p>You can also change loads of other settings. Here are my settings:https://pastebin.com/WGn0NfcW</p>
 <p>Read the documentation here: <a href="https://motion-project.github.io/motion_guide.html">https://motion-project.github.io/motion_guide.html</a></p>
-<p><em>If you enjoyed this article consider <a href="https://4rkal.com/donate">supporting me</a></em>*</p>
+<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
 ]]></content:encoded>
     </item>
     

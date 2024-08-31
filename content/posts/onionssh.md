@@ -3,9 +3,9 @@ title: SSH Remote Access NO Port-Forwarding NO Cloudflare
 date: 2023-10-04T19:17:04+03:00
 draft: false
 tags:
-  - ssh
-  - linux
-  - selfhosting
+  - article
+  - "ssh"
+  - "linux"
 ---
 In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.
 

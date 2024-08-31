@@ -190,8 +190,7 @@ ok      apiSpeedImprove/httpReuse       7.270s
 <h3 id="hugo">Hugo</h3>
 <p><a href="https://gohugo.io">Hugo</a> is an ultra fast static website generator made in golang. I have been using hugo for my blog for almost 2 years now. I recently switched the theme of my my blog. Read more about the change <a href="https://4rkal.eu.org/posts/newlook?utm_source=internal&amp;utm_campaign=obsidianhugo">New Look, new start</a>.</p>
 <h1 id="setup">Setup</h1>
-<p>The following setup gives you the most control over the look and feel of your website without having a very complex setup. I believe it is a lot better than <a href="https://obsidian.md/publish">Obsidian Publish</a> for those reasons.</p>
-<p>In this article I will not be showing how to setup these two technologies but merely how to get them to work together.</p>
+<p>In this article I will not be showing how to setup obsidian or hugo but merely how to get them to work together.</p>
 <p>If you wan&rsquo;t to learn how I setup this whole blog using hugo, cloudflare and render.com read:
 <a href="https://4rkal.eu.org/posts/thisblog?utm_source=internal&amp;utm_campaign=obsidianhugo">How I setup this blog for free (domain, hosting, ssl) Complete Guide</a></p>
 <p>If you wan&rsquo;t a good guide on how to use obsidian read:
@@ -1875,9 +1874,9 @@ This will enable us to access the stream from other computers.</p>
 <p>If you only want the live stream port you can go to http://your_ip:8081</p>
 <p>Again you can change that under stream_port.</p>
 <p>Now everything should be working fine. All motion detection files will be saved in /var/lib/motion</p>
-<p>You can also change loads of other settings. Here are my settings: <a href="https://pastebin.com/WGn0NfcW">https://pastebin.com/WGn0NfcW</a></p>
+<p>You can also change loads of other settings. Here are my settings:https://pastebin.com/WGn0NfcW</p>
 <p>Read the documentation here: <a href="https://motion-project.github.io/motion_guide.html">https://motion-project.github.io/motion_guide.html</a></p>
-<p><em>If you enjoyed this article consider <a href="https://4rkal.com/donate">supporting me</a></em>*</p>
+<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
 ]]></content:encoded>
     </item>
     
@@ -1944,7 +1943,7 @@ There are different ciphers that can be used for SSH depending on the applicatio
     </item>
     
     <item>
-      <title>Automating your web browser with python and selenium</title>
+      <title>Automating your web browser with selenium</title>
       <link>https://4rkal.com/posts/selenium/</link>
       <pubDate>Wed, 22 Feb 2023 21:23:38 +0300</pubDate>
       

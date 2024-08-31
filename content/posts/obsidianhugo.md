@@ -3,8 +3,6 @@ title: My Obsidian + Hugo blogging setup (Auto publishing with hotkeys)
 description: In this post I go through how I have setup my Obsidian and Hugo blogging workflow. I use a single vault and auto publish my articles with hotkeys.
 date: 2024-08-13T17:15:57+03:00
 draft: false
-tags:
-  - obsidian
 ---
 If you clicked on this article you probably know what these two technologies are but if you don't here's a quick explanation:
 
@@ -17,10 +15,9 @@ I have been taking all of my notes in it for a couple of months now and it's ama
 
 ### Hugo
 [Hugo](https://gohugo.io) is an ultra fast static website generator made in golang. I have been using hugo for my blog for almost 2 years now. I recently switched the theme of my my blog. Read more about the change [New Look, new start](https://4rkal.eu.org/posts/newlook?utm_source=internal&utm_campaign=obsidianhugo). 
-# Setup
-The following setup gives you the most control over the look and feel of your website without having a very complex setup. I believe it is a lot better than [Obsidian Publish](https://obsidian.md/publish) for those reasons.
 
-In this article I will not be showing how to setup these two technologies but merely how to get them to work together. 
+# Setup
+In this article I will not be showing how to setup obsidian or hugo but merely how to get them to work together. 
 
 If you wan't to learn how I setup this whole blog using hugo, cloudflare and render.com read:
 [How I setup this blog for free (domain, hosting, ssl) Complete Guide](https://4rkal.eu.org/posts/thisblog?utm_source=internal&utm_campaign=obsidianhugo)

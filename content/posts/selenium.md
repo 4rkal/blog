@@ -1,5 +1,5 @@
 ---
-title: Automating your web browser with python and selenium
+title: Automating your web browser with selenium
 date: 2023-02-22T21:23:38+03:00
 toc:
   enable: true

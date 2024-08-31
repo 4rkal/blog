@@ -48,9 +48,9 @@ Again you can change that under stream_port.
 
 Now everything should be working fine. All motion detection files will be saved in /var/lib/motion
 
-You can also change loads of other settings. Here are my settings: https://pastebin.com/WGn0NfcW
+You can also change loads of other settings. Here are my settings:https://pastebin.com/WGn0NfcW
 
 Read the documentation here: https://motion-project.github.io/motion_guide.html
 
-*If you enjoyed this article consider [supporting me](https://4rkal.com/donate)**
+***If you enjoyed this article consider [supporting me](../../donate)**
 

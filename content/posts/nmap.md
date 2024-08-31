@@ -4,6 +4,7 @@ date: 2023-03-05T17:37:03+03:00
 tags:
   - nmap
   - networking
+  - "article"
 ---
 Whether you want to scan your network for vulnerabilities or just want to see which ports you have open, nmap can be extremely useful.
 # What is nmap
