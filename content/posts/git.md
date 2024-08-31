@@ -1,112 +1,141 @@
 ---
-title: Setup your own git server
+title: "How to Set Up Your Own Git Server: A Simple Guide"
 date: 2023-03-05T17:11:40+03:00
 tags:
-  - "selfhosting"
-  - "linux"
+  - selfhosting
+  - linux
 ---
-There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .
+Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you'll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.
 
-# Requirements
-1. A computer for your server (running [[linux]] preferably debian)
-2. An internet connection (pretty hard without one)
-3. A second computer with git installed
+### What You’ll Need
+1. **A Computer for Your Server**: Ideally running Linux (Debian is a solid choice).
+2. **Internet Connection**: Pretty essential for accessing your server remotely.
+3. **Another Computer with Git Installed**: This is what you'll use to interact with your server.
 
-# Setup
-The first thing you will have to do is install git via your package manager
+### Step-by-Step Setup Guide
 
-If you are using apt
+#### 1. Install Git on Your Server
+First, you need to install Git on your server. Depending on your Linux distribution, use one of these commands:
 
-`sudo apt install git`
+- For Debian-based systems (like Ubuntu):
+  ```bash
+  sudo apt install git
+  ```
+- For Fedora-based systems:
+  ```bash
+  sudo dnf install git
+  ```
+- For Arch-based systems:
+  ```bash
+  sudo pacman -S git
+  ```
 
-On dnf
+#### 2. Create a Git User
+Next, create a dedicated user for Git operations:
 
-`sudo dnf install git`
-
-pacman
-
-`sudo pacman -S git`
-
-After that create a user called git
-
-`sudo useradd git`
-
-You will have to enter some information, you can leave everything except the password blank.
-
-Now login to your git user
-
-`su git`
-
-Now to make our server more secure we are going to use ssh keys.
+```bash
+sudo useradd git
 ```
+
+You'll be prompted to enter some information. Feel free to leave everything blank except for the password.
+
+#### 3. Secure Your Server with SSH Keys
+Log in as the new Git user:
+
+```bash
+su git
+```
+
+Then, enhance security by setting up SSH keys:
+
+```bash
 mkdir .ssh
 chmod 700 .ssh/
 touch .ssh/authorized_keys
 chmod 600 .ssh/authorized_keys
 ```
 
-Now on the computer which you want to commit from you will have to generate a ssh key
-On your main machine type.
-[My article on keybased auth](../sssh)
+#### 4. Generate and Add SSH Keys
+On your main machine (the one you’ll be committing from), generate an SSH key:
 
-`ssh-keygen`
-
-After that you will have to copy your ssh public key to the authorized_keys
-
-`ssh-copy-id user@ip`
-
-(To find out your ip you can type ifconfig)
-
-Now if you try to connect to your server you should be able to login without a password.
-
-`ssh git@ip`
-
-Now you will have to create the folder where all your git repos will be saved.
-
-I will save mine in ~/git , but you can save them wherever you want
-
-`mkdir ~/git`
-
-Now we have to give the ownership of the git folder to the git user
-
-`chown git:git git`
-
-Now for every repository you will have to create a folder.
-
-eg.
-
-`mkdir ~/git/my_cool_project.git`
-
-Now run 
-
-`cd ~/git/my_cool_project.git`
-
-And initiate the git repository
-
-`git init --bare`
-
-Now you can create a couple of files inside of your project (to test it out).
-
-`touch stuff.txt`
-
-Now you can test if your repository is working by cloning the files from another machine running git.
-
-`git clone git@ip:~/git/my_cool_project.git`
-
-You will probably get
-
-`warning: You appear to have cloned an empty repository.`
-
-That is because you haven't committed anything.
-
+```bash
+ssh-keygen
 ```
+
+Copy the SSH public key to your server:
+
+```bash
+ssh-copy-id git@your-server-ip
+```
+
+To find your server's IP, use:
+
+```bash
+ifconfig
+```
+
+Now, you should be able to log in to your server without needing a password:
+
+```bash
+ssh git@your-server-ip
+```
+
+#### 5. Set Up Your Git Repository Directory
+Create a directory to store your Git repositories. For example:
+
+```bash
+mkdir ~/git
+```
+
+Give ownership of this directory to the Git user:
+
+```bash
+chown git:git ~/git
+```
+
+#### 6. Create a New Repository
+For each project, create a separate directory:
+
+```bash
+mkdir ~/git/my_cool_project.git
+```
+
+Initialize the repository as a bare repository (suitable for sharing):
+
+```bash
+cd ~/git/my_cool_project.git
+git init --bare
+```
+
+#### 7. Test Your Setup
+To test your new Git server, try cloning the repository from another machine:
+
+```bash
+git clone git@your-server-ip:~/git/my_cool_project.git
+```
+
+You might see:
+
+```bash
+warning: You appear to have cloned an empty repository.
+```
+
+That’s because you haven’t added any files yet. Go ahead and add a file:
+
+```bash
+touch stuff.txt
+```
+
+Commit your changes:
+
+```bash
 git add .
 git commit -m "first commit"
 ```
 
-Now if you test that again it should work.
+Now, try cloning again, and everything should work smoothly.
 
-**GG** you did it, you have now successfully set up your own git server
+### Congratulations!
+You’ve successfully set up your own Git server! Now you have full control over your code and can collaborate without relying on third-party services.
 
-***If you enjoyed this article consider [supporting me](https://4rkal.com/donate)
-
+*Enjoyed this guide? Consider [supporting me](https://4rkal.com/donate) to help me create more content like this!*

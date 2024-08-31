@@ -1282,71 +1282,80 @@ Read more:
     </item>
     
     <item>
-      <title>Setup your own git server</title>
+      <title>How to Set Up Your Own Git Server: A Simple Guide</title>
       <link>https://4rkal.com/posts/git/</link>
       <pubDate>Sun, 05 Mar 2023 17:11:40 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/git/</guid>
-      <description>There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .
-Requirements A computer for your server (running [[linux]] preferably debian) An internet connection (pretty hard without one) A second computer with git installed Setup The first thing you will have to do is install git via your package manager</description>
-      <content:encoded><![CDATA[<p>There are numerous benefits to running your own git server as opposed to Github . Your code cannot be used for profit . Additionally, nobody can delete your code base .</p>
-<h1 id="requirements">Requirements</h1>
+      <description>Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you&amp;rsquo;ll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.
+What You’ll Need A Computer for Your Server: Ideally running Linux (Debian is a solid choice). Internet Connection: Pretty essential for accessing your server remotely. Another Computer with Git Installed: This is what you&amp;rsquo;ll use to interact with your server.</description>
+      <content:encoded><![CDATA[<p>Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you&rsquo;ll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.</p>
+<h3 id="what-youll-need">What You’ll Need</h3>
 <ol>
-<li>A computer for your server (running [[linux]] preferably debian)</li>
-<li>An internet connection (pretty hard without one)</li>
-<li>A second computer with git installed</li>
+<li><strong>A Computer for Your Server</strong>: Ideally running Linux (Debian is a solid choice).</li>
+<li><strong>Internet Connection</strong>: Pretty essential for accessing your server remotely.</li>
+<li><strong>Another Computer with Git Installed</strong>: This is what you&rsquo;ll use to interact with your server.</li>
 </ol>
-<h1 id="setup">Setup</h1>
-<p>The first thing you will have to do is install git via your package manager</p>
-<p>If you are using apt</p>
-<p><code>sudo apt install git</code></p>
-<p>On dnf</p>
-<p><code>sudo dnf install git</code></p>
-<p>pacman</p>
-<p><code>sudo pacman -S git</code></p>
-<p>After that create a user called git</p>
-<p><code>sudo useradd git</code></p>
-<p>You will have to enter some information, you can leave everything except the password blank.</p>
-<p>Now login to your git user</p>
-<p><code>su git</code></p>
-<p>Now to make our server more secure we are going to use ssh keys.</p>
-<pre tabindex="0"><code>mkdir .ssh
-chmod 700 .ssh/
-touch .ssh/authorized_keys
-chmod 600 .ssh/authorized_keys
-</code></pre><p>Now on the computer which you want to commit from you will have to generate a ssh key
-On your main machine type.
-<a href="../sssh">My article on keybased auth</a></p>
-<p><code>ssh-keygen</code></p>
-<p>After that you will have to copy your ssh public key to the authorized_keys</p>
-<p><code>ssh-copy-id user@ip</code></p>
-<p>(To find out your ip you can type ifconfig)</p>
-<p>Now if you try to connect to your server you should be able to login without a password.</p>
-<p><code>ssh git@ip</code></p>
-<p>Now you will have to create the folder where all your git repos will be saved.</p>
-<p>I will save mine in ~/git , but you can save them wherever you want</p>
-<p><code>mkdir ~/git</code></p>
-<p>Now we have to give the ownership of the git folder to the git user</p>
-<p><code>chown git:git git</code></p>
-<p>Now for every repository you will have to create a folder.</p>
-<p>eg.</p>
-<p><code>mkdir ~/git/my_cool_project.git</code></p>
-<p>Now run</p>
-<p><code>cd ~/git/my_cool_project.git</code></p>
-<p>And initiate the git repository</p>
-<p><code>git init --bare</code></p>
-<p>Now you can create a couple of files inside of your project (to test it out).</p>
-<p><code>touch stuff.txt</code></p>
-<p>Now you can test if your repository is working by cloning the files from another machine running git.</p>
-<p><code>git clone git@ip:~/git/my_cool_project.git</code></p>
-<p>You will probably get</p>
-<p><code>warning: You appear to have cloned an empty repository.</code></p>
-<p>That is because you haven&rsquo;t committed anything.</p>
-<pre tabindex="0"><code>git add .
-git commit -m &#34;first commit&#34;
-</code></pre><p>Now if you test that again it should work.</p>
-<p><strong>GG</strong> you did it, you have now successfully set up your own git server</p>
-<p>***If you enjoyed this article consider <a href="https://4rkal.com/donate">supporting me</a></p>
+<h3 id="step-by-step-setup-guide">Step-by-Step Setup Guide</h3>
+<h4 id="1-install-git-on-your-server">1. Install Git on Your Server</h4>
+<p>First, you need to install Git on your server. Depending on your Linux distribution, use one of these commands:</p>
+<ul>
+<li>For Debian-based systems (like Ubuntu):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install git
+</span></span></code></pre></div></li>
+<li>For Fedora-based systems:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install git
+</span></span></code></pre></div></li>
+<li>For Arch-based systems:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S git
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="2-create-a-git-user">2. Create a Git User</h4>
+<p>Next, create a dedicated user for Git operations:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo useradd git
+</span></span></code></pre></div><p>You&rsquo;ll be prompted to enter some information. Feel free to leave everything blank except for the password.</p>
+<h4 id="3-secure-your-server-with-ssh-keys">3. Secure Your Server with SSH Keys</h4>
+<p>Log in as the new Git user:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>su git
+</span></span></code></pre></div><p>Then, enhance security by setting up SSH keys:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir .ssh
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">700</span> .ssh/
+</span></span><span style="display:flex;"><span>touch .ssh/authorized_keys
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">600</span> .ssh/authorized_keys
+</span></span></code></pre></div><h4 id="4-generate-and-add-ssh-keys">4. Generate and Add SSH Keys</h4>
+<p>On your main machine (the one you’ll be committing from), generate an SSH key:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen
+</span></span></code></pre></div><p>Copy the SSH public key to your server:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-copy-id git@your-server-ip
+</span></span></code></pre></div><p>To find your server&rsquo;s IP, use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ifconfig
+</span></span></code></pre></div><p>Now, you should be able to log in to your server without needing a password:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh git@your-server-ip
+</span></span></code></pre></div><h4 id="5-set-up-your-git-repository-directory">5. Set Up Your Git Repository Directory</h4>
+<p>Create a directory to store your Git repositories. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir ~/git
+</span></span></code></pre></div><p>Give ownership of this directory to the Git user:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chown git:git ~/git
+</span></span></code></pre></div><h4 id="6-create-a-new-repository">6. Create a New Repository</h4>
+<p>For each project, create a separate directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir ~/git/my_cool_project.git
+</span></span></code></pre></div><p>Initialize the repository as a bare repository (suitable for sharing):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/git/my_cool_project.git
+</span></span><span style="display:flex;"><span>git init --bare
+</span></span></code></pre></div><h4 id="7-test-your-setup">7. Test Your Setup</h4>
+<p>To test your new Git server, try cloning the repository from another machine:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone git@your-server-ip:~/git/my_cool_project.git
+</span></span></code></pre></div><p>You might see:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>warning: You appear to have cloned an empty repository.
+</span></span></code></pre></div><p>That’s because you haven’t added any files yet. Go ahead and add a file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>touch stuff.txt
+</span></span></code></pre></div><p>Commit your changes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;first commit&#34;</span>
+</span></span></code></pre></div><p>Now, try cloning again, and everything should work smoothly.</p>
+<h3 id="congratulations">Congratulations!</h3>
+<p>You’ve successfully set up your own Git server! Now you have full control over your code and can collaborate without relying on third-party services.</p>
+<p><em>Enjoyed this guide? Consider <a href="https://4rkal.com/donate">supporting me</a> to help me create more content like this!</em></p>
 ]]></content:encoded>
     </item>
     
