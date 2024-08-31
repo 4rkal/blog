@@ -32,4 +32,3 @@ Wikipedia:\
 https://en.wikipedia.org/wiki/Floating-point_arithmetic
 
 **If you enjoyed this article consider [donating](https://4rkal.com/donate)**
-
