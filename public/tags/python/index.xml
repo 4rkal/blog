@@ -282,7 +282,7 @@ On windows:</li>
 <li>Paste the file in the directory that your script will run</li>
 </ol>
 <h1 id="installing-selenium">Installing selenium</h1>
-<p>To install selenium you have to have python and pip installed.Check out my article on python for <a href="../posts/python">more</a>
+<p>To install selenium you have to have python and pip installed.Check out my article on python for <a href="https://4rkal.com/posts/python">more</a>
 To install selenium open your cmd or terminal and type:<br>
 <code>pip install selenium</code>
 That should install it.\</p>

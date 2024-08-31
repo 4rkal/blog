@@ -254,7 +254,7 @@ Now push the changes with
 
 After that if you refresh the page of your github repo you should see everything there.
 
-Now head to [render.com](render.com) and create an account
+Now head to [render.com](https://render.com) and create an account
 
 On your dashboard select +New and then static site.
 

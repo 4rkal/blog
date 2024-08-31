@@ -800,7 +800,7 @@ git branch -M main
 <p>Now push the changes with</p>
 <p><code>git push -u origin main</code></p>
 <p>After that if you refresh the page of your github repo you should see everything there.</p>
-<p>Now head to <a href="render.com">render.com</a> and create an account</p>
+<p>Now head to <a href="https://render.com">render.com</a> and create an account</p>
 <p>On your dashboard select +New and then static site.</p>
 <p>Now you will be prompted to connect a github repository. Just connect your account and add that repository.</p>
 <p>eg</p>
@@ -1992,7 +1992,7 @@ On windows:</li>
 <li>Paste the file in the directory that your script will run</li>
 </ol>
 <h1 id="installing-selenium">Installing selenium</h1>
-<p>To install selenium you have to have python and pip installed.Check out my article on python for <a href="../posts/python">more</a>
+<p>To install selenium you have to have python and pip installed.Check out my article on python for <a href="https://4rkal.com/posts/python">more</a>
 To install selenium open your cmd or terminal and type:<br>
 <code>pip install selenium</code>
 That should install it.\</p>
@@ -2114,7 +2114,7 @@ When you perform math on these repeating decimals, you end up with leftovers whi
 0.300.com
 Wikipedia:<br>
 <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">https://en.wikipedia.org/wiki/Floating-point_arithmetic</a></p>
-<p><strong>If you enjoyed this article consider <a href="../donate">donating</a></strong></p>
+<p><strong>If you enjoyed this article consider <a href="https://4rkal.com/donate">donating</a></strong></p>
 ]]></content:encoded>
     </item>
     
