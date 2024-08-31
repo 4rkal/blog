@@ -150,5 +150,5 @@ In NERO
 
 You have now sent the transaction.
 
-**if this article helped you out consider [supporting me](../../donate/)**
+**if this article helped you out consider [supporting me](https://4rkal.com/donate)**
 

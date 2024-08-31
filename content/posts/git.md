@@ -108,5 +108,5 @@ Now if you test that again it should work.
 
 **GG** you did it, you have now successfully set up your own git server
 
-***If you enjoyed this article consider [supporting me](../../donate)
+***If you enjoyed this article consider [supporting me](https://4rkal.com/donate)
 

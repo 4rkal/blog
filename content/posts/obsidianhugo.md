@@ -102,7 +102,7 @@ draft: true
 ---
 
 
-**If you enjoyed this article consider [supporting me](https://4rkal.eu.org/donate)**
+**If you enjoyed this article consider [supporting me](https://4rkal.com/donate)**
 ```
 
 I have all the required front matter including a title, description and a date in the format that hugo asks.
