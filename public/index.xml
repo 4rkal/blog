@@ -182,20 +182,17 @@ ok      apiSpeedImprove/httpReuse       7.270s
       
       <guid>https://4rkal.com/posts/obsidianhugo/</guid>
       <description>In this post I go through how I have setup my Obsidian and Hugo blogging workflow. I use a single vault and auto publish my articles with hotkeys.</description>
-      <content:encoded><![CDATA[<p>If you clicked on this article you probably know what these two technologies are but if you don&rsquo;t here&rsquo;s a quick explanation:</p>
+      <content:encoded><![CDATA[<p>If you clicked on this article you probably know what Obsidian and Hugo are but if you don&rsquo;t here&rsquo;s a quick explanation:</p>
 <h3 id="obsidian">Obsidian</h3>
 <p><a href="https://obsidian.md">Obsidian</a> is a feature packed markdown editor. But it&rsquo;s not just a markdown editor. It&rsquo;s a way to manage knowledge. It&rsquo;s great for organizing your thoughts in a flexible, non-linear way.</p>
 <p>Obsidian works on all platforms. So you can write articles from basically any platform.</p>
 <p>I have been taking all of my notes in it for a couple of months now and it&rsquo;s amazing!</p>
 <h3 id="hugo">Hugo</h3>
 <p><a href="https://gohugo.io">Hugo</a> is an ultra fast static website generator made in golang. I have been using hugo for my blog for almost 2 years now. I recently switched the theme of my my blog. Read more about the change <a href="https://4rkal.eu.org/posts/newlook?utm_source=internal&amp;utm_campaign=obsidianhugo">New Look, new start</a>.</p>
-<h1 id="setup">Setup</h1>
-<p>In this article I will not be showing how to setup obsidian or hugo but merely how to get them to work together.</p>
-<p>If you wan&rsquo;t to learn how I setup this whole blog using hugo, cloudflare and render.com read:
-<a href="https://4rkal.eu.org/posts/thisblog?utm_source=internal&amp;utm_campaign=obsidianhugo">How I setup this blog for free (domain, hosting, ssl) Complete Guide</a></p>
-<p>If you wan&rsquo;t a good guide on how to use obsidian read:
-<a href="https://help.obsidian.md/Getting+started/Download+and+install+Obsidian">Getting started - obsidian.md</a></p>
-<h1 id="goals">Goals</h1>
+<h3 id="using-obsidian-with-hugo">Using Obsidian with Hugo</h3>
+<p>In this guide, I’ll show you how to get Obsidian and Hugo working together. I won’t cover the initial setup of either tool, but I’ll explain how to integrate them for a smooth blogging workflow.</p>
+<p>If you need help setting up Hugo, check out my guide: <a href="https://4rkal.com/posts/thisblog?utm_source=internal&amp;utm_campaign=obsidianhugo">How I Setup This Blog for Free (Domain, Hosting, SSL) Complete Guide</a>. And if you’re new to Obsidian, check out this <a href="https://help.obsidian.md/Getting+started/Download+and+install+Obsidian">Getting Started Guide</a> .</p>
+<h3 id="goals-for-using-hugo-with-obsidian">Goals for Using Hugo with Obsidian</h3>
 <p>My goals for the setup are:</p>
 <ol>
 <li>Using a single <a href="https://help.obsidian.md/Getting+started/Create+a+vault">obsidian vault</a></li>
@@ -205,12 +202,12 @@ ok      apiSpeedImprove/httpReuse       7.270s
 <li>Have all markdown files in a <a href="https://github.com/4rkal/blog/">public github repository</a>, so that people can propose changes</li>
 </ol>
 <h1 id="existing-setup">Existing setup</h1>
-<p>The way that my current work flow works is:</p>
+<p>Here’s how my current workflow with Obsidian and Hugo looks:</p>
 <ol>
-<li>Edit articles from the content folder.</li>
-<li>Run hugo command.</li>
-<li>Push to github.</li>
-<li><a href="https://render.com">Render.com</a> automatically picks up the changes and serves them.</li>
+<li>I write and edit articles directly in Obsidian, within the <code>content</code> folder of my Hugo project.</li>
+<li>I run the Hugo command to generate the static site.</li>
+<li>I push the changes to GitHub.</li>
+<li><a href="https://render.com">Render.com</a> automatically picks up the changes and deploys the updated site.</li>
 </ol>
 <h1 id="journey">Journey</h1>
 <p><em>If you want to skip the journey part you can go straight to <a href="#the-sauce">The Sauce</a></em></p>
@@ -259,7 +256,7 @@ draft: true
 <p>I also added a small donation text that I include at the bottom of every article.</p>
 <p>This means that I can automatically insert this template into any file and start writing!</p>
 <h2 id="folder-syncing">Folder Syncing</h2>
-<p>Now I want all of my files in my vault/Blog directory to be copied over to the blog/content</p>
+<p>Now I want all of my files in my vault/Blog directory to be copied over to the blog/content. Essentially connecting Hugo and Obsidian.</p>
 <p>Thank&rsquo;s to a helpful discord user I found the <a href="https://github.com/Taitava/obsidian-shellcommands">obsidian-shellcommands</a> plugin.</p>
 <p><strong>NOTE:</strong> this plugin does not currently work very well with the flatpak version of obsidian (since flatpak isolates the environment) . Using another alternative (.deb or appimage) seems to work.</p>
 <p>It allows you to run shell commands in the background with a hotkey.</p>
@@ -1949,10 +1946,10 @@ There are different ciphers that can be used for SSH depending on the applicatio
       
       <guid>https://4rkal.com/posts/selenium/</guid>
       <description>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.
-In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.medium.com/f1df170bcc08/python-for-beginners)
+In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.com/posts/python/)
 What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation.</description>
       <content:encoded><![CDATA[<p><strong>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.</strong></p>
-<p>In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (<a href="https://4rkal.medium.com/f1df170bcc08/python-for-beginners">https://4rkal.medium.com/f1df170bcc08/python-for-beginners</a>)</p>
+<p>In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (<a href="https://4rkal.com/posts/python/">https://4rkal.com/posts/python/</a>)</p>
 <h1 id="what-is-selenium">What is selenium?</h1>
 <p>Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. You can use selenium in multiple programming languages including JavaScript (Node.js), C#, Groovy, Java, Perl, PHP, Python, Ruby and Scala and with multiple web browsers including firefox, internet explorer, safary, opera, chrome and edge. Selenium can be very useful for web scraping, automating boring and manual tasks and so much more.</p>
 <h1 id="setup">Setup</h1>

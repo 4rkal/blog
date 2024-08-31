@@ -4,7 +4,7 @@ description: In this post I go through how I have setup my Obsidian and Hugo blo
 date: 2024-08-13T17:15:57+03:00
 draft: false
 ---
-If you clicked on this article you probably know what these two technologies are but if you don't here's a quick explanation:
+If you clicked on this article you probably know what Obsidian and Hugo are but if you don't here's a quick explanation:
 
 ### Obsidian
 [Obsidian](https://obsidian.md) is a feature packed markdown editor. But it's not just a markdown editor. It's a way to manage knowledge. It's great for organizing your thoughts in a flexible, non-linear way. 
@@ -16,16 +16,12 @@ I have been taking all of my notes in it for a couple of months now and it's ama
 ### Hugo
 [Hugo](https://gohugo.io) is an ultra fast static website generator made in golang. I have been using hugo for my blog for almost 2 years now. I recently switched the theme of my my blog. Read more about the change [New Look, new start](https://4rkal.eu.org/posts/newlook?utm_source=internal&utm_campaign=obsidianhugo). 
 
-# Setup
-In this article I will not be showing how to setup obsidian or hugo but merely how to get them to work together. 
+### Using Obsidian with Hugo
+In this guide, I’ll show you how to get Obsidian and Hugo working together. I won’t cover the initial setup of either tool, but I’ll explain how to integrate them for a smooth blogging workflow.
 
-If you wan't to learn how I setup this whole blog using hugo, cloudflare and render.com read:
-[How I setup this blog for free (domain, hosting, ssl) Complete Guide](https://4rkal.eu.org/posts/thisblog?utm_source=internal&utm_campaign=obsidianhugo)
+If you need help setting up Hugo, check out my guide: [How I Setup This Blog for Free (Domain, Hosting, SSL) Complete Guide](https://4rkal.com/posts/thisblog?utm_source=internal&utm_campaign=obsidianhugo). And if you’re new to Obsidian, check out this [Getting Started Guide](https://help.obsidian.md/Getting+started/Download+and+install+Obsidian) .
 
-If you wan't a good guide on how to use obsidian read:
-[Getting started - obsidian.md](https://help.obsidian.md/Getting+started/Download+and+install+Obsidian)
-
-# Goals
+### Goals for Using Hugo with Obsidian
 My goals for the setup are:
 1. Using a single [obsidian vault](https://help.obsidian.md/Getting+started/Create+a+vault)
 2. Have an easy to use [obsidian template](https://help.obsidian.md/Plugins/Templates) that I can use for my blog posts.
@@ -34,13 +30,11 @@ My goals for the setup are:
 5. Have all markdown files in a [public github repository](https://github.com/4rkal/blog/), so that people can propose changes
 
 # Existing setup
-The way that my current work flow works is:
-1. Edit articles from the content folder.
-2. Run hugo command.
-3. Push to github.
-4. [Render.com](https://render.com) automatically picks up the changes and serves them.
-
-
+Here’s how my current workflow with Obsidian and Hugo looks:
+1. I write and edit articles directly in Obsidian, within the `content` folder of my Hugo project.
+2. I run the Hugo command to generate the static site.
+3. I push the changes to GitHub.
+4.  [Render.com](https://render.com) automatically picks up the changes and deploys the updated site.
 # Journey
 *If you want to skip the journey part you can go straight to [The Sauce](#the-sauce)*
 
@@ -118,7 +112,7 @@ I also added a small donation text that I include at the bottom of every article
 This means that I can automatically insert this template into any file and start writing!
 
 ## Folder Syncing
-Now I want all of my files in my vault/Blog directory to be copied over to the blog/content
+Now I want all of my files in my vault/Blog directory to be copied over to the blog/content. Essentially connecting Hugo and Obsidian.
 
 Thank's to a helpful discord user I found the [obsidian-shellcommands](https://github.com/Taitava/obsidian-shellcommands) plugin. 
 
