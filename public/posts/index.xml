@@ -238,7 +238,7 @@ vault/Blog
 </code></pre><p>After that I copied over all of my files from the content directory to the Blog.</p>
 <p><em>I then started writing this very article</em></p>
 <h2 id="obsidian-templates">Obsidian templates</h2>
-<p>I needed some way to setup a simple template to contain all of the required hugo front matter.</p>
+<p>I needed some way to setup a simple obsidian template to contains all of the required hugo front matter.</p>
 <p>That is quite easy.</p>
 <p>Read about how to setup templates <a href="https://help.obsidian.md/Plugins/Templates">Templates - obsidian.md</a></p>
 <p>I created a file called <code>Blog Post</code> in my templates folder</p>

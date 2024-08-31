@@ -84,7 +84,7 @@ After that I copied over all of my files from the content directory to the Blog.
 *I then started writing this very article*
 
 ## Obsidian templates
-I needed some way to setup a simple template to contain all of the required hugo front matter. 
+I needed some way to setup a simple obsidian template to contains all of the required hugo front matter. 
 
 That is quite easy.
 
