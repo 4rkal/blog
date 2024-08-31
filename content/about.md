@@ -15,7 +15,7 @@ If you enjoy my content, consider supporting me with a [donation](../../donate).
 Here’s what I'm currently working on:
 
 1. **[This Blog](.)** - Continuously updating with new content.
-2. **[CypherGoat](https://github.com/CypherGoat)** / [RubyTrades](x.com/ruby_trades)- A cryptocurrency instant swap aggregator.
+2. **[CypherGoat](https://github.com/CypherGoat)** / [RubyTrades](https://x.com/ruby_trades)- A cryptocurrency instant swap aggregator.
 3. **[Videiro](https://videiro.com)** - Video editor requirement website.
 
 ## Get in Touch
@@ -23,8 +23,8 @@ Here’s what I'm currently working on:
 You can reach me on various platforms:
 
 - **Twitter:** `@4rkal_`
-- **Email:** `4rkal@proton.me`
-- **Shitposting Email:** `4rkal@horsefucker.org`
+- **Email:** `4rkal at proton dot me`
+- **Shitposting Email:** `4rkal at horsefucker dot org`
 - **Signal:** `4rkal.69` ([Link](https://signal.me/#eu/yLATcXczmtO-VimtMwpkJQKJSeyNppqP_H-742eUxPL1TLezxCxMSqZJR2QD4lqY))
 - **Matrix:** `4rkal:monero.social`
 - **Session:** `053a1d66ce897ff32b87a4ab4232529f47b734971308d61984fc84b16fec87a519`
