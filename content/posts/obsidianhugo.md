@@ -1,5 +1,5 @@
 ---
-title: My Obsidian + Hugo blogging setup (Auto publishing with hotkeys)
+title: My Obsidian + Hugo blogging setup
 description: In this post I go through how I have setup my Obsidian and Hugo blogging workflow. I use a single vault and auto publish my articles with hotkeys.
 date: 2024-08-13T17:15:57+03:00
 draft: false
