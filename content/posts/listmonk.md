@@ -224,7 +224,7 @@ These are the most important features that listmonk offers (I'm sure I forgot so
 
 ## That's all folks
 
-If this article helped you out, consider joining my **newsletter bellow**:
+If this article helped you out, consider joining my (listmonk) **newsletter bellow**:
 
 
 <div style="text-align: left; margin: 0 auto;">
