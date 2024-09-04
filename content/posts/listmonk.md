@@ -24,7 +24,6 @@ tags:
 
 And more
 
-
 ## Why choose listmonk over mailchimp, buttodown etc
 For me, running a newsletter means owning my email list. 
 
@@ -159,6 +158,29 @@ Don't forget to save!
 ## Sliding window limit
 This is very important to setup when email providers limit the amount of email to be sent per/hour or per/day. You can access the Sliding window limit in `Settings` under the performance tab. For ionos I have it set at 500 emails/hour
 
+## Exposing via cloudflare tunnels
+I will be making my instance publicly accessible using cloudflare tunnels.
+
+To do this you will need a cloudflare account and a domain pointed to cloudflare.
+
+First head to the [Zero Trust Dashboard](https://one.dash.cloudflare.com/)
+
+Under `Networks` click on `Tunnels` and then `Create a tunnel`
+
+Once created you should `Install and run a connector`, follow the instructions on the page for your specific setup. 
+
+After the connector is running you should click on the `Public Hostname` tab and `Add a public hostname`.
+
+Now you should see something like this: 
+![Zero Trust Dashboard](../assets/listmonk5.png)
+
+Fill in the info as I have. 
+
+The service type should be `HTTP` and the url should be `yourserverurl:9000`, in my case that's 127.0.0.1:9000
+
+Now if you head to the domain that you specified you should see gitea up and running.
+
+In my case you can access my newsletter page [here](https://newsletter.4rkal.com/subscription/form)
 
 ## Listmonk feature overview
 These are all of the features that listmonk offers:
