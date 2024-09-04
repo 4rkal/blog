@@ -3,6 +3,11 @@ title: Selfhosted email newsletter made easy - Listmonk.app
 description: Listmonk is an amazing selfhosted email newsletter manager. It offers loads of features like analytics (clicks, opens, bounces), templates, public subscription pages, importing subscribers and much more!
 date: 2024-08-23T11:19:17+03:00
 draft: false
+tags:
+  - selfhosting
+  - automation
+  - linux
+  - privacy
 ---
 ## What is listmonk?
 [Listmonk](https://listmonk.app) is a selfhosted newsletter and mailing list manager. It is free and opensource, so you have full control. It also offers a super clean webui:

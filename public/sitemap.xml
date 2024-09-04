@@ -17,12 +17,37 @@
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://4rkal.com/tags/automation/</loc>
+    <lastmod>2024-08-23T11:19:17+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/linux/</loc>
+    <lastmod>2024-08-23T11:19:17+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://4rkal.com/posts/</loc>
     <lastmod>2024-08-23T11:19:17+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://4rkal.com/tags/privacy/</loc>
+    <lastmod>2024-08-23T11:19:17+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://4rkal.com/posts/listmonk/</loc>
+    <lastmod>2024-08-23T11:19:17+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/selfhosting/</loc>
+    <lastmod>2024-08-23T11:19:17+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/</loc>
     <lastmod>2024-08-23T11:19:17+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -33,16 +58,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://4rkal.com/posts/gitea/</loc>
-    <lastmod>2024-08-19T19:21:15+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/selfhosting/</loc>
-    <lastmod>2024-08-19T19:21:15+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/</loc>
     <lastmod>2024-08-19T19:21:15+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -127,11 +142,6 @@
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://4rkal.com/tags/linux/</loc>
-    <lastmod>2023-10-04T19:17:04+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://4rkal.com/tags/ssh/</loc>
     <lastmod>2023-10-04T19:17:04+03:00</lastmod>
     <changefreq>always</changefreq>
@@ -158,11 +168,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://4rkal.com/posts/pocketbase/</loc>
-    <lastmod>2023-03-06T20:44:46+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/privacy/</loc>
     <lastmod>2023-03-06T20:44:46+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -273,11 +278,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://4rkal.com/posts/selenium/</loc>
-    <lastmod>2023-02-22T21:23:38+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/automation/</loc>
     <lastmod>2023-02-22T21:23:38+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
