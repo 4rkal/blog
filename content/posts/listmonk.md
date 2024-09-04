@@ -14,6 +14,13 @@ tags:
 
 ![Listmonk WebUI](../assets/listmonk.png)
 
+## Why choose listmonk over mailchimp, buttodown etc
+For me, running a newsletter means owning my email list. 
+
+When people create newsletters they want to break free from the big platforms like Twitter or YouTube. When you use a proprietary service like Mailchimp, you’re still tied down to their rules and limitations. With Listmonk, you get more control and independence, which for me is a huge win. 
+
+The other reason is that listmonk is completely free (if you don't count electricity bills/vps hosting bills). Even if you include the cost of your email host + hosting fees it is still tiny compared to mailchimp or buttondown.
+
 ## Listmonk feature overview
 1. Analytics - Tracking email opens, link clicks and bounces
 2. Templates - Advanced html templates with template variables
@@ -23,13 +30,6 @@ tags:
 6. Email lists - Separate lists eg Weekly roundup and new posts.
 
 And more
-
-## Why choose listmonk over mailchimp, buttodown etc
-For me, running a newsletter means owning my email list. 
-
-When people create newsletters they want to break free from the big platforms like Twitter or YouTube. When you use a proprietary service like Mailchimp, you’re still tied down to their rules and limitations. With Listmonk, you get more control and independence, which for me is a huge win. 
-
-The other reason is that listmonk is completely free (if you don't count electricity bills/vps hosting bills). Even if you include the cost of your email host + hosting fees it is still tiny compared to mailchimp or buttondown.
 
 ## Requirements for running listmonk
 1. A server running linux, either in the cloud or at home. We will be using debian 12, but you can use any other distribution.
