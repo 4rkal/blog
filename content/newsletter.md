@@ -2,7 +2,7 @@
 title: Newsletter
 date: 2024-09-04T11:11:15+03:00
 ---
-Join my weekly newsletter, where I share recent articles I have written, tips and tricks and more!
+Join my weekly roundup, where I’ll share what I’ve been up to that week, including articles I’ve published, cool finds, tips and tricks and more!
 
 
 <style>
