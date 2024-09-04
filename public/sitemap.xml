@@ -7,6 +7,11 @@
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://4rkal.com/newsletter/</loc>
+    <lastmod>2024-09-04T11:11:15+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://4rkal.com/</loc>
     <lastmod>2024-08-19T19:21:15+03:00</lastmod>
     <changefreq>always</changefreq>
@@ -64,6 +69,21 @@
   </url><url>
     <loc>https://4rkal.com/updates/</loc>
     <lastmod>2024-08-14T16:41:25+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/#hugo/</loc>
+    <lastmod>2024-08-13T17:15:57+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/#obsidian/</loc>
+    <lastmod>2024-08-13T17:15:57+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/posts/obsidian-hugo/</loc>
+    <lastmod>2024-08-13T17:15:57+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
