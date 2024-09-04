@@ -12,14 +12,14 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 23 Aug 2024 11:19:17 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Selfhosted email newsletter made easy - Listmonk.app</title>
+      <title>Setup a selfhosted newsletter using listmonk</title>
       <link>https://4rkal.com/posts/listmonk/</link>
       <pubDate>Fri, 23 Aug 2024 11:19:17 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/listmonk/</guid>
-      <description>Listmonk is an amazing selfhosted email newsletter manager. It offers loads of features like analytics (clicks, opens, bounces), templates, public subscription pages, importing subscribers and much more!</description>
+      <description>Listmonk is an amazing feature packed selfhosted email newsletter manager. It offers loads of features like analytics (clicks, opens, bounces), templates, public subscription pages, importing subscribers and much more!</description>
       <content:encoded><![CDATA[<h2 id="what-is-listmonk">What is listmonk?</h2>
-<p><a href="https://listmonk.app">Listmonk</a> is a selfhosted newsletter and mailing list manager. It is free and opensource, so you have full control. It also offers a super clean webui:</p>
+<p><a href="https://listmonk.app">Listmonk</a> is a selfhosted newsletter and mailing list manager. It is free and opensource, so you have full control over your data. It also offers a super clean webui:</p>
 <p><img loading="lazy" src="/../assets/listmonk.png" type="" alt="Listmonk WebUI"  /></p>
 <h2 id="listmonk-feature-overview">Listmonk feature overview</h2>
 <ol>
@@ -62,14 +62,14 @@
 </code></pre><p>Login and head to the settings</p>
 <p>In the <code>General</code> tab you can customize the default from email, root url, site name, favicon and admin notification emails</p>
 <p>Here&rsquo;s what my settings look like:</p>
-<p><img loading="lazy" src="/../assets/listmonk2.png" type="" alt="Listmonk Settings"  /></p>
+<p><img loading="lazy" src="/listmonk2.png" type="" alt="Listmonk Settings"  /></p>
 <p>You can customize the page to your liking.</p>
 <p>Save by clicking on the save button in the top right corner.</p>
 <h2 id="email-setup">Email setup</h2>
 <p>For the next part you will either need a gmail account or any other email provider that give you smtp connection</p>
 <p>If you want a great custom email I recommend ionos, you can get up to 10$ in credits by using my link <a href="http://aklam.io/bbxioA">Ionos - Email &amp; Office 10$ credits </a> that is the provider that I am currently using.</p>
 <p>In this guide I will show you how to set this up for these two providers, but the setup should be similar for others too.</p>
-<p><strong>IMPORTANT</strong>: Both of these hosts have a limit on how many emails can be sent out per/hour or per/day. For ionos that is 500/hour. Setting up a <a href="#sliding-window-limit">Sliding Window Limit</a> is very important.</p>
+<p><strong>IMPORTANT</strong>: Both of these hosts have a limit on how many emails can be sent out per hour or per day. For ionos that is 500/hour. Setting up a <a href="#sliding-window-limit">Sliding Window Limit</a> is very important.</p>
 <h3 id="setup-for-gmail">Setup for gmail</h3>
 <p>I recommend that you use a different gmail account from your personal one.</p>
 <p>The first thing you will have to do is generate an app password, to do that head to <a href="https://myaccount.google.com/apppasswords">Create and manage app passwords</a> and create a new one called listmonk. Copy the password that is generated and save it somewhere safe.</p>
@@ -97,7 +97,7 @@
 <p>If you configured everything correctly you should now get a test message to the email specified.</p>
 <p>Don&rsquo;t forget to save!</p>
 <h2 id="sliding-window-limit">Sliding window limit</h2>
-<p>This is very important to setup when email providers limit the amount of email to be sent per/hour or per/day. You can access the Sliding window limit in <code>Settings</code> under the performance tab. For ionos I have it set at 500 emails/hour</p>
+<p>This is very important to setup when email providers limit the amount of email to be sent per hour or per day. You can access the Sliding window limit in <code>Settings</code> under the performance tab. For ionos I have it set at 500 emails/hour</p>
 <h2 id="exposing-via-cloudflare-tunnels">Exposing via cloudflare tunnels</h2>
 <p>I will be making my instance publicly accessible using cloudflare tunnels.</p>
 <p>To do this you will need a cloudflare account and a domain pointed to cloudflare.</p>

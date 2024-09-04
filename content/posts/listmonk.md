@@ -1,6 +1,6 @@
 ---
-title: Selfhosted email newsletter made easy - Listmonk.app
-description: Listmonk is an amazing selfhosted email newsletter manager. It offers loads of features like analytics (clicks, opens, bounces), templates, public subscription pages, importing subscribers and much more!
+title: Setup a selfhosted newsletter using listmonk
+description: Listmonk is an amazing feature packed selfhosted email newsletter manager. It offers loads of features like analytics (clicks, opens, bounces), templates, public subscription pages, importing subscribers and much more!
 date: 2024-08-23T11:19:17+03:00
 draft: false
 tags:
@@ -10,7 +10,7 @@ tags:
   - privacy
 ---
 ## What is listmonk?
-[Listmonk](https://listmonk.app) is a selfhosted newsletter and mailing list manager. It is free and opensource, so you have full control. It also offers a super clean webui:
+[Listmonk](https://listmonk.app) is a selfhosted newsletter and mailing list manager. It is free and opensource, so you have full control over your data. It also offers a super clean webui:
 
 ![Listmonk WebUI](../assets/listmonk.png)
 
@@ -90,7 +90,7 @@ In the `General` tab you can customize the default from email, root url, site na
 
 Here's what my settings look like:
 
-![Listmonk Settings](../assets/listmonk2.png)
+![Listmonk Settings](listmonk2.png)
 
 You can customize the page to your liking.
 
@@ -103,7 +103,7 @@ If you want a great custom email I recommend ionos, you can get up to 10$ in cre
 
 In this guide I will show you how to set this up for these two providers, but the setup should be similar for others too.
 
-**IMPORTANT**: Both of these hosts have a limit on how many emails can be sent out per/hour or per/day. For ionos that is 500/hour. Setting up a [Sliding Window Limit](#sliding-window-limit) is very important.
+**IMPORTANT**: Both of these hosts have a limit on how many emails can be sent out per hour or per day. For ionos that is 500/hour. Setting up a [Sliding Window Limit](#sliding-window-limit) is very important.
 
 ### Setup for gmail
 I recommend that you use a different gmail account from your personal one.
@@ -156,7 +156,7 @@ If you configured everything correctly you should now get a test message to the 
 Don't forget to save!
 
 ## Sliding window limit
-This is very important to setup when email providers limit the amount of email to be sent per/hour or per/day. You can access the Sliding window limit in `Settings` under the performance tab. For ionos I have it set at 500 emails/hour
+This is very important to setup when email providers limit the amount of email to be sent per hour or per day. You can access the Sliding window limit in `Settings` under the performance tab. For ionos I have it set at 500 emails/hour
 
 ## Exposing via cloudflare tunnels
 I will be making my instance publicly accessible using cloudflare tunnels.
