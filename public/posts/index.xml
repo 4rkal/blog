@@ -98,6 +98,19 @@
 <p>Don&rsquo;t forget to save!</p>
 <h2 id="sliding-window-limit">Sliding window limit</h2>
 <p>This is very important to setup when email providers limit the amount of email to be sent per/hour or per/day. You can access the Sliding window limit in <code>Settings</code> under the performance tab. For ionos I have it set at 500 emails/hour</p>
+<h2 id="exposing-via-cloudflare-tunnels">Exposing via cloudflare tunnels</h2>
+<p>I will be making my instance publicly accessible using cloudflare tunnels.</p>
+<p>To do this you will need a cloudflare account and a domain pointed to cloudflare.</p>
+<p>First head to the <a href="https://one.dash.cloudflare.com/">Zero Trust Dashboard</a></p>
+<p>Under <code>Networks</code> click on <code>Tunnels</code> and then <code>Create a tunnel</code></p>
+<p>Once created you should <code>Install and run a connector</code>, follow the instructions on the page for your specific setup.</p>
+<p>After the connector is running you should click on the <code>Public Hostname</code> tab and <code>Add a public hostname</code>.</p>
+<p>Now you should see something like this:
+<img loading="lazy" src="/../assets/listmonk5.png" type="" alt="Zero Trust Dashboard"  /></p>
+<p>Fill in the info as I have.</p>
+<p>The service type should be <code>HTTP</code> and the url should be <code>yourserverurl:9000</code>, in my case that&rsquo;s 127.0.0.1:9000</p>
+<p>Now if you head to the domain that you specified you should see gitea up and running.</p>
+<p>In my case you can access my newsletter page <a href="https://newsletter.4rkal.com/subscription/form">here</a></p>
 <h2 id="listmonk-feature-overview-1">Listmonk feature overview</h2>
 <p>These are all of the features that listmonk offers:</p>
 <h3 id="templates">Templates</h3>
@@ -267,71 +280,6 @@ Why use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance be
 <p>In my case you can access my public gitea instance at <a href="https://git.4rkal.com">git.4rkal.com</a></p>
 <p>Congratulations, you now have your very own gitea instance!</p>
 <p><strong>If you enjoyed this article, consider <a href="https://4rkal.eu.org/donate">supporting me</a></strong></p>
-<h4 id="join-my-weekly-roundup-where-i-share-what-ive-been-up-to-that-week-including-articles-ive-published-cool-finds-tips-and-tricks-and-more">Join my weekly roundup, where I share what I’ve been up to that week, including articles I’ve published, cool finds, tips and tricks, and more!</h4>
-<style>
-  .listmonk-form {
-    width: 100%;
-    max-width: 600px; /* Increase the max-width for more horizontal space */
-    padding: 15px;
-    border: 1px solid #444;
-    border-radius: 8px;
-    background-color: #333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for better visibility */
-    margin: 0; /* Remove centering margin */
-  }
-  .listmonk-form h3 {
-    margin-bottom: 10px;
-    color: #f1f1f1;
-  }
-  .listmonk-form p {
-    margin-bottom: 10px;
-  }
-  .listmonk-form input[type="email"],
-  .listmonk-form input[type="text"] {
-    width: calc(100% - 22px); /* Adjust width for padding */
-    padding: 8px;
-    border: 1px solid #555;
-    border-radius: 4px;
-    background-color: #222;
-    color: #f1f1f1;
-  }
-  .listmonk-form input[type="checkbox"] {
-    margin-right: 8px;
-  }
-  .listmonk-form label {
-    margin-right: 8px;
-    color: #f1f1f1;
-  }
-  .listmonk-form span {
-    display: block;
-    margin-top: 4px;
-    color: #aaa;
-  }
-  .listmonk-form input[type="submit"] {
-    background-color: #007bff;
-    color: #f1f1f1;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  .listmonk-form input[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-</style>
-<form method="post" action="https://newsletter.4rkal.com/subscription/form" class="listmonk-form">
-    <div>
-        <h3>Subscribe</h3>
-        <input type="hidden" name="nonce" />
-        <p><input type="email" name="email" required placeholder="E-mail" /></p>
-        <p>
-            <input id="78a75" type="checkbox" name="l" checked value="78a75b30-472d-4790-a5d5-7f2ed49662a4" />
-            <label for="78a75">Weekly Roundup</label>
-        </p>
-        <p><input type="submit" value="Subscribe" /></p>
-    </div>
-</form>
 ]]></content:encoded>
     </item>
     

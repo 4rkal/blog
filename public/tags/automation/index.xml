@@ -98,6 +98,19 @@
 <p>Don&rsquo;t forget to save!</p>
 <h2 id="sliding-window-limit">Sliding window limit</h2>
 <p>This is very important to setup when email providers limit the amount of email to be sent per/hour or per/day. You can access the Sliding window limit in <code>Settings</code> under the performance tab. For ionos I have it set at 500 emails/hour</p>
+<h2 id="exposing-via-cloudflare-tunnels">Exposing via cloudflare tunnels</h2>
+<p>I will be making my instance publicly accessible using cloudflare tunnels.</p>
+<p>To do this you will need a cloudflare account and a domain pointed to cloudflare.</p>
+<p>First head to the <a href="https://one.dash.cloudflare.com/">Zero Trust Dashboard</a></p>
+<p>Under <code>Networks</code> click on <code>Tunnels</code> and then <code>Create a tunnel</code></p>
+<p>Once created you should <code>Install and run a connector</code>, follow the instructions on the page for your specific setup.</p>
+<p>After the connector is running you should click on the <code>Public Hostname</code> tab and <code>Add a public hostname</code>.</p>
+<p>Now you should see something like this:
+<img loading="lazy" src="/../assets/listmonk5.png" type="" alt="Zero Trust Dashboard"  /></p>
+<p>Fill in the info as I have.</p>
+<p>The service type should be <code>HTTP</code> and the url should be <code>yourserverurl:9000</code>, in my case that&rsquo;s 127.0.0.1:9000</p>
+<p>Now if you head to the domain that you specified you should see gitea up and running.</p>
+<p>In my case you can access my newsletter page <a href="https://newsletter.4rkal.com/subscription/form">here</a></p>
 <h2 id="listmonk-feature-overview-1">Listmonk feature overview</h2>
 <p>These are all of the features that listmonk offers:</p>
 <h3 id="templates">Templates</h3>
