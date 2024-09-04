@@ -37,25 +37,11 @@ mobileMode = "auto"
     title = "Posts"
 
   [[menu.main]]
-    weight = 2
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
-    title = "Tags"
-
-  [[menu.main]]
     weight = 3
     identifier = "About"
     name = "About"
     url = "/about/"
     title = "About"
-
-  [[menu.main]]
-    weight = 4
-    identifier = "Updates"
-    name = "Updates"
-    url = "/updates/"
-    title = "Updates"
 
   [[menu.main]]
     weight = 5
