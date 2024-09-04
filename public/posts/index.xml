@@ -10,7 +10,152 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Aug 2024 19:21:15 +0300</lastBuildDate><atom:link href="https://4rkal.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Aug 2024 11:19:17 +0300</lastBuildDate><atom:link href="https://4rkal.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Selfhosted email newsletter made easy - Listmonk.app</title>
+      <link>https://4rkal.com/posts/listmonk/</link>
+      <pubDate>Fri, 23 Aug 2024 11:19:17 +0300</pubDate>
+      
+      <guid>https://4rkal.com/posts/listmonk/</guid>
+      <description>Listmonk is an amazing selfhosted email newsletter manager. It offers loads of features like analytics (clicks, opens, bounces), templates, public subscription pages, importing subscribers and much more!</description>
+      <content:encoded><![CDATA[<h2 id="what-is-listmonk">What is listmonk?</h2>
+<p><a href="https://listmonk.app">Listmonk</a> is a selfhosted newsletter and mailing list manager. It is free and opensource, so you have full control. It also offers a super clean webui:</p>
+<p><img loading="lazy" src="/../assets/listmonk.png" type="" alt="Listmonk WebUI"  /></p>
+<h2 id="listmonk-feature-overview">Listmonk feature overview</h2>
+<ol>
+<li>Analytics - Tracking email opens, link clicks and bounces</li>
+<li>Templates - Advanced html templates with template variables</li>
+<li>Public subscription page - See mine <a href="https://newsletter.4rkal.com/subscription/form">here</a></li>
+<li>Subscribers import - Import subscribers from other platforms using CSV.</li>
+<li>Media Uploads - Upload images etc</li>
+<li>Email lists - Separate lists eg Weekly roundup and new posts.</li>
+</ol>
+<p>And more</p>
+<h2 id="why-choose-listmonk-over-mailchimp-buttodown-etc">Why choose listmonk over mailchimp, buttodown etc</h2>
+<p>For me, running a newsletter means owning my email list.</p>
+<p>When people create newsletters they want to break free from the big platforms like Twitter or YouTube. When you use a proprietary service like Mailchimp, you’re still tied down to their rules and limitations. With Listmonk, you get more control and independence, which for me is a huge win.</p>
+<p>The other reason is that listmonk is completely free (if you don&rsquo;t count electricity bills/vps hosting bills). Even if you include the cost of your email host + hosting fees it is still tiny compared to mailchimp or buttondown.</p>
+<h2 id="requirements-for-running-listmonk">Requirements for running listmonk</h2>
+<ol>
+<li>A server running linux, either in the cloud or at home. We will be using debian 12, but you can use any other distribution.</li>
+<li>An email address to send the newsletter from. Can either be a gmail or a custom one.</li>
+</ol>
+<h2 id="server-setup">Server Setup</h2>
+<p>Before doing anything I highly recommend that you disable password logins for ssh. See <a href="https://4rkal.com/posts/sssh/">Securing ssh with Key-Based authentication</a> for more info on how to do that.</p>
+<p>Login to your server via ssh</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh user@server.ip
+</span></span></code></pre></div><p>Make sure that all packages are up to date</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt upgrade
+</span></span></code></pre></div><p>Create a new directory to host listmonk&rsquo;s configuration files</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir listmonk <span style="color:#f92672">&amp;&amp;</span> cd listmonk
+</span></span></code></pre></div><p>Download the listmonk production script (I highly recommend you read scripts before running them)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sh -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/knadh/listmonk/master/install-prod.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Now if you head to</p>
+<pre tabindex="0"><code>localhost:9000
+</code></pre><p>You should see listmonk up and running</p>
+<p>But first we should change some settings in the configuration files</p>
+<pre tabindex="0"><code>vim config.toml
+</code></pre><p>Here you can change the default admin password. I also changed the address to 0.0.0.0 so that I can access it via the servers ip.</p>
+<h2 id="listmonk-customization">Listmonk customization</h2>
+<p>Now head to the webui at</p>
+<pre tabindex="0"><code>localhost:9000
+</code></pre><p>Login and head to the settings</p>
+<p>In the <code>General</code> tab you can customize the default from email, root url, site name, favicon and admin notification emails</p>
+<p>Here&rsquo;s what my settings look like:</p>
+<p><img loading="lazy" src="/../assets/listmonk2.png" type="" alt="Listmonk Settings"  /></p>
+<p>You can customize the page to your liking.</p>
+<p>Save by clicking on the save button in the top right corner.</p>
+<h2 id="email-setup">Email setup</h2>
+<p>For the next part you will either need a gmail account or any other email provider that give you smtp connection</p>
+<p>If you want a great custom email I recommend ionos, you can get up to 10$ in credits by using my link <a href="http://aklam.io/bbxioA">Ionos - Email &amp; Office 10$ credits </a> that is the provider that I am currently using.</p>
+<p>In this guide I will show you how to set this up for these two providers, but the setup should be similar for others too.</p>
+<p><strong>IMPORTANT</strong>: Both of these hosts have a limit on how many emails can be sent out per/hour or per/day. For ionos that is 500/hour. Setting up a <a href="#sliding-window-limit">Sliding Window Limit</a> is very important.</p>
+<h3 id="setup-for-gmail">Setup for gmail</h3>
+<p>I recommend that you use a different gmail account from your personal one.</p>
+<p>The first thing you will have to do is generate an app password, to do that head to <a href="https://myaccount.google.com/apppasswords">Create and manage app passwords</a> and create a new one called listmonk. Copy the password that is generated and save it somewhere safe.</p>
+<p>Now head over to the listmonk webui</p>
+<p>In the <code>SMTP</code> tab in settings you will find this:</p>
+<p><img loading="lazy" src="/../assets/listmonk3.png" type="" alt="Gmail SMTP"  /></p>
+<p>Click on the gmail option as circled.</p>
+<p>Now enter your full email address (including @gmail.com) in the username field</p>
+<p>And in the password field enter the app password we generated before.</p>
+<p>Now click on the <code>Test connection</code> button in the bottom right corner, enter a test email and click on <code>Send e-mail</code>.</p>
+<p>If you configured everything correctly you should now get a test message to the email specified.</p>
+<p>Don&rsquo;t forget to save!</p>
+<h3 id="setup-for-ionos">Setup for ionos</h3>
+<p>You should probably generate a new email for the newsletter, eg `<a href="mailto:newsletter@yourdomain.tld">newsletter@yourdomain.tld</a>.</p>
+<p>Head over to the listmonk webui</p>
+<p>Now in the <code>SMTP</code> tab in the settings you see this</p>
+<p><img loading="lazy" src="/../assets/listmonk4.png" type="" alt="Gmail SMTP"  /></p>
+<p>The ionos smtp server settings are:</p>
+<p>Host: <code>smtp.ionos.com</code></p>
+<p>Port: <code>465</code></p>
+<p>TLS: <code>SSL/TLS</code></p>
+<p><strong>IMPORTANT</strong>: If you’re using IONOS UK or another specific regional version, you need to adjust the host name. For example, if you’re on IONOS UK, you should use <code>smtp.ionos.co.uk</code> instead of the global <code>smtp.ionos.com</code>.</p>
+<p>Now in the username field you should enter the full email address <code>newsletter@yourdomain.tld</code> and the password is the normal user password.</p>
+<p>Now to test the connection click on the <code>Test connection</code> button in the bottom right corner, enter a test email and click on <code>Send e-mail</code>.</p>
+<p>If you configured everything correctly you should now get a test message to the email specified.</p>
+<p>Don&rsquo;t forget to save!</p>
+<h2 id="sliding-window-limit">Sliding window limit</h2>
+<p>This is very important to setup when email providers limit the amount of email to be sent per/hour or per/day. You can access the Sliding window limit in <code>Settings</code> under the performance tab. For ionos I have it set at 500 emails/hour</p>
+<h2 id="listmonk-feature-overview-1">Listmonk feature overview</h2>
+<p>These are all of the features that listmonk offers:</p>
+<h3 id="templates">Templates</h3>
+<p>Listmonk offers amazing built in template support.</p>
+<p>All templates are written in HTML.</p>
+<p>You can access the templates by going to <code>Campaigns &gt; Templates</code>.</p>
+<p>Don&rsquo;t forget to always include <code>{{ template &quot;content&quot; . }}</code> (for the main content) and also an unsubscribe button in all of your templates</p>
+<h3 id="campaigns">Campaigns</h3>
+<p>You can create a new campaign (email) by going to <code>Campaigns &gt; All Campaigns</code></p>
+<p>Here you can select a campaign name, subject the list&rsquo;s you want to target and the template</p>
+<h3 id="email-lists">Email lists</h3>
+<p>You can create new lists by going to <code>Lists &gt; All Lists</code>.</p>
+<p>For example I have two lists:</p>
+<ol>
+<li>New posts - Receive an email every time I post something new on my blog</li>
+<li>Weekly Roundup - Join my weekly roundup, where I share what I’ve been up to that week, including articles I’ve published, cool finds, tips and tricks and more!</li>
+</ol>
+<p>Not everyone wants to receive an email every time I post a new article, so I created two lists!</p>
+<h3 id="html-forms">HTML Forms</h3>
+<p>Listmonk also offers embeddable html forms, to subscribe to the email list. You can access the form builder by going to <code>Lists &gt; Forms</code></p>
+<h3 id="public-subscription-page">Public subscription page</h3>
+<p>Except for the HTML forms listmonk also has a public subscription page. For example <a href="https://newsletter.4rkal.com/subscription/form">here</a> is mine.</p>
+<p>It can also be accessed under `Lists &gt; Forms</p>
+<h3 id="campaign-analytics">Campaign analytics</h3>
+<p>You can track the views, clicks and bounces of your email campaigns by going to <code>Campaigns &gt; Analytics</code>.</p>
+<h3 id="import-subscribers">Import subscribers</h3>
+<p>You can import subscribers from other platforms by going to <code>Subscribers &gt; Import</code>. It currently supports CSV or ZIP files.</p>
+<p>These are the most important features that listmonk offers (I&rsquo;m sure I forgot some).</p>
+<h2 id="thats-all-folks">That&rsquo;s all folks</h2>
+<p>If this article helped you out, consider joining my <strong>newsletter bellow</strong>:</p>
+<div style="text-align: left; margin: 0 auto;">
+    <form method="post" action="https://newsletter.4rkal.com/subscription/form" style="background: #2c2c2c; color: #f0f0f0; border-radius: 8px; padding: 15px; max-width: 500px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); font-family: Arial, sans-serif;">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <h3 style="margin: 0; color: #f0f0f0; font-size: 18px;">Subscribe</h3>
+            <input type="hidden" name="nonce"/>
+            <input type="email" name="email" required placeholder="E-mail" style="width: 100%; padding: 10px; border: 1px solid #666; border-radius: 4px; background: #333; color: #f0f0f0; box-sizing: border-box;"/>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="margin: 0; color: #f0f0f0; display: none;">
+                    <input id="78a75" type="checkbox" name="l" checked value="78a75b30-472d-4790-a5d5-7f2ed49662a4" style="accent-color: #fff;"/>
+                    Weekly Roundup
+                </label>
+                <span style="color: #d0d0d0; display: none;">Where I share what I’ve been up to that week, including articles I’ve published, cool finds, tips and tricks, and more!</span>
+                <label style="margin: 0; color: #f0f0f0; display: none;">
+                    <input id="b3964" type="checkbox" name="l" checked value="b3964560-37b0-43d3-9df9-26589fd6bf8d" style="accent-color: #fff;"/>
+                    New Posts
+                </label>
+                <span style="color: #d0d0d0; display: none;">Receive an email every time I post something new on my blog</span>
+            </div>
+            <input type="submit" value="Subscribe" style="width: 100%; padding: 10px; border: none; border-radius: 4px; background: #fff; color: #007bff; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);"/>
+        </div>
+        <p style="text-align: center; margin-top: 10px; color: #d0d0d0; font-size: 10px; margin-bottom:0px;">
+            No spam, no ads. Unsubscribe at any time.
+        </p>
+    </form>
+</div>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Selfhost your own gitea instance - selfhosted, lightweight github alternative</title>
       <link>https://4rkal.com/posts/gitea/</link>
@@ -122,6 +267,71 @@ Why use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance be
 <p>In my case you can access my public gitea instance at <a href="https://git.4rkal.com">git.4rkal.com</a></p>
 <p>Congratulations, you now have your very own gitea instance!</p>
 <p><strong>If you enjoyed this article, consider <a href="https://4rkal.eu.org/donate">supporting me</a></strong></p>
+<h4 id="join-my-weekly-roundup-where-i-share-what-ive-been-up-to-that-week-including-articles-ive-published-cool-finds-tips-and-tricks-and-more">Join my weekly roundup, where I share what I’ve been up to that week, including articles I’ve published, cool finds, tips and tricks, and more!</h4>
+<style>
+  .listmonk-form {
+    width: 100%;
+    max-width: 600px; /* Increase the max-width for more horizontal space */
+    padding: 15px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for better visibility */
+    margin: 0; /* Remove centering margin */
+  }
+  .listmonk-form h3 {
+    margin-bottom: 10px;
+    color: #f1f1f1;
+  }
+  .listmonk-form p {
+    margin-bottom: 10px;
+  }
+  .listmonk-form input[type="email"],
+  .listmonk-form input[type="text"] {
+    width: calc(100% - 22px); /* Adjust width for padding */
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #222;
+    color: #f1f1f1;
+  }
+  .listmonk-form input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  .listmonk-form label {
+    margin-right: 8px;
+    color: #f1f1f1;
+  }
+  .listmonk-form span {
+    display: block;
+    margin-top: 4px;
+    color: #aaa;
+  }
+  .listmonk-form input[type="submit"] {
+    background-color: #007bff;
+    color: #f1f1f1;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .listmonk-form input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+</style>
+<form method="post" action="https://newsletter.4rkal.com/subscription/form" class="listmonk-form">
+    <div>
+        <h3>Subscribe</h3>
+        <input type="hidden" name="nonce" />
+        <p><input type="email" name="email" required placeholder="E-mail" /></p>
+        <p>
+            <input id="78a75" type="checkbox" name="l" checked value="78a75b30-472d-4790-a5d5-7f2ed49662a4" />
+            <label for="78a75">Weekly Roundup</label>
+        </p>
+        <p><input type="submit" value="Subscribe" /></p>
+    </div>
+</form>
 ]]></content:encoded>
     </item>
     
@@ -624,12 +834,12 @@ On your phone:</p>
       
       <guid>https://4rkal.com/posts/coldstorage/</guid>
       <description>In this article I will show you how to &amp;ldquo;easily&amp;rdquo; generate a live archlinux usb with the monero gui pre-installed.
-Requirements An arch[[linux]] install A usb Setup In this guide I will show you how to build a custom archlinux iso with monerogui installed. I will not be providing any pre-built images.
+Requirements An archlinux install A usb Setup In this guide I will show you how to build a custom archlinux iso with monerogui installed. I will not be providing any pre-built images.
 The first thing you will have to do is install archuseriso. You can install it from the aur using this command:</description>
       <content:encoded><![CDATA[<p>In this article I will show you how to &ldquo;easily&rdquo; generate a live archlinux usb with the monero gui pre-installed.</p>
 <h2 id="requirements">Requirements</h2>
 <ol>
-<li>An arch[[linux]] install</li>
+<li>An archlinux install</li>
 <li>A usb</li>
 </ol>
 <h2 id="setup">Setup</h2>
@@ -676,7 +886,71 @@ If you don&rsquo;t write down your seed and keep it in a secure place you will l
 <p>You now have a cold wallet for offline signing on your usb and a view-only wallet on your phone. Basicly you can view all incoming transactions on your phone but can&rsquo;t spend them there. Only your computer booted into the usb can sign them.</p>
 <h2 id="signing-transactions">Signing transactions</h2>
 <p>I won&rsquo;t cover doing this in this article. But you can find out more about how to send transactions from cold storage <a href="https://monerodocs.org/cold-storage/offline-transaction-signing/">here</a></p>
-]]></content:encoded>
+<h4 id="join-my-weekly-roundup-where-i-share-what-ive-been-up-to-that-week-including-articles-ive-published-cool-finds-tips-and-tricks-and-more">Join my weekly roundup, where I share what I’ve been up to that week, including articles I’ve published, cool finds, tips and tricks, and more!</h4>
+<style>
+  .listmonk-form {
+    width: 100%;
+    max-width: 600px; /* Increase the max-width for more horizontal space */
+    padding: 15px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for better visibility */
+    margin: 0; /* Remove centering margin */
+  }
+  .listmonk-form h3 {
+    margin-bottom: 10px;
+    color: #f1f1f1;
+  }
+  .listmonk-form p {
+    margin-bottom: 10px;
+  }
+  .listmonk-form input[type="email"],
+  .listmonk-form input[type="text"] {
+    width: calc(100% - 22px); /* Adjust width for padding */
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #222;
+    color: #f1f1f1;
+  }
+  .listmonk-form input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  .listmonk-form label {
+    margin-right: 8px;
+    color: #f1f1f1;
+  }
+  .listmonk-form span {
+    display: block;
+    margin-top: 4px;
+    color: #aaa;
+  }
+  .listmonk-form input[type="submit"] {
+    background-color: #007bff;
+    color: #f1f1f1;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .listmonk-form input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+</style>
+<form method="post" action="https://newsletter.4rkal.com/subscription/form" class="listmonk-form">
+    <div>
+        <h3>Subscribe</h3>
+        <input type="hidden" name="nonce" />
+        <p><input type="email" name="email" required placeholder="E-mail" /></p>
+        <p>
+            <input id="78a75" type="checkbox" name="l" checked value="78a75b30-472d-4790-a5d5-7f2ed49662a4" />
+            <label for="78a75">Weekly Roundup</label>
+        </p>
+        <p><input type="submit" value="Subscribe" /></p>
+    </div>
+</form>]]></content:encoded>
     </item>
     
     <item>
