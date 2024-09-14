@@ -4,8 +4,8 @@ description: In this post I go through how I have setup my Obsidian and Hugo blo
 date: 2024-08-13T17:15:57+03:00
 draft: false
 tags:
-  - "#obsidian"
-  - "#hugo"
+  - obsidian
+  - hugo
 ---
 If you clicked on this article you probably know what Obsidian and Hugo are but if you don't here's a quick explanation:
 
