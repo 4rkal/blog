@@ -277,69 +277,28 @@ Congratulations!
 
 **If you enjoyed this post and want to support my (mostly unpaid) work , you can [donate here](https://4rkal.com/donate).**
 
-#### Join my weekly roundup, where I share what I’ve been up to that week, including articles I’ve published, cool finds, tips and tricks, and more!
-<style>
-  .listmonk-form {
-    width: 100%;
-    max-width: 600px; /* Increase the max-width for more horizontal space */
-    padding: 15px;
-    border: 1px solid #444;
-    border-radius: 8px;
-    background-color: #333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for better visibility */
-    margin: 0; /* Remove centering margin */
-  }
-  .listmonk-form h3 {
-    margin-bottom: 10px;
-    color: #f1f1f1;
-  }
-  .listmonk-form p {
-    margin-bottom: 10px;
-  }
-  .listmonk-form input[type="email"],
-  .listmonk-form input[type="text"] {
-    width: calc(100% - 22px); /* Adjust width for padding */
-    padding: 8px;
-    border: 1px solid #555;
-    border-radius: 4px;
-    background-color: #222;
-    color: #f1f1f1;
-  }
-  .listmonk-form input[type="checkbox"] {
-    margin-right: 8px;
-  }
-  .listmonk-form label {
-    margin-right: 8px;
-    color: #f1f1f1;
-  }
-  .listmonk-form span {
-    display: block;
-    margin-top: 4px;
-    color: #aaa;
-  }
-  .listmonk-form input[type="submit"] {
-    background-color: #007bff;
-    color: #f1f1f1;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  .listmonk-form input[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-</style>
-
-<form method="post" action="https://newsletter.4rkal.com/subscription/form" class="listmonk-form">
-    <div>
-        <h3>Subscribe</h3>
-        <input type="hidden" name="nonce" />
-        <p><input type="email" name="email" required placeholder="E-mail" /></p>
-        <p>
-            <input id="78a75" type="checkbox" name="l" checked value="78a75b30-472d-4790-a5d5-7f2ed49662a4" />
-            <label for="78a75">Weekly Roundup</label>
+<div style="text-align: left; margin: 0 auto;">
+    <form method="post" action="https://newsletter.4rkal.com/subscription/form" style="background: #2c2c2c; color: #f0f0f0; border-radius: 8px; padding: 15px; max-width: 500px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); font-family: Arial, sans-serif;">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <h3 style="margin: 0; color: #f0f0f0; font-size: 18px;">Subscribe</h3>
+            <input type="hidden" name="nonce"/>
+            <input type="email" name="email" required placeholder="E-mail" style="width: 100%; padding: 10px; border: 1px solid #666; border-radius: 4px; background: #333; color: #f0f0f0; box-sizing: border-box;"/>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="margin: 0; color: #f0f0f0; display: none;">
+                    <input id="78a75" type="checkbox" name="l" checked value="78a75b30-472d-4790-a5d5-7f2ed49662a4" style="accent-color: #fff;"/>
+                    Weekly Roundup
+                </label>
+                <span style="color: #d0d0d0; display: none;">Where I share what I’ve been up to that week, including articles I’ve published, cool finds, tips and tricks, and more!</span>
+                <label style="margin: 0; color: #f0f0f0; display: none;">
+                    <input id="b3964" type="checkbox" name="l" checked value="b3964560-37b0-43d3-9df9-26589fd6bf8d" style="accent-color: #fff;"/>
+                    New Posts
+                </label>
+                <span style="color: #d0d0d0; display: none;">Receive an email every time I post something new on my blog</span>
+            </div>
+            <input type="submit" value="Subscribe" style="width: 100%; padding: 10px; border: none; border-radius: 4px; background: #fff; color: #007bff; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);"/>
+        </div>
+        <p style="text-align: center; margin-top: 10px; color: #d0d0d0; font-size: 10px; margin-bottom:0px;">
+            No spam, no ads. Unsubscribe at any time.
         </p>
-        <p><input type="submit" value="Subscribe" /></p>
-    </div>
-</form>
+    </form>
+</div>
