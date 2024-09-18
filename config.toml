@@ -36,21 +36,25 @@ mobileMode = "auto"
     title = "Posts"
 
   [[menu.main]]
-    weight = 3
+    weight = 2
     identifier = "About"
     name = "About"
     url = "/about/"
     title = "About"
 
-  [[menu.main]]
-    weight = 5
-    identifier = "Donate"
-    name = "Donate"
-    url = "/donate/"
-    title = "Donate"
+    [[menu.main]]
+    weight = 3
+    identifier = "Newsletter"
+    name = "NEWSLETTER"
+    url = "https://newsletter.4rkal.com/subscription/form"
+    title = "NEWSLETTER"
+    params.external = true
+
+
+
 
   [[menu.main]]
-    weight = 6
+    weight = 4
     identifier = "Search"
     name = "Search"
     url = "/search/"
