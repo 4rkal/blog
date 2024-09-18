@@ -46,7 +46,7 @@ mobileMode = "auto"
     weight = 3
     identifier = "Newsletter"
     name = "NEWSLETTER"
-    url = "https://newsletter.4rkal.com/subscription/form"
+    url = "newsletter.4rkal.com/subscription/form"
     title = "NEWSLETTER"
     params.external = true
 
