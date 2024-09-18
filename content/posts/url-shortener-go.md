@@ -1,8 +1,8 @@
 ---
-title: Build a URL shortener in go
+title: Build a URL shortener in Go
 description: 
 date: 2024-09-14T18:24:11+03:00
-draft: false
+draft: true
 tags:
   - golang
 ---
@@ -15,7 +15,7 @@ This is a great weekend project especially if you're new to go.
 2. A code editor, eg [vs code](https://code.visualstudio.com/), [neovim](https://neovim.io/)
 
 
-In this project I will be using [echo](https://echo.labstack.com/) as the http server, [templ](https://templ.guide) for the html templates.
+In this project I will be using [echo](https://echo.labstack.com/) as the http server and the standard html library.
 ## Project Setup
 Create a new directory to house our project
 ```shell
@@ -30,14 +30,7 @@ Create a new go module (project):
 go mod init project-name
 ```
 
-Before we start writing any code we first have to install a couple packages
-
-Install Templ:
-```shell
-go install github.com/a-h/templ/cmd/templ@latest
-```
-
-Install echo:
+Before we start writing any code we first have to install echo:
 
 ```shell
 go get github.com/labstack/echo/v4
@@ -113,7 +106,6 @@ Now we will need to have a place to store all of our links. In this example we w
 Create a new struct called `Link` and a map called `LinkMap`:
 
 ```go
-
 type Link struct {
 	Id string
 	Url string
@@ -125,7 +117,7 @@ var linkMap = map[string]*models.Link{}
 You can also add some sample data to it.
 
 ```go
-var linkMap = map[string]*Link{ "example.com": { Id: "example.com", Url: "https://example.com", }, }
+var linkMap = map[string]*Link{ "example": { Id: "example", Url: "https://example.com", }, }
 ```
 
 
@@ -154,12 +146,19 @@ package main
 
 import (
 "math/rand"
+"time"
 "github.com/labstack/echo/v4"
+"github.com/labstack/echo/v4/middleware"
 )
+
+type Link struct {
+	Id string
+	Url string
+}
 
 const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
-var linkMap = map[string]*models.Link{}
+var linkMap = map[string]*Link{ "example": { Id: "example", Url: "https://example.com", }, }
 
 func main() {
 	e := echo.New()
@@ -185,8 +184,49 @@ func RedirectHandler(c echo.Context) error {
 	
 	return c.Redirect(http.StatusMovedPermanently, link.Url)
 }
+
+func generateRandomString(length int) string {
+	seededRand := rand.New(rand.NewSource(time.Now().UnixNano()))
+	
+	var result []byte
+	
+	for i := 0; i < length; i++ {
+	index := seededRand.Intn(len(charset))
+	result = append(result, charset[index])
+	}
+	
+	return string(result)
+
+}
 ```
 
+Run the server
+
+```
+go run .
+```
+
+You might also want to install any missing dependencies:
+
+```shell
+go mod tidy
+```
+
+If you head to 
+`localhost:8080/example` you should be redirected to example.com
+
+### Submission Handler
+
+We will now define two new routes inside of our main function
+
+```go
+e.GET("/", IndexHandler)
+e.POST("/submit", SubmitHandler)
+```
+
+These two handlers will handle the default page displayed in / which will contain a form that will be submitted to /submit in a post request.
 
 
-**If you enjoyed this post and want to support my work , you can [donate here](https://4rkal.com/donate).**
+
+
+**If you enjoyed this post and want to support my work, you can [donate here](https://4rkal.com/donate).**

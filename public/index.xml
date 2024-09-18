@@ -10,140 +10,15 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Sep 2024 18:24:11 +0300</lastBuildDate><atom:link href="https://4rkal.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Sep 2024 20:51:41 +0300</lastBuildDate><atom:link href="https://4rkal.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Build a URL shortener in go</title>
-      <link>https://4rkal.com/posts/url-shortener-go/</link>
-      <pubDate>Sat, 14 Sep 2024 18:24:11 +0300</pubDate>
+      <title>Host your own private search engine — SearXNG</title>
+      <link>https://4rkal.com/posts/searxng/</link>
+      <pubDate>Wed, 18 Sep 2024 20:51:41 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/url-shortener-go/</guid>
-      <description>In this article I will be going through how you can create a url shortener in go. The final result will look something like this shortr, source code
-This is a great weekend project especially if you&amp;rsquo;re new to go.
-Requirements Go installed on your system. A code editor, eg vs code, neovim In this project I will be using echo as the http server, templ for the html templates.</description>
-      <content:encoded><![CDATA[<p>In this article I will be going through how you can create a url shortener in go. The final result will look something like this <a href="https://app.4rkal.com">shortr</a>, <a href="https://github.com/4rkal/shortr">source code</a></p>
-<p>This is a great weekend project especially if you&rsquo;re new to go.</p>
-<h2 id="requirements">Requirements</h2>
-<ol>
-<li>Go installed on your system.</li>
-<li>A code editor, eg <a href="https://code.visualstudio.com/">vs code</a>, <a href="https://neovim.io/">neovim</a></li>
-</ol>
-<p>In this project I will be using <a href="https://echo.labstack.com/">echo</a> as the http server, <a href="https://templ.guide">templ</a> for the html templates.</p>
-<h2 id="project-setup">Project Setup</h2>
-<p>Create a new directory to house our project</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir project-name
-</span></span><span style="display:flex;"><span>cd project-name
-</span></span></code></pre></div><p>Assuming you have golang installed.</p>
-<p>Create a new go module (project):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>go mod init project-name
-</span></span></code></pre></div><p>Before we start writing any code we first have to install a couple packages</p>
-<p>Install Templ:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>go install github.com/a-h/templ/cmd/templ@latest
-</span></span></code></pre></div><p>Install echo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>go get github.com/labstack/echo/v4
-</span></span></code></pre></div><p>Now create a new file called main.go</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>touch main.go
-</span></span></code></pre></div><p>And open it in your favorite editor.</p>
-<h2 id="creating-url-handlers">Creating url handlers</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
-</span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Logger</span>())
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Recover</span>())
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Secure</span>())
-</span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/:id&#34;</span>, <span style="color:#a6e22e">RedirectHandler</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#a6e22e">IndexHandler</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">POST</span>(<span style="color:#e6db74">&#34;/submit&#34;</span>, <span style="color:#a6e22e">SubmitHandler</span>)
-</span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Logger</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Start</span>(<span style="color:#e6db74">&#34;:8080&#34;</span>))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This will create three different routes/handlers.</p>
-<p>The <code>/:id</code>, which will redirect the user to the required website</p>
-<p>The <code>/</code> which will display a url submission form for new urls to be added</p>
-<p>Finally the <code>/submit</code> which will handle url submissions from the form in <code>/</code></p>
-<h3 id="redirect-handler">Redirect Handler</h3>
-<p>The most important part of our application is the redirect handler, which will redirect the user to the url that was specified.</p>
-<p>Before we create any urls we first have to declare some variables and make a helper function</p>
-<p>In order to have a random ending to our url. eg <code>/M61YlA</code>, we will create a new function called <code>GenerateRandomString</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">charset</span> = <span style="color:#e6db74">&#34;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">generateRandomString</span>(<span style="color:#a6e22e">length</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">seededRand</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">NewSource</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">UnixNano</span>()))
-</span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">result</span> []<span style="color:#66d9ef">byte</span>
-</span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">index</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">seededRand</span>.<span style="color:#a6e22e">Intn</span>(len(<span style="color:#a6e22e">charset</span>))
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">result</span> = append(<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">charset</span>[<span style="color:#a6e22e">index</span>])
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">result</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This will select <code>lenght</code> random characters from the charset. If you want your slugs (urls), to not contain any capital letters, you can remove them from the charset.</p>
-<p>Now we will need to have a place to store all of our links. In this example we will be storing them in memory and not a database.</p>
-<p>Create a new struct called <code>Link</code> and a map called <code>LinkMap</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Link</span> <span style="color:#66d9ef">struct</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Id</span> <span style="color:#66d9ef">string</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Url</span> <span style="color:#66d9ef">string</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">linkMap</span> = <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">models</span>.<span style="color:#a6e22e">Link</span>{}
-</span></span></code></pre></div><p>You can also add some sample data to it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">linkMap</span> = <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Link</span>{ <span style="color:#e6db74">&#34;example.com&#34;</span>: { <span style="color:#a6e22e">Id</span>: <span style="color:#e6db74">&#34;example.com&#34;</span>, <span style="color:#a6e22e">Url</span>: <span style="color:#e6db74">&#34;https://example.com&#34;</span>, }, }
-</span></span></code></pre></div><p>Now we can (finally) create our <code>RedirectHandler</code>, which will handle all of the redirects for our url shortener.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">RedirectHandler</span>(<span style="color:#a6e22e">c</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">Context</span>) <span style="color:#66d9ef">error</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">id</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Param</span>(<span style="color:#e6db74">&#34;id&#34;</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">link</span>, <span style="color:#a6e22e">found</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">linkMap</span>[<span style="color:#a6e22e">id</span>]
-</span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">found</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusNotFound</span>, <span style="color:#e6db74">&#34;Link not found&#34;</span>)
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Redirect</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusMovedPermanently</span>, <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Url</span>)
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This function will get the id of the link eg <code>/123</code> and will look for it in the global <code>LinkMap</code>, if it is not available it will return an error that the link was not found. Otherwise it will redirect the user to the specified url using a <code>301 Permanently Moved</code> http response code.</p>
-<h2 id="recap-1">Recap #1</h2>
-<p>The code so far should look something like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;math/rand&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;github.com/labstack/echo/v4&#34;</span>
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">charset</span> = <span style="color:#e6db74">&#34;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">linkMap</span> = <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">models</span>.<span style="color:#a6e22e">Link</span>{}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
-</span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Logger</span>())
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Recover</span>())
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Secure</span>())
-</span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/:id&#34;</span>, <span style="color:#a6e22e">RedirectHandler</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//e.GET(&#34;/&#34;, IndexHandler)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">//e.POST(&#34;/submit&#34;, SubmitHandler)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Logger</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Start</span>(<span style="color:#e6db74">&#34;:8080&#34;</span>))
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">RedirectHandler</span>(<span style="color:#a6e22e">c</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">Context</span>) <span style="color:#66d9ef">error</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">id</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Param</span>(<span style="color:#e6db74">&#34;id&#34;</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">link</span>, <span style="color:#a6e22e">found</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">linkMap</span>[<span style="color:#a6e22e">id</span>]
-</span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">found</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusNotFound</span>, <span style="color:#e6db74">&#34;Link not found&#34;</span>)
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Redirect</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusMovedPermanently</span>, <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Url</span>)
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><strong>If you enjoyed this post and want to support my work , you can <a href="https://4rkal.com/donate">donate here</a>.</strong></p>
+      <guid>https://4rkal.com/posts/searxng/</guid>
+      <description>If you enjoyed this post and want to support my work , you can donate here.</description>
+      <content:encoded><![CDATA[<p><strong>If you enjoyed this post and want to support my work , you can <a href="https://4rkal.com/donate">donate here</a>.</strong></p>
 ]]></content:encoded>
     </item>
     

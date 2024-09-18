@@ -8,27 +8,17 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://4rkal.com/</loc>
-    <lastmod>2024-09-14T18:24:11+03:00</lastmod>
+    <lastmod>2024-09-18T20:51:41+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://4rkal.com/posts/url-shortener-go/</loc>
-    <lastmod>2024-09-14T18:24:11+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/golang/</loc>
-    <lastmod>2024-09-14T18:24:11+03:00</lastmod>
+    <loc>https://4rkal.com/posts/searxng/</loc>
+    <lastmod>2024-09-18T20:51:41+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://4rkal.com/posts/</loc>
-    <lastmod>2024-09-14T18:24:11+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/</loc>
-    <lastmod>2024-09-14T18:24:11+03:00</lastmod>
+    <lastmod>2024-09-18T20:51:41+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -62,6 +52,11 @@
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://4rkal.com/tags/</loc>
+    <lastmod>2024-08-23T11:19:17+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://4rkal.com/tags/git/</loc>
     <lastmod>2024-08-19T19:21:15+03:00</lastmod>
     <changefreq>always</changefreq>
@@ -73,6 +68,11 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://4rkal.com/tags/cyphergoat/</loc>
+    <lastmod>2024-08-17T12:25:15+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/golang/</loc>
     <lastmod>2024-08-17T12:25:15+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
