@@ -47,7 +47,7 @@ To use ventoy all you have to do is paste your iso files inside of the usb. No f
 
 When you boot into your usb you will be prompted which of the iso's to use. That's about it.
 
-Enjoy not having to reformat your usb for each iso/OS
+Enjoy not having to reformat your usb for each iso/OS.
 
 ### Join my free newsletter!
 <div style="text-align: left; margin: 0 auto;">
