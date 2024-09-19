@@ -37,7 +37,7 @@
 <li>Auto publish using obsidian hotkeys.</li>
 <li>Have all markdown files in a <a href="https://github.com/4rkal/blog/">public github repository</a>, so that people can propose changes</li>
 </ol>
-<h1 id="existing-setup">Existing setup</h1>
+<h2 id="existing-setup">Existing setup</h2>
 <p>Here’s how my current workflow with Obsidian and Hugo looks:</p>
 <ol>
 <li>I write and edit articles directly in Obsidian, within the <code>content</code> folder of my Hugo project.</li>
@@ -45,7 +45,7 @@
 <li>I push the changes to GitHub.</li>
 <li><a href="https://render.com">Render.com</a> automatically picks up the changes and deploys the updated site.</li>
 </ol>
-<h1 id="journey">Journey</h1>
+<h2 id="journey">Journey</h2>
 <p><em>If you want to skip the journey part you can go straight to <a href="#the-sauce">The Sauce</a></em></p>
 <p>I will be going through a couple of mistakes that I made while setting this up.</p>
 <h3 id="mistake-1">Mistake #1</h3>
@@ -63,7 +63,7 @@ This means that people can not propose changes to any of my articles</p>
 <p>I wanted to have my folders synced. I tried writing a couple of bash scripts that automatically synced the two folders using a cronjob.
 However having that constantly running the background is a waste of resources when I am not writing.
 Simply running the scripts via cli is just not that smooth.</p>
-<h1 id="the-sauce">The Sauce</h1>
+<h2 id="the-sauce">The Sauce</h2>
 <p>Basically the way that I have set this up is I have two folders:</p>
 <pre tabindex="0"><code>blog
 vault

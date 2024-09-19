@@ -32,13 +32,13 @@ My goals for the setup are:
 4. Auto publish using obsidian hotkeys.
 5. Have all markdown files in a [public github repository](https://github.com/4rkal/blog/), so that people can propose changes
 
-# Existing setup
+## Existing setup
 Here’s how my current workflow with Obsidian and Hugo looks:
 1. I write and edit articles directly in Obsidian, within the `content` folder of my Hugo project.
 2. I run the Hugo command to generate the static site.
 3. I push the changes to GitHub.
 4.  [Render.com](https://render.com) automatically picks up the changes and deploys the updated site.
-# Journey
+## Journey
 *If you want to skip the journey part you can go straight to [The Sauce](#the-sauce)*
 
 I will be going through a couple of mistakes that I made while setting this up.
@@ -68,7 +68,7 @@ I wanted to have my folders synced. I tried writing a couple of bash scripts tha
 However having that constantly running the background is a waste of resources when I am not writing.
 Simply running the scripts via cli is just not that smooth.
 
-# The Sauce
+## The Sauce
 Basically the way that I have set this up is I have two folders:
 ```
 blog
