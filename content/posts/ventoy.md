@@ -25,7 +25,7 @@ After you have extracted the file open the folder and click on the VentoyGUI .
 Depending on your processor type select the file ending in either aarch64 i386 mips64el or x86_64. (It will most probably be x86_64).
 
 After that you should see something like this:
-![](../assets/ventoy.webp)
+![Ventoy on linux](../assets/ventoy.webp)
 
 Select your device from the devices tab
 
@@ -38,7 +38,7 @@ Then click on the file called Ventoy2Disk.exe
 
 You should see something like this
 
-![](../assets/ventoy-win.webp)
+![Ventoy on Windows](../assets/ventoy-win.webp)
 
 Select your usb device from the drop down and click on install.
 

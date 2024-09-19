@@ -1,12 +1,12 @@
 ---
 title: Build a URL shortener in Go
-description: 
+description: I will be showing you how to create a url shortener in go.
 date: 2024-09-14T18:24:11+03:00
 draft: true
 tags:
   - golang
 ---
-In this article I will be going through how you can create a url shortener in go. The final result will look something like this [shortr](https://app.4rkal.com), [source code](https://github.com/4rkal/shortr)
+In this article I will be going through how to make a url shortener in go. The final result will look something like this [shortr](https://app.4rkal.com), [source code](https://github.com/4rkal/shortr)
 
 This is a great weekend project especially if you're new to go.
 
@@ -98,7 +98,7 @@ func generateRandomString(length int) string {
 }
 ```
 
-This will select `lenght` random characters from the charset. If you want your slugs (urls), to not contain any capital letters, you can remove them from the charset.
+This will select `length` random characters from the charset. If you want your slugs (urls), to not contain any capital letters, you can remove them from the charset.
 
 
 Now we will need to have a place to store all of our links. In this example we will be storing them in memory and not a database.
@@ -215,7 +215,7 @@ go mod tidy
 If you head to 
 `localhost:8080/example` you should be redirected to example.com
 
-### Submission Handler
+### Submission Handlers
 
 We will now define two new routes inside of our main function
 
@@ -227,6 +227,203 @@ e.POST("/submit", SubmitHandler)
 These two handlers will handle the default page displayed in / which will contain a form that will be submitted to /submit in a post request.
 
 
+For the `IndexHandler` our code will look something like this:
+```go
+func IndexHandler(c echo.Context) error {
+	html := `
+		<h1>Submit a new website</h1>
+		<form action="/submit" method="POST">
+		<label for="url">Website URL:</label>
+		<input type="text" id="url" name="url">
+		<input type="submit" value="Submit">
+		</form>
+		<h2>Existing Links </h2>
+		<ul>`
+	
+	for _, link := range linkMap {
+		html += `<li><a href="/` + link.Id + `">` + link.Id + `</a></li>`
+	}
+	html += `</ul>`
+	
+	return c.HTML(http.StatusOK, html)
+}
+```
+
+When we visit `/` a submission for will be rendered, to submit a new website. Under the form we will see all registered links from our `Linkmap`
+
+PS it is not recommended that you use html like this. You should be separating the html file or using a library like [templ](https://templ.guide).
+
+The submission handler `SubmitHandler` should look something like this
 
 
-**If you enjoyed this post and want to support my work, you can [donate here](https://4rkal.com/donate).**
+```go
+func SubmitHandler(c echo.Context) error {
+	url := c.FormValue("url")
+	if url == "" {
+		return c.String(http.StatusBadRequest, "URL is required")
+	}
+	
+	if !(len(url) >= 4 && (url[:4] == "http" || url[:5] == "https")) {
+		url = "https://" + url
+	}
+	
+	id := generateRandomString(8)
+	
+	linkMap[id] = &Link{Id: id, Url: url}
+	
+	return c.Redirect(http.StatusSeeOther, "/")
+}
+```
+
+This handler will take a url from the form that was submitted, do some (simple) input validation and then append it to the linkMap.
+
+## Final Recap
+
+The code for our url shortener is:
+
+```go
+package main
+
+import (
+	"math/rand"
+	"net/http"
+	"time"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
+)
+
+  
+
+type Link struct {
+	Id string
+	Url string
+}
+
+const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
+var linkMap = map[string]*Link{"example": {Id: "example", Url: "https://example.com"}}
+
+  
+func main() {
+
+	e := echo.New()
+	
+	e.Use(middleware.Logger())
+	e.Use(middleware.Recover())
+	e.Use(middleware.Secure())
+	
+	e.GET("/:id", RedirectHandler)
+	e.GET("/", IndexHandler)
+	e.POST("/submit", SubmitHandler)
+	
+	e.Logger.Fatal(e.Start(":8080"))
+}
+
+  
+func generateRandomString(length int) string {
+	seededRand := rand.New(rand.NewSource(time.Now().UnixNano()))
+
+	var result []byte 
+	
+	for i := 0; i < length; i++ {
+		index := seededRand.Intn(len(charset))
+		result = append(result, charset[index])
+	}
+
+	return string(result)
+}
+
+  
+func RedirectHandler(c echo.Context) error {
+	id := c.Param("id")
+	link, found := linkMap[id]
+
+	if !found {
+		return c.String(http.StatusNotFound, "Link not found")
+	}
+
+	return c.Redirect(http.StatusMovedPermanently, link.Url)
+}
+
+  
+func IndexHandler(c echo.Context) error {
+	html := `
+		<h1>Submit a new website</h1>
+		<form action="/submit" method="POST">
+		<label for="url">Website URL:</label>
+		<input type="text" id="url" name="url">
+		<input type="submit" value="Submit">
+		</form>
+		<h2>Existing Links </h2>
+		<ul>`
+	
+	for _, link := range linkMap {
+		html += `<li><a href="/` + link.Id + `">` + link.Id + `</a></li>`
+	}
+	html += `</ul>`
+	
+	return c.HTML(http.StatusOK, html)
+}
+
+  
+
+func SubmitHandler(c echo.Context) error {
+	url := c.FormValue("url")
+	if url == "" {
+		return c.String(http.StatusBadRequest, "URL is required")
+	}
+	
+	if !(len(url) >= 4 && (url[:4] == "http" || url[:5] == "https")) {
+		url = "https://" + url
+	}
+	
+	id := generateRandomString(8)
+	
+	linkMap[id] = &Link{Id: id, Url: url}
+	
+	return c.Redirect(http.StatusSeeOther, "/")
+}
+```
+
+
+## Closing words
+
+This is a great small project if you are new to/learning go.
+
+It can be very helpful if you extend beyond this tutorial. For example here are some other ideas that you can add to the project:
+1. Enhance the input validation
+2. Track link clicks + Statistics Page
+3. Improve UI (html)
+4. Dockerizing the application
+5. ++
+
+I did all of those and my url shortener (called shortr) can be accessed under the url [app.4rkal.com](https://app.4rkal.com) and the source code is [here](https://github.com/4rkal/shortr)
+
+
+### Join my mailing list
+
+<div style="text-align: left; margin: 0 auto;">
+    <form method="post" action="https://newsletter.4rkal.com/subscription/form" style="background: #2c2c2c; color: #f0f0f0; border-radius: 8px; padding: 15px; max-width: 500px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); font-family: Arial, sans-serif;">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <h3 style="margin: 0; color: #f0f0f0; font-size: 18px;">Subscribe</h3>
+            <input type="hidden" name="nonce"/>
+            <input type="email" name="email" required placeholder="E-mail" style="width: 100%; padding: 10px; border: 1px solid #666; border-radius: 4px; background: #333; color: #f0f0f0; box-sizing: border-box;"/>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="margin: 0; color: #f0f0f0; display: none;">
+                    <input id="78a75" type="checkbox" name="l" checked value="78a75b30-472d-4790-a5d5-7f2ed49662a4" style="accent-color: #fff;"/>
+                    Weekly Roundup
+                </label>
+                <span style="color: #d0d0d0; display: none;">Where I share what I’ve been up to that week, including articles I’ve published, cool finds, tips and tricks, and more!</span>
+                <label style="margin: 0; color: #f0f0f0; display: none;">
+                    <input id="b3964" type="checkbox" name="l" checked value="b3964560-37b0-43d3-9df9-26589fd6bf8d" style="accent-color: #fff;"/>
+                    New Posts
+                </label>
+                <span style="color: #d0d0d0; display: none;">Receive an email every time I post something new on my blog</span>
+            </div>
+            <input type="submit" value="Subscribe" style="width: 100%; padding: 10px; border: none; border-radius: 4px; background: #fff; color: #007bff; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);"/>
+        </div>
+        <p style="text-align: center; margin-top: 10px; color: #d0d0d0; font-size: 10px; margin-bottom:0px;">
+            No spam, no ads. Unsubscribe at any time.
+        </p>
+    </form>
+</div>
