@@ -238,7 +238,25 @@ function toggleThemeListener() {
       
       
     </div>
-  </header> 
+  </header> <div class="toc side right">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#ssh-password-based-vs-key-based-authentication" aria-label="SSH Password Based VS Key Based Authentication">SSH Password Based VS Key Based Authentication</a></li>
+                <li>
+                    <a href="#how-does-key-based-authentication-work" aria-label="How does Key Based Authentication work?">How does Key Based Authentication work?</a></li>
+                <li>
+                    <a href="#setting-up" aria-label="Setting up">Setting up</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><p>SSH keys provide an extremely secure way of logging into your server.</p>
 <h1 id="ssh-password-based-vs-key-based-authentication">SSH Password Based VS Key Based Authentication<a hidden class="anchor" aria-hidden="true" href="#ssh-password-based-vs-key-based-authentication">¶</a></h1>
 <p>Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts. The solution to that is ssh key based authentication.</p>
@@ -438,7 +456,7 @@ Enter passphrase (empty for no passphrase):
   
   
   (function() {
-    const enableTocScroll = '' == '1'
+    const enableTocScroll = '1' == '1'
     if (!enableTocScroll) {
       return
     }

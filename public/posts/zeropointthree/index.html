@@ -242,7 +242,21 @@ function toggleThemeListener() {
       
       
     </div>
-  </header> 
+  </header> <div class="toc side right">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#why-does-this-happen" aria-label="Why does this happen?">Why does this happen?</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><p><strong>Most people know that adding up 0.1 + 0.2 equals 0.3. However computers represent it as 0.30000000000000004 .</strong></p>
 <p>Here is a screenshot of it in python3
 <img loading="lazy" src="/../assets/zeropointthree.png" type="" alt="0.1&#43;0.2 in python"  /></p>
@@ -418,7 +432,7 @@ Wikipedia:<br>
   
   
   (function() {
-    const enableTocScroll = '' == '1'
+    const enableTocScroll = '1' == '1'
     if (!enableTocScroll) {
       return
     }

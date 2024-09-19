@@ -238,7 +238,29 @@ function toggleThemeListener() {
       
       
     </div>
-  </header> 
+  </header> <div class="toc side right">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-is-searx" aria-label="What is searX?">What is searX?</a></li>
+                <li>
+                    <a href="#what-is-a-metasearch-engine" aria-label="What is a metasearch engine?">What is a metasearch engine?</a></li>
+                <li>
+                    <a href="#requirements" aria-label="Requirements">Requirements</a></li>
+                <li>
+                    <a href="#installing-on-windows" aria-label="Installing on windows">Installing on windows</a></li>
+                <li>
+                    <a href="#installing-on-linux-debian" aria-label="Installing on Linux (debian)">Installing on Linux (debian)</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><p>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.</p>
 <h2 id="what-is-searx">What is searX?<a hidden class="anchor" aria-hidden="true" href="#what-is-searx">¶</a></h2>
 <p>Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users. In order to do this, Searx does not provide the search engines from which it receives results with users’ IP addresses or search histories. Tracking cookies served by the search engines are blocked, preventing user-profiling-based results modification.</p>
@@ -457,7 +479,7 @@ Now if you head to 127.0.0.1:8888 you should be able to see something like this
   
   
   (function() {
-    const enableTocScroll = '' == '1'
+    const enableTocScroll = '1' == '1'
     if (!enableTocScroll) {
       return
     }

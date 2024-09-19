@@ -244,7 +244,31 @@ function toggleThemeListener() {
       
       
     </div>
-  </header> 
+  </header> <div class="toc side right">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#session-encryption" aria-label="Session Encryption">Session Encryption</a></li>
+                <li>
+                    <a href="#different-encryption-techniques" aria-label="Different Encryption Techniques">Different Encryption Techniques</a></li>
+                <li>
+                    <a href="#symmetrical-encryption" aria-label="Symmetrical Encryption">Symmetrical Encryption</a></li>
+                <li>
+                    <a href="#asymmetrical-encryption" aria-label="Asymmetrical Encryption">Asymmetrical Encryption</a></li>
+                <li>
+                    <a href="#hashing" aria-label="Hashing">Hashing</a></li>
+                <li>
+                    <a href="#session-encryption-negotiation" aria-label="Session Encryption Negotiation">Session Encryption Negotiation</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><p>If you work in the IT industry, you’ve undoubtedly heard of ssh. But how does it work?<br>
 SSH (secure shell) is a network protocol that allows two computers to connect securely over the internet. SSH uses encryption to prevent hackers from reading data sent between two connected devices.<br>
 SSH is divided into three layers:</p>
@@ -448,7 +472,7 @@ There are different ciphers that can be used for SSH depending on the applicatio
   
   
   (function() {
-    const enableTocScroll = '' == '1'
+    const enableTocScroll = '1' == '1'
     if (!enableTocScroll) {
       return
     }

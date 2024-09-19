@@ -238,7 +238,31 @@ function toggleThemeListener() {
       
       
     </div>
-  </header> 
+  </header> <div class="toc side right">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-is-tails" aria-label="What is tails?">What is tails?</a></li>
+                <li>
+                    <a href="#what-is-the-tor-network" aria-label="What is the tor network?">What is the tor network?</a></li>
+                <li>
+                    <a href="#who-is-tails-intended-for" aria-label="Who is tails intended for?">Who is tails intended for?</a></li>
+                <li>
+                    <a href="#requirements" aria-label="Requirements">Requirements</a></li>
+                <li>
+                    <a href="#installation" aria-label="Installation">Installation</a></li>
+                <li>
+                    <a href="#using-tails" aria-label="Using tails">Using tails</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><p>In this article we will talk about what tails is and how to install and more.</p>
 <h1 id="what-is-tails">What is tails?<a hidden class="anchor" aria-hidden="true" href="#what-is-tails">¶</a></h1>
 <p>Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</p>
@@ -441,7 +465,7 @@ After you have clicked on the windows logo you should be prompted with the requi
   
   
   (function() {
-    const enableTocScroll = '' == '1'
+    const enableTocScroll = '1' == '1'
     if (!enableTocScroll) {
       return
     }

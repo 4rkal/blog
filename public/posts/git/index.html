@@ -238,7 +238,43 @@ function toggleThemeListener() {
       
       
     </div>
-  </header> 
+  </header> <div class="toc side right">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-youll-need" aria-label="What You’ll Need">What You’ll Need</a></li>
+                <li>
+                    <a href="#step-by-step-setup-guide" aria-label="Step-by-Step Setup Guide">Step-by-Step Setup Guide</a><ul>
+                        
+                <li>
+                    <a href="#1-install-git-on-your-server" aria-label="1. Install Git on Your Server">1. Install Git on Your Server</a></li>
+                <li>
+                    <a href="#2-create-a-git-user" aria-label="2. Create a Git User">2. Create a Git User</a></li>
+                <li>
+                    <a href="#3-secure-your-server-with-ssh-keys" aria-label="3. Secure Your Server with SSH Keys">3. Secure Your Server with SSH Keys</a></li>
+                <li>
+                    <a href="#4-generate-and-add-ssh-keys" aria-label="4. Generate and Add SSH Keys">4. Generate and Add SSH Keys</a></li>
+                <li>
+                    <a href="#5-set-up-your-git-repository-directory" aria-label="5. Set Up Your Git Repository Directory">5. Set Up Your Git Repository Directory</a></li>
+                <li>
+                    <a href="#6-create-a-new-repository" aria-label="6. Create a New Repository">6. Create a New Repository</a></li>
+                <li>
+                    <a href="#7-test-your-setup" aria-label="7. Test Your Setup">7. Test Your Setup</a></li></ul>
+                </li>
+                <li>
+                    <a href="#congratulations" aria-label="Congratulations!">Congratulations!</a></li>
+                <li>
+                    <a href="#" aria-label="Subscribe">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><p>Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you&rsquo;ll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.</p>
 <h3 id="what-youll-need">What You’ll Need<a hidden class="anchor" aria-hidden="true" href="#what-youll-need">¶</a></h3>
 <ol>
@@ -484,7 +520,7 @@ function toggleThemeListener() {
   
   
   (function() {
-    const enableTocScroll = '' == '1'
+    const enableTocScroll = '1' == '1'
     if (!enableTocScroll) {
       return
     }

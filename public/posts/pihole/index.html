@@ -238,7 +238,34 @@ function toggleThemeListener() {
       
       
     </div>
-  </header> 
+  </header> <div class="toc side right">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-is-pi-hole" aria-label="What is Pi-hole?">What is Pi-hole?</a></li>
+                <li>
+                    <a href="#requirements" aria-label="Requirements">Requirements</a></li>
+                <li>
+                    <a href="#installation" aria-label="Installation">Installation</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#on-windows" aria-label="On Windows:">On Windows:</a></li>
+                <li>
+                    <a href="#on-linux" aria-label="On Linux:">On Linux:</a>
+                </li>
+            </ul>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><p>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.</p>
 <h1 id="what-is-pi-hole">What is Pi-hole?<a hidden class="anchor" aria-hidden="true" href="#what-is-pi-hole">¶</a></h1>
 <p>Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine. Pi-hole has the ability to block traditional website advertisements as well as advertisements in unconventional places, such as smart TVs and mobile operating system advertisements.</p>
@@ -479,7 +506,7 @@ function toggleThemeListener() {
   
   
   (function() {
-    const enableTocScroll = '' == '1'
+    const enableTocScroll = '1' == '1'
     if (!enableTocScroll) {
       return
     }

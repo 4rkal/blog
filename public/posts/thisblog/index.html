@@ -236,7 +236,33 @@ function toggleThemeListener() {
       
       
     </div>
-  </header> 
+  </header> <div class="toc side right">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-is-hugo" aria-label="What is hugo?">What is hugo?</a></li>
+                <li>
+                    <a href="#hugo-setup" aria-label="Hugo setup">Hugo setup</a></li>
+                <li>
+                    <a href="#creating-the-hugo-site" aria-label="Creating the hugo site">Creating the hugo site</a></li>
+                <li>
+                    <a href="#adding-articles-to-our-blog" aria-label="Adding articles to our blog">Adding articles to our blog</a></li>
+                <li>
+                    <a href="#domain" aria-label="Domain">Domain</a></li>
+                <li>
+                    <a href="#hosting-our-site" aria-label="Hosting our site.">Hosting our site.</a></li>
+                <li>
+                    <a href="#seo-google-and-bing" aria-label="SEO Google and bing">SEO Google and bing</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><p>In this article I’ll show you how I setup this blog completely for free. I’ll show you how to use hugo to write your blog, Cloudflare and eu.org for your domain and ssl, Render and github for the hosting and even how to get your blog on google.</p>
 <h1 id="what-is-hugo">What is hugo?<a hidden class="anchor" aria-hidden="true" href="#what-is-hugo">¶</a></h1>
 <p>Hugo is a fast and popular open-source static site generator used for creating static websites without requiring a database or dynamic components.</p>
@@ -574,7 +600,7 @@ git branch -M main
   
   
   (function() {
-    const enableTocScroll = '' == '1'
+    const enableTocScroll = '1' == '1'
     if (!enableTocScroll) {
       return
     }

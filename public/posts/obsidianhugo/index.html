@@ -236,7 +236,53 @@ function toggleThemeListener() {
       
       
     </div>
-  </header> 
+  </header> <div class="toc side right">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul><ul>
+                <li>
+                    <a href="#obsidian" aria-label="Obsidian">Obsidian</a></li>
+                <li>
+                    <a href="#hugo" aria-label="Hugo">Hugo</a></li>
+                <li>
+                    <a href="#using-obsidian-with-hugo" aria-label="Using Obsidian with Hugo">Using Obsidian with Hugo</a></li>
+                <li>
+                    <a href="#goals-for-using-hugo-with-obsidian" aria-label="Goals for Using Hugo with Obsidian">Goals for Using Hugo with Obsidian</a></li></ul>
+                    
+                <li>
+                    <a href="#existing-setup" aria-label="Existing setup">Existing setup</a></li>
+                <li>
+                    <a href="#journey" aria-label="Journey">Journey</a><ul>
+                        
+                <li>
+                    <a href="#mistake-1" aria-label="Mistake #1">Mistake #1</a></li>
+                <li>
+                    <a href="#mistake-2" aria-label="Mistake #2">Mistake #2</a></li></ul>
+                </li>
+                <li>
+                    <a href="#the-sauce" aria-label="The Sauce">The Sauce</a></li>
+                <li>
+                    <a href="#obsidian-templates" aria-label="Obsidian templates">Obsidian templates</a></li>
+                <li>
+                    <a href="#folder-syncing" aria-label="Folder Syncing">Folder Syncing</a></li>
+                <li>
+                    <a href="#auto-publishing-scripts" aria-label="Auto publishing scripts">Auto publishing scripts</a></li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a><ul>
+                        
+                <li>
+                    <a href="#" aria-label="Subscribe">Subscribe</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><p>If you clicked on this article you probably know what Obsidian and Hugo are but if you don&rsquo;t here&rsquo;s a quick explanation:</p>
 <h3 id="obsidian">Obsidian<a hidden class="anchor" aria-hidden="true" href="#obsidian">¶</a></h3>
 <p><a href="https://obsidian.md">Obsidian</a> is a feature packed markdown editor. But it&rsquo;s not just a markdown editor. It&rsquo;s a way to manage knowledge. It&rsquo;s great for organizing your thoughts in a flexible, non-linear way.</p>
@@ -534,7 +580,7 @@ draft: true
   
   
   (function() {
-    const enableTocScroll = '' == '1'
+    const enableTocScroll = '1' == '1'
     if (!enableTocScroll) {
       return
     }

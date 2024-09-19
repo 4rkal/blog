@@ -241,7 +241,43 @@ function toggleThemeListener() {
       
       
     </div>
-  </header> 
+  </header> <div class="toc side right">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul><ul>
+                <li>
+                    <a href="#what-is-gitea" aria-label="What is gitea?">What is gitea?</a></li>
+                <li>
+                    <a href="#why-use-gitea-vs-github-gitlab-etc" aria-label="Why use gitea (vs GitHub, GitLab etc)">Why use gitea (vs GitHub, GitLab etc)</a></li></ul>
+                    
+                <li>
+                    <a href="#setup" aria-label="Setup">Setup</a><ul>
+                        
+                <li>
+                    <a href="#installing-and-setting-up-docker" aria-label="Installing and setting up docker">Installing and setting up docker</a></li>
+                <li>
+                    <a href="#docker-composeyml" aria-label="Docker-compose.yml">Docker-compose.yml</a></li>
+                <li>
+                    <a href="#starting-the-container-and-additional-configuration" aria-label="Starting the container and additional configuration">Starting the container and additional configuration</a></li></ul>
+                </li>
+                <li>
+                    <a href="#make-publicly-accessible-with-cloudflare-tunnels-optional" aria-label="Make publicly accessible with cloudflare tunnels (optional)">Make publicly accessible with cloudflare tunnels (optional)</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#" aria-label="Subscribe">Subscribe</a>
+                </li>
+            </ul>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><p>In this article I&rsquo;ll walk you through how you can run your own gitea instance. But first</p>
 <h2 id="what-is-gitea">What is gitea?<a hidden class="anchor" aria-hidden="true" href="#what-is-gitea">¶</a></h2>
 <p>Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my <a href="https://libre.computer/products/aml-s905x-cc/">Le Potato</a> and it barely uses any resources.</p>
@@ -522,7 +558,7 @@ function toggleThemeListener() {
   
   
   (function() {
-    const enableTocScroll = '' == '1'
+    const enableTocScroll = '1' == '1'
     if (!enableTocScroll) {
       return
     }
