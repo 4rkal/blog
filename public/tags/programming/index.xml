@@ -384,9 +384,9 @@ In this tutorial, we’ll learn how to use Python and Selenium to automate a web
 What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation.</description>
       <content:encoded><![CDATA[<p><strong>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.</strong></p>
 <p>In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (<a href="https://4rkal.com/posts/python/">https://4rkal.com/posts/python/</a>)</p>
-<h1 id="what-is-selenium">What is selenium?</h1>
+<h2 id="what-is-selenium">What is selenium?</h2>
 <p>Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. You can use selenium in multiple programming languages including JavaScript (Node.js), C#, Groovy, Java, Perl, PHP, Python, Ruby and Scala and with multiple web browsers including firefox, internet explorer, safary, opera, chrome and edge. Selenium can be very useful for web scraping, automating boring and manual tasks and so much more.</p>
-<h1 id="setup">Setup</h1>
+<h2 id="setup">Setup</h2>
 <p>To install selenium you first have to install a browser driver. Here is the list of supported web browsers :</p>
 <ul>
 <li>Firefox</li>
@@ -397,11 +397,11 @@ What is selenium? Selenium is an open source umbrella project for a range of too
 <li>Edge
 In this article we will be using firefox geckodriver. But you can use any of the browser drivers above.</li>
 </ul>
-<h1 id="downloading-geckodriver">Downloading geckodriver</h1>
+<h2 id="downloading-geckodriver">Downloading geckodriver</h2>
 <p>To get started go to github.com/mozilla/geckodriver/releases
 Scroll down and select the package for your computer.
 I’ll use geckodriver-v0.31.0-linux64.tar.gz because I’m using a linux 64-bit computer.</p>
-<h1 id="installing-geckodriver">Installing geckodriver</h1>
+<h2 id="installing-geckodriver">Installing geckodriver</h2>
 <p>The setup varies depending on your operating system.</p>
 <p>If you are using Arch Linux:
 You can install geckodriver from the aur. Using your favourite aur helper</p>
@@ -416,12 +416,12 @@ On windows:</li>
 <li>Unzip the file</li>
 <li>Paste the file in the directory that your script will run</li>
 </ol>
-<h1 id="installing-selenium">Installing selenium</h1>
+<h2 id="installing-selenium">Installing selenium</h2>
 <p>To install selenium you have to have python and pip installed.Check out my article on python for <a href="https://4rkal.com/posts/python">more</a>
 To install selenium open your cmd or terminal and type:<br>
 <code>pip install selenium</code>
 That should install it.\</p>
-<h1 id="basics-of-selenium">Basics of selenium</h1>
+<h2 id="basics-of-selenium">Basics of selenium</h2>
 <p>The first thing we have to do is to create a new file with the .py ending eg. main.py<br>
 After you have created it open it in your ide or editor of choice.\</p>
 <p>The first thing that we have to do is to import the selenium webdriver :
@@ -437,7 +437,7 @@ browser = webdriver.Firefox()
 browser.get(&#39;https://python.org&#39;)
 </code></pre><p>Now we might want it to click on the Downloads button</p>
 <p>There are a few ways to do this</p>
-<h1 id="method-1-of-clicking-a-button">Method 1 of clicking a button</h1>
+<h2 id="method-1-of-clicking-a-button">Method 1 of clicking a button</h2>
 <p>The first is with XPATH<br>
 To find the xpath of a button / object on a website you have to open your web browser go to the desired website and hit F12 to get the development tools. Now you should click on the select tool (See below)
 <img loading="lazy" src="/../assets/inspect.png" type="" alt="Inspect element"  />
@@ -454,7 +454,7 @@ from selenium.webdriver.common.by import By
 browser = webdriver.Firefox()
 browser.get(&#39;https://python.org&#39;)
 browser.find_element(By.XPATH, &#39;/html/body/div/header/div/nav/ul/li[2]/a&#39;).click()
-</code></pre><h1 id="method-2">Method 2</h1>
+</code></pre><h2 id="method-2">Method 2</h2>
 <p>XPATH with text
 The second method is a bit simpler but not as reliable as the first as there might be many objects with the same name.<br>
 To use this method type:
@@ -479,7 +479,7 @@ The methods are the following</p>
 <li>By.CSS_SELECTOR\</li>
 </ul>
 <p>Read more here: <a href="https://selenium-python.readthedocs.io/locating-elements.html">https://selenium-python.readthedocs.io/locating-elements.html</a></p>
-<h1 id="typing-text-into-input-fields">Typing text into input fields.</h1>
+<h2 id="typing-text-into-input-fields">Typing text into input fields.</h2>
 <p>Typing text into input fields is pretty straight forward.<br>
 For that we will use any of the above methods. I&rsquo;m going to use xpath.<br>
 Find the xpath of any input field, I&rsquo;m going to use the google.com search field<br>

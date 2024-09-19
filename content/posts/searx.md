@@ -8,25 +8,25 @@ tags:
 ---
 We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
 
-# What is searX?
+## What is searX?
 Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users. In order to do this, Searx does not provide the search engines from which it receives results with users’ IP addresses or search histories. Tracking cookies served by the search engines are blocked, preventing user-profiling-based results modification.
 
 Users can run private instances of Searx on their own computer, but there are also many public, user-run, Searx instances.
 
 In this article i will show you how to run your own searX instance.
 
-# What is a metasearch engine?
+## What is a metasearch engine?
 A web search engine’s data is used by a metasearch engine, an online information retrieval tool, to create its own results. Metasearch engines automatically query search engines eg Google after receiving user input. The users are shown sufficient data that has been gathered, sorted, and presented.
 
-# Requirements
+## Requirements
 1. An computer (preferably running linux). Check out my article on how to install linux here https://4rkal.medium.com/install-a-debian-server-54add9133eec
 2. an internet connection
-# Installing on windows
+## Installing on windows
 To install on windows you will have to install wsl and follow the setup guide for linux bellow
 
 To see how to install wsl head to https://docs.microsoft.com/en-us/windows/wsl/install
 
-# Installing on Linux (debian)
+## Installing on Linux (debian)
 First update your system
 `sudo apt-get update && sudo apt-get upgrade`
 Now install required packages

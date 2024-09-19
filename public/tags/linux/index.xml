@@ -258,18 +258,18 @@ HiddenServicePort 22 127.0.0.1:22
       <description>With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.
 Whats ventoy? Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .</description>
       <content:encoded><![CDATA[<p>With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.</p>
-<h1 id="whats-ventoy">Whats ventoy?</h1>
+<h2 id="whats-ventoy">Whats ventoy?</h2>
 <p>Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .iso to the USB drive and boot from them directly. Ventoy will present the user with a boot menu to select one of these files.</p>
-<h1 id="requirements">Requirements</h1>
+<h2 id="requirements">Requirements</h2>
 <ol>
 <li>a computer</li>
 <li>a internet connection (pretty hard without one)</li>
 <li>a usb (min 8gb)</li>
 </ol>
-<h1 id="installation">Installation</h1>
+<h2 id="installation">Installation</h2>
 <p>Ventoy is available on both linux and windows.</p>
 <p>The first thing you will have to do is head to ventoy.net . On the download page select your operating system and click on download.</p>
-<h1 id="on-linux">On linux</h1>
+<h2 id="on-linux">On linux</h2>
 <p>After you have extracted the file open the folder and click on the VentoyGUI .</p>
 <p>Depending on your processor type select the file ending in either aarch64 i386 mips64el or x86_64. (It will most probably be x86_64).</p>
 <p>After that you should see something like this:
@@ -400,21 +400,21 @@ What You’ll Need A Computer for Your Server: Ideally running Linux (Debian is 
       <description>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
 What is searX? Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users.</description>
       <content:encoded><![CDATA[<p>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.</p>
-<h1 id="what-is-searx">What is searX?</h1>
+<h2 id="what-is-searx">What is searX?</h2>
 <p>Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users. In order to do this, Searx does not provide the search engines from which it receives results with users’ IP addresses or search histories. Tracking cookies served by the search engines are blocked, preventing user-profiling-based results modification.</p>
 <p>Users can run private instances of Searx on their own computer, but there are also many public, user-run, Searx instances.</p>
 <p>In this article i will show you how to run your own searX instance.</p>
-<h1 id="what-is-a-metasearch-engine">What is a metasearch engine?</h1>
+<h2 id="what-is-a-metasearch-engine">What is a metasearch engine?</h2>
 <p>A web search engine’s data is used by a metasearch engine, an online information retrieval tool, to create its own results. Metasearch engines automatically query search engines eg Google after receiving user input. The users are shown sufficient data that has been gathered, sorted, and presented.</p>
-<h1 id="requirements">Requirements</h1>
+<h2 id="requirements">Requirements</h2>
 <ol>
 <li>An computer (preferably running linux). Check out my article on how to install linux here <a href="https://4rkal.medium.com/install-a-debian-server-54add9133eec">https://4rkal.medium.com/install-a-debian-server-54add9133eec</a></li>
 <li>an internet connection</li>
 </ol>
-<h1 id="installing-on-windows">Installing on windows</h1>
+<h2 id="installing-on-windows">Installing on windows</h2>
 <p>To install on windows you will have to install wsl and follow the setup guide for linux bellow</p>
 <p>To see how to install wsl head to <a href="https://docs.microsoft.com/en-us/windows/wsl/install">https://docs.microsoft.com/en-us/windows/wsl/install</a></p>
-<h1 id="installing-on-linux-debian">Installing on Linux (debian)</h1>
+<h2 id="installing-on-linux-debian">Installing on Linux (debian)</h2>
 <p>First update your system
 <code>sudo apt-get update &amp;&amp; sudo apt-get upgrade</code>
 Now install required packages

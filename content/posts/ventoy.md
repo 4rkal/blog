@@ -6,20 +6,20 @@ tags:
 ---
 With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.
 
-# Whats ventoy?
+## Whats ventoy?
 Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .iso to the USB drive and boot from them directly. Ventoy will present the user with a boot menu to select one of these files.
 
-# Requirements
+## Requirements
 1. a computer
 2. a internet connection (pretty hard without one)
 3. a usb (min 8gb)
 
-# Installation
+## Installation
 Ventoy is available on both linux and windows.
 
 The first thing you will have to do is head to ventoy.net . On the download page select your operating system and click on download.
 
-# On linux
+## On linux
 After you have extracted the file open the folder and click on the VentoyGUI .
 
 Depending on your processor type select the file ending in either aarch64 i386 mips64el or x86_64. (It will most probably be x86_64).

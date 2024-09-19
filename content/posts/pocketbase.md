@@ -8,7 +8,7 @@ tags:
 # What is PocketBase
 PocketBase is an open source backend made in go consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.
 
-# Install PocketBase
+## Install PocketBase
 The first thing that you will have to do is head to https://pocketbase.io and select the file for your operating system. Since I am using linux I will show how to set this up on linux but it should be pretty similar for any other os.
 
 Unzip the file and open up a terminal to the path that you extracted the file to and type:

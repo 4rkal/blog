@@ -14,9 +14,9 @@ tags:
 **Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.**
 
 In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn't work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.com/posts/python/)
-# What is selenium?
+## What is selenium?
 Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. You can use selenium in multiple programming languages including JavaScript (Node.js), C#, Groovy, Java, Perl, PHP, Python, Ruby and Scala and with multiple web browsers including firefox, internet explorer, safary, opera, chrome and edge. Selenium can be very useful for web scraping, automating boring and manual tasks and so much more.
-# Setup
+## Setup
 To install selenium you first have to install a browser driver. Here is the list of supported web browsers :
 - Firefox
 - Internet Explorer?
@@ -25,11 +25,11 @@ To install selenium you first have to install a browser driver. Here is the list
 - Chrome
 - Edge
 In this article we will be using firefox geckodriver. But you can use any of the browser drivers above.
-# Downloading geckodriver
+## Downloading geckodriver
 To get started go to github.com/mozilla/geckodriver/releases
 Scroll down and select the package for your computer.
 I’ll use geckodriver-v0.31.0-linux64.tar.gz because I’m using a linux 64-bit computer.
-# Installing geckodriver
+## Installing geckodriver
 The setup varies depending on your operating system.
 
 If you are using Arch Linux:
@@ -44,12 +44,12 @@ On linux:
 On windows:
 1. Unzip the file
 2. Paste the file in the directory that your script will run
-# Installing selenium
+## Installing selenium
 To install selenium you have to have python and pip installed.Check out my article on python for [more](https://4rkal.com/posts/python)
 To install selenium open your cmd or terminal and type:\
 ```pip install selenium```
 That should install it.\
-# Basics of selenium
+## Basics of selenium
 The first thing we have to do is to create a new file with the .py ending eg. main.py\
 After you have created it open it in your ide or editor of choice.\
 
@@ -71,7 +71,7 @@ browser.get('https://python.org')
 Now we might want it to click on the Downloads button
 
 There are a few ways to do this
-# Method 1 of clicking a button
+## Method 1 of clicking a button
 The first is with XPATH\
 To find the xpath of a button / object on a website you have to open your web browser go to the desired website and hit F12 to get the development tools. Now you should click on the select tool (See below)
 ![Inspect element](../assets/inspect.png)
@@ -90,7 +90,7 @@ browser = webdriver.Firefox()
 browser.get('https://python.org')
 browser.find_element(By.XPATH, '/html/body/div/header/div/nav/ul/li[2]/a').click()
 ```
-# Method 2
+## Method 2
 XPATH with text
 The second method is a bit simpler but not as reliable as the first as there might be many objects with the same name.\
 To use this method type:
@@ -118,7 +118,7 @@ The methods are the following
 - By.CSS_SELECTOR\
 
 Read more here: https://selenium-python.readthedocs.io/locating-elements.html 
-# Typing text into input fields.
+## Typing text into input fields.
 Typing text into input fields is pretty straight forward.\
 For that we will use any of the above methods. I'm going to use xpath.\
 Find the xpath of any input field, I'm going to use the google.com search field\
