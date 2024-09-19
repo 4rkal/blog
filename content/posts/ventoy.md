@@ -31,7 +31,7 @@ Select your device from the devices tab
 
 Then click on install.
 
-# On windows
+## On windows
 Download the file and unzip it
 
 Then click on the file called Ventoy2Disk.exe

@@ -268,11 +268,11 @@ ok      apiSpeedImprove 3.216s
 goarch: amd64
 pkg: apiSpeedImprove/httpReuse
 cpu: AMD Ryzen 5 7640U w/ Radeon 760M Graphics      
-BenchmarkReusedHandler-12                   2179            505189 ns/op
-BenchmarkNewHandlerPerRequest-12            2341            507525 ns/op
+BenchmarkNewHttpClientEachRequest-12                3360            300058 ns/op
+BenchmarkReuseHttpClient-12                         6470            175472 ns/op
 PASS
-ok      apiSpeedImprove/httpReuse       7.270s
-</code></pre><p>Reusing HTTP handlers gave a slight performance boost compared to making a new handler for each request.</p>
+ok      apiSpeedImprove/httpReuse       4.010s
+</code></pre><p>Reusing HTTP handlers gave a solid performance boost compared to making a new handler for each request.</p>
 <h1 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">¶</a></h1>
 <p>With these tweaks I managed to cut the time it took to gather all the info from 24 seconds initially to about 2 seconds. Pretty solid improvement!</p>
 <p>If you are interested the code for my benchmarks, it is available <a href="https://git.4rkal.com/4rkal/goapiperf">here</a></p>

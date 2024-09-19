@@ -276,7 +276,7 @@ Whats ventoy? Ventoy is a free and open-source utility used for writing image fi
 <img loading="lazy" src="/../assets/ventoy.webp" type="" alt="Ventoy on linux"  /></p>
 <p>Select your device from the devices tab</p>
 <p>Then click on install.</p>
-<h1 id="on-windows">On windows</h1>
+<h2 id="on-windows">On windows</h2>
 <p>Download the file and unzip it</p>
 <p>Then click on the file called Ventoy2Disk.exe</p>
 <p>You should see something like this</p>
