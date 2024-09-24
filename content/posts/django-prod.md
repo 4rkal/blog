@@ -28,6 +28,8 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 ```
 
+You should also change the `SECRET_KEY` to a long random string, that you should never share with anyone.
+
 After that create a new file called `.gitignore` and paste the following:
 
 ```gitignore

@@ -30,7 +30,8 @@
 </span></span><span style="display:flex;"><span>CSRF_TRUSTED_ORIGINS <span style="color:#f92672">=</span> [
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;yourdomain.tld&#39;</span>,
 </span></span><span style="display:flex;"><span>]
-</span></span></code></pre></div><p>After that create a new file called <code>.gitignore</code> and paste the following:</p>
+</span></span></code></pre></div><p>You should also change the <code>SECRET_KEY</code> to a long random string, that you should never share with anyone.</p>
+<p>After that create a new file called <code>.gitignore</code> and paste the following:</p>
 <pre tabindex="0"><code class="language-gitignore" data-lang="gitignore">db.sqlite3
 *.pyc
 </code></pre><p>This will make sure that the database is not uploaded to our server and that no pyc files are either.</p>
