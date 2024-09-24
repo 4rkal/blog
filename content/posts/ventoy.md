@@ -43,7 +43,7 @@ You should see something like this
 Select your usb device from the drop down and click on install.
 
 # Using ventoy 
-To use ventoy all you have to do is paste your iso files inside of the usb. No formatting etc.
+To use ventoy all you have to do is paste your iso files inside of the usb. No need for formatting etc.
 
 When you boot into your usb you will be prompted which of the iso's to use. That's about it.
 

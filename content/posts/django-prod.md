@@ -1,7 +1,7 @@
 ---
 title: Deploy a django app to production
 description: In this article I will show you how to deploy django to production. We will be using nginx, gunicorn and cloudflare tunnels
-date: 2024-09-03T11:54:29+03:00
+date: 2024-09-20T11:54:29+03:00
 draft: true
 tags:
   - programming

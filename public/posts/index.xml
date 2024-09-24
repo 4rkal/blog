@@ -1441,7 +1441,7 @@ Whats ventoy? Ventoy is a free and open-source utility used for writing image fi
 <p><img loading="lazy" src="/../assets/ventoy-win.webp" type="" alt="Ventoy on Windows"  /></p>
 <p>Select your usb device from the drop down and click on install.</p>
 <h1 id="using-ventoy">Using ventoy</h1>
-<p>To use ventoy all you have to do is paste your iso files inside of the usb. No formatting etc.</p>
+<p>To use ventoy all you have to do is paste your iso files inside of the usb. No need for formatting etc.</p>
 <p>When you boot into your usb you will be prompted which of the iso&rsquo;s to use. That&rsquo;s about it.</p>
 <p>Enjoy not having to reformat your usb for each iso/OS.</p>
 <h3 id="join-my-free-newsletter">Join my free newsletter!</h3>

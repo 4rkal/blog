@@ -1,7 +1,7 @@
 ---
 title: Build a URL shortener in Go
 description: I will be showing you how to create a url shortener in go.
-date: 2024-09-14T18:24:11+03:00
+date: 2024-09-22T18:24:11+03:00
 draft: true
 tags:
   - golang
@@ -9,6 +9,10 @@ tags:
 In this article I will be going through how to make a url shortener in go. The final result will look something like this [shortr](https://app.4rkal.com), [source code](https://github.com/4rkal/shortr)
 
 This is a great weekend project especially if you're new to go.
+
+## What is a url shortener?
+A URL shortener is a tool that takes a long URL and shrinks it down into something much shorter and easier to share. Instead of copying and pasting a long string of letters, numbers, and symbols, you get a compact version that leads to the same destination. For example, a long URL like `www.somelongwebsite.com/articles/this-is-a-super-long-link` could become something like `bit.ly/abc123`. It's super handy for sharing links on social media, in texts, or anywhere space is limited. And most url shorteners provide analytics like link clicks.
+
 
 ## Requirements
 1. Go installed on your system.
