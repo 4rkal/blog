@@ -20,7 +20,7 @@
       <description>In this article I will show you how to deploy django to production. We will be using nginx, gunicorn and cloudflare tunnels</description>
       <content:encoded><![CDATA[<p>I recently deployed my very own django application to production. The website is called <a href="https://videiro.com">videiro.com</a> and was developed in django + HTML/CSS/JS + Tailwind.</p>
 <h2 id="setup">Setup</h2>
-<p>I am using a debian 12 server which will expose my application via cloudflare tunnels. All of the static files are being served via nginx and the Django project is being ran b)y gunicorn.</p>
+<p>I am using a debian 12 server which will expose my application via cloudflare tunnels. All of the static files are being served via nginx and the Django project is being ran by gunicorn.</p>
 <p>In this guide I will show you how I set this up.</p>
 <h2 id="preparing-the-django-project">Preparing the Django project</h2>
 <p>The first thing you will have to do is open the settings.py and change the following</p>
@@ -157,6 +157,7 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
 <p>Now if you head to the domain that you specified you should see your app up and running.</p>
 <p>Congratulations!</p>
 <p><strong>If you enjoyed this post and want to support my (mostly unpaid) work , you can <a href="https://4rkal.com/donate">donate here</a>.</strong></p>
+<h2 id="join-my-free-newsletter">Join my free newsletter</h2>
 <div style="text-align: left; margin: 0 auto;">
     <form method="post" action="https://newsletter.4rkal.com/subscription/form" style="background: #2c2c2c; color: #f0f0f0; border-radius: 8px; padding: 15px; max-width: 500px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); font-family: Arial, sans-serif;">
         <div style="display: flex; flex-direction: column; gap: 10px;">
