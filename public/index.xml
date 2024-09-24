@@ -12,7 +12,7 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 20 Sep 2024 11:54:29 +0300</lastBuildDate><atom:link href="https://4rkal.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Deploy a django app to production</title>
+      <title>Deploy django to production</title>
       <link>https://4rkal.com/posts/django-prod/</link>
       <pubDate>Fri, 20 Sep 2024 11:54:29 +0300</pubDate>
       
@@ -157,7 +157,7 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
 <p>Now if you head to the domain that you specified you should see your app up and running.</p>
 <p>Congratulations!</p>
 <p><strong>If you enjoyed this post and want to support my (mostly unpaid) work , you can <a href="https://4rkal.com/donate">donate here</a>.</strong></p>
-<h2 id="join-my-free-newsletter">Join my free newsletter</h2>
+<h2 id="join-my-free-newsletter">Join my free newsletter!</h2>
 <div style="text-align: left; margin: 0 auto;">
     <form method="post" action="https://newsletter.4rkal.com/subscription/form" style="background: #2c2c2c; color: #f0f0f0; border-radius: 8px; padding: 15px; max-width: 500px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); font-family: Arial, sans-serif;">
         <div style="display: flex; flex-direction: column; gap: 10px;">
