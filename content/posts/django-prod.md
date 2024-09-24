@@ -82,7 +82,7 @@ cd my-project
 
 Once you're in install the following:
 ```shell
-pip install django django-crispy-forms whitenoise
+pip install django django-crispy-forms 
 ```
 
 Now try to run the project:
