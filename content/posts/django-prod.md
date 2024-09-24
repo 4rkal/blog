@@ -12,7 +12,7 @@ tags:
 I recently deployed my very own django application to production. The website is called [videiro.com](https://videiro.com) and was developed in django + HTML/CSS/JS + Tailwind. 
 
 ## Setup
-I am using a debian 12 server which will expose my application via cloudflare tunnels. All of the static files are being served via nginx and the Django project is being ran my gunicorn.
+I am using a debian 12 server which will expose my application via cloudflare tunnels. All of the static files are being served via nginx and the Django project is being ran b)y gunicorn.
 
 In this guide I will show you how I set this up.
 

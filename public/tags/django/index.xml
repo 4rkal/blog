@@ -20,7 +20,7 @@
       <description>In this article I will show you how to deploy django to production. We will be using nginx, gunicorn and cloudflare tunnels</description>
       <content:encoded><![CDATA[<p>I recently deployed my very own django application to production. The website is called <a href="https://videiro.com">videiro.com</a> and was developed in django + HTML/CSS/JS + Tailwind.</p>
 <h2 id="setup">Setup</h2>
-<p>I am using a debian 12 server which will expose my application via cloudflare tunnels. All of the static files are being served via nginx and the Django project is being ran my gunicorn.</p>
+<p>I am using a debian 12 server which will expose my application via cloudflare tunnels. All of the static files are being served via nginx and the Django project is being ran b)y gunicorn.</p>
 <p>In this guide I will show you how I set this up.</p>
 <h2 id="preparing-the-django-project">Preparing the Django project</h2>
 <p>The first thing you will have to do is open the settings.py and change the following</p>
