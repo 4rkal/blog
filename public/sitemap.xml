@@ -7,27 +7,52 @@
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://4rkal.com/</loc>
+    <lastmod>2024-09-20T11:54:29+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/posts/django-prod/</loc>
+    <lastmod>2024-09-20T11:54:29+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/django/</loc>
+    <lastmod>2024-09-20T11:54:29+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/linux/</loc>
+    <lastmod>2024-09-20T11:54:29+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/posts/</loc>
+    <lastmod>2024-09-20T11:54:29+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/programming/</loc>
+    <lastmod>2024-09-20T11:54:29+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/python/</loc>
+    <lastmod>2024-09-20T11:54:29+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/</loc>
+    <lastmod>2024-09-20T11:54:29+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://4rkal.com/newsletter/</loc>
     <lastmod>2024-09-04T11:11:15+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://4rkal.com/</loc>
-    <lastmod>2024-08-23T11:19:17+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://4rkal.com/tags/automation/</loc>
-    <lastmod>2024-08-23T11:19:17+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/linux/</loc>
-    <lastmod>2024-08-23T11:19:17+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/posts/</loc>
     <lastmod>2024-08-23T11:19:17+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -43,11 +68,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://4rkal.com/posts/listmonk/</loc>
-    <lastmod>2024-08-23T11:19:17+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/</loc>
     <lastmod>2024-08-23T11:19:17+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -73,11 +93,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://4rkal.com/posts/goapi/</loc>
-    <lastmod>2024-08-17T12:25:15+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/programming/</loc>
     <lastmod>2024-08-17T12:25:15+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -149,11 +164,6 @@
   </url><url>
     <loc>https://4rkal.com/posts/thisblog/</loc>
     <lastmod>2023-03-23T18:13:03+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/python/</loc>
-    <lastmod>2023-03-06T20:52:42+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>

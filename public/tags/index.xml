@@ -10,13 +10,13 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Aug 2024 11:19:17 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Sep 2024 11:54:29 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>automation</title>
-      <link>https://4rkal.com/tags/automation/</link>
-      <pubDate>Fri, 23 Aug 2024 11:19:17 +0300</pubDate>
+      <title>django</title>
+      <link>https://4rkal.com/tags/django/</link>
+      <pubDate>Fri, 20 Sep 2024 11:54:29 +0300</pubDate>
       
-      <guid>https://4rkal.com/tags/automation/</guid>
+      <guid>https://4rkal.com/tags/django/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -24,9 +24,39 @@
     <item>
       <title>linux</title>
       <link>https://4rkal.com/tags/linux/</link>
-      <pubDate>Fri, 23 Aug 2024 11:19:17 +0300</pubDate>
+      <pubDate>Fri, 20 Sep 2024 11:54:29 +0300</pubDate>
       
       <guid>https://4rkal.com/tags/linux/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://4rkal.com/tags/programming/</link>
+      <pubDate>Fri, 20 Sep 2024 11:54:29 +0300</pubDate>
+      
+      <guid>https://4rkal.com/tags/programming/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://4rkal.com/tags/python/</link>
+      <pubDate>Fri, 20 Sep 2024 11:54:29 +0300</pubDate>
+      
+      <guid>https://4rkal.com/tags/python/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>automation</title>
+      <link>https://4rkal.com/tags/automation/</link>
+      <pubDate>Fri, 23 Aug 2024 11:19:17 +0300</pubDate>
+      
+      <guid>https://4rkal.com/tags/automation/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -82,16 +112,6 @@
     </item>
     
     <item>
-      <title>programming</title>
-      <link>https://4rkal.com/tags/programming/</link>
-      <pubDate>Sat, 17 Aug 2024 12:25:15 +0300</pubDate>
-      
-      <guid>https://4rkal.com/tags/programming/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
       <title>hugo</title>
       <link>https://4rkal.com/tags/hugo/</link>
       <pubDate>Tue, 13 Aug 2024 17:15:57 +0300</pubDate>
@@ -127,16 +147,6 @@
       <pubDate>Wed, 04 Oct 2023 19:17:04 +0300</pubDate>
       
       <guid>https://4rkal.com/tags/ssh/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://4rkal.com/tags/python/</link>
-      <pubDate>Mon, 06 Mar 2023 20:52:42 +0300</pubDate>
-      
-      <guid>https://4rkal.com/tags/python/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
