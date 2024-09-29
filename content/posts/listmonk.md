@@ -1,5 +1,5 @@
 ---
-title: Setup a selfhosted newsletter using listmonk
+title: How to setup a selfhosted newsletter using listmonk
 description: Listmonk is an amazing feature packed selfhosted email newsletter manager. It offers loads of features like analytics (clicks, opens, bounces), templates, public subscription pages, importing subscribers and much more!
 date: 2024-08-23T11:19:17+03:00
 draft: false
