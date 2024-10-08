@@ -1,6 +1,6 @@
 ---
 title: How to build a URL shortener in Go
-description: In this arti will be showing you how to build a url shortener in go.
+description: In this article will be showing you how to build a url shortener in go.
 date: 2024-09-22T18:24:11+03:00
 draft: false
 tags:
