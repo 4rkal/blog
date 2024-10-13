@@ -10,14 +10,82 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Sep 2024 18:24:11 +0300</lastBuildDate><atom:link href="https://4rkal.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Oct 2024 17:33:38 +0300</lastBuildDate><atom:link href="https://4rkal.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>If Linux is so great why isn&#39;t everyone using it?</title>
+      <link>https://4rkal.com/posts/linux/</link>
+      <pubDate>Sun, 13 Oct 2024 17:33:38 +0300</pubDate>
+      
+      <guid>https://4rkal.com/posts/linux/</guid>
+      <description>Curious why more people aren’t using Linux if it’s so awesome? This article breaks down what Linux is, why it&amp;#39;s great and how it secretly powers most of your favorite devices, from smartphones to servers.</description>
+      <content:encoded><![CDATA[<h2 id="what-even-is-linux">What even is Linux?</h2>
+<p>Linux is a family of free and open source operating systems based on the <a href="https://kernel.org/">Linux kernel</a>.</p>
+<p>Although being completely free (unlike alternatives) Linux currently only has <a href="https://gs.statcounter.com/os-market-share/desktop/worldwide">4.5% of the global desktop operating system market</a>, a very low percentage.</p>
+<h2 id="what-makes-linux-great">What makes Linux great?</h2>
+<p>The core difference between Linux and other mainstream desktop operating systems (windows, macOS) is the fact that it is <strong>free and open source</strong>. This allows it to be:</p>
+<ol>
+<li><strong>Highly performant</strong> - Linux is often faster and more efficient than its counterparts.</li>
+<li><strong>Free from spyware and ads</strong> -  Unlike Windows 11 which is <a href="https://www.theverge.com/2024/4/24/24138949/microsoft-windows-11-start-menu-ads-recommendations-setting-disable">adding ads to the start menu</a></li>
+<li><strong>Arguably more secure</strong> - Being opensource often makes it more secure</li>
+<li><strong><a href="https://www.reddit.com/r/unixporn/">Endlessly customizable</a></strong></li>
+<li><strong>Completely free forever</strong> - Because it is published under a free and open source GPL license.</li>
+<li>and much much more</li>
+</ol>
+<p>If Windows and macOS are like apartments with rules and restrictions on what you can change, then Linux is like a house that you own that you can renovate, decorate and modify any way you like.</p>
+<h2 id="if-linux-is-so-great-why-isnt-everyone-using-it">If Linux is so great why isn&rsquo;t everyone using it?</h2>
+<p>We (all Linux users) can probably agree that the main drawback of Linux is user-friendliness. The average user never cared and will never care about what bootloader their laptop is using.</p>
+<p>The fun part however is that most people are using Linux, they just don&rsquo;t know it!</p>
+<h3 id="android">Android</h3>
+<p>Android is the most widely used mobile operating system in the world. With a staggering <a href="https://gs.statcounter.com/os-market-share/mobile/worldwide">71% of the global mobile operating system market</a></p>
+<p>A lesser known fact is that android is based on the Linux kernel.</p>
+<p>So basically 71% of smartphones are running Linux!</p>
+<h3 id="servers">Servers</h3>
+<p>Linux is the leading operating system on servers (over 96.4% of the top one million web servers&rsquo; operating systems are Linux)
+It also leads other systems such as mainframe computers, and is used on all of the world&rsquo;s 500 fastest supercomputers.</p>
+<p>This website is being served from a Linux server.</p>
+<p>The majority if not all of the websites that you visit every single day are being served from a Linux server.</p>
+<h3 id="iot-and-embedded-systems">IoT and embedded systems</h3>
+<p>Most IoT devices run Linux because of it&rsquo;s lightweight nature and robustness. <a href="https://ubuntu.com/blog/eclipse-2018-survey-the-iot-landscape-what-it-empirically-looks-like">This article</a> from 2018 suggests that 71% of IoT devices run Linux</p>
+<p>Most embedded systems (smart TV&rsquo;s, routers etc) run Linux</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Linux is quietly running behind the scenes. It may only capture a small slice of the desktop operating system market but it&rsquo;s a huge player in mobile, server and IoT spaces. In fact a majority of people are using Linux daily without even realizing it! It’s in your phone, your favorite websites and countless devices around you.</p>
+<p>Ultimately I highly recommend anyone interested to at least try and play around with Linux (especially if you are in the IT field I feel like it&rsquo;s a must)</p>
+<p><em>PS: this article was written on a Framework 13 running Fedora 40 (Linux)</em></p>
+<h2 id="join-my-free-newsletter">Join my free newsletter</h2>
+<div style="text-align: left; margin: 0 auto;">
+    <form method="post" action="https://newsletter.4rkal.com/subscription/form" style="background: #2c2c2c; color: #f0f0f0; border-radius: 8px; padding: 15px; max-width: 500px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); font-family: Arial, sans-serif;">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <h3 style="margin: 0; color: #f0f0f0; font-size: 18px;">Subscribe</h3>
+            <input type="hidden" name="nonce"/>
+            <input type="email" name="email" required placeholder="E-mail" style="width: 100%; padding: 10px; border: 1px solid #666; border-radius: 4px; background: #333; color: #f0f0f0; box-sizing: border-box;"/>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="margin: 0; color: #f0f0f0; display: none;">
+                    <input id="78a75" type="checkbox" name="l" checked value="78a75b30-472d-4790-a5d5-7f2ed49662a4" style="accent-color: #fff;"/>
+                    Weekly Roundup
+                </label>
+                <span style="color: #d0d0d0; display: none;">Where I share what I’ve been up to that week, including articles I’ve published, cool finds, tips and tricks, and more!</span>
+                <label style="margin: 0; color: #f0f0f0; display: none;">
+                    <input id="b3964" type="checkbox" name="l" checked value="b3964560-37b0-43d3-9df9-26589fd6bf8d" style="accent-color: #fff;"/>
+                    New Posts
+                </label>
+                <span style="color: #d0d0d0; display: none;">Receive an email every time I post something new on my blog</span>
+            </div>
+            <input type="submit" value="Subscribe" style="width: 100%; padding: 10px; border: none; border-radius: 4px; background: #fff; color: #007bff; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);"/>
+        </div>
+        <p style="text-align: center; margin-top: 10px; color: #d0d0d0; font-size: 10px; margin-bottom:0px;">
+            No spam, no ads. Unsubscribe at any time.
+        </p>
+    </form>
+</div>]]></content:encoded>
+    </item>
+    
     <item>
       <title>How to build a URL shortener in Go</title>
       <link>https://4rkal.com/posts/url-shortener-go/</link>
       <pubDate>Sun, 22 Sep 2024 18:24:11 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/url-shortener-go/</guid>
-      <description>I will be showing you how to build a url shortener in go.</description>
+      <description>In this article will be showing you how to build a url shortener in go.</description>
       <content:encoded><![CDATA[<p>In this article I will be going through how to make a url shortener in go. The final result will look something like this <a href="https://app.4rkal.com">shortr</a>, <a href="https://github.com/4rkal/shortr">source code</a></p>
 <p>This is a great weekend project especially if you&rsquo;re new to go.</p>
 <h2 id="what-is-a-url-shortener">What is a url shortener?</h2>

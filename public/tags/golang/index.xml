@@ -17,7 +17,7 @@
       <pubDate>Sun, 22 Sep 2024 18:24:11 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/url-shortener-go/</guid>
-      <description>I will be showing you how to build a url shortener in go.</description>
+      <description>In this article will be showing you how to build a url shortener in go.</description>
       <content:encoded><![CDATA[<p>In this article I will be going through how to make a url shortener in go. The final result will look something like this <a href="https://app.4rkal.com">shortr</a>, <a href="https://github.com/4rkal/shortr">source code</a></p>
 <p>This is a great weekend project especially if you&rsquo;re new to go.</p>
 <h2 id="what-is-a-url-shortener">What is a url shortener?</h2>
