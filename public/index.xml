@@ -31,6 +31,7 @@
 <li><strong>Completely free forever</strong> - Because it is published under a free and open source GPL license.</li>
 <li>and much much more</li>
 </ol>
+<p>Read <a href="https://4rkal.com/posts/opensource">The importance of open source software</a> for more information about open source software and it&rsquo;s superiority.</p>
 <p>If Windows and macOS are like apartments with rules and restrictions on what you can change, then Linux is like a house that you own that you can renovate, decorate and modify any way you like.</p>
 <h2 id="if-linux-is-so-great-why-isnt-everyone-using-it">If Linux is so great why isn&rsquo;t everyone using it?</h2>
 <p>We (all Linux users) can probably agree that the main drawback of Linux is user-friendliness. The average user never cared and will never care about what bootloader their laptop is using.</p>
@@ -2663,14 +2664,13 @@ What is Tor? Tor — short for the Onion Routing project — is an open-source p
       
       <guid>https://4rkal.com/posts/opensource/</guid>
       <description>As the linuxfoundation states about 95% of cloud providers run kubernetes which is an open sourced solution, the Apache Web server powers millions of websites including netflix.com, spotify.com and more. Most of the Internets core functions are based on open source technology. But what is it and why is it so important?
-What is open sourced software?
-Open-source software is computer software that is distributed under a license that allows users to use, study, modify, and distribute the program and its source code to anyone and for any purpose.</description>
+What is open sourced software? Open-source software is computer software that is distributed under a license that allows users to use, study, modify and distribute the program and its source code to anyone and for any purpose.</description>
       <content:encoded><![CDATA[<p>As the linuxfoundation states about 95% of cloud providers run kubernetes which is an open sourced solution, the Apache Web server powers millions of websites including netflix.com, spotify.com and more. Most of the Internets core functions are based on open source technology. But what is it and why is it so important?</p>
-<p>What is open sourced software?</p>
-<p>Open-source software is computer software that is distributed under a license that allows users to use, study, modify, and distribute the program and its source code to anyone and for any purpose. Open-source software may be created in a public, collaborative environment. Open-source software is a good example of open collaboration since it allows any skilled user to engage in development online.</p>
+<h2 id="what-is-open-sourced-software">What is open sourced software?</h2>
+<p>Open-source software is computer software that is distributed under a license that allows users to use, study, modify and distribute the program and its source code to anyone and for any purpose. Open-source software may be created in a public, collaborative environment. Open-source software is a good example of open collaboration since it allows any skilled user to engage in development online.</p>
 <p>&ldquo;Certainly there’s a phenomenon around open source. You know free software will be a vibrant area. There will be a lot of neat things that get done there.&rdquo;
 -Bill Gates</p>
-<h1 id="why-open-source">Why open source?</h1>
+<h2 id="why-open-source">Why open source?</h2>
 <p>There are several advantages to using open-source software.</p>
 <ol>
 <li>

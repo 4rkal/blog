@@ -18,6 +18,8 @@ The core difference between Linux and other mainstream desktop operating systems
 5. **Completely free forever** - Because it is published under a free and open source GPL license. 
 6. and much much more
 
+Read [The importance of open source software](https://4rkal.com/posts/opensource) for more information about open source software and it's superiority. 
+
 If Windows and macOS are like apartments with rules and restrictions on what you can change, then Linux is like a house that you own that you can renovate, decorate and modify any way you like.
 
 ## If Linux is so great why isn't everyone using it?

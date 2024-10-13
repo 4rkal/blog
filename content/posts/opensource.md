@@ -6,14 +6,13 @@ tags:
 ---
 As the linuxfoundation states about 95% of cloud providers run kubernetes which is an open sourced solution, the Apache Web server powers millions of websites including netflix.com, spotify.com and more. Most of the Internets core functions are based on open source technology. But what is it and why is it so important?
 
-What is open sourced software?
-
-Open-source software is computer software that is distributed under a license that allows users to use, study, modify, and distribute the program and its source code to anyone and for any purpose. Open-source software may be created in a public, collaborative environment. Open-source software is a good example of open collaboration since it allows any skilled user to engage in development online.
+## What is open sourced software?
+Open-source software is computer software that is distributed under a license that allows users to use, study, modify and distribute the program and its source code to anyone and for any purpose. Open-source software may be created in a public, collaborative environment. Open-source software is a good example of open collaboration since it allows any skilled user to engage in development online.
 
 "Certainly there’s a phenomenon around open source. You know free software will be a vibrant area. There will be a lot of neat things that get done there."
 -Bill Gates
 
-# Why open source?
+## Why open source?
 
 There are several advantages to using open-source software.
 
