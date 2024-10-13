@@ -13,7 +13,7 @@ Although being completely free (unlike alternatives) Linux currently only has [4
 The core difference between Linux and other mainstream desktop operating systems (windows, macOS) is the fact that it is **free and open source**. This allows it to be:
 1. **Highly performant** - Linux is often faster and more efficient than its counterparts.
 2. **Free from spyware and ads** -  Unlike Windows 11 which is [adding ads to the start menu](https://www.theverge.com/2024/4/24/24138949/microsoft-windows-11-start-menu-ads-recommendations-setting-disable)
-3. **Arguably more secure** - Being opensource often makes it more secure
+3. **Arguably more secure** - Being open source often makes it more secure
 4. **[Endlessly customizable](https://www.reddit.com/r/unixporn/)**
 5. **Completely free forever** - Because it is published under a free and open source GPL license. 
 6. and much much more
@@ -40,7 +40,7 @@ This website is being served from a Linux server.
 The majority if not all of the websites that you visit every single day are being served from a Linux server.
 
 ### IoT and embedded systems
-Most IoT devices run Linux because of it's lightweight nature and robustness. [This article](https://ubuntu.com/blog/eclipse-2018-survey-the-iot-landscape-what-it-empirically-looks-like) from 2018 suggests that 71% of IoT devices run Linux
+Most IoT (Internet Of Things) devices run Linux because of it's lightweight nature and robustness. [This article](https://ubuntu.com/blog/eclipse-2018-survey-the-iot-landscape-what-it-empirically-looks-like) from 2018 suggests that 71% of IoT devices run Linux
 
 Most embedded systems (smart TV's, routers etc) run Linux
 

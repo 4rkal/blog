@@ -26,7 +26,7 @@
 <ol>
 <li><strong>Highly performant</strong> - Linux is often faster and more efficient than its counterparts.</li>
 <li><strong>Free from spyware and ads</strong> -  Unlike Windows 11 which is <a href="https://www.theverge.com/2024/4/24/24138949/microsoft-windows-11-start-menu-ads-recommendations-setting-disable">adding ads to the start menu</a></li>
-<li><strong>Arguably more secure</strong> - Being opensource often makes it more secure</li>
+<li><strong>Arguably more secure</strong> - Being open source often makes it more secure</li>
 <li><strong><a href="https://www.reddit.com/r/unixporn/">Endlessly customizable</a></strong></li>
 <li><strong>Completely free forever</strong> - Because it is published under a free and open source GPL license.</li>
 <li>and much much more</li>
@@ -45,7 +45,7 @@ It also leads other systems such as mainframe computers, and is used on all of t
 <p>This website is being served from a Linux server.</p>
 <p>The majority if not all of the websites that you visit every single day are being served from a Linux server.</p>
 <h3 id="iot-and-embedded-systems">IoT and embedded systems</h3>
-<p>Most IoT devices run Linux because of it&rsquo;s lightweight nature and robustness. <a href="https://ubuntu.com/blog/eclipse-2018-survey-the-iot-landscape-what-it-empirically-looks-like">This article</a> from 2018 suggests that 71% of IoT devices run Linux</p>
+<p>Most IoT (Internet Of Things) devices run Linux because of it&rsquo;s lightweight nature and robustness. <a href="https://ubuntu.com/blog/eclipse-2018-survey-the-iot-landscape-what-it-empirically-looks-like">This article</a> from 2018 suggests that 71% of IoT devices run Linux</p>
 <p>Most embedded systems (smart TV&rsquo;s, routers etc) run Linux</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>Linux is quietly running behind the scenes. It may only capture a small slice of the desktop operating system market but it&rsquo;s a huge player in mobile, server and IoT spaces. In fact a majority of people are using Linux daily without even realizing it! It’s in your phone, your favorite websites and countless devices around you.</p>
