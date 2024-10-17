@@ -8,6 +8,7 @@ tags:
   - python
   - django
   - linux
+  - videiro
 ---
 I recently deployed my very own django application to production. The website is called [videiro.com](https://videiro.com) and was developed in django + HTML/CSS/JS + Tailwind. 
 
