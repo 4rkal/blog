@@ -892,7 +892,7 @@ Why use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance be
     </item>
     
     <item>
-      <title>Improving Go API request performance</title>
+      <title>How to Improve Go API request performance</title>
       <link>https://4rkal.com/posts/goapi/</link>
       <pubDate>Sat, 17 Aug 2024 12:25:15 +0300</pubDate>
       

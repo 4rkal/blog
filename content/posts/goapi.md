@@ -1,5 +1,5 @@
 ---
-title: Improving Go API request performance
+title: How to Improve Go API request performance
 description: In this post I'll show you how I improved the performance of my go based cryptocurrency exchange aggregator. By making small changes, like using goroutines, switching JSON libraries and reusing HTTP handlers.
 date: 2024-08-17T12:25:15+03:00
 draft: false
