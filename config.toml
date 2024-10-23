@@ -1,6 +1,6 @@
 baseURL = "https://4rkal.com/"
 languageCode = "en-us"
-title = "4rkal.com"
+title = "4rkal"
 theme = "PaperModX"
 languageName = "English"
 paginate = 8
