@@ -220,10 +220,13 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh user@server.ip
 </span></span></code></pre></div><p>Make sure that all packages are up to date</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt upgrade
-</span></span></code></pre></div><p>Create a new directory to host listmonk&rsquo;s configuration files</p>
+</span></span></code></pre></div><p>You will also have to have docker installed, if you don&rsquo;t install it, <a href="https://docs.docker.com/engine/install/debian/">instructions for debian</a></p>
+<p>Create a new directory to host listmonk&rsquo;s configuration files</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir listmonk <span style="color:#f92672">&amp;&amp;</span> cd listmonk
-</span></span></code></pre></div><p>Download the listmonk production script (I highly recommend you read scripts before running them)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sh -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/knadh/listmonk/master/install-prod.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Download the listmonk docker-compose file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -O https://github.com/knadh/listmonk/blob/master/docker-compose.yml
+</span></span></code></pre></div><p>Run it using docker:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker compose up -d
 </span></span></code></pre></div><p>Now if you head to</p>
 <pre tabindex="0"><code>localhost:9000
 </code></pre><p>You should see listmonk up and running</p>

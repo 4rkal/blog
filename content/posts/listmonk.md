@@ -50,16 +50,23 @@ Make sure that all packages are up to date
 sudo apt update && sudo apt upgrade
 ```
 
+You will also have to have docker installed, if you don't install it, [instructions for debian](https://docs.docker.com/engine/install/debian/)
+
 Create a new directory to host listmonk's configuration files
 
 ```shell
 mkdir listmonk && cd listmonk
 ```
 
-Download the listmonk production script (I highly recommend you read scripts before running them)
+Download the listmonk docker-compose file
 
 ```shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/knadh/listmonk/master/install-prod.sh)"
+curl -O https://github.com/knadh/listmonk/blob/master/docker-compose.yml
+```
+
+Run it using docker:
+```shell
+docker compose up -d
 ```
 
 Now if you head to 

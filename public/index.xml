@@ -10,7 +10,20 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Oct 2024 17:33:38 +0300</lastBuildDate><atom:link href="https://4rkal.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Oct 2024 20:08:17 +0300</lastBuildDate><atom:link href="https://4rkal.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fail2Ban Setup: How to Secure Your Linux Server Against Brute Force Attacks</title>
+      <link>https://4rkal.com/posts/fail2ban/</link>
+      <pubDate>Wed, 23 Oct 2024 20:08:17 +0300</pubDate>
+      
+      <guid>https://4rkal.com/posts/fail2ban/</guid>
+      <description>Fail2ban is a powerful and free open-source security tool that protects Linux servers from brute-force attacks. By monitoring system logs and responding to suspicious behavior, Fail2ban can block malicious IP addresses automatically. In this guide, we’ll walk you through how to install and configure Fail2ban on Linux to secure services like SSH, Apache, and Nginx.</description>
+      <content:encoded><![CDATA[<h2 id="what-is-fail2ban-and-why-use-it">What is fail2ban and why use it?</h2>
+<p>Fail2ban is an intrusion prevention software framework that protects your server by banning IP addresses that show malicious signs, such as too many failed login attempts. By setting up Fail2ban, you can defend your server from brute-force login attacks and other security threats.</p>
+<p><strong>If you enjoyed this post and want to support my work , you can <a href="https://4rkal.com/donate">donate here</a>.</strong></p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>If Linux is so great why isn&#39;t everyone using it?</title>
       <link>https://4rkal.com/posts/linux/</link>
@@ -87,7 +100,7 @@ It also leads other systems such as mainframe computers, and is used on all of t
       
       <guid>https://4rkal.com/posts/url-shortener-go/</guid>
       <description>In this article will be showing you how to build a url shortener in go.</description>
-      <content:encoded><![CDATA[<p>In this article I will be going through how to make a url shortener in go. The final result will look something like this <a href="https://app.4rkal.com">shortr</a>, <a href="https://github.com/4rkal/shortr">source code</a></p>
+      <content:encoded><![CDATA[<p>In this article I will be going through how to make a url shortener in go. The final result will look something like this <a href="https://app.5rkal.com">shortr</a>, <a href="https://github.com/4rkal/shortr">source code</a></p>
 <p>This is a great weekend project especially if you&rsquo;re new to go.</p>
 <h2 id="what-is-a-url-shortener">What is a url shortener?</h2>
 <p>A URL shortener is a tool that takes a long URL and shrinks it down into something much shorter and easier to share. Instead of copying and pasting a long string of letters, numbers, and symbols, you get a compact version that leads to the same destination. For example, a long URL like <code>www.somelongwebsite.com/articles/this-is-a-super-long-link</code> could become something like <code>bit.ly/abc123</code>. It&rsquo;s super handy for sharing links on social media, in texts, or anywhere space is limited. And most url shorteners provide analytics like link clicks.</p>
@@ -630,10 +643,13 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh user@server.ip
 </span></span></code></pre></div><p>Make sure that all packages are up to date</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt upgrade
-</span></span></code></pre></div><p>Create a new directory to host listmonk&rsquo;s configuration files</p>
+</span></span></code></pre></div><p>You will also have to have docker installed, if you don&rsquo;t install it, <a href="https://docs.docker.com/engine/install/debian/">instructions for debian</a></p>
+<p>Create a new directory to host listmonk&rsquo;s configuration files</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir listmonk <span style="color:#f92672">&amp;&amp;</span> cd listmonk
-</span></span></code></pre></div><p>Download the listmonk production script (I highly recommend you read scripts before running them)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sh -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/knadh/listmonk/master/install-prod.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Download the listmonk docker-compose file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -O https://github.com/knadh/listmonk/blob/master/docker-compose.yml
+</span></span></code></pre></div><p>Run it using docker:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker compose up -d
 </span></span></code></pre></div><p>Now if you head to</p>
 <pre tabindex="0"><code>localhost:9000
 </code></pre><p>You should see listmonk up and running</p>
