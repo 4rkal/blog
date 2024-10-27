@@ -108,7 +108,7 @@ icon = "4rkal.png"
 
 [params.opengraph]
 enable = true
-title = "{{ .Title }} - 4rkal's blog"
+title = "{{ .Title }}"
 description = "{{ .Params.description }}"
 image = "{{ .Params.images }}"
 
