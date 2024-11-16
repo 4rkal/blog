@@ -87,7 +87,7 @@ It also leads other systems such as mainframe computers, and is used on all of t
       
       <guid>https://4rkal.com/posts/url-shortener-go/</guid>
       <description>In this article will be showing you how to build a url shortener in go.</description>
-      <content:encoded><![CDATA[<p>In this article I will be going through how to make a url shortener in go. The final result will look something like this <a href="https://app.5rkal.com">shortr</a>, <a href="https://github.com/4rkal/shortr">source code</a></p>
+      <content:encoded><![CDATA[<p>In this article I will be going through how to make a url shortener in go. The final result will look something like this <a href="https://app.4rkal.com">shortr</a>, <a href="https://github.com/4rkal/shortr">source code</a></p>
 <p>This is a great weekend project especially if you&rsquo;re new to go.</p>
 <h2 id="what-is-a-url-shortener">What is a url shortener?</h2>
 <p>A URL shortener is a tool that takes a long URL and shrinks it down into something much shorter and easier to share. Instead of copying and pasting a long string of letters, numbers, and symbols, you get a compact version that leads to the same destination. For example, a long URL like <code>www.somelongwebsite.com/articles/this-is-a-super-long-link</code> could become something like <code>bit.ly/abc123</code>. It&rsquo;s super handy for sharing links on social media, in texts, or anywhere space is limited. And most url shorteners provide analytics like link clicks.</p>
@@ -2411,7 +2411,7 @@ What is tails? Tails, or The Amnesic Incognito Live System, is a security-focuse
 <h1 id="what-is-the-tor-network">What is the tor network?</h1>
 <p>Tor, short for The Onion Router, is free and open-source software for enabling anonymous communication. It directs Internet traffic through a free, worldwide, volunteer overlay network, consisting of more than six thousand relays,to conceal a user’s location and usage from anyone performing network surveillance or traffic analysis. Using Tor makes it more difficult to trace a user’s Internet activity.</p>
 <h1 id="who-is-tails-intended-for">Who is tails intended for?</h1>
-<p>As the tails website states (<a href="https://tails.boum.org/)">https://tails.boum.org/)</a>. Tails is intended for Activists who use Tails to hide their identities, avoid censorship, and communicate securely. Journalists and their sources use Tails to publish sensitive information and access the Internet from unsafe places. Domestic violence survivors use Tails to escape surveillance at home. You whenever you need extra privacy in this digital world.</p>
+<p>As the tails website states (<a href="https://tails.net">https://tails.net</a>). Tails is intended for Activists who use Tails to hide their identities, avoid censorship, and communicate securely. Journalists and their sources use Tails to publish sensitive information and access the Internet from unsafe places. Domestic violence survivors use Tails to escape surveillance at home. You whenever you need extra privacy in this digital world.</p>
 <h1 id="requirements">Requirements</h1>
 <ol>
 <li>A computer (minimum of 2GB ram , 64-bit x86–64 compatible processor)</li>

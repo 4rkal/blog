@@ -6,7 +6,7 @@ draft: false
 tags:
   - golang
 ---
-In this article I will be going through how to make a url shortener in go. The final result will look something like this [shortr](https://app.5rkal.com), [source code](https://github.com/4rkal/shortr)
+In this article I will be going through how to make a url shortener in go. The final result will look something like this [shortr](https://app.4rkal.com), [source code](https://github.com/4rkal/shortr)
 
 This is a great weekend project especially if you're new to go.
 
