@@ -1,168 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Obsidian on 4rkal</title>
     <link>https://4rkal.com/tags/obsidian/</link>
     <description>Recent content in Obsidian on 4rkal</description>
-    <image>
-      <url>https://4rkal.com/4rkal.png</url>
-      <link>https://4rkal.com/4rkal.png</link>
-    </image>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Aug 2024 17:15:57 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/obsidian/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Aug 2024 17:15:57 +0300</lastBuildDate>
+    <atom:link href="https://4rkal.com/tags/obsidian/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Obsidian &#43; Hugo blogging setup</title>
       <link>https://4rkal.com/posts/obsidianhugo/</link>
       <pubDate>Tue, 13 Aug 2024 17:15:57 +0300</pubDate>
-      
       <guid>https://4rkal.com/posts/obsidianhugo/</guid>
-      <description>In this post I go through how I have setup my Obsidian and Hugo blogging workflow. I use a single vault and auto publish my articles with hotkeys.</description>
-      <content:encoded><![CDATA[<p>If you clicked on this article you probably know what Obsidian and Hugo are but if you don&rsquo;t here&rsquo;s a quick explanation:</p>
-<h3 id="obsidian">Obsidian</h3>
-<p><a href="https://obsidian.md">Obsidian</a> is a feature packed markdown editor. But it&rsquo;s not just a markdown editor. It&rsquo;s a way to manage knowledge. It&rsquo;s great for organizing your thoughts in a flexible, non-linear way.</p>
-<p>Obsidian works on all platforms. So you can write articles from basically any platform.</p>
-<p>I have been taking all of my notes in it for a couple of months now and it&rsquo;s amazing!</p>
-<h3 id="hugo">Hugo</h3>
-<p><a href="https://gohugo.io">Hugo</a> is an ultra fast static website generator made in golang. I have been using hugo for my blog for almost 2 years now. I recently switched the theme of my my blog. Read more about the change <a href="https://4rkal.eu.org/posts/newlook?utm_source=internal&amp;utm_campaign=obsidianhugo">New Look, new start</a>.</p>
-<h3 id="using-obsidian-with-hugo">Using Obsidian with Hugo</h3>
-<p>In this guide, I’ll show you how to get Obsidian and Hugo working together. I won’t cover the initial setup of either tool, but I’ll explain how to integrate them for a smooth blogging workflow.</p>
-<p>If you need help setting up Hugo, check out my guide: <a href="https://4rkal.com/posts/thisblog?utm_source=internal&amp;utm_campaign=obsidianhugo">How I Setup This Blog for Free (Domain, Hosting, SSL) Complete Guide</a>. And if you’re new to Obsidian, check out this <a href="https://help.obsidian.md/Getting+started/Download+and+install+Obsidian">Getting Started Guide</a> .</p>
-<h3 id="goals-for-using-hugo-with-obsidian">Goals for Using Hugo with Obsidian</h3>
-<p>My goals for the setup are:</p>
-<ol>
-<li>Using a single <a href="https://help.obsidian.md/Getting+started/Create+a+vault">obsidian vault</a></li>
-<li>Have an easy to use <a href="https://help.obsidian.md/Plugins/Templates">obsidian template</a> that I can use for my blog posts.</li>
-<li>Keep my personal vault folders private.</li>
-<li>Auto publish using obsidian hotkeys.</li>
-<li>Have all markdown files in a <a href="https://github.com/4rkal/blog/">public github repository</a>, so that people can propose changes</li>
-</ol>
-<h2 id="existing-setup">Existing setup</h2>
-<p>Here’s how my current workflow with Obsidian and Hugo looks:</p>
-<ol>
-<li>I write and edit articles directly in Obsidian, within the <code>content</code> folder of my Hugo project.</li>
-<li>I run the Hugo command to generate the static site.</li>
-<li>I push the changes to GitHub.</li>
-<li><a href="https://render.com">Render.com</a> automatically picks up the changes and deploys the updated site.</li>
-</ol>
-<h2 id="journey">Journey</h2>
-<p><em>If you want to skip the journey part you can go straight to <a href="#the-sauce">The Sauce</a></em></p>
-<p>I will be going through a couple of mistakes that I made while setting this up.</p>
-<h3 id="mistake-1">Mistake #1</h3>
-<p>The first idea that I had was to create a simple symlink (I use linux btw) that would link the two folders together.</p>
-<p>Basically I have two folders:</p>
-<pre tabindex="0"><code>blog/
-vault/
-</code></pre><p>The blog folder contains all the blog folders and the vault is my personal vault.</p>
-<p>The symlink would link these folders</p>
-<pre tabindex="0"><code>blog/content
-vault/Blog
-</code></pre><p>However <strong>the problem</strong> with a symlink is that the folder content is not visible in my git repo.
-This means that people can not propose changes to any of my articles</p>
-<h3 id="mistake-2">Mistake #2</h3>
-<p>I wanted to have my folders synced. I tried writing a couple of bash scripts that automatically synced the two folders using a cronjob.
-However having that constantly running the background is a waste of resources when I am not writing.
-Simply running the scripts via cli is just not that smooth.</p>
-<h2 id="the-sauce">The Sauce</h2>
-<p>Basically the way that I have set this up is I have two folders:</p>
-<pre tabindex="0"><code>blog
-vault
-</code></pre><p>The blog folder contains all the necessary hugo files and also has a sub directory called content that houses all of the markdown blog files.</p>
-<p>I created a new folder inside of my vault called Blog</p>
-<pre tabindex="0"><code>blog/content
-vault/Blog
-</code></pre><p>After that I copied over all of my files from the content directory to the Blog.</p>
-<p><em>I then started writing this very article</em></p>
-<h2 id="obsidian-templates">Obsidian templates</h2>
-<p>I needed some way to setup a simple obsidian template to contains all of the required hugo front matter.</p>
-<p>That is quite easy.</p>
-<p>Read about how to setup templates <a href="https://help.obsidian.md/Plugins/Templates">Templates - obsidian.md</a></p>
-<p>I created a file called <code>Blog Post</code> in my templates folder</p>
-<p>My <code>Blog Post</code> template contains the following:</p>
-<pre tabindex="0"><code>---
-title: &#34;{{Title}}&#34;
-description: 
-date: &#34;{{date:YYYY-MM-DD}}T{{time:HH:mm:ss}}+00:00&#34;
-draft: true
----
-
-
-**If you enjoyed this article consider [supporting me](https://4rkal.com/donate)**
-</code></pre><p>I have all the required front matter including a title, description and a date in the format that hugo asks.</p>
-<p>I also added a small donation text that I include at the bottom of every article.</p>
-<p>This means that I can automatically insert this template into any file and start writing!</p>
-<h2 id="folder-syncing">Folder Syncing</h2>
-<p>Now I want all of my files in my vault/Blog directory to be copied over to the blog/content. Essentially connecting Hugo and Obsidian.</p>
-<p>Thank&rsquo;s to a helpful discord user I found the <a href="https://github.com/Taitava/obsidian-shellcommands">obsidian-shellcommands</a> plugin.</p>
-<p><strong>NOTE:</strong> this plugin does not currently work very well with the flatpak version of obsidian (since flatpak isolates the environment) . Using another alternative (.deb or appimage) seems to work.</p>
-<p>It allows you to run shell commands in the background with a hotkey.</p>
-<p>The steps to set this up are the following:</p>
-<ol>
-<li><a href="https://obsidian.md/plugins?search=shell%20commands">Install the plugin</a></li>
-<li>Enable the plugin</li>
-<li>Go to the plugin options</li>
-<li>Click on <code>New shell command</code></li>
-<li>Now you will need to enter a shell command to copy the files from the one folder to the other.</li>
-</ol>
-<p>On Linux/MacOS that is:</p>
-<p><code>cp -a ~/folder1/. ~/folder2/</code></p>
-<p>in my case that is <code>cp -a ~/Documents/vault/Blog/. ~/Documents/blog/content/</code></p>
-<p>On windows it most probably is:</p>
-<p><code>robocopy &quot;%USERPROFILE%\folder1&quot; &quot;%USERPROFILE%\folder2&quot; /E /COPYALL</code></p>
-<p>After that we need to set a hotkey that will run the command</p>
-<p>Click on the (+) icon to go to the hotkey settings and assign a hotkey</p>
-<p>My hotkey is <code>CTR + 0</code>, simply because that was available.</p>
-<p>Now every time that I run the hotkey it copies over all of my files to the hugo folder ready to be published</p>
-<h2 id="auto-publishing-scripts">Auto publishing scripts</h2>
-<p>I also want to be able to automatically publish my articles. But I want it to happen when hitting a hotkey.</p>
-<p>I wrote a small script that does exactly that:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>cd ~/Documents/blog
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>hugo
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>git add .
-</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;new&#34;</span>
-</span></span><span style="display:flex;"><span>git push -u origin main
-</span></span></code></pre></div><p>This script will build my website, commit and push to my github repo, where it is picked up and published. Read <a href="https://4rkal.eu.org/posts/thisblog?utm_source=internal&amp;utm_campaign=obsidianhugo">How I setup this blog for free (domain, hosting, ssl) Complete Guide</a> to learn how to setup your own blog for free.</p>
-<p>Don&rsquo;t forget to make the script executable by running</p>
-<p><code>chmod +x ./YOURSCRIPT.sh</code></p>
-<p>Then create a new shell command for the shellcommand plugin (as we did before) and enter the path to your script.</p>
-<p>In my case that is:</p>
-<p><code>~/Documents/blog/push.sh</code></p>
-<p>Then enter a hotkey and you&rsquo;re done!</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>I can now simply open my obsidian vault, create a new file, insert my template and have all the info automatically entered.</p>
-<p>I then write my article inside of obsidian</p>
-<p>Run my hotkey and copy all the files into the hugo directory</p>
-<p>Hit another key and my blog is published!</p>
-<p><strong>If you enjoyed this article consider <a href="https://4rkal.eu.org/donate">supporting me</a></strong></p>
-<div style="text-align: left; margin: 0 auto;">
-    <form method="post" action="https://newsletter.4rkal.com/subscription/form" style="background: #2c2c2c; color: #f0f0f0; border-radius: 8px; padding: 15px; max-width: 500px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); font-family: Arial, sans-serif;">
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-            <h3 style="margin: 0; color: #f0f0f0; font-size: 18px;">Subscribe</h3>
-            <input type="hidden" name="nonce"/>
-            <input type="email" name="email" required placeholder="E-mail" style="width: 100%; padding: 10px; border: 1px solid #666; border-radius: 4px; background: #333; color: #f0f0f0; box-sizing: border-box;"/>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-                <label style="margin: 0; color: #f0f0f0; display: none;">
-                    <input id="78a75" type="checkbox" name="l" checked value="78a75b30-472d-4790-a5d5-7f2ed49662a4" style="accent-color: #fff;"/>
-                    Weekly Roundup
-                </label>
-                <span style="color: #d0d0d0; display: none;">Where I share what I’ve been up to that week, including articles I’ve published, cool finds, tips and tricks, and more!</span>
-                <label style="margin: 0; color: #f0f0f0; display: none;">
-                    <input id="b3964" type="checkbox" name="l" checked value="b3964560-37b0-43d3-9df9-26589fd6bf8d" style="accent-color: #fff;"/>
-                    New Posts
-                </label>
-                <span style="color: #d0d0d0; display: none;">Receive an email every time I post something new on my blog</span>
-            </div>
-            <input type="submit" value="Subscribe" style="width: 100%; padding: 10px; border: none; border-radius: 4px; background: #fff; color: #007bff; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);"/>
-        </div>
-        <p style="text-align: center; margin-top: 10px; color: #d0d0d0; font-size: 10px; margin-bottom:0px;">
-            No spam, no ads. Unsubscribe at any time.
-        </p>
-    </form>
-</div>]]></content:encoded>
+      <description>If you clicked on this article you probably know what Obsidian and Hugo are but if you don&amp;rsquo;t here&amp;rsquo;s a quick explanation:&#xA;Obsidian Obsidian is a feature packed markdown editor. But it&amp;rsquo;s not just a markdown editor. It&amp;rsquo;s a way to manage knowledge. It&amp;rsquo;s great for organizing your thoughts in a flexible, non-linear way.&#xA;Obsidian works on all platforms. So you can write articles from basically any platform.&#xA;I have been taking all of my notes in it for a couple of months now and it&amp;rsquo;s amazing!</description>
     </item>
-    
   </channel>
 </rss>

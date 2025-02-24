@@ -1,189 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Videiro on 4rkal</title>
     <link>https://4rkal.com/tags/videiro/</link>
     <description>Recent content in Videiro on 4rkal</description>
-    <image>
-      <url>https://4rkal.com/4rkal.png</url>
-      <link>https://4rkal.com/4rkal.png</link>
-    </image>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Sep 2024 11:54:29 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/videiro/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Sep 2024 11:54:29 +0300</lastBuildDate>
+    <atom:link href="https://4rkal.com/tags/videiro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to deploy django to production</title>
       <link>https://4rkal.com/posts/django-prod/</link>
       <pubDate>Fri, 20 Sep 2024 11:54:29 +0300</pubDate>
-      
       <guid>https://4rkal.com/posts/django-prod/</guid>
-      <description>In this article I will show you how to deploy django to production. We will be using nginx, gunicorn and cloudflare tunnels</description>
-      <content:encoded><![CDATA[<p>I recently deployed my very own django application to production. The website is called <a href="https://videiro.com">videiro.com</a> and was developed in django + HTML/CSS/JS + Tailwind.</p>
-<h2 id="setup">Setup</h2>
-<p>I am using a debian 12 server which will expose my application via cloudflare tunnels. All of the static files are being served via nginx and the Django project is being ran by gunicorn.</p>
-<p>In this guide I will show you how I set this up.</p>
-<h2 id="preparing-the-django-project">Preparing the Django project</h2>
-<p>The first thing you will have to do is open the settings.py and change the following</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Debug <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
-</span></span><span style="display:flex;"><span>ALLOWED_HOSTS <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;yourdomain.tld&#39;</span>]
-</span></span><span style="display:flex;"><span>CSRF_COOKIE_SECURE <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
-</span></span><span style="display:flex;"><span>CSRF_TRUSTED_ORIGINS <span style="color:#f92672">=</span> [
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;yourdomain.tld&#39;</span>,
-</span></span><span style="display:flex;"><span>]
-</span></span></code></pre></div><p>You should also change the <code>SECRET_KEY</code> to a long random string, that you should never share with anyone.</p>
-<p>After that create a new file called <code>.gitignore</code> and paste the following:</p>
-<pre tabindex="0"><code class="language-gitignore" data-lang="gitignore">db.sqlite3
-*.pyc
-</code></pre><p>This will make sure that the database is not uploaded to our server and that no pyc files are either.</p>
-<p>Now you can upload your project to a new github repository (or gitea repository). If you don&rsquo;t want everyone to have access to your source code make sure to set the repository as private.</p>
-<p>If you want to make sure that your source code stays private I recommend you setup a selfhosted gitea instance, read  <a href="https://4rkal.com/posts/gitea/">Selfhost your own gitea instance - selfhosted, lightweight github alternative</a>, to learn how to do that.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git init
-</span></span><span style="display:flex;"><span>git branch -M main
-</span></span><span style="display:flex;"><span>git add .
-</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;initial commit&#34;</span>
-</span></span><span style="display:flex;"><span>git remote add origin https://...
-</span></span><span style="display:flex;"><span>git push -u origin main
-</span></span></code></pre></div><p>Now that you we have done that you should login to your server</p>
-<h2 id="server-setup">Server setup</h2>
-<p>Before configuring anything make sure that you don&rsquo;t allow any ssh logins with a password. Follow <a href="https://4rkal.com/posts/sssh/">Securing ssh with Key-Based authentication</a> to secure your server from those kinds of attacks.</p>
-<p>Login to your server</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh user@server.ip
-</span></span></code></pre></div><p>Make sure that your packages are up to data</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt upgrade
-</span></span></code></pre></div><p>Now install python, pip, git and nginx</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install python3 python3-pip git nginx
-</span></span></code></pre></div><p>Now clone your project into your home directory.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://...
-</span></span><span style="display:flex;"><span>cd my-project
-</span></span></code></pre></div><p>Once you&rsquo;re in install the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pip install django django-crispy-forms 
-</span></span></code></pre></div><p>Now try to run the project:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 manage.py runserver
-</span></span></code></pre></div><p>if you get an error that a package is missing install it and re run.</p>
-<h2 id="configuring-gunicorn">Configuring gunicorn</h2>
-<p>Now we will setup gunicorn</p>
-<p>First install it</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pip install gunicorn
-</span></span></code></pre></div><p>Now create a new file called gunicorn.service with your favorite text editor:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo vim /etc/systemd/system/gunicorn.service
-</span></span></code></pre></div><p>And paste the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>Unit<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>Description<span style="color:#f92672">=</span>gunicorn daemon
-</span></span><span style="display:flex;"><span>After<span style="color:#f92672">=</span>network.target
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Service<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>User<span style="color:#f92672">=</span>YOURUSER
-</span></span><span style="display:flex;"><span>Group<span style="color:#f92672">=</span>www-data
-</span></span><span style="display:flex;"><span>WorkingDirectory<span style="color:#f92672">=</span>/home/YOURUSER/PROJECT
-</span></span><span style="display:flex;"><span>ExecStart<span style="color:#f92672">=</span>/path/to/gunicorn --access-logfile - --workers <span style="color:#ae81ff">3</span> --bind 127.0.0.1:8000 PROJECTNAME.wsgi:application
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Install<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>WantedBy<span style="color:#f92672">=</span>multi-user.target
-</span></span></code></pre></div><p>Change <code>YOURUSER</code> to your user.</p>
-<p>To find the path to <code>gunicorn</code> run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>which gunicorn
-</span></span></code></pre></div><p>And your project name is the name of the folder inside of your project that contains the <code>settings.py</code> file.</p>
-<p>Now run the following commands to start and enable gunicorn (start on boot)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo systemctl daemon-reload
-</span></span><span style="display:flex;"><span>sudo systemctl start gunicorn.service
-</span></span><span style="display:flex;"><span>sudo systemctl enable gunicorn.service
-</span></span></code></pre></div><p>Now if you head to 127.0.0.1:8000 you should see your project running.</p>
-<p>But were not finished yet</p>
-<h2 id="setting-up-nginx">Setting up nginx</h2>
-<p>Now we need to serve our static content via nginx.</p>
-<p>First create a new file nginx configuration file with your favorite text editor:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo vim /etc/nginx/sites-available/PROJECT
-</span></span></code></pre></div><p>Change PROJECT to whatever you want</p>
-<p>Now paste the following content:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">YOURDOMAIN</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> <span style="color:#e6db74">/static/</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">alias</span> <span style="color:#e6db74">/var/www/staticfiles/</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://127.0.0.1:8000</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $host;
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Proto</span> $scheme;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Just change YOURDOMAIN to the domain that this will be hosted on.</p>
-<p>Create a symbolic link to enable your website:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo ln -s /etc/nginx/sites-available/PROJECT /etc/nginx/sites-enabled/
-</span></span></code></pre></div><p>Start and enable nginx:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo systemctl start nginx
-</span></span><span style="display:flex;"><span>sudo systemctl enable nginx
-</span></span></code></pre></div><h2 id="setup-static-files">Setup static files</h2>
-<p>The first thing you will have to do is cd into your (django) project</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd project
-</span></span></code></pre></div><p>Now run the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 manage.py collectstatic
-</span></span></code></pre></div><p>This will create a new folder called <code>staticfiles</code></p>
-<p>Now to set up the static files we have two options:</p>
-<ol>
-<li>Change the user in  <code>/etc/nginx/nginx.conf</code> to your user (less secure)</li>
-<li>Copy over the staticfiles to <code>/var/www/</code> (more secure)</li>
-</ol>
-<p>I will be doing the 2nd option:</p>
-<p>First create a new file called staticfiles in /var/www</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo mkdir -p /var/www/staticfiles
-</span></span></code></pre></div><p>Now copy over all of the staticfiles from your project there:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo cp staticfiles/* /var/www/staticfiles
-</span></span></code></pre></div><p>Now cd into /var/www</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd /var/www
-</span></span></code></pre></div><p>Change the ownership of all the files</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo chown www-data:www-data staticfiles
-</span></span><span style="display:flex;"><span>sudo chown www-data:www-data staticfiles/*
-</span></span></code></pre></div><p>Restart the nginx service:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo systemctl restart nginx
-</span></span></code></pre></div><p>Now if you head to:</p>
-<p><code>127.0.0.1</code></p>
-<p>You should see your website running with all of the static files being served!</p>
-<h2 id="exposing-via-cloudflare-tunnels">Exposing via cloudflare tunnels</h2>
-<p>Now to make your website publicly accessible.</p>
-<p>To do this you will need a cloudflare account and a domain pointed to cloudflare.</p>
-<p>First head to the <a href="https://one.dash.cloudflare.com/">Zero Trust Dashboard</a></p>
-<p>Under <code>Networks</code> click on <code>Tunnels</code> and then <code>Create a tunnel</code></p>
-<p>Once created you should <code>Install and run a connector</code>, follow the instructions on the page for your specific setup.</p>
-<p>After the connector is running you should click on the <code>Public Hostname</code> tab and <code>Add a public hostname</code>.</p>
-<p>Now you should see something like this:
-<img loading="lazy" src="/../assets/gitea2.png" type="" alt="Cloudflare dashboard"  /></p>
-<p>Fill in the info as I have.
-The service type should be <code>HTTP</code> and the url should be <code>127.0.0.1:80</code> or <code>localhost:80</code></p>
-<p>Now if you head to the domain that you specified you should see your app up and running.</p>
-<p>Congratulations!</p>
-<p><strong>If you enjoyed this post and want to support my (mostly unpaid) work , you can <a href="https://4rkal.com/donate">donate here</a>.</strong></p>
-<h2 id="join-my-free-newsletter">Join my free newsletter!</h2>
-<div style="text-align: left; margin: 0 auto;">
-    <form method="post" action="https://newsletter.4rkal.com/subscription/form" style="background: #2c2c2c; color: #f0f0f0; border-radius: 8px; padding: 15px; max-width: 500px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); font-family: Arial, sans-serif;">
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-            <h3 style="margin: 0; color: #f0f0f0; font-size: 18px;">Subscribe</h3>
-            <input type="hidden" name="nonce"/>
-            <input type="email" name="email" required placeholder="E-mail" style="width: 100%; padding: 10px; border: 1px solid #666; border-radius: 4px; background: #333; color: #f0f0f0; box-sizing: border-box;"/>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-                <label style="margin: 0; color: #f0f0f0; display: none;">
-                    <input id="78a75" type="checkbox" name="l" checked value="78a75b30-472d-4790-a5d5-7f2ed49662a4" style="accent-color: #fff;"/>
-                    Weekly Roundup
-                </label>
-                <span style="color: #d0d0d0; display: none;">Where I share what I’ve been up to that week, including articles I’ve published, cool finds, tips and tricks, and more!</span>
-                <label style="margin: 0; color: #f0f0f0; display: none;">
-                    <input id="b3964" type="checkbox" name="l" checked value="b3964560-37b0-43d3-9df9-26589fd6bf8d" style="accent-color: #fff;"/>
-                    New Posts
-                </label>
-                <span style="color: #d0d0d0; display: none;">Receive an email every time I post something new on my blog</span>
-            </div>
-            <input type="submit" value="Subscribe" style="width: 100%; padding: 10px; border: none; border-radius: 4px; background: #fff; color: #007bff; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);"/>
-        </div>
-        <p style="text-align: center; margin-top: 10px; color: #d0d0d0; font-size: 10px; margin-bottom:0px;">
-            No spam, no ads. Unsubscribe at any time.
-        </p>
-    </form>
-</div>]]></content:encoded>
+      <description>I recently deployed my very own django application to production. The website is called videiro.com and was developed in django + HTML/CSS/JS + Tailwind.&#xA;Setup I am using a debian 12 server which will expose my application via cloudflare tunnels. All of the static files are being served via nginx and the Django project is being ran by gunicorn.&#xA;In this guide I will show you how I set this up.</description>
     </item>
-    
   </channel>
 </rss>

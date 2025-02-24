@@ -15,7 +15,7 @@ If you enjoy my content, consider supporting me with a [donation](../../donate).
 Here’s what I'm currently working on:
 
 1. **[This Blog](.)** - Continuously updating with new content.
-2. **[CypherGoat](https://github.com/CypherGoat)** / [RubyTrades](https://x.com/ruby_trades)- A cryptocurrency instant swap aggregator.
+2. **[CypherGoat](https://cyphergoat.com?utm_source=4rkal.com)**- A cryptocurrency instant swap aggregator.
 3. **[Videiro](https://videiro.com)** - Free video editor portfolio platform
 4. [Videiro Recruitment](hire.videiro.com) - Video editor requirement website.
 
