@@ -1,1 +1,3 @@
 User-agent: *
+Disallow:
+Sitemap: https://4rkal.com/sitemap.xml

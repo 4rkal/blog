@@ -1,26 +1,158 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Rpi on 4rkal</title>
     <link>https://4rkal.com/tags/rpi/</link>
     <description>Recent content in Rpi on 4rkal</description>
-    <generator>Hugo</generator>
+    <image>
+      <url>https://4rkal.com/4rkal.png</url>
+      <link>https://4rkal.com/4rkal.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Feb 2023 21:17:13 +0300</lastBuildDate>
-    <atom:link href="https://4rkal.com/tags/rpi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Feb 2023 21:17:13 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/rpi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Get ad free web with Pi-hole</title>
       <link>https://4rkal.com/posts/pihole/</link>
       <pubDate>Sat, 25 Feb 2023 21:17:13 +0300</pubDate>
+      
       <guid>https://4rkal.com/posts/pihole/</guid>
-      <description>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&amp;rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.&#xA;What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine.</description>
+      <description>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&amp;rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.
+What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine.</description>
+      <content:encoded><![CDATA[<p>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.</p>
+<h1 id="what-is-pi-hole">What is Pi-hole?</h1>
+<p>Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine. Pi-hole has the ability to block traditional website advertisements as well as advertisements in unconventional places, such as smart TVs and mobile operating system advertisements.</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>A computer with Linux (preferably something Debian-based)</li>
+<li>Preferably an Ethernet cable</li>
+<li>Access to your router&rsquo;s admin portal</li>
+<li>A static IP</li>
+<li>An internet connection (it&rsquo;s pretty difficult without one, trust me)</li>
+</ol>
+<h1 id="installation">Installation</h1>
+<p>The first thing we have to do is download the installer.</p>
+<p>To do that, type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -O basic-install.sh https://install.pi-hole.net
+</span></span></code></pre></div><p>Now, install it with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo bash basic-install.sh
+</span></span></code></pre></div><p>Now you should see something like this:</p>
+<p><img loading="lazy" src="/../assets/pihole/1.webp" type="" alt="Installation Step 1"  /></p>
+<p>Just press OK.</p>
+<p><img loading="lazy" src="/../assets/pihole/2.webp" type="" alt="Installation Step 2"  /></p>
+<p>Just press OK again.</p>
+<p>As I said before, you have to have a static IP in order to set up the Pi-hole, so if you have one configured, just press Yes.</p>
+<p><img loading="lazy" src="/../assets/pihole/3.webp" type="" alt="Static IP Setup"  /></p>
+<p>Otherwise, you will have to set one up.</p>
+<p>Now you will be prompted to select your upstream DNS provider. You can select any of the DNS providers on the list. I will just select Google.</p>
+<p><img loading="lazy" src="/../assets/pihole/4.webp" type="" alt="DNS Provider Selection"  /></p>
+<p>And press OK.</p>
+<p>After that, you will have to select your list. I will just select the default one.</p>
+<p><img loading="lazy" src="/../assets/pihole/5.webp" type="" alt="List Selection"  /></p>
+<p>Now you will have to select whether you want a web admin interface. Select On and then OK.</p>
+<p><img loading="lazy" src="/../assets/pihole/6.webp" type="" alt="Web Admin Interface"  /></p>
+<p>Now just select On and press OK.</p>
+<p><img loading="lazy" src="/../assets/pihole/7.webp" type="" alt="Web Admin Interface Confirmation"  /></p>
+<p>After that, you can select if you want to log queries. You can select any option you want.</p>
+<p><img loading="lazy" src="/../assets/pihole/8.webp" type="" alt="Log Queries"  /></p>
+<p>Now, I recommend that you leave this as default, but you don’t have to.</p>
+<p><img loading="lazy" src="/../assets/pihole/9.webp" type="" alt="Default Settings"  /></p>
+<p>Now it should start installing everything.</p>
+<p>After the installation is finished, you should see something like this:</p>
+<p><img loading="lazy" src="/../assets/pihole/10.webp" type="" alt="Installation Complete"  /></p>
+<p>You have now successfully installed Pi-hole. You can head to the admin portal by going to the specified IP.</p>
+<p>To be able to use Pi-hole, you have two options:</p>
+<ol>
+<li>Make the IP the default DNS for your whole network</li>
+<li>Manually add it on any device</li>
+</ol>
+<p>I&rsquo;ll go with the second option.</p>
+<h3 id="on-windows">On Windows:</h3>
+<p>DNS settings are specified in the TCP/IP Properties window for the selected network connection.</p>
+<ol>
+<li>Go to the Control Panel</li>
+<li>Click Network and Internet &gt; Network and Sharing Center &gt; Change adapter settings</li>
+<li>Select the connection for which you want to configure</li>
+<li>Right-click Local Area Connection &gt; Properties</li>
+<li>Select the Networking tab</li>
+<li>Select Internet Protocol Version 4 (TCP/IPv4) or Internet Protocol Version 6 (TCP/IPv6)</li>
+<li>Click Properties</li>
+<li>Click Advanced</li>
+<li>Select the DNS tab</li>
+<li>Click OK</li>
+<li>Select Use the following DNS server addresses</li>
+<li>Replace those addresses with the IP addresses of your Pi</li>
+<li>Restart the connection you selected in step 3</li>
+<li>Repeat the procedure for additional network connections you want to change</li>
+</ol>
+<h3 id="on-linux">On Linux:</h3>
+<p>In most modern Linux distributions, DNS settings are configured through Network Manager.</p>
+<ol>
+<li>Click System &gt; Preferences &gt; Network Connections</li>
+<li>Select the connection for which you want to configure and press <strong>Edit</strong></li>
+<li>Select the IPv4 Settings or IPv6 Settings tab</li>
+<li>If the selected method is Automatic (DHCP), open the dropdown and select Automatic (DHCP) addresses only instead. If the method is set to something else, do not change it.</li>
+<li>In the DNS servers field, enter your Pi’s IP addresses</li>
+<li>Click Apply to save the changes</li>
+</ol>
+<blockquote>
+<p><strong>Warning:</strong> If you are not using Network Manager, your DNS settings are specified in <code>/etc/resolv.conf</code>.</p>
+</blockquote>
+<p>Now, if we head over to any websites with ads, you should see that no ads appear.</p>
+<p>Let&rsquo;s try speedtest.net.</p>
+<p>If you have followed the steps correctly, you should see something like this:</p>
+<p><img loading="lazy" src="/../assets/pihole/ads.webp" type="" alt="No Ads!"  /></p>
+<p><strong>NO ADS</strong></p>
+<p>Enjoy the ad-free web.</p>
+<p><em><strong>If you enjoyed this article, consider <a href="../../donate">supporting me</a>.</strong></em></p>
+<pre tabindex="0"><code></code></pre>]]></content:encoded>
     </item>
+    
     <item>
       <title>Raspberry pi security camera</title>
       <link>https://4rkal.com/posts/rpicamera/</link>
       <pubDate>Sat, 25 Feb 2023 20:03:25 +0300</pubDate>
+      
       <guid>https://4rkal.com/posts/rpicamera/</guid>
-      <description>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.&#xA;Requirements Raspberry pi or any other computer Web cam Any kind of debian based distro installed on the pi/computer Setup In this article we will be using the motion package (https://motion-project.github.io/)&#xA;To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard.</description>
+      <description>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.
+Requirements Raspberry pi or any other computer Web cam Any kind of debian based distro installed on the pi/computer Setup In this article we will be using the motion package (https://motion-project.github.io/)
+To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard.</description>
+      <content:encoded><![CDATA[<p>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>Raspberry pi or any other computer</li>
+<li>Web cam</li>
+<li>Any kind of debian based distro installed on the pi/computer</li>
+</ol>
+<h1 id="setup">Setup</h1>
+<p>In this article we will be using the motion package (<a href="https://motion-project.github.io/">https://motion-project.github.io/</a>)</p>
+<p>To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard. Also connect your web cam to the raspberry pi usb port.</p>
+<p>The first thing we will have to do is install motion, for that type the following command:<br>
+<code>apt install motion</code><br>
+Now start motion with:<br>
+<code>systemctl start motion</code><br>
+or<br>
+<code>service motion start</code><br>
+Now we are going to change some of the default settings . To do that type:<br>
+<code>nano /etc/motion/motion.conf</code><br>
+The first thing that we are going to change is<br>
+<code>webcontrol_localhost off</code><br>
+This will enable us to access the stream from other computers.</p>
+<p>To view the stream run:</p>
+<p><code>motion</code></p>
+<p>If you get a permission denied error try running</p>
+<p><code>sudo motion</code></p>
+<p>If you got to http://YOUR_IP:8080 you should see a live feed of the web cam</p>
+<p>You can change the port under webcontrol_port in the config file eg.
+<code>webcontrol_port 1234</code></p>
+<p>If you only want the live stream port you can go to http://your_ip:8081</p>
+<p>Again you can change that under stream_port.</p>
+<p>Now everything should be working fine. All motion detection files will be saved in /var/lib/motion</p>
+<p>You can also change loads of other settings. Here are my settings:https://pastebin.com/WGn0NfcW</p>
+<p>Read the documentation here: <a href="https://motion-project.github.io/motion_guide.html">https://motion-project.github.io/motion_guide.html</a></p>
+<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
+]]></content:encoded>
     </item>
+    
   </channel>
 </rss>

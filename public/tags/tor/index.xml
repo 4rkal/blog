@@ -1,26 +1,125 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tor on 4rkal</title>
     <link>https://4rkal.com/tags/tor/</link>
     <description>Recent content in Tor on 4rkal</description>
-    <generator>Hugo</generator>
+    <image>
+      <url>https://4rkal.com/4rkal.png</url>
+      <link>https://4rkal.com/4rkal.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Mar 2023 23:03:40 +0300</lastBuildDate>
-    <atom:link href="https://4rkal.com/tags/tor/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Mar 2023 23:03:40 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/tor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Become anonymous and somewhat untraceable with tails os</title>
       <link>https://4rkal.com/posts/tails/</link>
       <pubDate>Fri, 03 Mar 2023 23:03:40 +0300</pubDate>
+      
       <guid>https://4rkal.com/posts/tails/</guid>
-      <description>In this article we will talk about what tails is and how to install and more.&#xA;What is tails? Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</description>
+      <description>In this article we will talk about what tails is and how to install and more.
+What is tails? Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</description>
+      <content:encoded><![CDATA[<p>In this article we will talk about what tails is and how to install and more.</p>
+<h1 id="what-is-tails">What is tails?</h1>
+<p>Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</p>
+<h1 id="what-is-the-tor-network">What is the tor network?</h1>
+<p>Tor, short for The Onion Router, is free and open-source software for enabling anonymous communication. It directs Internet traffic through a free, worldwide, volunteer overlay network, consisting of more than six thousand relays,to conceal a user’s location and usage from anyone performing network surveillance or traffic analysis. Using Tor makes it more difficult to trace a user’s Internet activity.</p>
+<h1 id="who-is-tails-intended-for">Who is tails intended for?</h1>
+<p>As the tails website states (<a href="https://tails.net">https://tails.net</a>). Tails is intended for Activists who use Tails to hide their identities, avoid censorship, and communicate securely. Journalists and their sources use Tails to publish sensitive information and access the Internet from unsafe places. Domestic violence survivors use Tails to escape surveillance at home. You whenever you need extra privacy in this digital world.</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>A computer (minimum of 2GB ram , 64-bit x86–64 compatible processor)</li>
+<li>A usb stick with 8GB+ of space</li>
+</ol>
+<p>Read more <a href="https://tails.boum.org/doc/about/requirements/index.en.html">https://tails.boum.org/doc/about/requirements/index.en.html</a></p>
+<h1 id="installation">Installation</h1>
+<p>Back up all your files USB files as they will get deleted!</p>
+<p>The first thing you will have to do is to head to <a href="https://tails.boum.org/install/index.en.html">https://tails.boum.org/install/index.en.html</a>
+Now select your operating system</p>
+<p>Ill walk you through the installation for windows and linux.
+This should probably bethe same with linux
+After you have clicked on the windows logo you should be prompted with the requirements and a step by step guide.</p>
+<p>The first thing you will have to do is to download the tails usb image.</p>
+<p>After that i highly recommend that you verify your download</p>
+<p>Just click on select and select it.</p>
+<p>Now you will have to download balena etcher. Just click on download balena etcher and double click the installer.</p>
+<p>At this moment plug in your usb (if you have any important files on the usb you have to back the up or they will be lost)</p>
+<p>Now click the flash from file button and select the file you downloaded (it ends in .img)</p>
+<p>Click the Select target button to select your USB stick.</p>
+<p>And now select flash.</p>
+<p>This could take a while so just sit back and relax.</p>
+<h1 id="using-tails">Using tails</h1>
+<p>After your installation is finished just reboot your computer and hit F12 or F2 depending on your computer.</p>
+<p>Now you should see a screen thats says something like please select your boot device. You will have to select your usb and hit enter</p>
+<p>Now you should see the grub loader</p>
+<p>Select Tails and hit enter</p>
+<p>Now you should be booted into tails</p>
+<p>You will probably see a screen that looks something like this</p>
+<p><img loading="lazy" src="/../assets/tails.webp" type="" alt=""  /></p>
+<p>Here you will have to set your language and region. We can also press on the + icon to add a admin password mac address anonymization etc. I will just put the admin password and the unsafe browser. You can select anything you want. However remember that changing some of these settings will make you less anonymous.</p>
+<p>Once you are ready select start tails</p>
+<p>Now you will see</p>
+<p><img loading="lazy" src="/../assets/tails2.webp" type="" alt=""  /></p>
+<p>Here you can select anything you want. I will just select the first option.</p>
+<p>Now you should see this:</p>
+<p><img loading="lazy" src="/../assets/tails3.webp" type="" alt=""  /></p>
+<p>GG you did it. One more step though</p>
+<p>I like to have a persistent volume so that i don’t lose all my files when i reboot. To do that open the configure persistent volume app and follow the steps there.</p>
+<p>That’s it for now</p>
+<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
+]]></content:encoded>
     </item>
+    
     <item>
       <title>Setup a tor website (hidden service)</title>
       <link>https://4rkal.com/posts/torhs/</link>
       <pubDate>Sat, 25 Feb 2023 20:56:02 +0300</pubDate>
+      
       <guid>https://4rkal.com/posts/torhs/</guid>
-      <description>In this article i will be showing you how to host your “dark web” aka Tor website for free.&#xA;What is Tor? Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</description>
+      <description>In this article i will be showing you how to host your “dark web” aka Tor website for free.
+What is Tor? Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</description>
+      <content:encoded><![CDATA[<p>In this article i will be showing you how to host your “dark web” aka Tor website for free.</p>
+<h1 id="what-is-tor">What is Tor?</h1>
+<p>Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</p>
+<h1 id="why-use-tor">Why use Tor?</h1>
+<p>Tor is useful for anyone who wants to keep their internet activities out of the hands of advertisers, ISPs, and websites. That includes people getting around censorship restrictions in their country, people looking to hide their IP address, or anyone else who doesn’t want their browsing habits linked to them.</p>
+<p>The Tor network may also host webpages that only other Tor users can view. In other words, you’ve entered the Dark Web, which consists of websites that aren’t indexed by the standard crawlers you use to look for products to purchase, and quiz answers etc . On the Dark Web, you can discover everything from free textbooks to drugs — and worse — as long as you know the secret URL that leads to these sites.</p>
+<h1 id="tor-websites">Tor Websites</h1>
+<p>Just like any other website, you will need to know the address of an onion service in order to connect to it. An onion address is a string of 56 mostly random letters and numbers, followed by “.onion”.</p>
+<h1 id="requirements">Requirements</h1>
+<ol>
+<li>A linux machine (debian preferably)</li>
+<li>An internet connection (pretty hard without one,trust me)</li>
+</ol>
+<h1 id="installation">Installation</h1>
+<p>The first thing we will have to do is install Tor</p>
+<p><code>apt install tor</code></p>
+<p>Now we will have to enable tor hidden service(which is the website) for that type:</p>
+<p><code>sudo nano /etc/tor/torrc</code></p>
+<p>You should see a large configuration file, search for <code>HiddenService</code></p>
+<p>You will have to uncoment:</p>
+<pre tabindex="0"><code>#HiddenServiceDir /var/lib/tor/hidden_service/
+#HiddenServicePort 80 127.0.0.1:80
+</code></pre><p>Now press cntrl s and then cntrl x to exit</p>
+<p>After that start the tor service by running</p>
+<p><code>sudo service tor start</code></p>
+<p>or</p>
+<p><code>sudo systemctl start tor</code></p>
+<p>Now we also have to install nginx to be able to run our website to do that type</p>
+<p><code>sudo apt install nginx</code></p>
+<p>Start the nginx service with the systemctl or service command</p>
+<p>Now we also have to install nginx to be able to run our website to do that type</p>
+<p><code>sudo cat /var/lib/tor/hidden_service/hostname</code></p>
+<p>You should see a address that looks something like this</p>
+<p><code>tiur7p652svsaemdewbsxnnkrj3b35ny2rx454od5wk5ivfqhijm2qd.onion</code></p>
+<p>Now open your tor browser and paste your address and press enter.</p>
+<p>You will most probably be greeted by the default nginx site.</p>
+<p>This page is easily customized, you can check out my article:
+<a href="https://4rkal.com/posts/shwebsite/">here</a></p>
+<p>GG you did it you are now running a pretty anonymous website on the tor network.</p>
+<p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
+]]></content:encoded>
     </item>
+    
   </channel>
 </rss>

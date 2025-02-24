@@ -1,159 +1,225 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on 4rkal</title>
     <link>https://4rkal.com/tags/</link>
     <description>Recent content in Tags on 4rkal</description>
-    <generator>Hugo</generator>
+    <image>
+      <url>https://4rkal.com/4rkal.png</url>
+      <link>https://4rkal.com/4rkal.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Sep 2024 18:24:11 +0300</lastBuildDate>
-    <atom:link href="https://4rkal.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Sep 2024 18:24:11 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
       <link>https://4rkal.com/tags/golang/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 22 Sep 2024 18:24:11 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/golang/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Django</title>
       <link>https://4rkal.com/tags/django/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 20 Sep 2024 11:54:29 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/django/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Linux</title>
       <link>https://4rkal.com/tags/linux/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 20 Sep 2024 11:54:29 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/linux/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Programming</title>
       <link>https://4rkal.com/tags/programming/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 20 Sep 2024 11:54:29 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/programming/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Python</title>
       <link>https://4rkal.com/tags/python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 20 Sep 2024 11:54:29 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/python/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Videiro</title>
       <link>https://4rkal.com/tags/videiro/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 20 Sep 2024 11:54:29 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/videiro/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Automation</title>
       <link>https://4rkal.com/tags/automation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 23 Aug 2024 11:19:17 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/automation/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Privacy</title>
       <link>https://4rkal.com/tags/privacy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 23 Aug 2024 11:19:17 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/privacy/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Selfhosting</title>
       <link>https://4rkal.com/tags/selfhosting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 23 Aug 2024 11:19:17 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/selfhosting/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Git</title>
       <link>https://4rkal.com/tags/git/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 Aug 2024 19:21:15 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/git/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Cyphergoat</title>
       <link>https://4rkal.com/tags/cyphergoat/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 17 Aug 2024 12:25:15 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/cyphergoat/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Hugo</title>
       <link>https://4rkal.com/tags/hugo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 13 Aug 2024 17:15:57 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/hugo/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Obsidian</title>
       <link>https://4rkal.com/tags/obsidian/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 13 Aug 2024 17:15:57 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/obsidian/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Crypto</title>
       <link>https://4rkal.com/tags/crypto/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 14 Dec 2023 21:00:30 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/crypto/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Ssh</title>
       <link>https://4rkal.com/tags/ssh/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 04 Oct 2023 19:17:04 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/ssh/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Monero</title>
       <link>https://4rkal.com/tags/monero/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 06 Mar 2023 20:23:16 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/monero/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Networking</title>
       <link>https://4rkal.com/tags/networking/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 05 Mar 2023 17:37:03 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/networking/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Nmap</title>
       <link>https://4rkal.com/tags/nmap/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 05 Mar 2023 17:37:03 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/nmap/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Tor</title>
       <link>https://4rkal.com/tags/tor/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 03 Mar 2023 23:03:40 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/tor/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Rpi</title>
       <link>https://4rkal.com/tags/rpi/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 25 Feb 2023 21:17:13 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/rpi/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
     <item>
       <title>Opensource</title>
       <link>https://4rkal.com/tags/opensource/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 25 Feb 2023 20:43:23 +0300</pubDate>
+      
       <guid>https://4rkal.com/tags/opensource/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
+    
   </channel>
 </rss>
