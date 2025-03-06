@@ -2,326 +2,326 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://4rkal.com/about/</loc>
     <lastmod>2023-02-25T19:29:56+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://4rkal.com/</loc>
     <lastmod>2025-03-06T14:16:29+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/cyphergoat/</loc>
+    <loc>https://4rkal.com/tags/cyphergoat/</loc>
     <lastmod>2025-03-06T14:16:29+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/deploy-go-htmx-templ-tailwind-to-production/</loc>
+    <loc>https://4rkal.com/posts/deploy-go-htmx-templ-tailwind-to-production/</loc>
     <lastmod>2025-03-06T14:16:29+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/golang/</loc>
+    <loc>https://4rkal.com/tags/golang/</loc>
     <lastmod>2025-03-06T14:16:29+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
+    <loc>https://4rkal.com/tags/linux/</loc>
     <lastmod>2025-03-06T14:16:29+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://4rkal.com/posts/</loc>
     <lastmod>2025-03-06T14:16:29+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/programming/</loc>
+    <loc>https://4rkal.com/tags/programming/</loc>
     <lastmod>2025-03-06T14:16:29+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://4rkal.com/tags/</loc>
     <lastmod>2025-03-06T14:16:29+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/go-rate-limit/</loc>
+    <loc>https://4rkal.com/posts/go-rate-limit/</loc>
     <lastmod>2025-03-04T19:15:40+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/linux/</loc>
+    <loc>https://4rkal.com/posts/linux/</loc>
     <lastmod>2024-10-13T17:33:38+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/url-shortener-go/</loc>
+    <loc>https://4rkal.com/posts/url-shortener-go/</loc>
     <lastmod>2024-09-22T18:24:11+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/django/</loc>
+    <loc>https://4rkal.com/tags/django/</loc>
     <lastmod>2024-09-20T11:54:29+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/django-prod/</loc>
+    <loc>https://4rkal.com/posts/django-prod/</loc>
     <lastmod>2024-09-20T11:54:29+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
+    <loc>https://4rkal.com/tags/python/</loc>
     <lastmod>2024-09-20T11:54:29+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/videiro/</loc>
+    <loc>https://4rkal.com/tags/videiro/</loc>
     <lastmod>2024-09-20T11:54:29+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/newsletter/</loc>
+    <loc>https://4rkal.com/newsletter/</loc>
     <lastmod>2024-09-04T11:11:15+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/automation/</loc>
+    <loc>https://4rkal.com/tags/automation/</loc>
     <lastmod>2024-08-23T11:19:17+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/listmonk/</loc>
+    <loc>https://4rkal.com/posts/listmonk/</loc>
     <lastmod>2024-08-23T11:19:17+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/privacy/</loc>
+    <loc>https://4rkal.com/tags/privacy/</loc>
     <lastmod>2024-08-23T11:19:17+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/selfhosting/</loc>
+    <loc>https://4rkal.com/tags/selfhosting/</loc>
     <lastmod>2024-08-23T11:19:17+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/git/</loc>
+    <loc>https://4rkal.com/tags/git/</loc>
     <lastmod>2024-08-19T19:21:15+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/gitea/</loc>
+    <loc>https://4rkal.com/posts/gitea/</loc>
     <lastmod>2024-08-19T19:21:15+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/goapi/</loc>
+    <loc>https://4rkal.com/posts/goapi/</loc>
     <lastmod>2024-08-17T12:25:15+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/updates/newdomain/</loc>
+    <loc>https://4rkal.com/updates/newdomain/</loc>
     <lastmod>2024-08-14T16:41:25+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/updates/</loc>
+    <loc>https://4rkal.com/updates/</loc>
     <lastmod>2024-08-14T16:41:25+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
+    <loc>https://4rkal.com/tags/hugo/</loc>
     <lastmod>2024-08-13T17:15:57+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/obsidianhugo/</loc>
+    <loc>https://4rkal.com/posts/obsidianhugo/</loc>
     <lastmod>2024-08-13T17:15:57+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/obsidian/</loc>
+    <loc>https://4rkal.com/tags/obsidian/</loc>
     <lastmod>2024-08-13T17:15:57+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/newlook/</loc>
+    <loc>https://4rkal.com/posts/newlook/</loc>
     <lastmod>2024-08-11T16:17:31+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/crypto/</loc>
+    <loc>https://4rkal.com/tags/crypto/</loc>
     <lastmod>2023-12-14T21:00:30+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/feathernero/</loc>
+    <loc>https://4rkal.com/posts/feathernero/</loc>
     <lastmod>2023-12-14T21:00:30+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/coldstorage/</loc>
+    <loc>https://4rkal.com/posts/coldstorage/</loc>
     <lastmod>2023-11-07T18:03:15+02:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/updates/monero-archive/</loc>
+    <loc>https://4rkal.com/updates/monero-archive/</loc>
     <lastmod>2023-10-11T21:34:20+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/updates/hacktoberfest23/</loc>
+    <loc>https://4rkal.com/updates/hacktoberfest23/</loc>
     <lastmod>2023-10-11T21:30:30+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/ssh/</loc>
+    <loc>https://4rkal.com/tags/ssh/</loc>
     <lastmod>2023-10-04T19:17:04+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/onionssh/</loc>
+    <loc>https://4rkal.com/posts/onionssh/</loc>
     <lastmod>2023-10-04T19:17:04+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/thisblog/</loc>
+    <loc>https://4rkal.com/posts/thisblog/</loc>
     <lastmod>2023-03-23T18:13:03+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/python/</loc>
+    <loc>https://4rkal.com/posts/python/</loc>
     <lastmod>2023-03-06T20:52:42+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pocketbase/</loc>
+    <loc>https://4rkal.com/posts/pocketbase/</loc>
     <lastmod>2023-03-06T20:44:46+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/monero/</loc>
+    <loc>https://4rkal.com/tags/monero/</loc>
     <lastmod>2023-03-06T20:23:16+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/whymonero/</loc>
+    <loc>https://4rkal.com/posts/whymonero/</loc>
     <lastmod>2023-03-06T20:23:16+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/ventoy/</loc>
+    <loc>https://4rkal.com/posts/ventoy/</loc>
     <lastmod>2023-03-06T20:11:51+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/networking/</loc>
+    <loc>https://4rkal.com/tags/networking/</loc>
     <lastmod>2023-03-05T17:37:03+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/nmap/</loc>
+    <loc>https://4rkal.com/tags/nmap/</loc>
     <lastmod>2023-03-05T17:37:03+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/nmap/</loc>
+    <loc>https://4rkal.com/posts/nmap/</loc>
     <lastmod>2023-03-05T17:37:03+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/githubmon/</loc>
+    <loc>https://4rkal.com/posts/githubmon/</loc>
     <lastmod>2023-03-05T17:21:56+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/git/</loc>
+    <loc>https://4rkal.com/posts/git/</loc>
     <lastmod>2023-03-05T17:11:40+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/searx/</loc>
+    <loc>https://4rkal.com/posts/searx/</loc>
     <lastmod>2023-03-03T23:21:53+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/tails/</loc>
+    <loc>https://4rkal.com/posts/tails/</loc>
     <lastmod>2023-03-03T23:03:40+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/tor/</loc>
+    <loc>https://4rkal.com/tags/tor/</loc>
     <lastmod>2023-03-03T23:03:40+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/donate/</loc>
+    <loc>https://4rkal.com/donate/</loc>
     <lastmod>2023-02-26T20:29:31+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pihole/</loc>
+    <loc>https://4rkal.com/posts/pihole/</loc>
     <lastmod>2023-02-25T21:17:13+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/rpi/</loc>
+    <loc>https://4rkal.com/tags/rpi/</loc>
     <lastmod>2023-02-25T21:17:13+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/sssh/</loc>
+    <loc>https://4rkal.com/posts/sssh/</loc>
     <lastmod>2023-02-25T21:08:47+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/torhs/</loc>
+    <loc>https://4rkal.com/posts/torhs/</loc>
     <lastmod>2023-02-25T20:56:02+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/opensource/</loc>
+    <loc>https://4rkal.com/tags/opensource/</loc>
     <lastmod>2023-02-25T20:43:23+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/opensource/</loc>
+    <loc>https://4rkal.com/posts/opensource/</loc>
     <lastmod>2023-02-25T20:43:23+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/shwebsite/</loc>
+    <loc>https://4rkal.com/posts/shwebsite/</loc>
     <lastmod>2023-02-25T20:23:16+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/rpicamera/</loc>
+    <loc>https://4rkal.com/posts/rpicamera/</loc>
     <lastmod>2023-02-25T20:03:25+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/howsshworks/</loc>
+    <loc>https://4rkal.com/posts/howsshworks/</loc>
     <lastmod>2023-02-25T19:36:25+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/selenium/</loc>
+    <loc>https://4rkal.com/posts/selenium/</loc>
     <lastmod>2023-02-22T21:23:38+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/zeropointthree/</loc>
+    <loc>https://4rkal.com/posts/zeropointthree/</loc>
     <lastmod>2023-02-21T19:27:44+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://4rkal.com/categories/</loc>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://4rkal.com/search/</loc>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url>

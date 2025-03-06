@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Selfhosting on 4rkal</title>
-    <link>http://localhost:1313/tags/selfhosting/</link>
+    <link>https://4rkal.com/tags/selfhosting/</link>
     <description>Recent content in Selfhosting on 4rkal</description>
     <image>
-      <url>http://localhost:1313/4rkal.png</url>
-      <link>http://localhost:1313/4rkal.png</link>
+      <url>https://4rkal.com/4rkal.png</url>
+      <link>https://4rkal.com/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Aug 2024 11:19:17 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/selfhosting/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Aug 2024 11:19:17 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/selfhosting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to setup a selfhosted newsletter using listmonk</title>
-      <link>http://localhost:1313/posts/listmonk/</link>
+      <link>https://4rkal.com/posts/listmonk/</link>
       <pubDate>Fri, 23 Aug 2024 11:19:17 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/listmonk/</guid>
+      <guid>https://4rkal.com/posts/listmonk/</guid>
       <description>Listmonk is an amazing feature packed selfhosted email newsletter manager. It offers loads of features like analytics (clicks, opens, bounces), templates, public subscription pages, importing subscribers and much more!</description>
       <content:encoded><![CDATA[<h2 id="what-is-listmonk">What is listmonk?</h2>
 <p><a href="https://listmonk.app">Listmonk</a> is a selfhosted newsletter and mailing list manager. It is free and opensource, so you have full control over your data. It also offers a super clean webui:</p>
@@ -174,10 +174,10 @@
     
     <item>
       <title>Selfhost your own gitea instance - selfhosted, lightweight github alternative</title>
-      <link>http://localhost:1313/posts/gitea/</link>
+      <link>https://4rkal.com/posts/gitea/</link>
       <pubDate>Mon, 19 Aug 2024 19:21:15 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/gitea/</guid>
+      <guid>https://4rkal.com/posts/gitea/</guid>
       <description>In this article I&amp;rsquo;ll walk you through how you can run your own gitea instance. But first
 What is gitea? Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.
 Why use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance because I wanted a private place to host my Obsidian notes.</description>
@@ -312,10 +312,10 @@ Why use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance be
     
     <item>
       <title>PocketBase self-hosted Firebase alternative</title>
-      <link>http://localhost:1313/posts/pocketbase/</link>
+      <link>https://4rkal.com/posts/pocketbase/</link>
       <pubDate>Mon, 06 Mar 2023 20:44:46 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/pocketbase/</guid>
+      <guid>https://4rkal.com/posts/pocketbase/</guid>
       <description>What is PocketBase PocketBase is an open source backend made in go consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.
 Install PocketBase The first thing that you will have to do is head to https://pocketbase.io and select the file for your operating system. Since I am using linux I will show how to set this up on linux but it should be pretty similar for any other os.</description>
       <content:encoded><![CDATA[<h1 id="what-is-pocketbase">What is PocketBase</h1>
@@ -356,10 +356,10 @@ Install PocketBase The first thing that you will have to do is head to https://p
     
     <item>
       <title>How to Set Up Your Own Git Server: A Simple Guide</title>
-      <link>http://localhost:1313/posts/git/</link>
+      <link>https://4rkal.com/posts/git/</link>
       <pubDate>Sun, 05 Mar 2023 17:11:40 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/git/</guid>
+      <guid>https://4rkal.com/posts/git/</guid>
       <description>Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you&amp;rsquo;ll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.
 What You’ll Need A Computer for Your Server: Ideally running Linux (Debian is a solid choice). Internet Connection: Pretty essential for accessing your server remotely. Another Computer with Git Installed: This is what you&amp;rsquo;ll use to interact with your server.</description>
       <content:encoded><![CDATA[<p>Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you&rsquo;ll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.</p>
@@ -458,10 +458,10 @@ What You’ll Need A Computer for Your Server: Ideally running Linux (Debian is 
     
     <item>
       <title>Host your own private search engine — searX</title>
-      <link>http://localhost:1313/posts/searx/</link>
+      <link>https://4rkal.com/posts/searx/</link>
       <pubDate>Fri, 03 Mar 2023 23:21:53 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/searx/</guid>
+      <guid>https://4rkal.com/posts/searx/</guid>
       <description>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
 What is searX? Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users.</description>
       <content:encoded><![CDATA[<p>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.</p>
@@ -533,10 +533,10 @@ Now if you head to 127.0.0.1:8888 you should be able to see something like this
     
     <item>
       <title>Get ad free web with Pi-hole</title>
-      <link>http://localhost:1313/posts/pihole/</link>
+      <link>https://4rkal.com/posts/pihole/</link>
       <pubDate>Sat, 25 Feb 2023 21:17:13 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/pihole/</guid>
+      <guid>https://4rkal.com/posts/pihole/</guid>
       <description>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&amp;rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.
 What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine.</description>
       <content:encoded><![CDATA[<p>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.</p>
@@ -630,10 +630,10 @@ What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tra
     
     <item>
       <title>Securing ssh with Key-Based authentication</title>
-      <link>http://localhost:1313/posts/sssh/</link>
+      <link>https://4rkal.com/posts/sssh/</link>
       <pubDate>Sat, 25 Feb 2023 21:08:47 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/sssh/</guid>
+      <guid>https://4rkal.com/posts/sssh/</guid>
       <description>SSH keys provide an extremely secure way of logging into your server.
 SSH Password Based VS Key Based Authentication Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts.</description>
       <content:encoded><![CDATA[<p>SSH keys provide an extremely secure way of logging into your server.</p>
@@ -686,10 +686,10 @@ Enter passphrase (empty for no passphrase):
     
     <item>
       <title>Setup a tor website (hidden service)</title>
-      <link>http://localhost:1313/posts/torhs/</link>
+      <link>https://4rkal.com/posts/torhs/</link>
       <pubDate>Sat, 25 Feb 2023 20:56:02 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/torhs/</guid>
+      <guid>https://4rkal.com/posts/torhs/</guid>
       <description>In this article i will be showing you how to host your “dark web” aka Tor website for free.
 What is Tor? Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</description>
       <content:encoded><![CDATA[<p>In this article i will be showing you how to host your “dark web” aka Tor website for free.</p>
@@ -729,7 +729,7 @@ What is Tor? Tor — short for the Onion Routing project — is an open-source p
 <p>Now open your tor browser and paste your address and press enter.</p>
 <p>You will most probably be greeted by the default nginx site.</p>
 <p>This page is easily customized, you can check out my article:
-<a href="http://localhost:1313/posts/shwebsite/">here</a></p>
+<a href="https://4rkal.com/posts/shwebsite/">here</a></p>
 <p>GG you did it you are now running a pretty anonymous website on the tor network.</p>
 <p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
 ]]></content:encoded>
@@ -737,10 +737,10 @@ What is Tor? Tor — short for the Onion Routing project — is an open-source p
     
     <item>
       <title>Self host your own website</title>
-      <link>http://localhost:1313/posts/shwebsite/</link>
+      <link>https://4rkal.com/posts/shwebsite/</link>
       <pubDate>Sat, 25 Feb 2023 20:23:16 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/shwebsite/</guid>
+      <guid>https://4rkal.com/posts/shwebsite/</guid>
       <description>In this article i will show you how to self host your own website securely.
 Requirements A computer or microcomputer to host the website The computer needs to run linux An internet connection (Its pretty hard without one, trust me) Lets get started!
 Installation The first thing that we will have to do is setup our nginx site.
@@ -836,10 +836,10 @@ make install
     
     <item>
       <title>Raspberry pi security camera</title>
-      <link>http://localhost:1313/posts/rpicamera/</link>
+      <link>https://4rkal.com/posts/rpicamera/</link>
       <pubDate>Sat, 25 Feb 2023 20:03:25 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/rpicamera/</guid>
+      <guid>https://4rkal.com/posts/rpicamera/</guid>
       <description>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.
 Requirements Raspberry pi or any other computer Web cam Any kind of debian based distro installed on the pi/computer Setup In this article we will be using the motion package (https://motion-project.github.io/)
 To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard.</description>
