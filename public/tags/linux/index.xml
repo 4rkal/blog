@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on 4rkal</title>
-    <link>http://localhost:1313/tags/linux/</link>
+    <link>https://4rkal.com/tags/linux/</link>
     <description>Recent content in Linux on 4rkal</description>
     <image>
-      <url>http://localhost:1313/4rkal.png</url>
-      <link>http://localhost:1313/4rkal.png</link>
+      <url>https://4rkal.com/4rkal.png</url>
+      <link>https://4rkal.com/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Mar 2025 14:16:29 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Mar 2025 14:16:29 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploying Go &#43; Templ &#43; HTMX &#43; TailwindCSS to production</title>
-      <link>http://localhost:1313/posts/deploy-go-htmx-templ-tailwind-to-production/</link>
+      <link>https://4rkal.com/posts/deploy-go-htmx-templ-tailwind-to-production/</link>
       <pubDate>Thu, 06 Mar 2025 14:16:29 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/deploy-go-htmx-templ-tailwind-to-production/</guid>
+      <guid>https://4rkal.com/posts/deploy-go-htmx-templ-tailwind-to-production/</guid>
       <description>In this article I will be showing you how to deploy the GoTTH stack (Go Templ htmx tailwind) to production.</description>
       <content:encoded><![CDATA[<p>I recently created my very own cryptocurrency exchange aggregator called <a href="htttps://cyphergoat.com">cyphergoat</a> it finds you the best rate to swap your crypto from different partnered exchanges.</p>
 <p>It has two parts:</p>
@@ -51,9 +51,9 @@ The web the website source code.</p>
 <pre tabindex="0"><code>npx @tailwindcss/cli -i ./static/styles.css -o ./static/tailwind.css --watch
 </code></pre><p>(assuming you have tailwind-cli installed)</p>
 <p>In my header.templ file (the header of all the pages) at the top I have</p>
-<pre tabindex="0"><code>&lt;link href=&#34;http://localhost:1313/static/tailwind.css&#34; rel=&#34;stylesheet&#34;&gt;
+<pre tabindex="0"><code>&lt;link href=&#34;https://4rkal.com/static/tailwind.css&#34; rel=&#34;stylesheet&#34;&gt;
 
-&lt;link href=&#34;http://localhost:1313/static/styles.css&#34; rel=&#34;stylesheet&#34;&gt;
+&lt;link href=&#34;https://4rkal.com/static/styles.css&#34; rel=&#34;stylesheet&#34;&gt;
 </code></pre><p>And the files are being served using echo&rsquo;s e.Static (in my main.go file )</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>(){
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
@@ -209,10 +209,10 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
     
     <item>
       <title>How to deploy django to production</title>
-      <link>http://localhost:1313/posts/django-prod/</link>
+      <link>https://4rkal.com/posts/django-prod/</link>
       <pubDate>Fri, 20 Sep 2024 11:54:29 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/django-prod/</guid>
+      <guid>https://4rkal.com/posts/django-prod/</guid>
       <description>In this article I will show you how to deploy django to production. We will be using nginx, gunicorn and cloudflare tunnels</description>
       <content:encoded><![CDATA[<p>I recently deployed my very own django application to production. The website is called <a href="https://videiro.com">videiro.com</a> and was developed in django + HTML/CSS/JS + Tailwind.</p>
 <h2 id="setup">Setup</h2>
@@ -383,10 +383,10 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
     
     <item>
       <title>How to setup a selfhosted newsletter using listmonk</title>
-      <link>http://localhost:1313/posts/listmonk/</link>
+      <link>https://4rkal.com/posts/listmonk/</link>
       <pubDate>Fri, 23 Aug 2024 11:19:17 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/listmonk/</guid>
+      <guid>https://4rkal.com/posts/listmonk/</guid>
       <description>Listmonk is an amazing feature packed selfhosted email newsletter manager. It offers loads of features like analytics (clicks, opens, bounces), templates, public subscription pages, importing subscribers and much more!</description>
       <content:encoded><![CDATA[<h2 id="what-is-listmonk">What is listmonk?</h2>
 <p><a href="https://listmonk.app">Listmonk</a> is a selfhosted newsletter and mailing list manager. It is free and opensource, so you have full control over your data. It also offers a super clean webui:</p>
@@ -544,10 +544,10 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
     
     <item>
       <title>SSH Remote Access NO Port-Forwarding NO Cloudflare</title>
-      <link>http://localhost:1313/posts/onionssh/</link>
+      <link>https://4rkal.com/posts/onionssh/</link>
       <pubDate>Wed, 04 Oct 2023 19:17:04 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/onionssh/</guid>
+      <guid>https://4rkal.com/posts/onionssh/</guid>
       <description>In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.
 Requirements: A computer &amp;ldquo;server&amp;rdquo; (running linux) A internet connection Another computer to connect to your server (running linux) Why? If you want to access your server without portforwarding in a extremely secure fashion you will want to follow this tutorial. You will be connecting to the server via tor which will make it harder for anyone to find the url of the server and ill show you how to setup keybased auth for even more security!</description>
       <content:encoded><![CDATA[<p>In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.</p>
@@ -624,10 +624,10 @@ HiddenServicePort 22 127.0.0.1:22
     
     <item>
       <title>Create a MultiBoot USB using ventoy</title>
-      <link>http://localhost:1313/posts/ventoy/</link>
+      <link>https://4rkal.com/posts/ventoy/</link>
       <pubDate>Mon, 06 Mar 2023 20:11:51 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/ventoy/</guid>
+      <guid>https://4rkal.com/posts/ventoy/</guid>
       <description>With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.
 Whats ventoy? Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .</description>
       <content:encoded><![CDATA[<p>With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.</p>
@@ -689,10 +689,10 @@ Whats ventoy? Ventoy is a free and open-source utility used for writing image fi
     
     <item>
       <title>How to Set Up Your Own Git Server: A Simple Guide</title>
-      <link>http://localhost:1313/posts/git/</link>
+      <link>https://4rkal.com/posts/git/</link>
       <pubDate>Sun, 05 Mar 2023 17:11:40 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/git/</guid>
+      <guid>https://4rkal.com/posts/git/</guid>
       <description>Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you&amp;rsquo;ll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.
 What You’ll Need A Computer for Your Server: Ideally running Linux (Debian is a solid choice). Internet Connection: Pretty essential for accessing your server remotely. Another Computer with Git Installed: This is what you&amp;rsquo;ll use to interact with your server.</description>
       <content:encoded><![CDATA[<p>Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you&rsquo;ll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.</p>
@@ -791,10 +791,10 @@ What You’ll Need A Computer for Your Server: Ideally running Linux (Debian is 
     
     <item>
       <title>Host your own private search engine — searX</title>
-      <link>http://localhost:1313/posts/searx/</link>
+      <link>https://4rkal.com/posts/searx/</link>
       <pubDate>Fri, 03 Mar 2023 23:21:53 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/searx/</guid>
+      <guid>https://4rkal.com/posts/searx/</guid>
       <description>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
 What is searX? Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users.</description>
       <content:encoded><![CDATA[<p>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.</p>
@@ -866,10 +866,10 @@ Now if you head to 127.0.0.1:8888 you should be able to see something like this
     
     <item>
       <title>Become anonymous and somewhat untraceable with tails os</title>
-      <link>http://localhost:1313/posts/tails/</link>
+      <link>https://4rkal.com/posts/tails/</link>
       <pubDate>Fri, 03 Mar 2023 23:03:40 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/tails/</guid>
+      <guid>https://4rkal.com/posts/tails/</guid>
       <description>In this article we will talk about what tails is and how to install and more.
 What is tails? Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</description>
       <content:encoded><![CDATA[<p>In this article we will talk about what tails is and how to install and more.</p>
@@ -925,10 +925,10 @@ After you have clicked on the windows logo you should be prompted with the requi
     
     <item>
       <title>Get ad free web with Pi-hole</title>
-      <link>http://localhost:1313/posts/pihole/</link>
+      <link>https://4rkal.com/posts/pihole/</link>
       <pubDate>Sat, 25 Feb 2023 21:17:13 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/pihole/</guid>
+      <guid>https://4rkal.com/posts/pihole/</guid>
       <description>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&amp;rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.
 What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine.</description>
       <content:encoded><![CDATA[<p>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.</p>
@@ -1022,10 +1022,10 @@ What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tra
     
     <item>
       <title>Securing ssh with Key-Based authentication</title>
-      <link>http://localhost:1313/posts/sssh/</link>
+      <link>https://4rkal.com/posts/sssh/</link>
       <pubDate>Sat, 25 Feb 2023 21:08:47 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/sssh/</guid>
+      <guid>https://4rkal.com/posts/sssh/</guid>
       <description>SSH keys provide an extremely secure way of logging into your server.
 SSH Password Based VS Key Based Authentication Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts.</description>
       <content:encoded><![CDATA[<p>SSH keys provide an extremely secure way of logging into your server.</p>
@@ -1078,10 +1078,10 @@ Enter passphrase (empty for no passphrase):
     
     <item>
       <title>Setup a tor website (hidden service)</title>
-      <link>http://localhost:1313/posts/torhs/</link>
+      <link>https://4rkal.com/posts/torhs/</link>
       <pubDate>Sat, 25 Feb 2023 20:56:02 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/torhs/</guid>
+      <guid>https://4rkal.com/posts/torhs/</guid>
       <description>In this article i will be showing you how to host your “dark web” aka Tor website for free.
 What is Tor? Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</description>
       <content:encoded><![CDATA[<p>In this article i will be showing you how to host your “dark web” aka Tor website for free.</p>
@@ -1121,7 +1121,7 @@ What is Tor? Tor — short for the Onion Routing project — is an open-source p
 <p>Now open your tor browser and paste your address and press enter.</p>
 <p>You will most probably be greeted by the default nginx site.</p>
 <p>This page is easily customized, you can check out my article:
-<a href="http://localhost:1313/posts/shwebsite/">here</a></p>
+<a href="https://4rkal.com/posts/shwebsite/">here</a></p>
 <p>GG you did it you are now running a pretty anonymous website on the tor network.</p>
 <p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
 ]]></content:encoded>
@@ -1129,10 +1129,10 @@ What is Tor? Tor — short for the Onion Routing project — is an open-source p
     
     <item>
       <title>Self host your own website</title>
-      <link>http://localhost:1313/posts/shwebsite/</link>
+      <link>https://4rkal.com/posts/shwebsite/</link>
       <pubDate>Sat, 25 Feb 2023 20:23:16 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/shwebsite/</guid>
+      <guid>https://4rkal.com/posts/shwebsite/</guid>
       <description>In this article i will show you how to self host your own website securely.
 Requirements A computer or microcomputer to host the website The computer needs to run linux An internet connection (Its pretty hard without one, trust me) Lets get started!
 Installation The first thing that we will have to do is setup our nginx site.
@@ -1228,10 +1228,10 @@ make install
     
     <item>
       <title>Raspberry pi security camera</title>
-      <link>http://localhost:1313/posts/rpicamera/</link>
+      <link>https://4rkal.com/posts/rpicamera/</link>
       <pubDate>Sat, 25 Feb 2023 20:03:25 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/rpicamera/</guid>
+      <guid>https://4rkal.com/posts/rpicamera/</guid>
       <description>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.
 Requirements Raspberry pi or any other computer Web cam Any kind of debian based distro installed on the pi/computer Setup In this article we will be using the motion package (https://motion-project.github.io/)
 To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard.</description>
@@ -1274,10 +1274,10 @@ This will enable us to access the stream from other computers.</p>
     
     <item>
       <title>How SSH works</title>
-      <link>http://localhost:1313/posts/howsshworks/</link>
+      <link>https://4rkal.com/posts/howsshworks/</link>
       <pubDate>Sat, 25 Feb 2023 19:36:25 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/howsshworks/</guid>
+      <guid>https://4rkal.com/posts/howsshworks/</guid>
       <description>If you work in the IT industry, you’ve undoubtedly heard of ssh. But how does it work?
 SSH (secure shell) is a network protocol that allows two computers to connect securely over the internet. SSH uses encryption to prevent hackers from reading data sent between two connected devices.
 SSH is divided into three layers:

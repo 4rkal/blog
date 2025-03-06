@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Cyphergoat on 4rkal</title>
-    <link>http://localhost:1313/tags/cyphergoat/</link>
+    <link>https://4rkal.com/tags/cyphergoat/</link>
     <description>Recent content in Cyphergoat on 4rkal</description>
     <image>
-      <url>http://localhost:1313/4rkal.png</url>
-      <link>http://localhost:1313/4rkal.png</link>
+      <url>https://4rkal.com/4rkal.png</url>
+      <link>https://4rkal.com/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Mar 2025 14:16:29 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/cyphergoat/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Mar 2025 14:16:29 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/cyphergoat/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploying Go &#43; Templ &#43; HTMX &#43; TailwindCSS to production</title>
-      <link>http://localhost:1313/posts/deploy-go-htmx-templ-tailwind-to-production/</link>
+      <link>https://4rkal.com/posts/deploy-go-htmx-templ-tailwind-to-production/</link>
       <pubDate>Thu, 06 Mar 2025 14:16:29 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/deploy-go-htmx-templ-tailwind-to-production/</guid>
+      <guid>https://4rkal.com/posts/deploy-go-htmx-templ-tailwind-to-production/</guid>
       <description>In this article I will be showing you how to deploy the GoTTH stack (Go Templ htmx tailwind) to production.</description>
       <content:encoded><![CDATA[<p>I recently created my very own cryptocurrency exchange aggregator called <a href="htttps://cyphergoat.com">cyphergoat</a> it finds you the best rate to swap your crypto from different partnered exchanges.</p>
 <p>It has two parts:</p>
@@ -51,9 +51,9 @@ The web the website source code.</p>
 <pre tabindex="0"><code>npx @tailwindcss/cli -i ./static/styles.css -o ./static/tailwind.css --watch
 </code></pre><p>(assuming you have tailwind-cli installed)</p>
 <p>In my header.templ file (the header of all the pages) at the top I have</p>
-<pre tabindex="0"><code>&lt;link href=&#34;http://localhost:1313/static/tailwind.css&#34; rel=&#34;stylesheet&#34;&gt;
+<pre tabindex="0"><code>&lt;link href=&#34;https://4rkal.com/static/tailwind.css&#34; rel=&#34;stylesheet&#34;&gt;
 
-&lt;link href=&#34;http://localhost:1313/static/styles.css&#34; rel=&#34;stylesheet&#34;&gt;
+&lt;link href=&#34;https://4rkal.com/static/styles.css&#34; rel=&#34;stylesheet&#34;&gt;
 </code></pre><p>And the files are being served using echo&rsquo;s e.Static (in my main.go file )</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>(){
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
@@ -209,10 +209,10 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
     
     <item>
       <title>How to Improve Go API request performance</title>
-      <link>http://localhost:1313/posts/goapi/</link>
+      <link>https://4rkal.com/posts/goapi/</link>
       <pubDate>Sat, 17 Aug 2024 12:25:15 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/goapi/</guid>
+      <guid>https://4rkal.com/posts/goapi/</guid>
       <description>In this post I&amp;#39;ll show you how I improved the performance of my go based cryptocurrency exchange aggregator. By making small changes, like using goroutines, switching JSON libraries and reusing HTTP handlers.</description>
       <content:encoded><![CDATA[<h1 id="the-project">The project</h1>
 <p>I recently started working on a <em>cryptocurrency exchange aggregator</em>. Basically I send out requests to a bunch of different exchanges and compare rates. This has to be made as fast as possible.

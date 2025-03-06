@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Automation on 4rkal</title>
-    <link>http://localhost:1313/tags/automation/</link>
+    <link>https://4rkal.com/tags/automation/</link>
     <description>Recent content in Automation on 4rkal</description>
     <image>
-      <url>http://localhost:1313/4rkal.png</url>
-      <link>http://localhost:1313/4rkal.png</link>
+      <url>https://4rkal.com/4rkal.png</url>
+      <link>https://4rkal.com/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Aug 2024 11:19:17 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Aug 2024 11:19:17 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to setup a selfhosted newsletter using listmonk</title>
-      <link>http://localhost:1313/posts/listmonk/</link>
+      <link>https://4rkal.com/posts/listmonk/</link>
       <pubDate>Fri, 23 Aug 2024 11:19:17 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/listmonk/</guid>
+      <guid>https://4rkal.com/posts/listmonk/</guid>
       <description>Listmonk is an amazing feature packed selfhosted email newsletter manager. It offers loads of features like analytics (clicks, opens, bounces), templates, public subscription pages, importing subscribers and much more!</description>
       <content:encoded><![CDATA[<h2 id="what-is-listmonk">What is listmonk?</h2>
 <p><a href="https://listmonk.app">Listmonk</a> is a selfhosted newsletter and mailing list manager. It is free and opensource, so you have full control over your data. It also offers a super clean webui:</p>
@@ -174,10 +174,10 @@
     
     <item>
       <title>Automating your web browser with selenium</title>
-      <link>http://localhost:1313/posts/selenium/</link>
+      <link>https://4rkal.com/posts/selenium/</link>
       <pubDate>Wed, 22 Feb 2023 21:23:38 +0300</pubDate>
       
-      <guid>http://localhost:1313/posts/selenium/</guid>
+      <guid>https://4rkal.com/posts/selenium/</guid>
       <description>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.
 In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.com/posts/python/)
 What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation.</description>
