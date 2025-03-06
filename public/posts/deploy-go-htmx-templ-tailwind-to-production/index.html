@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Deploying Go &#43; Templ &#43; HTMX &#43; TailwindCSS to production | 4rkal</title>
+<meta name="keywords" content="programming, golang, cyphergoat, linux">
+<meta name="description" content="In this article I will be showing you how to deploy the GoTTH stack (Go Templ htmx tailwind) to production.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/deploy-go-htmx-templ-tailwind-to-production/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.7da7716a1f2d0725f74c6ae7f8d6adafc43aabe2b366b65bfbf433448e2a2001.css" integrity="sha256-fadxah8tByX3TGrn&#43;Natr8Q6q&#43;KzZrZb&#43;/QzRI4qIAE=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/4rkal.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/deploy-go-htmx-templ-tailwind-to-production/">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Deploying Go &#43; Templ &#43; HTMX &#43; TailwindCSS to production | 4rkal" />
+<meta name="twitter:description" content="In this article I will be showing you how to deploy the GoTTH stack (Go Templ htmx tailwind) to production." />
+<meta property="og:title" content="Deploying Go &#43; Templ &#43; HTMX &#43; TailwindCSS to production | 4rkal" />
+<meta property="og:description" content="In this article I will be showing you how to deploy the GoTTH stack (Go Templ htmx tailwind) to production." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/deploy-go-htmx-templ-tailwind-to-production/" />
+    <meta property="og:image" content="http://localhost:1313/4rkal.png"/>
+<meta property="article:section" content="posts" />
+  <meta property="article:published_time" content="2025-03-06T14:16:29&#43;03:00" />
+  <meta property="article:modified_time" content="2025-03-06T14:16:29&#43;03:00" />
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Deploying Go + Templ + HTMX + TailwindCSS to production",
+      "item": "http://localhost:1313/posts/deploy-go-htmx-templ-tailwind-to-production/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Deploying Go + Templ + HTMX + TailwindCSS to production | 4rkal",
+  "name": "Deploying Go \u002b Templ \u002b HTMX \u002b TailwindCSS to production",
+  "description": "In this article I will be showing you how to deploy the GoTTH stack (Go Templ htmx tailwind) to production.",
+  "keywords": [
+    "programming", "golang", "cyphergoat", "linux"
+  ],
+  "wordCount" : "914",
+  "inLanguage": "en",
+  "datePublished": "2025-03-06T14:16:29+03:00",
+  "dateModified": "2025-03-06T14:16:29+03:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/deploy-go-htmx-templ-tailwind-to-production/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "4rkal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/4rkal.png"
+    }
+  }
+}
+</script>
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+<script defer data-domain="4rkal.com" src="https://stats.4rkal.eu.org/js/script.js"></script>
+
+
+</head>
+
+<body class=" dark type-posts kind-page layout-" id="top"><script data-no-instant>
+function switchTheme(theme) {
+  switch (theme) {
+    case 'light':
+      document.body.classList.remove('dark');
+      break;
+    case 'dark':
+      document.body.classList.add('dark');
+      break;
+    
+    default:
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+      }
+  }
+}
+
+function isDarkTheme() {
+  return document.body.className.includes("dark");
+}
+
+function getPrefTheme() {
+  return localStorage.getItem("pref-theme");
+}
+
+function setPrefTheme(theme) {
+  switchTheme(theme)
+  localStorage.setItem("pref-theme", theme);
+}
+
+const toggleThemeCallbacks = {}
+toggleThemeCallbacks['main'] = (isDark) => {
+  
+  if (isDark) {
+    setPrefTheme('light');
+  } else {
+    setPrefTheme('dark');
+  }
+}
+
+
+
+
+window.addEventListener('toggle-theme', function() {
+  
+  const isDark = isDarkTheme()
+  for (const key in toggleThemeCallbacks) {
+    toggleThemeCallbacks[key](isDark)
+  }
+});
+
+
+function toggleThemeListener() {
+  
+  window.dispatchEvent(new CustomEvent('toggle-theme'));
+}
+
+</script>
+<script>
+  
+  (function() {
+    const defaultTheme = 'dark';
+    const prefTheme = getPrefTheme();
+    const theme = prefTheme ? prefTheme : defaultTheme;
+
+    switchTheme(theme);
+  })();
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="4rkal (Alt + H)">
+                    <img src="http://localhost:1313/4rkal.png" alt="logo" aria-label="logo"
+                        height="30" width="30">4rkal</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts" class="active"
+                >Posts
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About"
+                >About
+                </a>
+            </li>
+            <li>
+                <a href="https://rb.gy/a6ylyh/" title="NEWSLETTER" target="_blank"
+                >NEWSLETTER<span class="external-link"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-external-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5" />
+  <line x1="10" y1="14" x2="20" y2="4" />
+  <polyline points="15 4 20 4 20 9" />
+</svg>
+</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search the site (Alt &#43; /)"data-no-instant accesskey=/
+                >Search
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main post">
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Deploying Go &#43; Templ &#43; HTMX &#43; TailwindCSS to production</h1>
+    <div class="post-description">In this article I will be showing you how to deploy the GoTTH stack (Go Templ htmx tailwind) to production.</div>
+    <div class="post-meta"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>March 6, 2025</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="http://localhost:1313/tags/programming/">Programming</a><a href="http://localhost:1313/tags/golang/">Golang</a><a href="http://localhost:1313/tags/cyphergoat/">Cyphergoat</a><a href="http://localhost:1313/tags/linux/">Linux</a></span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" style="user-select: text;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" style="user-select: text;"></path><polyline points="14 2 14 8 20 8" style="user-select: text;"></polyline><line x1="16" y1="13" x2="8" y2="13" style="user-select: text;"></line><line x1="16" y1="17" x2="8" y2="17" style="user-select: text;"></line><polyline points="10 9 9 9 8 9" style="user-select: text;"></polyline></svg>
+  <span>914 words</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 15"></polyline></svg>
+  <span>5 min</span></span>
+
+      
+      
+    </div>
+  </header> <div class="toc side right">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#setup" aria-label="Setup">Setup</a></li>
+                <li>
+                    <a href="#the-setup" aria-label="The setup">The setup</a><ul>
+                        
+                <li>
+                    <a href="#tailwind" aria-label="Tailwind">Tailwind</a></li></ul>
+                </li>
+                <li>
+                    <a href="#server" aria-label="Server">Server</a><ul>
+                        
+                <li>
+                    <a href="#nginx" aria-label="Nginx">Nginx</a></li>
+                <li>
+                    <a href="#cloudflare-tunnels" aria-label="Cloudflare Tunnels">Cloudflare Tunnels</a></li></ul>
+                </li>
+                <li>
+                    <a href="#deployment" aria-label="Deployment">Deployment</a></li>
+                <li>
+                    <a href="#join-my-free-newsletter" aria-label="Join my free newsletter!">Join my free newsletter!</a><ul>
+                        
+                <li>
+                    <a href="#" aria-label="Subscribe">Subscribe</a></li>
+                <li>
+                    <a href="#related-articles" aria-label="Related Articles">Related Articles</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>I recently created my very own cryptocurrency exchange aggregator called <a href="htttps://cyphergoat.com">cyphergoat</a> it finds you the best rate to swap your crypto from different partnered exchanges.</p>
+<p>It has two parts:</p>
+<ol>
+<li>An API that interacts with exchanges. Written in go and uses gin</li>
+<li>The Web UI that is written in go and uses a combination of HTML, HTMX, tailwindcss, CSS and Javascript in templ templates. Aka the GoTTH stack. It interacts with the api in order to find rates etc.</li>
+</ol>
+<p>What is extremely cool with this stack and setup is that we are able to produce <strong>a single binary</strong> with everything included for each part and ship it to the server. On the webui side this is possible since the html is compiled into go code using templ and then shipped with the binary.</p>
+<p>In this article I will be going through my setup to make it easier for you to make something like this.</p>
+<h2 id="setup">Setup<a hidden class="anchor" aria-hidden="true" href="#setup">¶</a></h2>
+<p>I am using a debian 12 server which will expose my application via cloudflare tunnels. All of the static files are being served via nginx and the api and website binaries are ran as systemd services.</p>
+<p>In this guide I will show you how I set this up.</p>
+<h2 id="the-setup">The setup<a hidden class="anchor" aria-hidden="true" href="#the-setup">¶</a></h2>
+<p>I have a single folder on my dev machine called cyphergoat:
+It contains</p>
+<pre tabindex="0"><code>api/
+web/
+builds/
+</code></pre><p>The api folder houses the api source code.
+The web the website source code.</p>
+<p>And the builds houses all of the builds that are deployed to the server.</p>
+<h3 id="tailwind">Tailwind<a hidden class="anchor" aria-hidden="true" href="#tailwind">¶</a></h3>
+<p>The first real challenge comes with setting up tailwindcss correctly.</p>
+<p>In my web project I have a static folder specifically for static files. Inside of it I have two files</p>
+<pre tabindex="0"><code>/web
+	styles.css
+	tailwind.css
+</code></pre><p>The <code>styles.css</code> simply contains:</p>
+<pre tabindex="0"><code>@import &#34;tailwindcss&#34;;
+</code></pre><p>The tailwind.css file is where tailwind-cli will save it&rsquo;s stuff.</p>
+<p>To build the tailwind stuff I simply run</p>
+<pre tabindex="0"><code>npx @tailwindcss/cli -i ./static/styles.css -o ./static/tailwind.css --watch
+</code></pre><p>(assuming you have tailwind-cli installed)</p>
+<p>In my header.templ file (the header of all the pages) at the top I have</p>
+<pre tabindex="0"><code>&lt;link href=&#34;/static/tailwind.css&#34; rel=&#34;stylesheet&#34;&gt;
+
+&lt;link href=&#34;/static/styles.css&#34; rel=&#34;stylesheet&#34;&gt;
+</code></pre><p>And the files are being served using echo&rsquo;s e.Static (in my main.go file )</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Logger</span>())
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Recover</span>())
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Secure</span>())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Static</span>(<span style="color:#e6db74">&#34;/static&#34;</span>, <span style="color:#e6db74">&#34;static&#34;</span>) <span style="color:#75715e">// Serves content from static folder.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Rest of the handlers
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h2 id="server">Server<a hidden class="anchor" aria-hidden="true" href="#server">¶</a></h2>
+<p>On my server side I have a debian 12 vm running on proxmox.</p>
+<p>In my users home directory I have a folder with the following contents:</p>
+<pre tabindex="0"><code>cyphergoat/
+├── api
+├── static/
+└── web
+</code></pre><p>The static folder contains all of the static files (including tailwind.css and styles.css) and the <strong>web</strong> and <strong>api</strong> are the binaries.</p>
+<p>I then have two systemd services for these exectuables:</p>
+<p>The<code> cg-api.service</code>
+<code>/etc/systemd/system/cg-api.service</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">CypherGoat API</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">network.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#f92672">=</span><span style="color:#e6db74">arkal</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Group</span><span style="color:#f92672">=</span><span style="color:#e6db74">www-data</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WorkingDirectory</span><span style="color:#f92672">=</span><span style="color:#e6db74">/home/arkal/cyphergoat</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/home/arkal/cyphergoat/api</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Restart</span><span style="color:#f92672">=</span><span style="color:#e6db74">always</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">RestartSec</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
+</span></span></code></pre></div><p>And <code>cg-web.service</code>
+<code>/etc/systemd/system/cg-web.service</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">CypherGoat Web</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">network.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#f92672">=</span><span style="color:#e6db74">arkal</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Group</span><span style="color:#f92672">=</span><span style="color:#e6db74">www-data</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WorkingDirectory</span><span style="color:#f92672">=</span><span style="color:#e6db74">/home/arkal/cyphergoat</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/home/arkal/cyphergoat/web</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
+</span></span></code></pre></div><p>Both are owned by the group <code>www-data</code> (this is probably not necessary for the api), in order to make it easier to serve them via nginx.</p>
+<h3 id="nginx">Nginx<a hidden class="anchor" aria-hidden="true" href="#nginx">¶</a></h3>
+<p>The website is communicating with the api but I still need to make the web-ui accessible.</p>
+<p>I have setup an nginx site with the following configuration:
+<code>/etc/nginx/sites-available/cg</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">cyphergoat.com</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://127.0.0.1:4200</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $host;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Proto</span> $scheme;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> <span style="color:#e6db74">/static/</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">alias</span> <span style="color:#e6db74">/var/www/static/</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">expires</span> <span style="color:#e6db74">30d</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Optional robots.txt
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">location</span> = <span style="color:#e6db74">/robots.txt</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">root</span> <span style="color:#e6db74">/var/www/static</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">access_log</span> <span style="color:#66d9ef">off</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">log_not_found</span> <span style="color:#66d9ef">off</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I have also setup certbot to have an ssl cert.</p>
+<p>You can setup certbot by running:</p>
+<pre tabindex="0"><code>sudo apt install certbot python3-certbot-nginx -y
+</code></pre><p>Generate the ssl cert:</p>
+<pre tabindex="0"><code>sudo certbot --nginx -d cyphergoat.com
+</code></pre><p>Read <a href="https://4rkal.com/posts/shwebsite/">Self host your own website</a> for a more in depth nginx setup.</p>
+<h3 id="cloudflare-tunnels">Cloudflare Tunnels<a hidden class="anchor" aria-hidden="true" href="#cloudflare-tunnels">¶</a></h3>
+<p>I am currently making my website accessible using cloudflare pages. It is an extremely easy to use port forwarding solution</p>
+<p>To do this you will need a cloudflare account and a domain pointed to cloudflare.</p>
+<p>First head to the <a href="https://one.dash.cloudflare.com/">Zero Trust Dashboard</a></p>
+<p>Under <code>Networks</code> click on <code>Tunnels</code> and then <code>Create a tunnel</code></p>
+<p>Once created you should <code>Install and run a connector</code>, follow the instructions on the page for your specific setup.</p>
+<p>After the connector is running you should click on the <code>Public Hostname</code> tab and <code>Add a public hostname</code>.</p>
+<p>Now you should see something like this:
+<img loading="lazy" src="/../assets/gitea2.png" type="" alt="Cloudflare dashboard"  /></p>
+<p>Fill in the info as I have.
+The service type should be <code>HTTP</code> and the url should be <code>127.0.0.1:80</code> or <code>localhost:80</code></p>
+<p>Obviously there is no reason to make your api publicly accessible when deploying your website.</p>
+<h2 id="deployment">Deployment<a hidden class="anchor" aria-hidden="true" href="#deployment">¶</a></h2>
+<p>In order to deploy my binaries I went ahead and created a quick bash script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd api
+</span></span><span style="display:flex;"><span>go build -o ../builds/ .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd ../web
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>templ generate <span style="color:#f92672">&amp;&amp;</span> go build -o ../builds/web cmd/main.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd ..
+</span></span><span style="display:flex;"><span>rsync -urvP ./builds/ user@SERVER:/home/user/cyphergoat
+</span></span><span style="display:flex;"><span>rsync -urvP ./web/static user@SERVER:/home/user/cyphergoat/
+</span></span><span style="display:flex;"><span>rsync -urvP ./api/coins.json user@SERVER:/user/user/cyphergoat/
+</span></span></code></pre></div><p>The script will build the api, generate the templ files and build the webui and then sends everything over to my server (including the static folder)</p>
+<p>I then ssh into my server</p>
+<p><code>ssh user@ip</code></p>
+<p>and then restart the services</p>
+<p><code>sudo systemctl restart cg-api cg-web</code></p>
+<p>And that&rsquo;s it.</p>
+<h2 id="join-my-free-newsletter">Join my free newsletter!<a hidden class="anchor" aria-hidden="true" href="#join-my-free-newsletter">¶</a></h2>
+<div style="text-align: left; margin: 0 auto;">
+    <form method="post" action="https://newsletter.4rkal.com/subscription/form" style="background: #2c2c2c; color: #f0f0f0; border-radius: 8px; padding: 15px; max-width: 500px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); font-family: Arial, sans-serif;">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <h3 style="margin: 0; color: #f0f0f0; font-size: 18px;">Subscribe</h3>
+            <input type="hidden" name="nonce"/>
+            <input type="email" name="email" required placeholder="E-mail" style="width: 100%; padding: 10px; border: 1px solid #666; border-radius: 4px; background: #333; color: #f0f0f0; box-sizing: border-box;"/>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="margin: 0; color: #f0f0f0; display: none;">
+                    <input id="78a75" type="checkbox" name="l" checked value="78a75b30-472d-4790-a5d5-7f2ed49662a4" style="accent-color: #fff;"/>
+                    Weekly Roundup
+                </label>
+                <span style="color: #d0d0d0; display: none;">Where I share what I’ve been up to that week, including articles I’ve published, cool finds, tips and tricks, and more!</span>
+                <label style="margin: 0; color: #f0f0f0; display: none;">
+                    <input id="b3964" type="checkbox" name="l" checked value="b3964560-37b0-43d3-9df9-26589fd6bf8d" style="accent-color: #fff;"/>
+                    New Posts
+                </label>
+                <span style="color: #d0d0d0; display: none;">Receive an email every time I post something new on my blog</span>
+            </div>
+            <input type="submit" value="Subscribe" style="width: 100%; padding: 10px; border: none; border-radius: 4px; background: #fff; color: #007bff; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);"/>
+        </div>
+        <p style="text-align: center; margin-top: 10px; color: #d0d0d0; font-size: 10px; margin-bottom:0px;">
+            No spam, no ads. Unsubscribe at any time.
+        </p>
+    </form>
+</div>
+<h3 id="related-articles">Related Articles<a hidden class="anchor" aria-hidden="true" href="#related-articles">¶</a></h3>
+<p><a href="https://4rkal.com/posts/go-rate-limit">Simple Rate Limiting in Go (Gin)</a></p>
+<p><a href="https://4rkal.com/posts/url-shortener-go/">How to build a URL shortener in Go</a></p>
+<p><a href="https://4rkal.com/posts/django-prod/">How to deploy django to production</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+    <div class="comments-separator"></div>
+</article>
+    </main>
+    
+<footer class="footer">
+  <span>&copy; 2025 <a href="http://localhost:1313/">4rkal</a></span><span style="display: inline-block; margin-left: 1em;">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+  </span>
+  <span style="display: inline-block; margin-left: 1em;">
+    <a href="https://newsletter.4rkal.com/subscription/form">SUBSCRIBE</a>
+  </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+    <path d="M12 6H0l6-6z" />
+  </svg>
+</a>
+
+<script>
+  (function() {
+     
+    const disableThemeToggle = '' == '1';
+    if (disableThemeToggle) {
+      return;
+    }
+
+    let button = document.getElementById("theme-toggle")
+    
+    button.removeEventListener('click', toggleThemeListener)
+    
+    button.addEventListener('click', toggleThemeListener)
+  })();
+</script>
+
+<script>
+  (function () {
+    let menu = document.getElementById('menu')
+    if (menu) {
+      menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+      menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+      }
+    }
+
+    const disableSmoothScroll = '' == '1';
+    const enableInstantClick = '' == '1';
+    
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || disableSmoothScroll || enableInstantClick) {
+      return;
+    }
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        var id = this.getAttribute("href").substr(1);
+        document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+          behavior: "smooth"
+        });
+        if (id === "top") {
+          history.replaceState(null, null, " ");
+        } else {
+          history.pushState(null, null, `#${id}`);
+        }
+      });
+    });
+  })();
+</script>
+<script>
+  var mybutton = document.getElementById("top-link");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+      mybutton.style.visibility = "visible";
+      mybutton.style.opacity = "1";
+    } else {
+      mybutton.style.visibility = "hidden";
+      mybutton.style.opacity = "0";
+    }
+  };
+</script>
+<script>
+  if (window.scrollListeners) {
+    
+    for (const listener of scrollListeners) {
+      window.removeEventListener('scroll', listener)
+    }
+  }
+  window.scrollListeners = []
+</script>
+
+
+
+<script src="/js/medium-zoom.min.js" data-no-instant
+></script>
+<script>
+  document.querySelectorAll('pre > code').forEach((codeblock) => {
+    const container = codeblock.parentNode.parentNode;
+
+    const copybutton = document.createElement('button');
+    copybutton.classList.add('copy-code');
+    copybutton.innerText = 'copy';
+
+    function copyingDone() {
+      copybutton.innerText = 'copied!';
+      setTimeout(() => {
+        copybutton.innerText = 'copy';
+      }, 2000);
+    }
+
+    copybutton.addEventListener('click', (cb) => {
+      if ('clipboard' in navigator) {
+        navigator.clipboard.writeText(codeblock.textContent);
+        copyingDone();
+        return;
+      }
+
+      const range = document.createRange();
+      range.selectNodeContents(codeblock);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      try {
+        document.execCommand('copy');
+        copyingDone();
+      } catch (e) { };
+      selection.removeRange(range);
+    });
+
+    if (container.classList.contains("highlight")) {
+      container.appendChild(copybutton);
+    } else if (container.parentNode.firstChild == container) {
+      
+    } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+      
+      codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+    } else {
+      
+      codeblock.parentNode.appendChild(copybutton);
+    }
+  });
+</script>
+
+
+
+
+<script>
+  
+  
+  (function() {
+    const enableTocScroll = '1' == '1'
+    if (!enableTocScroll) {
+      return
+    }
+    if (!document.querySelector('.toc')) {
+      console.log('no toc found, ignore toc scroll')
+      return
+    }
+    
+
+    
+    const scrollListeners = window.scrollListeners
+    const headings = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id]');
+    const activeClass = 'active';
+
+    
+    let activeHeading = headings[0];
+    getLinkByHeading(activeHeading).classList.add(activeClass);
+
+    const onScroll = () => {
+      const passedHeadings = [];
+      for (const h of headings) {
+        
+        if (getOffsetTop(h) < 5) {
+          passedHeadings.push(h)
+        } else {
+          break;
+        }
+      }
+      if (passedHeadings.length > 0) {
+        newActiveHeading = passedHeadings[passedHeadings.length - 1];
+      } else {
+        newActiveHeading = headings[0];
+      }
+      if (activeHeading != newActiveHeading) {
+        getLinkByHeading(activeHeading).classList.remove(activeClass);
+        activeHeading = newActiveHeading;
+        getLinkByHeading(activeHeading).classList.add(activeClass);
+      }
+    }
+
+    let timer = null;
+    const scrollListener = () => {
+      if (timer !== null) {
+        clearTimeout(timer)
+      }
+      timer = setTimeout(onScroll, 50)
+    }
+    window.addEventListener('scroll', scrollListener, false);
+    scrollListeners.push(scrollListener)
+
+    function getLinkByHeading(heading) {
+      const id = encodeURI(heading.getAttribute('id')).toLowerCase();
+      return document.querySelector(`.toc ul li a[href="#${id}"]`);
+    }
+
+    function getOffsetTop(heading) {
+      if (!heading.getClientRects().length) {
+        return 0;
+      }
+      let rect = heading.getBoundingClientRect();
+      return rect.top
+    }
+  })();
+  </script>
+
+</body>
+
+</html>

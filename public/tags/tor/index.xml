@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tor on 4rkal</title>
-    <link>https://4rkal.com/tags/tor/</link>
+    <link>http://localhost:1313/tags/tor/</link>
     <description>Recent content in Tor on 4rkal</description>
     <image>
-      <url>https://4rkal.com/4rkal.png</url>
-      <link>https://4rkal.com/4rkal.png</link>
+      <url>http://localhost:1313/4rkal.png</url>
+      <link>http://localhost:1313/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Mar 2023 23:03:40 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/tor/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Mar 2023 23:03:40 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/tor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Become anonymous and somewhat untraceable with tails os</title>
-      <link>https://4rkal.com/posts/tails/</link>
+      <link>http://localhost:1313/posts/tails/</link>
       <pubDate>Fri, 03 Mar 2023 23:03:40 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/tails/</guid>
+      <guid>http://localhost:1313/posts/tails/</guid>
       <description>In this article we will talk about what tails is and how to install and more.
 What is tails? Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</description>
       <content:encoded><![CDATA[<p>In this article we will talk about what tails is and how to install and more.</p>
@@ -72,10 +72,10 @@ After you have clicked on the windows logo you should be prompted with the requi
     
     <item>
       <title>Setup a tor website (hidden service)</title>
-      <link>https://4rkal.com/posts/torhs/</link>
+      <link>http://localhost:1313/posts/torhs/</link>
       <pubDate>Sat, 25 Feb 2023 20:56:02 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/torhs/</guid>
+      <guid>http://localhost:1313/posts/torhs/</guid>
       <description>In this article i will be showing you how to host your “dark web” aka Tor website for free.
 What is Tor? Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</description>
       <content:encoded><![CDATA[<p>In this article i will be showing you how to host your “dark web” aka Tor website for free.</p>
@@ -115,7 +115,7 @@ What is Tor? Tor — short for the Onion Routing project — is an open-source p
 <p>Now open your tor browser and paste your address and press enter.</p>
 <p>You will most probably be greeted by the default nginx site.</p>
 <p>This page is easily customized, you can check out my article:
-<a href="https://4rkal.com/posts/shwebsite/">here</a></p>
+<a href="http://localhost:1313/posts/shwebsite/">here</a></p>
 <p>GG you did it you are now running a pretty anonymous website on the tor network.</p>
 <p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
 ]]></content:encoded>

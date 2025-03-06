@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Python on 4rkal</title>
-    <link>https://4rkal.com/tags/python/</link>
+    <link>http://localhost:1313/tags/python/</link>
     <description>Recent content in Python on 4rkal</description>
     <image>
-      <url>https://4rkal.com/4rkal.png</url>
-      <link>https://4rkal.com/4rkal.png</link>
+      <url>http://localhost:1313/4rkal.png</url>
+      <link>http://localhost:1313/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Sep 2024 11:54:29 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Sep 2024 11:54:29 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to deploy django to production</title>
-      <link>https://4rkal.com/posts/django-prod/</link>
+      <link>http://localhost:1313/posts/django-prod/</link>
       <pubDate>Fri, 20 Sep 2024 11:54:29 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/django-prod/</guid>
+      <guid>http://localhost:1313/posts/django-prod/</guid>
       <description>In this article I will show you how to deploy django to production. We will be using nginx, gunicorn and cloudflare tunnels</description>
       <content:encoded><![CDATA[<p>I recently deployed my very own django application to production. The website is called <a href="https://videiro.com">videiro.com</a> and was developed in django + HTML/CSS/JS + Tailwind.</p>
 <h2 id="setup">Setup</h2>
@@ -187,10 +187,10 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
     
     <item>
       <title>Python for Complete Beginners</title>
-      <link>https://4rkal.com/posts/python/</link>
+      <link>http://localhost:1313/posts/python/</link>
       <pubDate>Mon, 06 Mar 2023 20:52:42 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/python/</guid>
+      <guid>http://localhost:1313/posts/python/</guid>
       <description>Why you should use Python. Going over the basics of Python.
 In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&amp;rsquo;s start by explaining what coding is.
 What is coding? Coding means writing instructions for computers and a finished set of instructions is known as a program. Computer programs control everything from smartphones to space rockets.</description>
@@ -414,10 +414,10 @@ print(&#34;GG you found it&#34;)
     
     <item>
       <title>Automating your web browser with selenium</title>
-      <link>https://4rkal.com/posts/selenium/</link>
+      <link>http://localhost:1313/posts/selenium/</link>
       <pubDate>Wed, 22 Feb 2023 21:23:38 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/selenium/</guid>
+      <guid>http://localhost:1313/posts/selenium/</guid>
       <description>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.
 In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.com/posts/python/)
 What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation.</description>

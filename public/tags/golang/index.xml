@@ -2,21 +2,217 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Golang on 4rkal</title>
-    <link>https://4rkal.com/tags/golang/</link>
+    <link>http://localhost:1313/tags/golang/</link>
     <description>Recent content in Golang on 4rkal</description>
     <image>
-      <url>https://4rkal.com/4rkal.png</url>
-      <link>https://4rkal.com/4rkal.png</link>
+      <url>http://localhost:1313/4rkal.png</url>
+      <link>http://localhost:1313/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Sep 2024 18:24:11 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Mar 2025 14:16:29 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploying Go &#43; Templ &#43; HTMX &#43; TailwindCSS to production</title>
+      <link>http://localhost:1313/posts/deploy-go-htmx-templ-tailwind-to-production/</link>
+      <pubDate>Thu, 06 Mar 2025 14:16:29 +0300</pubDate>
+      
+      <guid>http://localhost:1313/posts/deploy-go-htmx-templ-tailwind-to-production/</guid>
+      <description>In this article I will be showing you how to deploy the GoTTH stack (Go Templ htmx tailwind) to production.</description>
+      <content:encoded><![CDATA[<p>I recently created my very own cryptocurrency exchange aggregator called <a href="htttps://cyphergoat.com">cyphergoat</a> it finds you the best rate to swap your crypto from different partnered exchanges.</p>
+<p>It has two parts:</p>
+<ol>
+<li>An API that interacts with exchanges. Written in go and uses gin</li>
+<li>The Web UI that is written in go and uses a combination of HTML, HTMX, tailwindcss, CSS and Javascript in templ templates. Aka the GoTTH stack. It interacts with the api in order to find rates etc.</li>
+</ol>
+<p>What is extremely cool with this stack and setup is that we are able to produce <strong>a single binary</strong> with everything included for each part and ship it to the server. On the webui side this is possible since the html is compiled into go code using templ and then shipped with the binary.</p>
+<p>In this article I will be going through my setup to make it easier for you to make something like this.</p>
+<h2 id="setup">Setup</h2>
+<p>I am using a debian 12 server which will expose my application via cloudflare tunnels. All of the static files are being served via nginx and the api and website binaries are ran as systemd services.</p>
+<p>In this guide I will show you how I set this up.</p>
+<h2 id="the-setup">The setup</h2>
+<p>I have a single folder on my dev machine called cyphergoat:
+It contains</p>
+<pre tabindex="0"><code>api/
+web/
+builds/
+</code></pre><p>The api folder houses the api source code.
+The web the website source code.</p>
+<p>And the builds houses all of the builds that are deployed to the server.</p>
+<h3 id="tailwind">Tailwind</h3>
+<p>The first real challenge comes with setting up tailwindcss correctly.</p>
+<p>In my web project I have a static folder specifically for static files. Inside of it I have two files</p>
+<pre tabindex="0"><code>/web
+	styles.css
+	tailwind.css
+</code></pre><p>The <code>styles.css</code> simply contains:</p>
+<pre tabindex="0"><code>@import &#34;tailwindcss&#34;;
+</code></pre><p>The tailwind.css file is where tailwind-cli will save it&rsquo;s stuff.</p>
+<p>To build the tailwind stuff I simply run</p>
+<pre tabindex="0"><code>npx @tailwindcss/cli -i ./static/styles.css -o ./static/tailwind.css --watch
+</code></pre><p>(assuming you have tailwind-cli installed)</p>
+<p>In my header.templ file (the header of all the pages) at the top I have</p>
+<pre tabindex="0"><code>&lt;link href=&#34;http://localhost:1313/static/tailwind.css&#34; rel=&#34;stylesheet&#34;&gt;
+
+&lt;link href=&#34;http://localhost:1313/static/styles.css&#34; rel=&#34;stylesheet&#34;&gt;
+</code></pre><p>And the files are being served using echo&rsquo;s e.Static (in my main.go file )</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Logger</span>())
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Recover</span>())
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Secure</span>())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Static</span>(<span style="color:#e6db74">&#34;/static&#34;</span>, <span style="color:#e6db74">&#34;static&#34;</span>) <span style="color:#75715e">// Serves content from static folder.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Rest of the handlers
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h2 id="server">Server</h2>
+<p>On my server side I have a debian 12 vm running on proxmox.</p>
+<p>In my users home directory I have a folder with the following contents:</p>
+<pre tabindex="0"><code>cyphergoat/
+├── api
+├── static/
+└── web
+</code></pre><p>The static folder contains all of the static files (including tailwind.css and styles.css) and the <strong>web</strong> and <strong>api</strong> are the binaries.</p>
+<p>I then have two systemd services for these exectuables:</p>
+<p>The<code> cg-api.service</code>
+<code>/etc/systemd/system/cg-api.service</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">CypherGoat API</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">network.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#f92672">=</span><span style="color:#e6db74">arkal</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Group</span><span style="color:#f92672">=</span><span style="color:#e6db74">www-data</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WorkingDirectory</span><span style="color:#f92672">=</span><span style="color:#e6db74">/home/arkal/cyphergoat</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/home/arkal/cyphergoat/api</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Restart</span><span style="color:#f92672">=</span><span style="color:#e6db74">always</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">RestartSec</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
+</span></span></code></pre></div><p>And <code>cg-web.service</code>
+<code>/etc/systemd/system/cg-web.service</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">CypherGoat Web</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">network.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#f92672">=</span><span style="color:#e6db74">arkal</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Group</span><span style="color:#f92672">=</span><span style="color:#e6db74">www-data</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WorkingDirectory</span><span style="color:#f92672">=</span><span style="color:#e6db74">/home/arkal/cyphergoat</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/home/arkal/cyphergoat/web</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
+</span></span></code></pre></div><p>Both are owned by the group <code>www-data</code> (this is probably not necessary for the api), in order to make it easier to serve them via nginx.</p>
+<h3 id="nginx">Nginx</h3>
+<p>The website is communicating with the api but I still need to make the web-ui accessible.</p>
+<p>I have setup an nginx site with the following configuration:
+<code>/etc/nginx/sites-available/cg</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">cyphergoat.com</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://127.0.0.1:4200</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $host;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Proto</span> $scheme;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> <span style="color:#e6db74">/static/</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">alias</span> <span style="color:#e6db74">/var/www/static/</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">expires</span> <span style="color:#e6db74">30d</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Optional robots.txt
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">location</span> = <span style="color:#e6db74">/robots.txt</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">root</span> <span style="color:#e6db74">/var/www/static</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">access_log</span> <span style="color:#66d9ef">off</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">log_not_found</span> <span style="color:#66d9ef">off</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I have also setup certbot to have an ssl cert.</p>
+<p>You can setup certbot by running:</p>
+<pre tabindex="0"><code>sudo apt install certbot python3-certbot-nginx -y
+</code></pre><p>Generate the ssl cert:</p>
+<pre tabindex="0"><code>sudo certbot --nginx -d cyphergoat.com
+</code></pre><p>Read <a href="https://4rkal.com/posts/shwebsite/">Self host your own website</a> for a more in depth nginx setup.</p>
+<h3 id="cloudflare-tunnels">Cloudflare Tunnels</h3>
+<p>I am currently making my website accessible using cloudflare pages. It is an extremely easy to use port forwarding solution</p>
+<p>To do this you will need a cloudflare account and a domain pointed to cloudflare.</p>
+<p>First head to the <a href="https://one.dash.cloudflare.com/">Zero Trust Dashboard</a></p>
+<p>Under <code>Networks</code> click on <code>Tunnels</code> and then <code>Create a tunnel</code></p>
+<p>Once created you should <code>Install and run a connector</code>, follow the instructions on the page for your specific setup.</p>
+<p>After the connector is running you should click on the <code>Public Hostname</code> tab and <code>Add a public hostname</code>.</p>
+<p>Now you should see something like this:
+<img loading="lazy" src="/../assets/gitea2.png" type="" alt="Cloudflare dashboard"  /></p>
+<p>Fill in the info as I have.
+The service type should be <code>HTTP</code> and the url should be <code>127.0.0.1:80</code> or <code>localhost:80</code></p>
+<p>Obviously there is no reason to make your api publicly accessible when deploying your website.</p>
+<h2 id="deployment">Deployment</h2>
+<p>In order to deploy my binaries I went ahead and created a quick bash script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd api
+</span></span><span style="display:flex;"><span>go build -o ../builds/ .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd ../web
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>templ generate <span style="color:#f92672">&amp;&amp;</span> go build -o ../builds/web cmd/main.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd ..
+</span></span><span style="display:flex;"><span>rsync -urvP ./builds/ user@SERVER:/home/user/cyphergoat
+</span></span><span style="display:flex;"><span>rsync -urvP ./web/static user@SERVER:/home/user/cyphergoat/
+</span></span><span style="display:flex;"><span>rsync -urvP ./api/coins.json user@SERVER:/user/user/cyphergoat/
+</span></span></code></pre></div><p>The script will build the api, generate the templ files and build the webui and then sends everything over to my server (including the static folder)</p>
+<p>I then ssh into my server</p>
+<p><code>ssh user@ip</code></p>
+<p>and then restart the services</p>
+<p><code>sudo systemctl restart cg-api cg-web</code></p>
+<p>And that&rsquo;s it.</p>
+<h2 id="join-my-free-newsletter">Join my free newsletter!</h2>
+<div style="text-align: left; margin: 0 auto;">
+    <form method="post" action="https://newsletter.4rkal.com/subscription/form" style="background: #2c2c2c; color: #f0f0f0; border-radius: 8px; padding: 15px; max-width: 500px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); font-family: Arial, sans-serif;">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <h3 style="margin: 0; color: #f0f0f0; font-size: 18px;">Subscribe</h3>
+            <input type="hidden" name="nonce"/>
+            <input type="email" name="email" required placeholder="E-mail" style="width: 100%; padding: 10px; border: 1px solid #666; border-radius: 4px; background: #333; color: #f0f0f0; box-sizing: border-box;"/>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="margin: 0; color: #f0f0f0; display: none;">
+                    <input id="78a75" type="checkbox" name="l" checked value="78a75b30-472d-4790-a5d5-7f2ed49662a4" style="accent-color: #fff;"/>
+                    Weekly Roundup
+                </label>
+                <span style="color: #d0d0d0; display: none;">Where I share what I’ve been up to that week, including articles I’ve published, cool finds, tips and tricks, and more!</span>
+                <label style="margin: 0; color: #f0f0f0; display: none;">
+                    <input id="b3964" type="checkbox" name="l" checked value="b3964560-37b0-43d3-9df9-26589fd6bf8d" style="accent-color: #fff;"/>
+                    New Posts
+                </label>
+                <span style="color: #d0d0d0; display: none;">Receive an email every time I post something new on my blog</span>
+            </div>
+            <input type="submit" value="Subscribe" style="width: 100%; padding: 10px; border: none; border-radius: 4px; background: #fff; color: #007bff; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);"/>
+        </div>
+        <p style="text-align: center; margin-top: 10px; color: #d0d0d0; font-size: 10px; margin-bottom:0px;">
+            No spam, no ads. Unsubscribe at any time.
+        </p>
+    </form>
+</div>
+<h3 id="related-articles">Related Articles</h3>
+<p><a href="https://4rkal.com/posts/go-rate-limit">Simple Rate Limiting in Go (Gin)</a></p>
+<p><a href="https://4rkal.com/posts/url-shortener-go/">How to build a URL shortener in Go</a></p>
+<p><a href="https://4rkal.com/posts/django-prod/">How to deploy django to production</a></p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>How to build a URL shortener in Go</title>
-      <link>https://4rkal.com/posts/url-shortener-go/</link>
+      <link>http://localhost:1313/posts/url-shortener-go/</link>
       <pubDate>Sun, 22 Sep 2024 18:24:11 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/url-shortener-go/</guid>
+      <guid>http://localhost:1313/posts/url-shortener-go/</guid>
       <description>In this article will be showing you how to build a url shortener in go.</description>
       <content:encoded><![CDATA[<p>In this article I will be going through how to make a url shortener in go. The final result will look something like this <a href="https://app.4rkal.com">shortr</a>, <a href="https://github.com/4rkal/shortr">source code</a></p>
 <p>This is a great weekend project especially if you&rsquo;re new to go.</p>
@@ -175,7 +371,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">IndexHandler</span>(<span style="color:#a6e22e">c</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">Context</span>) <span style="color:#66d9ef">error</span> {
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">html</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;h1&gt;Submit a new website&lt;/h1&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;form action=&#34;https://4rkal.com/submit&#34; method=&#34;POST&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;form action=&#34;http://localhost:1313/submit&#34; method=&#34;POST&#34;&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;label for=&#34;url&#34;&gt;Website URL:&lt;/label&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;input type=&#34;text&#34; id=&#34;url&#34; name=&#34;url&#34;&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;input type=&#34;submit&#34; value=&#34;Submit&#34;&gt;
@@ -184,7 +380,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;ul&gt;`</span>
 </span></span><span style="display:flex;"><span>	
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">link</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">linkMap</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">html</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;li&gt;&lt;a href=&#34;https://4rkal.com/`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&#34;&gt;`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&lt;/a&gt;&lt;/li&gt;`</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">html</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;li&gt;&lt;a href=&#34;http://localhost:1313/`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&#34;&gt;`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&lt;/a&gt;&lt;/li&gt;`</span>
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">html</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;/ul&gt;`</span>
 </span></span><span style="display:flex;"><span>	
@@ -279,7 +475,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">IndexHandler</span>(<span style="color:#a6e22e">c</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">Context</span>) <span style="color:#66d9ef">error</span> {
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">html</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;h1&gt;Submit a new website&lt;/h1&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;form action=&#34;https://4rkal.com/submit&#34; method=&#34;POST&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;form action=&#34;http://localhost:1313/submit&#34; method=&#34;POST&#34;&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;label for=&#34;url&#34;&gt;Website URL:&lt;/label&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;input type=&#34;text&#34; id=&#34;url&#34; name=&#34;url&#34;&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;input type=&#34;submit&#34; value=&#34;Submit&#34;&gt;
@@ -288,7 +484,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;ul&gt;`</span>
 </span></span><span style="display:flex;"><span>	
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">link</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">linkMap</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">html</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;li&gt;&lt;a href=&#34;https://4rkal.com/`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&#34;&gt;`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&lt;/a&gt;&lt;/li&gt;`</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">html</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;li&gt;&lt;a href=&#34;http://localhost:1313/`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&#34;&gt;`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&lt;/a&gt;&lt;/li&gt;`</span>
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">html</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;/ul&gt;`</span>
 </span></span><span style="display:flex;"><span>	
@@ -354,10 +550,10 @@
     
     <item>
       <title>How to Improve Go API request performance</title>
-      <link>https://4rkal.com/posts/goapi/</link>
+      <link>http://localhost:1313/posts/goapi/</link>
       <pubDate>Sat, 17 Aug 2024 12:25:15 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/goapi/</guid>
+      <guid>http://localhost:1313/posts/goapi/</guid>
       <description>In this post I&amp;#39;ll show you how I improved the performance of my go based cryptocurrency exchange aggregator. By making small changes, like using goroutines, switching JSON libraries and reusing HTTP handlers.</description>
       <content:encoded><![CDATA[<h1 id="the-project">The project</h1>
 <p>I recently started working on a <em>cryptocurrency exchange aggregator</em>. Basically I send out requests to a bunch of different exchanges and compare rates. This has to be made as fast as possible.

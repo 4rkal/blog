@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Git on 4rkal</title>
-    <link>https://4rkal.com/tags/git/</link>
+    <link>http://localhost:1313/tags/git/</link>
     <description>Recent content in Git on 4rkal</description>
     <image>
-      <url>https://4rkal.com/4rkal.png</url>
-      <link>https://4rkal.com/4rkal.png</link>
+      <url>http://localhost:1313/4rkal.png</url>
+      <link>http://localhost:1313/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Aug 2024 19:21:15 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Aug 2024 19:21:15 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Selfhost your own gitea instance - selfhosted, lightweight github alternative</title>
-      <link>https://4rkal.com/posts/gitea/</link>
+      <link>http://localhost:1313/posts/gitea/</link>
       <pubDate>Mon, 19 Aug 2024 19:21:15 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/gitea/</guid>
+      <guid>http://localhost:1313/posts/gitea/</guid>
       <description>In this article I&amp;rsquo;ll walk you through how you can run your own gitea instance. But first
 What is gitea? Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.
 Why use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance because I wanted a private place to host my Obsidian notes.</description>
