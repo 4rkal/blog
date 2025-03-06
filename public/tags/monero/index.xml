@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Monero on 4rkal</title>
-    <link>https://4rkal.com/tags/monero/</link>
+    <link>http://localhost:1313/tags/monero/</link>
     <description>Recent content in Monero on 4rkal</description>
     <image>
-      <url>https://4rkal.com/4rkal.png</url>
-      <link>https://4rkal.com/4rkal.png</link>
+      <url>http://localhost:1313/4rkal.png</url>
+      <link>http://localhost:1313/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Mar 2023 20:23:16 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/monero/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Mar 2023 20:23:16 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/monero/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why Monero is the ultimate form of a cryptocurrency</title>
-      <link>https://4rkal.com/posts/whymonero/</link>
+      <link>http://localhost:1313/posts/whymonero/</link>
       <pubDate>Mon, 06 Mar 2023 20:23:16 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/whymonero/</guid>
+      <guid>http://localhost:1313/posts/whymonero/</guid>
       <description>In this article, I will tell you why Monero fits my views of what a cryptocurrency should look like.
 What is Monero? Monero is a decentralized cryptocurrency. It uses a public distributed ledger with privacy-enhancing technologies that obfuscate transactions to achieve anonymity and fungibility. Observers cannot decipher addresses trading Monero, transaction amounts, address balances, or transaction histories.
 Monero works like any other currency but with some privacy and decentralization innovations.</description>

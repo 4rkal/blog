@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Hugo on 4rkal</title>
-    <link>https://4rkal.com/tags/hugo/</link>
+    <link>http://localhost:1313/tags/hugo/</link>
     <description>Recent content in Hugo on 4rkal</description>
     <image>
-      <url>https://4rkal.com/4rkal.png</url>
-      <link>https://4rkal.com/4rkal.png</link>
+      <url>http://localhost:1313/4rkal.png</url>
+      <link>http://localhost:1313/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Aug 2024 17:15:57 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Aug 2024 17:15:57 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Obsidian &#43; Hugo blogging setup</title>
-      <link>https://4rkal.com/posts/obsidianhugo/</link>
+      <link>http://localhost:1313/posts/obsidianhugo/</link>
       <pubDate>Tue, 13 Aug 2024 17:15:57 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/obsidianhugo/</guid>
+      <guid>http://localhost:1313/posts/obsidianhugo/</guid>
       <description>In this post I go through how I have setup my Obsidian and Hugo blogging workflow. I use a single vault and auto publish my articles with hotkeys.</description>
       <content:encoded><![CDATA[<p>If you clicked on this article you probably know what Obsidian and Hugo are but if you don&rsquo;t here&rsquo;s a quick explanation:</p>
 <h3 id="obsidian">Obsidian</h3>

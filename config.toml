@@ -118,3 +118,10 @@ card = "summary_large_image"
 title = "{{ .Title }} - 4rkal's blog"
 description = "{{ .Params.description }}"
 image = "{{ .Params.images }}"
+
+[params.search]
+ enabled = true
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+

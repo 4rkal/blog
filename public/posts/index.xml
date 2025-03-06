@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on 4rkal</title>
-    <link>https://4rkal.com/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on 4rkal</description>
     <image>
-      <url>https://4rkal.com/4rkal.png</url>
-      <link>https://4rkal.com/4rkal.png</link>
+      <url>http://localhost:1313/4rkal.png</url>
+      <link>http://localhost:1313/4rkal.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Mar 2025 14:16:29 +0300</lastBuildDate><atom:link href="https://4rkal.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Mar 2025 14:16:29 +0300</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploying Go &#43; Templ &#43; HTMX &#43; TailwindCSS to production</title>
-      <link>https://4rkal.com/posts/deploy-go-htmx-templ-tailwind-to-production/</link>
+      <link>http://localhost:1313/posts/deploy-go-htmx-templ-tailwind-to-production/</link>
       <pubDate>Thu, 06 Mar 2025 14:16:29 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/deploy-go-htmx-templ-tailwind-to-production/</guid>
+      <guid>http://localhost:1313/posts/deploy-go-htmx-templ-tailwind-to-production/</guid>
       <description>In this article I will be showing you how to deploy the GoTTH stack (Go Templ htmx tailwind) to production.</description>
       <content:encoded><![CDATA[<p>I recently created my very own cryptocurrency exchange aggregator called <a href="htttps://cyphergoat.com">cyphergoat</a> it finds you the best rate to swap your crypto from different partnered exchanges.</p>
 <p>It has two parts:</p>
@@ -51,9 +51,9 @@ The web the website source code.</p>
 <pre tabindex="0"><code>npx @tailwindcss/cli -i ./static/styles.css -o ./static/tailwind.css --watch
 </code></pre><p>(assuming you have tailwind-cli installed)</p>
 <p>In my header.templ file (the header of all the pages) at the top I have</p>
-<pre tabindex="0"><code>&lt;link href=&#34;https://4rkal.com/static/tailwind.css&#34; rel=&#34;stylesheet&#34;&gt;
+<pre tabindex="0"><code>&lt;link href=&#34;http://localhost:1313/static/tailwind.css&#34; rel=&#34;stylesheet&#34;&gt;
 
-&lt;link href=&#34;https://4rkal.com/static/styles.css&#34; rel=&#34;stylesheet&#34;&gt;
+&lt;link href=&#34;http://localhost:1313/static/styles.css&#34; rel=&#34;stylesheet&#34;&gt;
 </code></pre><p>And the files are being served using echo&rsquo;s e.Static (in my main.go file )</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>(){
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
@@ -209,10 +209,10 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
     
     <item>
       <title>Simple Rate Limiting in Go (Gin)</title>
-      <link>https://4rkal.com/posts/go-rate-limit/</link>
+      <link>http://localhost:1313/posts/go-rate-limit/</link>
       <pubDate>Tue, 04 Mar 2025 19:15:40 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/go-rate-limit/</guid>
+      <guid>http://localhost:1313/posts/go-rate-limit/</guid>
       <description>In this article will be showing you how to setup rate limiting in the gin library in go.</description>
       <content:encoded><![CDATA[<p>While working on my <a href="https://cyphergoat.com">CypherGoat</a> project ,when exposing the API, I needed to setup some rate limiting to avoid getting spammed. Since my API uses Gin as its HTTP library, I used for the <code>limiter</code> package to handle the rate limiting.</p>
 <h2 id="setting-up-the-rate-limiting">Setting up the rate limiting</h2>
@@ -295,10 +295,10 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
     
     <item>
       <title>If Linux is so great why isn&#39;t everyone using it?</title>
-      <link>https://4rkal.com/posts/linux/</link>
+      <link>http://localhost:1313/posts/linux/</link>
       <pubDate>Sun, 13 Oct 2024 17:33:38 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/linux/</guid>
+      <guid>http://localhost:1313/posts/linux/</guid>
       <description>Curious why more people aren’t using Linux if it’s so awesome? This article breaks down what Linux is, why it&amp;#39;s great and how it secretly powers most of your favorite devices, from smartphones to servers.</description>
       <content:encoded><![CDATA[<h2 id="what-even-is-linux">What even is Linux?</h2>
 <p>Linux is a family of free and open source operating systems based on the <a href="https://kernel.org/">Linux kernel</a>.</p>
@@ -364,10 +364,10 @@ It also leads other systems such as mainframe computers, and is used on all of t
     
     <item>
       <title>How to build a URL shortener in Go</title>
-      <link>https://4rkal.com/posts/url-shortener-go/</link>
+      <link>http://localhost:1313/posts/url-shortener-go/</link>
       <pubDate>Sun, 22 Sep 2024 18:24:11 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/url-shortener-go/</guid>
+      <guid>http://localhost:1313/posts/url-shortener-go/</guid>
       <description>In this article will be showing you how to build a url shortener in go.</description>
       <content:encoded><![CDATA[<p>In this article I will be going through how to make a url shortener in go. The final result will look something like this <a href="https://app.4rkal.com">shortr</a>, <a href="https://github.com/4rkal/shortr">source code</a></p>
 <p>This is a great weekend project especially if you&rsquo;re new to go.</p>
@@ -526,7 +526,7 @@ It also leads other systems such as mainframe computers, and is used on all of t
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">IndexHandler</span>(<span style="color:#a6e22e">c</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">Context</span>) <span style="color:#66d9ef">error</span> {
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">html</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;h1&gt;Submit a new website&lt;/h1&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;form action=&#34;https://4rkal.com/submit&#34; method=&#34;POST&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;form action=&#34;http://localhost:1313/submit&#34; method=&#34;POST&#34;&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;label for=&#34;url&#34;&gt;Website URL:&lt;/label&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;input type=&#34;text&#34; id=&#34;url&#34; name=&#34;url&#34;&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;input type=&#34;submit&#34; value=&#34;Submit&#34;&gt;
@@ -535,7 +535,7 @@ It also leads other systems such as mainframe computers, and is used on all of t
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;ul&gt;`</span>
 </span></span><span style="display:flex;"><span>	
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">link</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">linkMap</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">html</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;li&gt;&lt;a href=&#34;https://4rkal.com/`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&#34;&gt;`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&lt;/a&gt;&lt;/li&gt;`</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">html</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;li&gt;&lt;a href=&#34;http://localhost:1313/`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&#34;&gt;`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&lt;/a&gt;&lt;/li&gt;`</span>
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">html</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;/ul&gt;`</span>
 </span></span><span style="display:flex;"><span>	
@@ -630,7 +630,7 @@ It also leads other systems such as mainframe computers, and is used on all of t
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">IndexHandler</span>(<span style="color:#a6e22e">c</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">Context</span>) <span style="color:#66d9ef">error</span> {
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">html</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;h1&gt;Submit a new website&lt;/h1&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;form action=&#34;https://4rkal.com/submit&#34; method=&#34;POST&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;form action=&#34;http://localhost:1313/submit&#34; method=&#34;POST&#34;&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;label for=&#34;url&#34;&gt;Website URL:&lt;/label&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;input type=&#34;text&#34; id=&#34;url&#34; name=&#34;url&#34;&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;input type=&#34;submit&#34; value=&#34;Submit&#34;&gt;
@@ -639,7 +639,7 @@ It also leads other systems such as mainframe computers, and is used on all of t
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		&lt;ul&gt;`</span>
 </span></span><span style="display:flex;"><span>	
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">link</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">linkMap</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">html</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;li&gt;&lt;a href=&#34;https://4rkal.com/`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&#34;&gt;`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&lt;/a&gt;&lt;/li&gt;`</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">html</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;li&gt;&lt;a href=&#34;http://localhost:1313/`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&#34;&gt;`</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">Id</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">`&lt;/a&gt;&lt;/li&gt;`</span>
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">html</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;/ul&gt;`</span>
 </span></span><span style="display:flex;"><span>	
@@ -705,10 +705,10 @@ It also leads other systems such as mainframe computers, and is used on all of t
     
     <item>
       <title>How to deploy django to production</title>
-      <link>https://4rkal.com/posts/django-prod/</link>
+      <link>http://localhost:1313/posts/django-prod/</link>
       <pubDate>Fri, 20 Sep 2024 11:54:29 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/django-prod/</guid>
+      <guid>http://localhost:1313/posts/django-prod/</guid>
       <description>In this article I will show you how to deploy django to production. We will be using nginx, gunicorn and cloudflare tunnels</description>
       <content:encoded><![CDATA[<p>I recently deployed my very own django application to production. The website is called <a href="https://videiro.com">videiro.com</a> and was developed in django + HTML/CSS/JS + Tailwind.</p>
 <h2 id="setup">Setup</h2>
@@ -879,10 +879,10 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
     
     <item>
       <title>How to setup a selfhosted newsletter using listmonk</title>
-      <link>https://4rkal.com/posts/listmonk/</link>
+      <link>http://localhost:1313/posts/listmonk/</link>
       <pubDate>Fri, 23 Aug 2024 11:19:17 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/listmonk/</guid>
+      <guid>http://localhost:1313/posts/listmonk/</guid>
       <description>Listmonk is an amazing feature packed selfhosted email newsletter manager. It offers loads of features like analytics (clicks, opens, bounces), templates, public subscription pages, importing subscribers and much more!</description>
       <content:encoded><![CDATA[<h2 id="what-is-listmonk">What is listmonk?</h2>
 <p><a href="https://listmonk.app">Listmonk</a> is a selfhosted newsletter and mailing list manager. It is free and opensource, so you have full control over your data. It also offers a super clean webui:</p>
@@ -1040,10 +1040,10 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
     
     <item>
       <title>Selfhost your own gitea instance - selfhosted, lightweight github alternative</title>
-      <link>https://4rkal.com/posts/gitea/</link>
+      <link>http://localhost:1313/posts/gitea/</link>
       <pubDate>Mon, 19 Aug 2024 19:21:15 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/gitea/</guid>
+      <guid>http://localhost:1313/posts/gitea/</guid>
       <description>In this article I&amp;rsquo;ll walk you through how you can run your own gitea instance. But first
 What is gitea? Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.
 Why use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance because I wanted a private place to host my Obsidian notes.</description>
@@ -1178,10 +1178,10 @@ Why use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance be
     
     <item>
       <title>How to Improve Go API request performance</title>
-      <link>https://4rkal.com/posts/goapi/</link>
+      <link>http://localhost:1313/posts/goapi/</link>
       <pubDate>Sat, 17 Aug 2024 12:25:15 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/goapi/</guid>
+      <guid>http://localhost:1313/posts/goapi/</guid>
       <description>In this post I&amp;#39;ll show you how I improved the performance of my go based cryptocurrency exchange aggregator. By making small changes, like using goroutines, switching JSON libraries and reusing HTTP handlers.</description>
       <content:encoded><![CDATA[<h1 id="the-project">The project</h1>
 <p>I recently started working on a <em>cryptocurrency exchange aggregator</em>. Basically I send out requests to a bunch of different exchanges and compare rates. This has to be made as fast as possible.
@@ -1252,10 +1252,10 @@ ok      apiSpeedImprove/httpReuse       4.010s
     
     <item>
       <title>My Obsidian &#43; Hugo blogging setup</title>
-      <link>https://4rkal.com/posts/obsidianhugo/</link>
+      <link>http://localhost:1313/posts/obsidianhugo/</link>
       <pubDate>Tue, 13 Aug 2024 17:15:57 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/obsidianhugo/</guid>
+      <guid>http://localhost:1313/posts/obsidianhugo/</guid>
       <description>In this post I go through how I have setup my Obsidian and Hugo blogging workflow. I use a single vault and auto publish my articles with hotkeys.</description>
       <content:encoded><![CDATA[<p>If you clicked on this article you probably know what Obsidian and Hugo are but if you don&rsquo;t here&rsquo;s a quick explanation:</p>
 <h3 id="obsidian">Obsidian</h3>
@@ -1405,10 +1405,10 @@ draft: true
     
     <item>
       <title>New look, new start</title>
-      <link>https://4rkal.com/posts/newlook/</link>
+      <link>http://localhost:1313/posts/newlook/</link>
       <pubDate>Sun, 11 Aug 2024 16:17:31 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/newlook/</guid>
+      <guid>http://localhost:1313/posts/newlook/</guid>
       <description>I recently switched from the hugo LoveIt theme to PaperModX . Why the switch? The LoveIt theme hasn&amp;rsquo;t been updated in 2+ years. PaperModX has a more modern look LoveIt doesn&amp;rsquo;t work that well with obsidian. The overall switch went pretty smoothly. You can see the changes I made in this commit.
 For anyone wondering this what the website used to look like
 More articles to come! The theme wasn&amp;rsquo;t the only change that I made.</description>
@@ -1432,10 +1432,10 @@ More articles to come! The theme wasn&amp;rsquo;t the only change that I made.</
     
     <item>
       <title>Ultimate Monero ColdStorage Guide (Feather X Anonero)</title>
-      <link>https://4rkal.com/posts/feathernero/</link>
+      <link>http://localhost:1313/posts/feathernero/</link>
       <pubDate>Thu, 14 Dec 2023 21:00:30 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/feathernero/</guid>
+      <guid>http://localhost:1313/posts/feathernero/</guid>
       <description>In this comprehensive guide, I will walk you through the process of easily setting up Monero cold storage using an old computer and your smartphone, using animated QR codes. No USB needed!</description>
       <content:encoded><![CDATA[<p>In this comprehensive guide, I will walk you through the process of easily setting up Monero cold storage using an old computer and your smartphone, using animated QR codes. No USB needed!</p>
 <h2 id="requirements">Requirements</h2>
@@ -1614,10 +1614,10 @@ On your phone:</p>
     
     <item>
       <title>Easy monero cold storage</title>
-      <link>https://4rkal.com/posts/coldstorage/</link>
+      <link>http://localhost:1313/posts/coldstorage/</link>
       <pubDate>Tue, 07 Nov 2023 18:03:15 +0200</pubDate>
       
-      <guid>https://4rkal.com/posts/coldstorage/</guid>
+      <guid>http://localhost:1313/posts/coldstorage/</guid>
       <description>In this article I will show you how to &amp;ldquo;easily&amp;rdquo; generate a live archlinux usb with the monero gui pre-installed.
 Requirements An archlinux install A usb Setup In this guide I will show you how to build a custom archlinux iso with monerogui installed. I will not be providing any pre-built images.
 The first thing you will have to do is install archuseriso. You can install it from the aur using this command:</description>
@@ -1700,10 +1700,10 @@ If you don&rsquo;t write down your seed and keep it in a secure place you will l
     
     <item>
       <title>SSH Remote Access NO Port-Forwarding NO Cloudflare</title>
-      <link>https://4rkal.com/posts/onionssh/</link>
+      <link>http://localhost:1313/posts/onionssh/</link>
       <pubDate>Wed, 04 Oct 2023 19:17:04 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/onionssh/</guid>
+      <guid>http://localhost:1313/posts/onionssh/</guid>
       <description>In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.
 Requirements: A computer &amp;ldquo;server&amp;rdquo; (running linux) A internet connection Another computer to connect to your server (running linux) Why? If you want to access your server without portforwarding in a extremely secure fashion you will want to follow this tutorial. You will be connecting to the server via tor which will make it harder for anyone to find the url of the server and ill show you how to setup keybased auth for even more security!</description>
       <content:encoded><![CDATA[<p>In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.</p>
@@ -1780,10 +1780,10 @@ HiddenServicePort 22 127.0.0.1:22
     
     <item>
       <title>How I setup this blog for free (domain, hosting, ssl) Complete Guide</title>
-      <link>https://4rkal.com/posts/thisblog/</link>
+      <link>http://localhost:1313/posts/thisblog/</link>
       <pubDate>Thu, 23 Mar 2023 18:13:03 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/thisblog/</guid>
+      <guid>http://localhost:1313/posts/thisblog/</guid>
       <description>In this article I’ll show you how I setup this blog completely for free. I’ll show you how to use hugo to write your blog, Cloudflare and eu.org for your domain and ssl, Render and github for the hosting and even how to get your blog on google.
 What is hugo? Hugo is a fast and popular open-source static site generator used for creating static websites without requiring a database or dynamic components.</description>
       <content:encoded><![CDATA[<p>In this article I’ll show you how I setup this blog completely for free. I’ll show you how to use hugo to write your blog, Cloudflare and eu.org for your domain and ssl, Render and github for the hosting and even how to get your blog on google.</p>
@@ -1974,10 +1974,10 @@ git branch -M main
     
     <item>
       <title>Python for Complete Beginners</title>
-      <link>https://4rkal.com/posts/python/</link>
+      <link>http://localhost:1313/posts/python/</link>
       <pubDate>Mon, 06 Mar 2023 20:52:42 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/python/</guid>
+      <guid>http://localhost:1313/posts/python/</guid>
       <description>Why you should use Python. Going over the basics of Python.
 In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&amp;rsquo;s start by explaining what coding is.
 What is coding? Coding means writing instructions for computers and a finished set of instructions is known as a program. Computer programs control everything from smartphones to space rockets.</description>
@@ -2201,10 +2201,10 @@ print(&#34;GG you found it&#34;)
     
     <item>
       <title>PocketBase self-hosted Firebase alternative</title>
-      <link>https://4rkal.com/posts/pocketbase/</link>
+      <link>http://localhost:1313/posts/pocketbase/</link>
       <pubDate>Mon, 06 Mar 2023 20:44:46 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/pocketbase/</guid>
+      <guid>http://localhost:1313/posts/pocketbase/</guid>
       <description>What is PocketBase PocketBase is an open source backend made in go consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.
 Install PocketBase The first thing that you will have to do is head to https://pocketbase.io and select the file for your operating system. Since I am using linux I will show how to set this up on linux but it should be pretty similar for any other os.</description>
       <content:encoded><![CDATA[<h1 id="what-is-pocketbase">What is PocketBase</h1>
@@ -2245,10 +2245,10 @@ Install PocketBase The first thing that you will have to do is head to https://p
     
     <item>
       <title>Why Monero is the ultimate form of a cryptocurrency</title>
-      <link>https://4rkal.com/posts/whymonero/</link>
+      <link>http://localhost:1313/posts/whymonero/</link>
       <pubDate>Mon, 06 Mar 2023 20:23:16 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/whymonero/</guid>
+      <guid>http://localhost:1313/posts/whymonero/</guid>
       <description>In this article, I will tell you why Monero fits my views of what a cryptocurrency should look like.
 What is Monero? Monero is a decentralized cryptocurrency. It uses a public distributed ledger with privacy-enhancing technologies that obfuscate transactions to achieve anonymity and fungibility. Observers cannot decipher addresses trading Monero, transaction amounts, address balances, or transaction histories.
 Monero works like any other currency but with some privacy and decentralization innovations.</description>
@@ -2278,10 +2278,10 @@ Monero works like any other currency but with some privacy and decentralization 
     
     <item>
       <title>Create a MultiBoot USB using ventoy</title>
-      <link>https://4rkal.com/posts/ventoy/</link>
+      <link>http://localhost:1313/posts/ventoy/</link>
       <pubDate>Mon, 06 Mar 2023 20:11:51 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/ventoy/</guid>
+      <guid>http://localhost:1313/posts/ventoy/</guid>
       <description>With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.
 Whats ventoy? Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .</description>
       <content:encoded><![CDATA[<p>With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.</p>
@@ -2343,10 +2343,10 @@ Whats ventoy? Ventoy is a free and open-source utility used for writing image fi
     
     <item>
       <title>Nmap(Network Mapper) For Beginners</title>
-      <link>https://4rkal.com/posts/nmap/</link>
+      <link>http://localhost:1313/posts/nmap/</link>
       <pubDate>Sun, 05 Mar 2023 17:37:03 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/nmap/</guid>
+      <guid>http://localhost:1313/posts/nmap/</guid>
       <description>Whether you want to scan your network for vulnerabilities or just want to see which ports you have open, nmap can be extremely useful.
 What is nmap Nmap (Network Mapper) is a network scanner created by Gordon Lyon . Nmap sends packets and examines the answers to find hosts and services on a computer network. For probing computer networks, Nmap offers a variety of functionalities, including host discovery, service detection, and operating system detection.</description>
       <content:encoded><![CDATA[<p>Whether you want to scan your network for vulnerabilities or just want to see which ports you have open, nmap can be extremely useful.</p>
@@ -2443,10 +2443,10 @@ OS details: Linux 2.6.32
     
     <item>
       <title>How Microsoft is monetizing the GitHub code base</title>
-      <link>https://4rkal.com/posts/githubmon/</link>
+      <link>http://localhost:1313/posts/githubmon/</link>
       <pubDate>Sun, 05 Mar 2023 17:21:56 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/githubmon/</guid>
+      <guid>http://localhost:1313/posts/githubmon/</guid>
       <description>Microsoft purchased GitHub in 2018, something many users are not aware of. After Microsoft’s acquisition of GitHub there have been many controversies like blocking private repositories and access to GitHub pages in certain countries and of course, GitHub Copilot.
 What is Github Copilot GitHub Copilot is an artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code.</description>
       <content:encoded><![CDATA[<p>Microsoft purchased GitHub in 2018, something many users are not aware of. After Microsoft’s acquisition of GitHub there have been many controversies like blocking private repositories and access to GitHub pages in certain countries and of course, GitHub Copilot.</p>
@@ -2504,10 +2504,10 @@ Read more:
     
     <item>
       <title>How to Set Up Your Own Git Server: A Simple Guide</title>
-      <link>https://4rkal.com/posts/git/</link>
+      <link>http://localhost:1313/posts/git/</link>
       <pubDate>Sun, 05 Mar 2023 17:11:40 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/git/</guid>
+      <guid>http://localhost:1313/posts/git/</guid>
       <description>Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you&amp;rsquo;ll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.
 What You’ll Need A Computer for Your Server: Ideally running Linux (Debian is a solid choice). Internet Connection: Pretty essential for accessing your server remotely. Another Computer with Git Installed: This is what you&amp;rsquo;ll use to interact with your server.</description>
       <content:encoded><![CDATA[<p>Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you&rsquo;ll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.</p>
@@ -2606,10 +2606,10 @@ What You’ll Need A Computer for Your Server: Ideally running Linux (Debian is 
     
     <item>
       <title>Host your own private search engine — searX</title>
-      <link>https://4rkal.com/posts/searx/</link>
+      <link>http://localhost:1313/posts/searx/</link>
       <pubDate>Fri, 03 Mar 2023 23:21:53 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/searx/</guid>
+      <guid>http://localhost:1313/posts/searx/</guid>
       <description>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
 What is searX? Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users.</description>
       <content:encoded><![CDATA[<p>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.</p>
@@ -2681,10 +2681,10 @@ Now if you head to 127.0.0.1:8888 you should be able to see something like this
     
     <item>
       <title>Become anonymous and somewhat untraceable with tails os</title>
-      <link>https://4rkal.com/posts/tails/</link>
+      <link>http://localhost:1313/posts/tails/</link>
       <pubDate>Fri, 03 Mar 2023 23:03:40 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/tails/</guid>
+      <guid>http://localhost:1313/posts/tails/</guid>
       <description>In this article we will talk about what tails is and how to install and more.
 What is tails? Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</description>
       <content:encoded><![CDATA[<p>In this article we will talk about what tails is and how to install and more.</p>
@@ -2740,10 +2740,10 @@ After you have clicked on the windows logo you should be prompted with the requi
     
     <item>
       <title>Get ad free web with Pi-hole</title>
-      <link>https://4rkal.com/posts/pihole/</link>
+      <link>http://localhost:1313/posts/pihole/</link>
       <pubDate>Sat, 25 Feb 2023 21:17:13 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/pihole/</guid>
+      <guid>http://localhost:1313/posts/pihole/</guid>
       <description>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&amp;rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.
 What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine.</description>
       <content:encoded><![CDATA[<p>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.</p>
@@ -2837,10 +2837,10 @@ What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tra
     
     <item>
       <title>Securing ssh with Key-Based authentication</title>
-      <link>https://4rkal.com/posts/sssh/</link>
+      <link>http://localhost:1313/posts/sssh/</link>
       <pubDate>Sat, 25 Feb 2023 21:08:47 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/sssh/</guid>
+      <guid>http://localhost:1313/posts/sssh/</guid>
       <description>SSH keys provide an extremely secure way of logging into your server.
 SSH Password Based VS Key Based Authentication Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts.</description>
       <content:encoded><![CDATA[<p>SSH keys provide an extremely secure way of logging into your server.</p>
@@ -2893,10 +2893,10 @@ Enter passphrase (empty for no passphrase):
     
     <item>
       <title>Setup a tor website (hidden service)</title>
-      <link>https://4rkal.com/posts/torhs/</link>
+      <link>http://localhost:1313/posts/torhs/</link>
       <pubDate>Sat, 25 Feb 2023 20:56:02 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/torhs/</guid>
+      <guid>http://localhost:1313/posts/torhs/</guid>
       <description>In this article i will be showing you how to host your “dark web” aka Tor website for free.
 What is Tor? Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</description>
       <content:encoded><![CDATA[<p>In this article i will be showing you how to host your “dark web” aka Tor website for free.</p>
@@ -2936,7 +2936,7 @@ What is Tor? Tor — short for the Onion Routing project — is an open-source p
 <p>Now open your tor browser and paste your address and press enter.</p>
 <p>You will most probably be greeted by the default nginx site.</p>
 <p>This page is easily customized, you can check out my article:
-<a href="https://4rkal.com/posts/shwebsite/">here</a></p>
+<a href="http://localhost:1313/posts/shwebsite/">here</a></p>
 <p>GG you did it you are now running a pretty anonymous website on the tor network.</p>
 <p>*<strong>If you enjoyed this article consider <a href="../../donate">supporting me</a></strong></p>
 ]]></content:encoded>
@@ -2944,10 +2944,10 @@ What is Tor? Tor — short for the Onion Routing project — is an open-source p
     
     <item>
       <title>The importance of open source software</title>
-      <link>https://4rkal.com/posts/opensource/</link>
+      <link>http://localhost:1313/posts/opensource/</link>
       <pubDate>Sat, 25 Feb 2023 20:43:23 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/opensource/</guid>
+      <guid>http://localhost:1313/posts/opensource/</guid>
       <description>As the linuxfoundation states about 95% of cloud providers run kubernetes which is an open sourced solution, the Apache Web server powers millions of websites including netflix.com, spotify.com and more. Most of the Internets core functions are based on open source technology. But what is it and why is it so important?
 What is open sourced software? Open-source software is computer software that is distributed under a license that allows users to use, study, modify and distribute the program and its source code to anyone and for any purpose.</description>
       <content:encoded><![CDATA[<p>As the linuxfoundation states about 95% of cloud providers run kubernetes which is an open sourced solution, the Apache Web server powers millions of websites including netflix.com, spotify.com and more. Most of the Internets core functions are based on open source technology. But what is it and why is it so important?</p>
@@ -2987,10 +2987,10 @@ Linus Torvalds</p>
     
     <item>
       <title>Self host your own website</title>
-      <link>https://4rkal.com/posts/shwebsite/</link>
+      <link>http://localhost:1313/posts/shwebsite/</link>
       <pubDate>Sat, 25 Feb 2023 20:23:16 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/shwebsite/</guid>
+      <guid>http://localhost:1313/posts/shwebsite/</guid>
       <description>In this article i will show you how to self host your own website securely.
 Requirements A computer or microcomputer to host the website The computer needs to run linux An internet connection (Its pretty hard without one, trust me) Lets get started!
 Installation The first thing that we will have to do is setup our nginx site.
@@ -3086,10 +3086,10 @@ make install
     
     <item>
       <title>Raspberry pi security camera</title>
-      <link>https://4rkal.com/posts/rpicamera/</link>
+      <link>http://localhost:1313/posts/rpicamera/</link>
       <pubDate>Sat, 25 Feb 2023 20:03:25 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/rpicamera/</guid>
+      <guid>http://localhost:1313/posts/rpicamera/</guid>
       <description>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.
 Requirements Raspberry pi or any other computer Web cam Any kind of debian based distro installed on the pi/computer Setup In this article we will be using the motion package (https://motion-project.github.io/)
 To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard.</description>
@@ -3132,10 +3132,10 @@ This will enable us to access the stream from other computers.</p>
     
     <item>
       <title>How SSH works</title>
-      <link>https://4rkal.com/posts/howsshworks/</link>
+      <link>http://localhost:1313/posts/howsshworks/</link>
       <pubDate>Sat, 25 Feb 2023 19:36:25 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/howsshworks/</guid>
+      <guid>http://localhost:1313/posts/howsshworks/</guid>
       <description>If you work in the IT industry, you’ve undoubtedly heard of ssh. But how does it work?
 SSH (secure shell) is a network protocol that allows two computers to connect securely over the internet. SSH uses encryption to prevent hackers from reading data sent between two connected devices.
 SSH is divided into three layers:
@@ -3194,10 +3194,10 @@ There are different ciphers that can be used for SSH depending on the applicatio
     
     <item>
       <title>Automating your web browser with selenium</title>
-      <link>https://4rkal.com/posts/selenium/</link>
+      <link>http://localhost:1313/posts/selenium/</link>
       <pubDate>Wed, 22 Feb 2023 21:23:38 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/selenium/</guid>
+      <guid>http://localhost:1313/posts/selenium/</guid>
       <description>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.
 In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.com/posts/python/)
 What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation.</description>
@@ -3330,10 +3330,10 @@ Read more about selenium here: <a href="https://selenium-python.readthedocs.io/"
     
     <item>
       <title>Why computers can’t represent 0.3 accurately</title>
-      <link>https://4rkal.com/posts/zeropointthree/</link>
+      <link>http://localhost:1313/posts/zeropointthree/</link>
       <pubDate>Tue, 21 Feb 2023 19:27:44 +0300</pubDate>
       
-      <guid>https://4rkal.com/posts/zeropointthree/</guid>
+      <guid>http://localhost:1313/posts/zeropointthree/</guid>
       <description>Most people know that adding up 0.1 + 0.2 equals 0.3. However computers represent it as 0.30000000000000004 .
 Here is a screenshot of it in python3 Your first thought might be that this is just some kind of error. Well its not
 Why does this happen? Fractions can be represented precisely in the base 10 system (used by humans) if a prime factor of the base is used (10).
