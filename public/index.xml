@@ -2282,11 +2282,10 @@ Monero works like any other currency but with some privacy and decentralization 
       <pubDate>Mon, 06 Mar 2023 20:11:51 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/ventoy/</guid>
-      <description>With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.
-Whats ventoy? Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .</description>
-      <content:encoded><![CDATA[<p>With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.</p>
-<h2 id="whats-ventoy">Whats ventoy?</h2>
+      <description>Whats ventoy? Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .iso to the USB drive and boot from them directly.</description>
+      <content:encoded><![CDATA[<h2 id="whats-ventoy">Whats ventoy?</h2>
 <p>Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .iso to the USB drive and boot from them directly. Ventoy will present the user with a boot menu to select one of these files.</p>
+<p>With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.</p>
 <h2 id="requirements">Requirements</h2>
 <ol>
 <li>a computer</li>
