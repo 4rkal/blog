@@ -9,7 +9,7 @@ tags:
   - cyphergoat
   - linux
 ---
-I recently created my very own cryptocurrency exchange aggregator called [cyphergoat](htttps://cyphergoat.com) it finds you the best rate to swap your crypto from different partnered exchanges. 
+I recently created my very own cryptocurrency exchange aggregator called [cyphergoat](https://cyphergoat.com) it finds you the best rate to swap your crypto from different partnered exchanges. 
 
 It has two parts:
 1. An API that interacts with exchanges. Written in go and uses gin

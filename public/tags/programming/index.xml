@@ -18,7 +18,7 @@
       
       <guid>https://4rkal.com/posts/deploy-go-htmx-templ-tailwind-to-production/</guid>
       <description>In this article I will be showing you how to deploy the GoTTH stack (Go Templ htmx tailwind) to production.</description>
-      <content:encoded><![CDATA[<p>I recently created my very own cryptocurrency exchange aggregator called <a href="htttps://cyphergoat.com">cyphergoat</a> it finds you the best rate to swap your crypto from different partnered exchanges.</p>
+      <content:encoded><![CDATA[<p>I recently created my very own cryptocurrency exchange aggregator called <a href="https://cyphergoat.com">cyphergoat</a> it finds you the best rate to swap your crypto from different partnered exchanges.</p>
 <p>It has two parts:</p>
 <ol>
 <li>An API that interacts with exchanges. Written in go and uses gin</li>
