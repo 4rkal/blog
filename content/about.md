@@ -17,7 +17,7 @@ Here’s what I'm currently working on:
 1. **[This Blog](.)** - Continuously updating with new content.
 2. **[CypherGoat](https://cyphergoat.com?utm_source=4rkal.com)**- A cryptocurrency instant swap aggregator.
 3. **[Videiro](https://videiro.com)** - Free video editor portfolio platform
-4. [Videiro Recruitment](hire.videiro.com) - Video editor requirement website.
+4. [Videiro Recruitment](https://hire.videiro.com) - Video editor requirement website.
 
 ## Get in Touch
 
