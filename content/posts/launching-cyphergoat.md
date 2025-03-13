@@ -1,5 +1,5 @@
 ---
-title: Introducing CypherGoat - The frist open source crypto exchange aggregator
+title: Introducing CypherGoat - The first open source crypto exchange aggregator
 description: Swap your crypto at the best rate on the market. Fast, Private, Open source!
 date: 2025-03-12T18:32:54+03:00
 draft: false
