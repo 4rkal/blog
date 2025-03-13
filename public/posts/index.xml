@@ -10,7 +10,40 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Mar 2025 14:16:29 +0300</lastBuildDate><atom:link href="https://4rkal.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Mar 2025 18:32:54 +0300</lastBuildDate><atom:link href="https://4rkal.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing CypherGoat</title>
+      <link>https://4rkal.com/posts/launching-cyphergoat/</link>
+      <pubDate>Wed, 12 Mar 2025 18:32:54 +0300</pubDate>
+      
+      <guid>https://4rkal.com/posts/launching-cyphergoat/</guid>
+      <description>Swap your crypto at the best rate on the market. Fast, Private, Open source!</description>
+      <content:encoded><![CDATA[<h2 id="why-i-built-cyphergoat">Why I built CypherGoat</h2>
+<p>Ever since I first got into crypto I have been building products to make using crypto easier. In early 2022 I co-founded <a href="https://dsc.gg/rubytrades">RubyTrades</a> a (kind of p2p) non kyc fiat on ramp that allowed users to buy and sell crypto using PayPal. Although it was not as successful as we had hoped it still gained some traction and I learned a lot from it.
+After that I got interested in Monero. I built <a href="https://github.com/4rkal/moneroos">MoneroOS</a> a plug and play live operating system that mine monero on boot. I also built <a href="https://github.com/4rkal/MoneroNodeMonitor">MoneroNodeMonitor</a> and some other projects.</p>
+<p>I was always fascinated by cross-chain on chain swaps (like rubic.exchange), so I decided to build something similar, <em>but better</em>.</p>
+<h2 id="what-is-cyphergoat">What is CypherGoat?</h2>
+<p>It is a <strong>crypto swap aggregator</strong> it automatically finds the <strong>best exchange rates</strong> from our partnered exchange at no extra cost. You can then perform the swap on that exchange, without ever leaving our website!</p>
+<h3 id="why-its-cool">Why it&rsquo;s cool</h3>
+<ul>
+<li><strong>KYC-Free</strong> – No personal verification required.</li>
+<li><strong>Non-Custodial</strong> – Direct to wallet trading (on chain swaps)</li>
+<li><strong>Open Source</strong> – Our web UI is open-source.</li>
+<li><strong>User-Friendly for Everyone</strong> – Unlike other aggregators with complex interfaces, CypherGoat offers a clean and simple UI, perfect for both beginners and advanced users.</li>
+<li><strong>Fast &amp; Seamless</strong> – Just pick your tokens, swap, and receive.</li>
+</ul>
+<h2 id="how-it-works">How it works</h2>
+<p>Using CypherGoat is ridiculously simple:</p>
+<ol>
+<li><strong>Choose your tokens</strong> – Select the crypto you want to send the one you want to receive and that the amount you want to swap.</li>
+<li><strong>Get the Best Rate</strong> – CypherGoat &ldquo;scans&rdquo; exchanges and finds the best deal for you.</li>
+<li><strong>Swap &amp; Receive</strong> – Confirm the trade, enter your address, send your funds, and get your swapped crypto in your wallet.</li>
+</ol>
+<h2 id="final-thoughts">Final thoughts</h2>
+<p>Crypto swapping shouldn’t be complicated, and I truly believe CypherGoat makes it easier. If you have thoughts, suggestions, or just want to chat about crypto, let’s connect! You can find me and the growing CypherGoat community on <a href="https://t.me/cyphergoatcom">Telegram</a> and <a href="https://x.com/cyphergoatcom">Twitter</a> .</p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Deploying Go &#43; Templ &#43; HTMX &#43; TailwindCSS to production</title>
       <link>https://4rkal.com/posts/deploy-go-htmx-templ-tailwind-to-production/</link>
