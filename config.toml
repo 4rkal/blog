@@ -1,6 +1,6 @@
 baseURL = "https://4rkal.com/"
 languageCode = "en-us"
-title = "4rkal"
+title = "4rkal's Dev Blog"
 theme = "PaperModX"
 languageName = "English"
 paginate = 8
@@ -22,6 +22,7 @@ ShowShareButtons = true
 ShowCodeCopyButtons = true
 defaultTheme = "dark"
 canonicalURL = "{{ .Permalink }}"
+author="4rkal"
 
 # Header settings
 [params.header]
