@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "4rkal's Dev Blog"
 theme = "PaperModX"
 languageName = "English"
-paginate = 8
+paginate = 100
 enableRobotsTXT = true
 defaultTheme = "dark"
 
