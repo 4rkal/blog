@@ -28,4 +28,3 @@ You can reach me on various platforms:
 - **Shitposting Email:** `4rkal [at] horsefucker [dot] org`
 - **Signal:** `4rkal.69` ([Link](https://signal.me/#eu/yLATcXczmtO-VimtMwpkJQKJSeyNppqP_H-742eUxPL1TLezxCxMSqZJR2QD4lqY))
 - **Matrix:** `4rkal:monero.social`
-- **Session:** `053a1d66ce897ff32b87a4ab4232529f47b734971308d61984fc84b16fec87a519`

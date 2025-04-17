@@ -10,7 +10,71 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Mar 2025 18:32:54 +0300</lastBuildDate><atom:link href="https://4rkal.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Apr 2025 17:43:47 +0300</lastBuildDate><atom:link href="https://4rkal.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prevent newsletter signup spam</title>
+      <link>https://4rkal.com/posts/newsletter-spam/</link>
+      <pubDate>Thu, 17 Apr 2025 17:43:47 +0300</pubDate>
+      
+      <guid>https://4rkal.com/posts/newsletter-spam/</guid>
+      <description>Got spammed with fake newsletter signups? Learn how to protect your forms using double opt-in, CAPTCHA, and Cloudflare.</description>
+      <content:encoded><![CDATA[<h2 id="backstory">Backstory</h2>
+<p>I woke up to 200 new subscribers on the newsletter of my site <a href="https;//videiro.com">videiro.com</a>, had it finally happened? Did my site finally go viral?</p>
+<p>Sadly no. After checking the new subscribers I noticed that none had verified their email addresses, not even one, that&rsquo;s definitely not a confidence.</p>
+<p>After some quick research I understood that I had indeed been spammed. But all the emails look legit. Here are some examples:</p>
+<pre tabindex="0"><code>kathyolynn@yahoo.com
+lukeckins@gmail.com
+dispatch@gonealinc.com
+doug_fern@hotmail.com
+</code></pre><p>After some initial research (entering the emails into <a href="https://haveibeenpwned.com/">haveibeenpwned</a>) it looks like most of these email addresses have been in some kind of hack or breach.</p>
+<p>So what was happening? How can I prevent it in the future?</p>
+<p>Someone, decided to use compromised email addresses to spam my form. Either to pollute my newsletter, to see how far they could go or just because they can?</p>
+<h2 id="what-i-learned">What I learned</h2>
+<p>When making anything publicly available on the internet, there will be spammers, there will be bots and there will be people trying to hack it. That is why you should always be making it as secure as possible.</p>
+<p>It turns out that this kind of spam attack is more common that you think (especially since my <a href="https://newsletter.4rkal.com">blog&rsquo;s newsletter</a> also got spammed a couple weeks later). Bots crawl the web and look for forms, usually newsletter or contact forms and then start submitting &ldquo;leaked&rdquo; email addresses.</p>
+<p>But why?
+Here are some reasons I came up with:</p>
+<ul>
+<li>To pollute your email list (if this is a personal attack, which I don&rsquo;t think it is in this case)</li>
+<li>To test the validity of the emails??</li>
+<li>To annoy the leaked email addresses owners by having them subscribed to thousands of newsletters</li>
+<li>To annoy the website owner (me)</li>
+</ul>
+<h2 id="how-i-fixed-it">How I fixed it</h2>
+<p>I have a couple solutions to this problem.</p>
+<h3 id="step-1-enable-double-opt-in">Step 1: Enable Double Opt-in</h3>
+<p>The fist and most important step is to make sure that all your newsletters are &lsquo;double opt-in&rsquo; meaning that the user has to confirm their email address before getting subscribed</p>
+<p>On listmonk (the newsletter software I am using) make sure that the list that you are subscribing your users to is <code>double opt in</code></p>
+<p>This means that even if your form gets spammed you can just remove all the addresses that haven&rsquo;t verified their email (after a couple of days/weeks).</p>
+<p>Want to learn how to set up your own self-hosted newsletter with Listmonk?<br>
+Check out my guide: <a href="https://4rkal.com/posts/listmonk/">How to set up a self-hosted newsletter using Listmonk</a></p>
+<h3 id="step-2-add-captcha-or-cloudflare-js-challenge">Step 2: Add Captcha or Cloudflare JS challenge</h3>
+<p>The second step I took was to enable some sort of catcha. Initially I setup an hcaptcha via listmonk. But I don&rsquo;t think that is the best solution as it&rsquo;s kind of annoying. I am however using it for the <a href="https://videiro.com">videiro.com</a> newsletter.
+If your interested in how to do it here how:</p>
+<ol>
+<li>Open the listmonk web-ui</li>
+<li>Go to settings</li>
+<li>Under <code>Security</code>, enable captcha and enter an hCaptcha.com API key (you will first have to signup at <a href="https://hcaptcha.com">hcaptcha.com</a>)</li>
+</ol>
+<p>However with this setup if you are using custom forms (like the email subscription form bellow) the submission process will be kind of broken.</p>
+<p>So instead what I came up with and I am currently using on 4rkal.com newsletter is to use cloudflare JS Challenge on a specific subdomain.</p>
+<p>The way that I have setup my email newsletter is that I have listmonk running on <code>newsletter.4rkal.com</code>, a seperate subdomain.</p>
+<p>This means that I can set that specific subdomain as &ldquo;under attack&rdquo; on cloudflare and prompt users to sometimes complete a catcha.</p>
+<p>To do this:</p>
+<ol>
+<li>Head to cloudflare.com</li>
+<li>Login and head to the dashboard of your specific domain</li>
+<li>Under <code>Security</code> select <code>WAF</code></li>
+<li>Then click on <code>Create rule</code></li>
+<li>Give it any name</li>
+<li>Under <code>Field</code> select <code>hostname</code> and under <code>Operator</code> select <code>wildcard</code>, in <code>Value</code> enter the subdomain, in my case that&rsquo;s <code>newsletter.4rkal.com</code>. The expression should look like this <code>(http.host wildcard &quot;newsletter.4rkal.com&quot;)</code></li>
+<li>Under <code>Choose action</code> select <code>JS Challenge</code></li>
+<li>Click on <code>Save</code>
+And that&rsquo;s about it</li>
+</ol>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Introducing CypherGoat - The first open source crypto exchange aggregator</title>
       <link>https://4rkal.com/posts/launching-cyphergoat/</link>
