@@ -10,7 +10,87 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Aug 2024 11:19:17 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://4rkal.com/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Someone tried to steal €2k from me on a P2P crypto trade. It didn&#39;t work.</title>
+      <link>https://4rkal.com/posts/p2p-2k/</link>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://4rkal.com/posts/p2p-2k/</guid>
+      <description>&lt;p&gt;Yesterday I got scammed on a P2P crypto trade. Or at least someone tried to. Here&amp;rsquo;s what happened and how I managed to get Revolut to side with me.&lt;/p&gt;
+&lt;h2 id=&#34;what-happened&#34;&gt;What happened&lt;/h2&gt;
+&lt;p&gt;I took a sell order on &lt;a href=&#34;https://robosats.com&#34;&gt;RoboSats&lt;/a&gt; for 3,110,649 sats (~0.031 BTC) in exchange for €2,100 EUR via Revolut. The buyer had listed the order, I took it, the trade went through normally, I confirmed the Revolut payment and released the Bitcoin.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Yesterday I got scammed on a P2P crypto trade. Or at least someone tried to. Here&rsquo;s what happened and how I managed to get Revolut to side with me.</p>
+<h2 id="what-happened">What happened</h2>
+<p>I took a sell order on <a href="https://robosats.com">RoboSats</a> for 3,110,649 sats (~0.031 BTC) in exchange for €2,100 EUR via Revolut. The buyer had listed the order, I took it, the trade went through normally, I confirmed the Revolut payment and released the Bitcoin.</p>
+<p>A few hours later I got a Revolut notification: &ldquo;Verify your transaction.&rdquo; The buyer had filed a recall request on the €2,100 payment. Revolut froze my account pending review.</p>
+<p>Classic P2P chargeback fraud. The buyer received the Bitcoin and then tried to claw back the fiat.</p>
+<h2 id="what-i-did">What I did</h2>
+<p>The first thing I did was move my Revolut balance out before the account got fully restricted (this was mostly done by accident but still). That turned out to be the right call Revolut can only chase your Revolut balance, not money that&rsquo;s already elsewhere.</p>
+<p>Then I went through Revolut&rsquo;s dispute flow. They asked for:</p>
+<ul>
+<li>Evidence of communication with the payer</li>
+<li>Evidence of the source of funds (cryptocurrency)</li>
+<li>A description of the payment</li>
+</ul>
+<p>The problem is RoboSats uses an ephemeral encrypted in-app chat. I had no screenshots of the conversation. Most people at this point would have almost nothing to submit.</p>
+<h2 id="the-evidence-package">The evidence package</h2>
+<p>What saved me was the RoboSats trade contract JSON file. After every completed trade, RoboSats generates a contract file you can download. Mine contained:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coordinator&#34;</span>: <span style="color:#e6db74">&#34;Over the Moon&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;order_id&#34;</span>: ,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;currency&#34;</span>: <span style="color:#e6db74">&#34;EUR&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;maker&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sent_fiat&#34;</span>: <span style="color:#ae81ff">2100</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;payment_hash&#34;</span>: <span style="color:#e6db74">&#34;33af4009cfdb4cdace...&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;preimage&#34;</span>: <span style="color:#e6db74">&#34;51f63c31b7eb8c479a...&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;taker&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sent_sats&#34;</span>: <span style="color:#ae81ff">3110649</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;received_fiat&#34;</span>: <span style="color:#ae81ff">2100</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>preimage</code> is cryptographic proof the Lightning payment settled. It can only be revealed upon successful payment completion — it&rsquo;s mathematically impossible to fake.</p>
+<p>I put together a PDF declaration with:</p>
+<ul>
+<li>Full trade details (order ID, amounts, dates)</li>
+<li>The escrow note verbatim (which explicitly named the order ID and trade amount)</li>
+<li>The payment hash and preimage</li>
+<li>An explanation of how RoboSats escrow works</li>
+<li>A signed declaration that the payment was legitimate consideration for Bitcoin delivered</li>
+</ul>
+<p>I uploaded that PDF, a screenshot from my lightning wallet, a screenshot from robosats of the trade and a screenshot of the JSON contract to Revolut&rsquo;s evidence form. Revolut accepted the dispute within a few hours</p>
+<p>I can&rsquo;t know exactly what tipped it, but the evidence package was as strong as I could make it given the circumstances.</p>
+<h3 id="template">Template</h3>
+<p>If this ever happens to you, I&rsquo;ve put together a ready-to-use PDF template, an exact copy of what I submitted. All the sections are pre-structured, you just fill in your trade details, paste in your payment hash and preimage from the JSON contract, sign it and upload it to your bank&rsquo;s dispute form.</p>
+<p><strong><a href="/robosats_dispute_template.pdf">Download the dispute template PDF here</a></strong></p>
+<p>Fields to fill in are clearly marked. The document covers:</p>
+<ul>
+<li>Party details (your name, buyer&rsquo;s name, payment tags)</li>
+<li>Full trade details (order ID, amounts, dates, payment method)</li>
+<li>Lightning escrow evidence (escrow note verbatim, amounts, fees)</li>
+<li>Cryptographic proof section (payment hash, preimage, contract timestamp)</li>
+<li>How RoboSats escrow works — explained for non-technical reviewers</li>
+<li>Signed declaration</li>
+</ul>
+<p>The most important fields are the <code>payment_hash</code> and <code>preimage</code> from your RoboSats JSON contract. Download that contract file before you close the order — it expires.</p>
+<h2 id="result">Result</h2>
+<p>Account unfrozen, €2,100 stays mine.</p>
+<h2 id="lessons">Lessons</h2>
+<p>A few things I&rsquo;ll do differently going forward:</p>
+<ul>
+<li><strong>Use SEPA/bank transfer instead of Revolut.</strong> Revolut payments can be recalled. SEPA Instant is much harder to reverse.</li>
+<li><strong>Always download the trade contract JSON</strong> before closing the RoboSats order. It takes one second and is your strongest evidence if something goes wrong.</li>
+<li><strong>Screenshot the in-trade chat</strong> before the trade closes. Even a single message showing the buyer agreed to the terms helps enormously.</li>
+<li><strong>Move funds out of Revolut</strong> before going through a dispute flow if you think it might go against you.</li>
+</ul>
+<p>Whatever ultimately swayed Revolut, having thorough documentation clearly didn&rsquo;t hurt. Most people submitting to these dispute flows have very little — putting together a proper evidence package at minimum gives you a fighting chance.</p>
+<hr>
+<h2 id="avoiding-p2p-altogether">Avoiding P2P altogether</h2>
+<p>If you&rsquo;re looking to avoid the P2P route entirely, I built <a href="https://cyphergoat.com">CypherGoat</a> — a non-custodial swap aggregator that compares rates across 20+ exchanges. It doesn&rsquo;t handle fiat, but for crypto-to-crypto swaps it&rsquo;s solid: no counterparty risk, funds go straight to your wallet.</p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>How to setup a selfhosted newsletter using listmonk</title>
       <link>https://4rkal.com/posts/listmonk/</link>
@@ -178,8 +258,10 @@
       <pubDate>Mon, 06 Mar 2023 20:44:46 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/pocketbase/</guid>
-      <description>What is PocketBase PocketBase is an open source backend made in go consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.
-Install PocketBase The first thing that you will have to do is head to https://pocketbase.io and select the file for your operating system. Since I am using linux I will show how to set this up on linux but it should be pretty similar for any other os.</description>
+      <description>&lt;h1 id=&#34;what-is-pocketbase&#34;&gt;What is PocketBase&lt;/h1&gt;
+&lt;p&gt;PocketBase is an open source backend made in go consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.&lt;/p&gt;
+&lt;h2 id=&#34;install-pocketbase&#34;&gt;Install PocketBase&lt;/h2&gt;
+&lt;p&gt;The first thing that you will have to do is head to &lt;a href=&#34;https://pocketbase.io&#34;&gt;https://pocketbase.io&lt;/a&gt; and select the file for your operating system. Since I am using linux I will show how to set this up on linux but it should be pretty similar for any other os.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h1 id="what-is-pocketbase">What is PocketBase</h1>
 <p>PocketBase is an open source backend made in go consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.</p>
 <h2 id="install-pocketbase">Install PocketBase</h2>
@@ -222,8 +304,9 @@ Install PocketBase The first thing that you will have to do is head to https://p
       <pubDate>Sun, 05 Mar 2023 17:21:56 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/githubmon/</guid>
-      <description>Microsoft purchased GitHub in 2018, something many users are not aware of. After Microsoft’s acquisition of GitHub there have been many controversies like blocking private repositories and access to GitHub pages in certain countries and of course, GitHub Copilot.
-What is Github Copilot GitHub Copilot is an artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code.</description>
+      <description>&lt;p&gt;Microsoft purchased GitHub in 2018, something many users are not aware of. After Microsoft’s acquisition of GitHub there have been many controversies like blocking private repositories and access to GitHub pages in certain countries and of course, GitHub Copilot.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-github-copilot&#34;&gt;What is Github Copilot&lt;/h1&gt;
+&lt;p&gt;GitHub Copilot is an artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code. Currently available by subscription to individual developers, the tool was first announced by GitHub on 29 June 2021, and works best for users coding in Python, JavaScript, TypeScript, Ruby, and Go.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Microsoft purchased GitHub in 2018, something many users are not aware of. After Microsoft’s acquisition of GitHub there have been many controversies like blocking private repositories and access to GitHub pages in certain countries and of course, GitHub Copilot.</p>
 <h1 id="what-is-github-copilot">What is Github Copilot</h1>
 <p>GitHub Copilot is an artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code. Currently available by subscription to individual developers, the tool was first announced by GitHub on 29 June 2021, and works best for users coding in Python, JavaScript, TypeScript, Ruby, and Go.</p>
@@ -283,8 +366,9 @@ Read more:
       <pubDate>Fri, 03 Mar 2023 23:21:53 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/searx/</guid>
-      <description>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
-What is searX? Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users.</description>
+      <description>&lt;p&gt;We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-searx&#34;&gt;What is searX?&lt;/h2&gt;
+&lt;p&gt;Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users. In order to do this, Searx does not provide the search engines from which it receives results with users’ IP addresses or search histories. Tracking cookies served by the search engines are blocked, preventing user-profiling-based results modification.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.</p>
 <h2 id="what-is-searx">What is searX?</h2>
 <p>Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users. In order to do this, Searx does not provide the search engines from which it receives results with users’ IP addresses or search histories. Tracking cookies served by the search engines are blocked, preventing user-profiling-based results modification.</p>
@@ -358,8 +442,9 @@ Now if you head to 127.0.0.1:8888 you should be able to see something like this
       <pubDate>Fri, 03 Mar 2023 23:03:40 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/tails/</guid>
-      <description>In this article we will talk about what tails is and how to install and more.
-What is tails? Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</description>
+      <description>&lt;p&gt;In this article we will talk about what tails is and how to install and more.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-tails&#34;&gt;What is tails?&lt;/h1&gt;
+&lt;p&gt;Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article we will talk about what tails is and how to install and more.</p>
 <h1 id="what-is-tails">What is tails?</h1>
 <p>Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</p>

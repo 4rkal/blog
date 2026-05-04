@@ -10,13 +10,53 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Mar 2025 18:32:54 +0300</lastBuildDate><atom:link href="https://4rkal.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://4rkal.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bitcoin</title>
+      <link>https://4rkal.com/tags/bitcoin/</link>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://4rkal.com/tags/bitcoin/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
     <item>
       <title>Crypto</title>
       <link>https://4rkal.com/tags/crypto/</link>
-      <pubDate>Wed, 12 Mar 2025 18:32:54 +0300</pubDate>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
       
       <guid>https://4rkal.com/tags/crypto/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Lightning</title>
+      <link>https://4rkal.com/tags/lightning/</link>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://4rkal.com/tags/lightning/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Privacy</title>
+      <link>https://4rkal.com/tags/privacy/</link>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://4rkal.com/tags/privacy/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Robosats</title>
+      <link>https://4rkal.com/tags/robosats/</link>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://4rkal.com/tags/robosats/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -97,16 +137,6 @@
       <pubDate>Fri, 23 Aug 2024 11:19:17 +0300</pubDate>
       
       <guid>https://4rkal.com/tags/automation/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Privacy</title>
-      <link>https://4rkal.com/tags/privacy/</link>
-      <pubDate>Fri, 23 Aug 2024 11:19:17 +0300</pubDate>
-      
-      <guid>https://4rkal.com/tags/privacy/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>

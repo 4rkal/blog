@@ -63,10 +63,10 @@ The web the website source code.</p>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Secure</span>())
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Static</span>(<span style="color:#e6db74">&#34;/static&#34;</span>, <span style="color:#e6db74">&#34;static&#34;</span>) <span style="color:#75715e">// Serves content from static folder.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Rest of the handlers
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Static</span>(<span style="color:#e6db74">&#34;/static&#34;</span>, <span style="color:#e6db74">&#34;static&#34;</span>) <span style="color:#75715e">// Serves content from static folder.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Rest of the handlers</span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="server">Server</h2>
 <p>On my server side I have a debian 12 vm running on proxmox.</p>
 <p>In my users home directory I have a folder with the following contents:</p>
@@ -461,9 +461,10 @@ ok      apiSpeedImprove/httpReuse       4.010s
       <pubDate>Mon, 06 Mar 2023 20:52:42 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/python/</guid>
-      <description>Why you should use Python. Going over the basics of Python.
-In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&amp;rsquo;s start by explaining what coding is.
-What is coding? Coding means writing instructions for computers and a finished set of instructions is known as a program. Computer programs control everything from smartphones to space rockets.</description>
+      <description>&lt;p&gt;Why you should use Python. Going over the basics of Python.&lt;/p&gt;
+&lt;p&gt;In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&amp;rsquo;s start by explaining what coding is.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-coding&#34;&gt;What is coding?&lt;/h2&gt;
+&lt;p&gt;Coding means writing instructions for computers and a finished set of instructions is known as a program. Computer programs control everything from smartphones to space rockets.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Why you should use Python. Going over the basics of Python.</p>
 <p>In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&rsquo;s start by explaining what coding is.</p>
 <h2 id="what-is-coding">What is coding?</h2>
@@ -688,8 +689,9 @@ print(&#34;GG you found it&#34;)
       <pubDate>Sun, 05 Mar 2023 17:21:56 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/githubmon/</guid>
-      <description>Microsoft purchased GitHub in 2018, something many users are not aware of. After Microsoft’s acquisition of GitHub there have been many controversies like blocking private repositories and access to GitHub pages in certain countries and of course, GitHub Copilot.
-What is Github Copilot GitHub Copilot is an artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code.</description>
+      <description>&lt;p&gt;Microsoft purchased GitHub in 2018, something many users are not aware of. After Microsoft’s acquisition of GitHub there have been many controversies like blocking private repositories and access to GitHub pages in certain countries and of course, GitHub Copilot.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-github-copilot&#34;&gt;What is Github Copilot&lt;/h1&gt;
+&lt;p&gt;GitHub Copilot is an artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code. Currently available by subscription to individual developers, the tool was first announced by GitHub on 29 June 2021, and works best for users coding in Python, JavaScript, TypeScript, Ruby, and Go.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Microsoft purchased GitHub in 2018, something many users are not aware of. After Microsoft’s acquisition of GitHub there have been many controversies like blocking private repositories and access to GitHub pages in certain countries and of course, GitHub Copilot.</p>
 <h1 id="what-is-github-copilot">What is Github Copilot</h1>
 <p>GitHub Copilot is an artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code. Currently available by subscription to individual developers, the tool was first announced by GitHub on 29 June 2021, and works best for users coding in Python, JavaScript, TypeScript, Ruby, and Go.</p>
@@ -749,9 +751,10 @@ Read more:
       <pubDate>Wed, 22 Feb 2023 21:23:38 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/selenium/</guid>
-      <description>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.
-In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.com/posts/python/)
-What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation.</description>
+      <description>&lt;p&gt;&lt;strong&gt;Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (&lt;a href=&#34;https://4rkal.com/posts/python/&#34;&gt;https://4rkal.com/posts/python/&lt;/a&gt;)&lt;/p&gt;
+&lt;h2 id=&#34;what-is-selenium&#34;&gt;What is selenium?&lt;/h2&gt;
+&lt;p&gt;Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. You can use selenium in multiple programming languages including JavaScript (Node.js), C#, Groovy, Java, Perl, PHP, Python, Ruby and Scala and with multiple web browsers including firefox, internet explorer, safary, opera, chrome and edge. Selenium can be very useful for web scraping, automating boring and manual tasks and so much more.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p><strong>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.</strong></p>
 <p>In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (<a href="https://4rkal.com/posts/python/">https://4rkal.com/posts/python/</a>)</p>
 <h2 id="what-is-selenium">What is selenium?</h2>

@@ -17,8 +17,9 @@
       <pubDate>Sat, 25 Feb 2023 21:17:13 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/pihole/</guid>
-      <description>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&amp;rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.
-What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine.</description>
+      <description>&lt;p&gt;In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&amp;rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-pi-hole&#34;&gt;What is Pi-hole?&lt;/h1&gt;
+&lt;p&gt;Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine. Pi-hole has the ability to block traditional website advertisements as well as advertisements in unconventional places, such as smart TVs and mobile operating system advertisements.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.</p>
 <h1 id="what-is-pi-hole">What is Pi-hole?</h1>
 <p>Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine. Pi-hole has the ability to block traditional website advertisements as well as advertisements in unconventional places, such as smart TVs and mobile operating system advertisements.</p>
@@ -114,9 +115,16 @@ What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tra
       <pubDate>Sat, 25 Feb 2023 20:03:25 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/rpicamera/</guid>
-      <description>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.
-Requirements Raspberry pi or any other computer Web cam Any kind of debian based distro installed on the pi/computer Setup In this article we will be using the motion package (https://motion-project.github.io/)
-To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard.</description>
+      <description>&lt;p&gt;In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.&lt;/p&gt;
+&lt;h1 id=&#34;requirements&#34;&gt;Requirements&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Raspberry pi or any other computer&lt;/li&gt;
+&lt;li&gt;Web cam&lt;/li&gt;
+&lt;li&gt;Any kind of debian based distro installed on the pi/computer&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;setup&#34;&gt;Setup&lt;/h1&gt;
+&lt;p&gt;In this article we will be using the motion package (&lt;a href=&#34;https://motion-project.github.io/&#34;&gt;https://motion-project.github.io/&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard. Also connect your web cam to the raspberry pi usb port.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.</p>
 <h1 id="requirements">Requirements</h1>
 <ol>

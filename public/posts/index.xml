@@ -10,7 +10,87 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Apr 2025 17:43:47 +0300</lastBuildDate><atom:link href="https://4rkal.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://4rkal.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Someone tried to steal €2k from me on a P2P crypto trade. It didn&#39;t work.</title>
+      <link>https://4rkal.com/posts/p2p-2k/</link>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://4rkal.com/posts/p2p-2k/</guid>
+      <description>&lt;p&gt;Yesterday I got scammed on a P2P crypto trade. Or at least someone tried to. Here&amp;rsquo;s what happened and how I managed to get Revolut to side with me.&lt;/p&gt;
+&lt;h2 id=&#34;what-happened&#34;&gt;What happened&lt;/h2&gt;
+&lt;p&gt;I took a sell order on &lt;a href=&#34;https://robosats.com&#34;&gt;RoboSats&lt;/a&gt; for 3,110,649 sats (~0.031 BTC) in exchange for €2,100 EUR via Revolut. The buyer had listed the order, I took it, the trade went through normally, I confirmed the Revolut payment and released the Bitcoin.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Yesterday I got scammed on a P2P crypto trade. Or at least someone tried to. Here&rsquo;s what happened and how I managed to get Revolut to side with me.</p>
+<h2 id="what-happened">What happened</h2>
+<p>I took a sell order on <a href="https://robosats.com">RoboSats</a> for 3,110,649 sats (~0.031 BTC) in exchange for €2,100 EUR via Revolut. The buyer had listed the order, I took it, the trade went through normally, I confirmed the Revolut payment and released the Bitcoin.</p>
+<p>A few hours later I got a Revolut notification: &ldquo;Verify your transaction.&rdquo; The buyer had filed a recall request on the €2,100 payment. Revolut froze my account pending review.</p>
+<p>Classic P2P chargeback fraud. The buyer received the Bitcoin and then tried to claw back the fiat.</p>
+<h2 id="what-i-did">What I did</h2>
+<p>The first thing I did was move my Revolut balance out before the account got fully restricted (this was mostly done by accident but still). That turned out to be the right call Revolut can only chase your Revolut balance, not money that&rsquo;s already elsewhere.</p>
+<p>Then I went through Revolut&rsquo;s dispute flow. They asked for:</p>
+<ul>
+<li>Evidence of communication with the payer</li>
+<li>Evidence of the source of funds (cryptocurrency)</li>
+<li>A description of the payment</li>
+</ul>
+<p>The problem is RoboSats uses an ephemeral encrypted in-app chat. I had no screenshots of the conversation. Most people at this point would have almost nothing to submit.</p>
+<h2 id="the-evidence-package">The evidence package</h2>
+<p>What saved me was the RoboSats trade contract JSON file. After every completed trade, RoboSats generates a contract file you can download. Mine contained:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coordinator&#34;</span>: <span style="color:#e6db74">&#34;Over the Moon&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;order_id&#34;</span>: ,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;currency&#34;</span>: <span style="color:#e6db74">&#34;EUR&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;maker&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sent_fiat&#34;</span>: <span style="color:#ae81ff">2100</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;payment_hash&#34;</span>: <span style="color:#e6db74">&#34;33af4009cfdb4cdace...&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;preimage&#34;</span>: <span style="color:#e6db74">&#34;51f63c31b7eb8c479a...&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;taker&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sent_sats&#34;</span>: <span style="color:#ae81ff">3110649</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;received_fiat&#34;</span>: <span style="color:#ae81ff">2100</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>preimage</code> is cryptographic proof the Lightning payment settled. It can only be revealed upon successful payment completion — it&rsquo;s mathematically impossible to fake.</p>
+<p>I put together a PDF declaration with:</p>
+<ul>
+<li>Full trade details (order ID, amounts, dates)</li>
+<li>The escrow note verbatim (which explicitly named the order ID and trade amount)</li>
+<li>The payment hash and preimage</li>
+<li>An explanation of how RoboSats escrow works</li>
+<li>A signed declaration that the payment was legitimate consideration for Bitcoin delivered</li>
+</ul>
+<p>I uploaded that PDF, a screenshot from my lightning wallet, a screenshot from robosats of the trade and a screenshot of the JSON contract to Revolut&rsquo;s evidence form. Revolut accepted the dispute within a few hours</p>
+<p>I can&rsquo;t know exactly what tipped it, but the evidence package was as strong as I could make it given the circumstances.</p>
+<h3 id="template">Template</h3>
+<p>If this ever happens to you, I&rsquo;ve put together a ready-to-use PDF template, an exact copy of what I submitted. All the sections are pre-structured, you just fill in your trade details, paste in your payment hash and preimage from the JSON contract, sign it and upload it to your bank&rsquo;s dispute form.</p>
+<p><strong><a href="/robosats_dispute_template.pdf">Download the dispute template PDF here</a></strong></p>
+<p>Fields to fill in are clearly marked. The document covers:</p>
+<ul>
+<li>Party details (your name, buyer&rsquo;s name, payment tags)</li>
+<li>Full trade details (order ID, amounts, dates, payment method)</li>
+<li>Lightning escrow evidence (escrow note verbatim, amounts, fees)</li>
+<li>Cryptographic proof section (payment hash, preimage, contract timestamp)</li>
+<li>How RoboSats escrow works — explained for non-technical reviewers</li>
+<li>Signed declaration</li>
+</ul>
+<p>The most important fields are the <code>payment_hash</code> and <code>preimage</code> from your RoboSats JSON contract. Download that contract file before you close the order — it expires.</p>
+<h2 id="result">Result</h2>
+<p>Account unfrozen, €2,100 stays mine.</p>
+<h2 id="lessons">Lessons</h2>
+<p>A few things I&rsquo;ll do differently going forward:</p>
+<ul>
+<li><strong>Use SEPA/bank transfer instead of Revolut.</strong> Revolut payments can be recalled. SEPA Instant is much harder to reverse.</li>
+<li><strong>Always download the trade contract JSON</strong> before closing the RoboSats order. It takes one second and is your strongest evidence if something goes wrong.</li>
+<li><strong>Screenshot the in-trade chat</strong> before the trade closes. Even a single message showing the buyer agreed to the terms helps enormously.</li>
+<li><strong>Move funds out of Revolut</strong> before going through a dispute flow if you think it might go against you.</li>
+</ul>
+<p>Whatever ultimately swayed Revolut, having thorough documentation clearly didn&rsquo;t hurt. Most people submitting to these dispute flows have very little — putting together a proper evidence package at minimum gives you a fighting chance.</p>
+<hr>
+<h2 id="avoiding-p2p-altogether">Avoiding P2P altogether</h2>
+<p>If you&rsquo;re looking to avoid the P2P route entirely, I built <a href="https://cyphergoat.com">CypherGoat</a> — a non-custodial swap aggregator that compares rates across 20+ exchanges. It doesn&rsquo;t handle fiat, but for crypto-to-crypto swaps it&rsquo;s solid: no counterparty risk, funds go straight to your wallet.</p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Prevent newsletter signup spam</title>
       <link>https://4rkal.com/posts/newsletter-spam/</link>
@@ -188,10 +268,10 @@ The web the website source code.</p>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Secure</span>())
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Static</span>(<span style="color:#e6db74">&#34;/static&#34;</span>, <span style="color:#e6db74">&#34;static&#34;</span>) <span style="color:#75715e">// Serves content from static folder.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Rest of the handlers
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Static</span>(<span style="color:#e6db74">&#34;/static&#34;</span>, <span style="color:#e6db74">&#34;static&#34;</span>) <span style="color:#75715e">// Serves content from static folder.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Rest of the handlers</span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="server">Server</h2>
 <p>On my server side I have a debian 12 vm running on proxmox.</p>
 <p>In my users home directory I have a folder with the following contents:</p>
@@ -359,24 +439,24 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">rate</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">limiter</span>.<span style="color:#a6e22e">Rate</span>{
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Period</span>: <span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Minute</span>,
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Limit</span>:  <span style="color:#ae81ff">30</span>, <span style="color:#75715e">// 30 Requests/minute limit
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Limit</span>:  <span style="color:#ae81ff">30</span>, <span style="color:#75715e">// 30 Requests/minute limit</span>
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">store</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">memory</span>.<span style="color:#a6e22e">NewStore</span>()
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Create the rate limiter
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">instance</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">limiter</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">store</span>, <span style="color:#a6e22e">rate</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Create the rate limiter</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">instance</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">limiter</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">store</span>, <span style="color:#a6e22e">rate</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Middleware to apply rate limiting per IP
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">ginlimiter</span>.<span style="color:#a6e22e">NewMiddleware</span>(<span style="color:#a6e22e">instance</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Middleware to apply rate limiting per IP</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">ginlimiter</span>.<span style="color:#a6e22e">NewMiddleware</span>(<span style="color:#a6e22e">instance</span>))
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Example endpoint
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Example endpoint</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#ae81ff">200</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{<span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Hello World!&#34;</span>})
 </span></span><span style="display:flex;"><span>	})
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Start server
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">Run</span>(<span style="color:#e6db74">&#34;:8080&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Start server</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">Run</span>(<span style="color:#e6db74">&#34;:8080&#34;</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>We first create a new gin router called router.</p>
 <p>After that we setup a rate limiting policy. In this case it is 30 Requests/minute</p>
@@ -606,9 +686,9 @@ It also leads other systems such as mainframe computers, and is used on all of t
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Secure</span>())
 </span></span><span style="display:flex;"><span>	
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/:id&#34;</span>, <span style="color:#a6e22e">RedirectHandler</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//e.GET(&#34;/&#34;, IndexHandler)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">//e.POST(&#34;/submit&#34;, SubmitHandler)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//e.GET(&#34;/&#34;, IndexHandler)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//e.POST(&#34;/submit&#34;, SubmitHandler)</span>
+</span></span><span style="display:flex;"><span>	
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Logger</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Start</span>(<span style="color:#e6db74">&#34;:8080&#34;</span>))
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -1169,9 +1249,11 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
       <pubDate>Mon, 19 Aug 2024 19:21:15 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/gitea/</guid>
-      <description>In this article I&amp;rsquo;ll walk you through how you can run your own gitea instance. But first
-What is gitea? Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.
-Why use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance because I wanted a private place to host my Obsidian notes.</description>
+      <description>&lt;p&gt;In this article I&amp;rsquo;ll walk you through how you can run your own gitea instance. But first&lt;/p&gt;
+&lt;h2 id=&#34;what-is-gitea&#34;&gt;What is gitea?&lt;/h2&gt;
+&lt;p&gt;Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my &lt;a href=&#34;https://libre.computer/products/aml-s905x-cc/&#34;&gt;Le Potato&lt;/a&gt; and it barely uses any resources.&lt;/p&gt;
+&lt;h2 id=&#34;why-use-gitea-vs-github-gitlab-etc&#34;&gt;Why use gitea (vs GitHub, GitLab etc)&lt;/h2&gt;
+&lt;p&gt;I started running my own Gitea instance because I wanted a private place to host my &lt;a href=&#34;https://obsidian.md&#34;&gt;Obsidian&lt;/a&gt; notes. I did not want to have them in a private GitHub repository since it&amp;rsquo;s not on my own hardware. GitLab is harder to spin up and has a lot of features that I do not need.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article I&rsquo;ll walk you through how you can run your own gitea instance. But first</p>
 <h2 id="what-is-gitea">What is gitea?</h2>
 <p>Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my <a href="https://libre.computer/products/aml-s905x-cc/">Le Potato</a> and it barely uses any resources.</p>
@@ -1534,10 +1616,18 @@ draft: true
       <pubDate>Sun, 11 Aug 2024 16:17:31 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/newlook/</guid>
-      <description>I recently switched from the hugo LoveIt theme to PaperModX . Why the switch? The LoveIt theme hasn&amp;rsquo;t been updated in 2+ years. PaperModX has a more modern look LoveIt doesn&amp;rsquo;t work that well with obsidian. The overall switch went pretty smoothly. You can see the changes I made in this commit.
-For anyone wondering this what the website used to look like
-More articles to come! The theme wasn&amp;rsquo;t the only change that I made.</description>
-      <content:encoded><![CDATA[<h4 id="i-recently-switched-from-the-hugo-loveithttpsgithubcomdillonzqloveit-theme-to-papermodxhttpsgithubcomreorxhugo-papermodx-">I recently switched from the hugo <a href="https://github.com/dillonzq/LoveIt">LoveIt</a> theme to <a href="https://github.com/reorx/hugo-PaperModX/">PaperModX</a> .</h4>
+      <description>&lt;h4 id=&#34;i-recently-switched-from-the-hugo-loveit-theme-to-papermodx-&#34;&gt;I recently switched from the hugo &lt;a href=&#34;https://github.com/dillonzq/LoveIt&#34;&gt;LoveIt&lt;/a&gt; theme to &lt;a href=&#34;https://github.com/reorx/hugo-PaperModX/&#34;&gt;PaperModX&lt;/a&gt; .&lt;/h4&gt;
+&lt;h2 id=&#34;why-the-switch&#34;&gt;Why the switch?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The LoveIt theme hasn&amp;rsquo;t been updated in 2+ years.&lt;/li&gt;
+&lt;li&gt;PaperModX has a more modern look&lt;/li&gt;
+&lt;li&gt;LoveIt doesn&amp;rsquo;t work that well with &lt;a href=&#34;https://obsidian.md&#34;&gt;obsidian&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The overall switch went pretty smoothly. You can see the changes I made in this &lt;a href=&#34;https://github.com/4rkal/blog/commit/15e21c2f357f8d3a4e6ba11896d5369ec3ccb315&#34;&gt;commit&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For anyone wondering this what &lt;a href=&#34;https://web.archive.org/web/20240615224820/https://4rkal.eu.org/&#34;&gt;the website used to look like&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;more-articles-to-come&#34;&gt;More articles to come!&lt;/h2&gt;
+&lt;p&gt;The theme wasn&amp;rsquo;t the only change that I made. After a pretty long break, I have decided to start publishing articles regularly again!&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h4 id="i-recently-switched-from-the-hugo-loveit-theme-to-papermodx-">I recently switched from the hugo <a href="https://github.com/dillonzq/LoveIt">LoveIt</a> theme to <a href="https://github.com/reorx/hugo-PaperModX/">PaperModX</a> .</h4>
 <h2 id="why-the-switch">Why the switch?</h2>
 <ul>
 <li>The LoveIt theme hasn&rsquo;t been updated in 2+ years.</li>
@@ -1743,9 +1833,15 @@ On your phone:</p>
       <pubDate>Tue, 07 Nov 2023 18:03:15 +0200</pubDate>
       
       <guid>https://4rkal.com/posts/coldstorage/</guid>
-      <description>In this article I will show you how to &amp;ldquo;easily&amp;rdquo; generate a live archlinux usb with the monero gui pre-installed.
-Requirements An archlinux install A usb Setup In this guide I will show you how to build a custom archlinux iso with monerogui installed. I will not be providing any pre-built images.
-The first thing you will have to do is install archuseriso. You can install it from the aur using this command:</description>
+      <description>&lt;p&gt;In this article I will show you how to &amp;ldquo;easily&amp;rdquo; generate a live archlinux usb with the monero gui pre-installed.&lt;/p&gt;
+&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;An archlinux install&lt;/li&gt;
+&lt;li&gt;A usb&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
+&lt;p&gt;In this guide I will show you how to build a custom archlinux iso with monerogui installed. I will not be providing any pre-built images.&lt;/p&gt;
+&lt;p&gt;The first thing you will have to do is install &lt;a href=&#34;https://github.com/laurent85v/archuseriso&#34;&gt;archuseriso&lt;/a&gt;. You can install it from the aur using this command:&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article I will show you how to &ldquo;easily&rdquo; generate a live archlinux usb with the monero gui pre-installed.</p>
 <h2 id="requirements">Requirements</h2>
 <ol>
@@ -1829,8 +1925,15 @@ If you don&rsquo;t write down your seed and keep it in a secure place you will l
       <pubDate>Wed, 04 Oct 2023 19:17:04 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/onionssh/</guid>
-      <description>In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.
-Requirements: A computer &amp;ldquo;server&amp;rdquo; (running linux) A internet connection Another computer to connect to your server (running linux) Why? If you want to access your server without portforwarding in a extremely secure fashion you will want to follow this tutorial. You will be connecting to the server via tor which will make it harder for anyone to find the url of the server and ill show you how to setup keybased auth for even more security!</description>
+      <description>&lt;p&gt;In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.&lt;/p&gt;
+&lt;h2 id=&#34;requirements&#34;&gt;Requirements:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;A computer &amp;ldquo;server&amp;rdquo; (running linux)&lt;/li&gt;
+&lt;li&gt;A internet connection&lt;/li&gt;
+&lt;li&gt;Another computer to connect to your server (running linux)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;why&#34;&gt;Why?&lt;/h2&gt;
+&lt;p&gt;If you want to access your server without portforwarding in a extremely secure fashion you will want to follow this tutorial. You will be connecting to the server via tor which will make it harder for anyone to find the url of the server and ill show you how to setup keybased auth for even more security!&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.</p>
 <h2 id="requirements">Requirements:</h2>
 <ol>
@@ -1909,8 +2012,9 @@ HiddenServicePort 22 127.0.0.1:22
       <pubDate>Thu, 23 Mar 2023 18:13:03 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/thisblog/</guid>
-      <description>In this article I’ll show you how I setup this blog completely for free. I’ll show you how to use hugo to write your blog, Cloudflare and eu.org for your domain and ssl, Render and github for the hosting and even how to get your blog on google.
-What is hugo? Hugo is a fast and popular open-source static site generator used for creating static websites without requiring a database or dynamic components.</description>
+      <description>&lt;p&gt;In this article I’ll show you how I setup this blog completely for free. I’ll show you how to use hugo to write your blog, Cloudflare and eu.org for your domain and ssl, Render and github for the hosting and even how to get your blog on google.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-hugo&#34;&gt;What is hugo?&lt;/h1&gt;
+&lt;p&gt;Hugo is a fast and popular open-source static site generator used for creating static websites without requiring a database or dynamic components.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article I’ll show you how I setup this blog completely for free. I’ll show you how to use hugo to write your blog, Cloudflare and eu.org for your domain and ssl, Render and github for the hosting and even how to get your blog on google.</p>
 <h1 id="what-is-hugo">What is hugo?</h1>
 <p>Hugo is a fast and popular open-source static site generator used for creating static websites without requiring a database or dynamic components.</p>
@@ -2103,9 +2207,10 @@ git branch -M main
       <pubDate>Mon, 06 Mar 2023 20:52:42 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/python/</guid>
-      <description>Why you should use Python. Going over the basics of Python.
-In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&amp;rsquo;s start by explaining what coding is.
-What is coding? Coding means writing instructions for computers and a finished set of instructions is known as a program. Computer programs control everything from smartphones to space rockets.</description>
+      <description>&lt;p&gt;Why you should use Python. Going over the basics of Python.&lt;/p&gt;
+&lt;p&gt;In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&amp;rsquo;s start by explaining what coding is.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-coding&#34;&gt;What is coding?&lt;/h2&gt;
+&lt;p&gt;Coding means writing instructions for computers and a finished set of instructions is known as a program. Computer programs control everything from smartphones to space rockets.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Why you should use Python. Going over the basics of Python.</p>
 <p>In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&rsquo;s start by explaining what coding is.</p>
 <h2 id="what-is-coding">What is coding?</h2>
@@ -2330,8 +2435,10 @@ print(&#34;GG you found it&#34;)
       <pubDate>Mon, 06 Mar 2023 20:44:46 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/pocketbase/</guid>
-      <description>What is PocketBase PocketBase is an open source backend made in go consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.
-Install PocketBase The first thing that you will have to do is head to https://pocketbase.io and select the file for your operating system. Since I am using linux I will show how to set this up on linux but it should be pretty similar for any other os.</description>
+      <description>&lt;h1 id=&#34;what-is-pocketbase&#34;&gt;What is PocketBase&lt;/h1&gt;
+&lt;p&gt;PocketBase is an open source backend made in go consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.&lt;/p&gt;
+&lt;h2 id=&#34;install-pocketbase&#34;&gt;Install PocketBase&lt;/h2&gt;
+&lt;p&gt;The first thing that you will have to do is head to &lt;a href=&#34;https://pocketbase.io&#34;&gt;https://pocketbase.io&lt;/a&gt; and select the file for your operating system. Since I am using linux I will show how to set this up on linux but it should be pretty similar for any other os.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h1 id="what-is-pocketbase">What is PocketBase</h1>
 <p>PocketBase is an open source backend made in go consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.</p>
 <h2 id="install-pocketbase">Install PocketBase</h2>
@@ -2374,9 +2481,10 @@ Install PocketBase The first thing that you will have to do is head to https://p
       <pubDate>Mon, 06 Mar 2023 20:23:16 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/whymonero/</guid>
-      <description>In this article, I will tell you why Monero fits my views of what a cryptocurrency should look like.
-What is Monero? Monero is a decentralized cryptocurrency. It uses a public distributed ledger with privacy-enhancing technologies that obfuscate transactions to achieve anonymity and fungibility. Observers cannot decipher addresses trading Monero, transaction amounts, address balances, or transaction histories.
-Monero works like any other currency but with some privacy and decentralization innovations.</description>
+      <description>&lt;p&gt;In this article, I will tell you why Monero fits my views of what a cryptocurrency should look like.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-monero&#34;&gt;What is Monero?&lt;/h1&gt;
+&lt;p&gt;Monero is a decentralized cryptocurrency. It uses a public distributed ledger with privacy-enhancing technologies that obfuscate transactions to achieve anonymity and fungibility. Observers cannot decipher addresses trading Monero, transaction amounts, address balances, or transaction histories.&lt;/p&gt;
+&lt;p&gt;Monero works like any other currency but with some privacy and decentralization innovations.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article, I will tell you why Monero fits my views of what a cryptocurrency should look like.</p>
 <h1 id="what-is-monero">What is Monero?</h1>
 <p>Monero is a decentralized cryptocurrency. It uses a public distributed ledger with privacy-enhancing technologies that obfuscate transactions to achieve anonymity and fungibility. Observers cannot decipher addresses trading Monero, transaction amounts, address balances, or transaction histories.</p>
@@ -2407,7 +2515,8 @@ Monero works like any other currency but with some privacy and decentralization 
       <pubDate>Mon, 06 Mar 2023 20:11:51 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/ventoy/</guid>
-      <description>Whats ventoy? Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .iso to the USB drive and boot from them directly.</description>
+      <description>&lt;h2 id=&#34;whats-ventoy&#34;&gt;Whats ventoy?&lt;/h2&gt;
+&lt;p&gt;Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .iso to the USB drive and boot from them directly. Ventoy will present the user with a boot menu to select one of these files.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="whats-ventoy">Whats ventoy?</h2>
 <p>Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .iso to the USB drive and boot from them directly. Ventoy will present the user with a boot menu to select one of these files.</p>
 <p>With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.</p>
@@ -2471,8 +2580,9 @@ Monero works like any other currency but with some privacy and decentralization 
       <pubDate>Sun, 05 Mar 2023 17:37:03 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/nmap/</guid>
-      <description>Whether you want to scan your network for vulnerabilities or just want to see which ports you have open, nmap can be extremely useful.
-What is nmap Nmap (Network Mapper) is a network scanner created by Gordon Lyon . Nmap sends packets and examines the answers to find hosts and services on a computer network. For probing computer networks, Nmap offers a variety of functionalities, including host discovery, service detection, and operating system detection.</description>
+      <description>&lt;p&gt;Whether you want to scan your network for vulnerabilities or just want to see which ports you have open, nmap can be extremely useful.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-nmap&#34;&gt;What is nmap&lt;/h1&gt;
+&lt;p&gt;Nmap (Network Mapper) is a network scanner created by Gordon Lyon . Nmap sends packets and examines the answers to find hosts and services on a computer network. For probing computer networks, Nmap offers a variety of functionalities, including host discovery, service detection, and operating system detection. Scripts that offer more sophisticated service discovery, vulnerability detection, and other features can extend these features. During a scan, Nmap can adjust to changing network conditions, such as latency and congestion.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Whether you want to scan your network for vulnerabilities or just want to see which ports you have open, nmap can be extremely useful.</p>
 <h1 id="what-is-nmap">What is nmap</h1>
 <p>Nmap (Network Mapper) is a network scanner created by Gordon Lyon . Nmap sends packets and examines the answers to find hosts and services on a computer network. For probing computer networks, Nmap offers a variety of functionalities, including host discovery, service detection, and operating system detection. Scripts that offer more sophisticated service discovery, vulnerability detection, and other features can extend these features. During a scan, Nmap can adjust to changing network conditions, such as latency and congestion.</p>
@@ -2571,8 +2681,9 @@ OS details: Linux 2.6.32
       <pubDate>Sun, 05 Mar 2023 17:21:56 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/githubmon/</guid>
-      <description>Microsoft purchased GitHub in 2018, something many users are not aware of. After Microsoft’s acquisition of GitHub there have been many controversies like blocking private repositories and access to GitHub pages in certain countries and of course, GitHub Copilot.
-What is Github Copilot GitHub Copilot is an artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code.</description>
+      <description>&lt;p&gt;Microsoft purchased GitHub in 2018, something many users are not aware of. After Microsoft’s acquisition of GitHub there have been many controversies like blocking private repositories and access to GitHub pages in certain countries and of course, GitHub Copilot.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-github-copilot&#34;&gt;What is Github Copilot&lt;/h1&gt;
+&lt;p&gt;GitHub Copilot is an artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code. Currently available by subscription to individual developers, the tool was first announced by GitHub on 29 June 2021, and works best for users coding in Python, JavaScript, TypeScript, Ruby, and Go.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Microsoft purchased GitHub in 2018, something many users are not aware of. After Microsoft’s acquisition of GitHub there have been many controversies like blocking private repositories and access to GitHub pages in certain countries and of course, GitHub Copilot.</p>
 <h1 id="what-is-github-copilot">What is Github Copilot</h1>
 <p>GitHub Copilot is an artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code. Currently available by subscription to individual developers, the tool was first announced by GitHub on 29 June 2021, and works best for users coding in Python, JavaScript, TypeScript, Ruby, and Go.</p>
@@ -2632,8 +2743,16 @@ Read more:
       <pubDate>Sun, 05 Mar 2023 17:11:40 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/git/</guid>
-      <description>Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you&amp;rsquo;ll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.
-What You’ll Need A Computer for Your Server: Ideally running Linux (Debian is a solid choice). Internet Connection: Pretty essential for accessing your server remotely. Another Computer with Git Installed: This is what you&amp;rsquo;ll use to interact with your server.</description>
+      <description>&lt;p&gt;Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you&amp;rsquo;ll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.&lt;/p&gt;
+&lt;h3 id=&#34;what-youll-need&#34;&gt;What You’ll Need&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;A Computer for Your Server&lt;/strong&gt;: Ideally running Linux (Debian is a solid choice).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Internet Connection&lt;/strong&gt;: Pretty essential for accessing your server remotely.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Another Computer with Git Installed&lt;/strong&gt;: This is what you&amp;rsquo;ll use to interact with your server.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;step-by-step-setup-guide&#34;&gt;Step-by-Step Setup Guide&lt;/h3&gt;
+&lt;h4 id=&#34;1-install-git-on-your-server&#34;&gt;1. Install Git on Your Server&lt;/h4&gt;
+&lt;p&gt;First, you need to install Git on your server. Depending on your Linux distribution, use one of these commands:&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you&rsquo;ll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.</p>
 <h3 id="what-youll-need">What You’ll Need</h3>
 <ol>
@@ -2734,8 +2853,9 @@ What You’ll Need A Computer for Your Server: Ideally running Linux (Debian is 
       <pubDate>Fri, 03 Mar 2023 23:21:53 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/searx/</guid>
-      <description>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
-What is searX? Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users.</description>
+      <description>&lt;p&gt;We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-searx&#34;&gt;What is searX?&lt;/h2&gt;
+&lt;p&gt;Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users. In order to do this, Searx does not provide the search engines from which it receives results with users’ IP addresses or search histories. Tracking cookies served by the search engines are blocked, preventing user-profiling-based results modification.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.</p>
 <h2 id="what-is-searx">What is searX?</h2>
 <p>Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users. In order to do this, Searx does not provide the search engines from which it receives results with users’ IP addresses or search histories. Tracking cookies served by the search engines are blocked, preventing user-profiling-based results modification.</p>
@@ -2809,8 +2929,9 @@ Now if you head to 127.0.0.1:8888 you should be able to see something like this
       <pubDate>Fri, 03 Mar 2023 23:03:40 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/tails/</guid>
-      <description>In this article we will talk about what tails is and how to install and more.
-What is tails? Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</description>
+      <description>&lt;p&gt;In this article we will talk about what tails is and how to install and more.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-tails&#34;&gt;What is tails?&lt;/h1&gt;
+&lt;p&gt;Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article we will talk about what tails is and how to install and more.</p>
 <h1 id="what-is-tails">What is tails?</h1>
 <p>Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</p>
@@ -2868,8 +2989,9 @@ After you have clicked on the windows logo you should be prompted with the requi
       <pubDate>Sat, 25 Feb 2023 21:17:13 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/pihole/</guid>
-      <description>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&amp;rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.
-What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine.</description>
+      <description>&lt;p&gt;In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&amp;rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-pi-hole&#34;&gt;What is Pi-hole?&lt;/h1&gt;
+&lt;p&gt;Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine. Pi-hole has the ability to block traditional website advertisements as well as advertisements in unconventional places, such as smart TVs and mobile operating system advertisements.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.</p>
 <h1 id="what-is-pi-hole">What is Pi-hole?</h1>
 <p>Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine. Pi-hole has the ability to block traditional website advertisements as well as advertisements in unconventional places, such as smart TVs and mobile operating system advertisements.</p>
@@ -2965,8 +3087,9 @@ What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tra
       <pubDate>Sat, 25 Feb 2023 21:08:47 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/sssh/</guid>
-      <description>SSH keys provide an extremely secure way of logging into your server.
-SSH Password Based VS Key Based Authentication Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts.</description>
+      <description>&lt;p&gt;SSH keys provide an extremely secure way of logging into your server.&lt;/p&gt;
+&lt;h1 id=&#34;ssh-password-based-vs-key-based-authentication&#34;&gt;SSH Password Based VS Key Based Authentication&lt;/h1&gt;
+&lt;p&gt;Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts. The solution to that is ssh key based authentication.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>SSH keys provide an extremely secure way of logging into your server.</p>
 <h1 id="ssh-password-based-vs-key-based-authentication">SSH Password Based VS Key Based Authentication</h1>
 <p>Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts. The solution to that is ssh key based authentication.</p>
@@ -3021,8 +3144,9 @@ Enter passphrase (empty for no passphrase):
       <pubDate>Sat, 25 Feb 2023 20:56:02 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/torhs/</guid>
-      <description>In this article i will be showing you how to host your “dark web” aka Tor website for free.
-What is Tor? Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</description>
+      <description>&lt;p&gt;In this article i will be showing you how to host your “dark web” aka Tor website for free.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-tor&#34;&gt;What is Tor?&lt;/h1&gt;
+&lt;p&gt;Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article i will be showing you how to host your “dark web” aka Tor website for free.</p>
 <h1 id="what-is-tor">What is Tor?</h1>
 <p>Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</p>
@@ -3072,8 +3196,9 @@ What is Tor? Tor — short for the Onion Routing project — is an open-source p
       <pubDate>Sat, 25 Feb 2023 20:43:23 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/opensource/</guid>
-      <description>As the linuxfoundation states about 95% of cloud providers run kubernetes which is an open sourced solution, the Apache Web server powers millions of websites including netflix.com, spotify.com and more. Most of the Internets core functions are based on open source technology. But what is it and why is it so important?
-What is open sourced software? Open-source software is computer software that is distributed under a license that allows users to use, study, modify and distribute the program and its source code to anyone and for any purpose.</description>
+      <description>&lt;p&gt;As the linuxfoundation states about 95% of cloud providers run kubernetes which is an open sourced solution, the Apache Web server powers millions of websites including netflix.com, spotify.com and more. Most of the Internets core functions are based on open source technology. But what is it and why is it so important?&lt;/p&gt;
+&lt;h2 id=&#34;what-is-open-sourced-software&#34;&gt;What is open sourced software?&lt;/h2&gt;
+&lt;p&gt;Open-source software is computer software that is distributed under a license that allows users to use, study, modify and distribute the program and its source code to anyone and for any purpose. Open-source software may be created in a public, collaborative environment. Open-source software is a good example of open collaboration since it allows any skilled user to engage in development online.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>As the linuxfoundation states about 95% of cloud providers run kubernetes which is an open sourced solution, the Apache Web server powers millions of websites including netflix.com, spotify.com and more. Most of the Internets core functions are based on open source technology. But what is it and why is it so important?</p>
 <h2 id="what-is-open-sourced-software">What is open sourced software?</h2>
 <p>Open-source software is computer software that is distributed under a license that allows users to use, study, modify and distribute the program and its source code to anyone and for any purpose. Open-source software may be created in a public, collaborative environment. Open-source software is a good example of open collaboration since it allows any skilled user to engage in development online.</p>
@@ -3115,12 +3240,19 @@ Linus Torvalds</p>
       <pubDate>Sat, 25 Feb 2023 20:23:16 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/shwebsite/</guid>
-      <description>In this article i will show you how to self host your own website securely.
-Requirements A computer or microcomputer to host the website The computer needs to run linux An internet connection (Its pretty hard without one, trust me) Lets get started!
-Installation The first thing that we will have to do is setup our nginx site.
-We first have to be root
-sudo su
-If you dont have sudo installed try:</description>
+      <description>&lt;p&gt;In this article i will show you how to self host your own website securely.&lt;/p&gt;
+&lt;h1 id=&#34;requirements&#34;&gt;Requirements&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;A computer or microcomputer to host the website&lt;/li&gt;
+&lt;li&gt;The computer needs to run linux&lt;/li&gt;
+&lt;li&gt;An internet connection (Its pretty hard without one, trust me)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Lets get started!&lt;/p&gt;
+&lt;h1 id=&#34;installation&#34;&gt;Installation&lt;/h1&gt;
+&lt;p&gt;The first thing that we will have to do is setup our nginx site.&lt;/p&gt;
+&lt;p&gt;We first have to be root&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo su&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you dont have sudo installed try:&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article i will show you how to self host your own website securely.</p>
 <h1 id="requirements">Requirements</h1>
 <ol>
@@ -3214,9 +3346,16 @@ make install
       <pubDate>Sat, 25 Feb 2023 20:03:25 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/rpicamera/</guid>
-      <description>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.
-Requirements Raspberry pi or any other computer Web cam Any kind of debian based distro installed on the pi/computer Setup In this article we will be using the motion package (https://motion-project.github.io/)
-To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard.</description>
+      <description>&lt;p&gt;In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.&lt;/p&gt;
+&lt;h1 id=&#34;requirements&#34;&gt;Requirements&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Raspberry pi or any other computer&lt;/li&gt;
+&lt;li&gt;Web cam&lt;/li&gt;
+&lt;li&gt;Any kind of debian based distro installed on the pi/computer&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;setup&#34;&gt;Setup&lt;/h1&gt;
+&lt;p&gt;In this article we will be using the motion package (&lt;a href=&#34;https://motion-project.github.io/&#34;&gt;https://motion-project.github.io/&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard. Also connect your web cam to the raspberry pi usb port.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.</p>
 <h1 id="requirements">Requirements</h1>
 <ol>
@@ -3260,10 +3399,15 @@ This will enable us to access the stream from other computers.</p>
       <pubDate>Sat, 25 Feb 2023 19:36:25 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/howsshworks/</guid>
-      <description>If you work in the IT industry, you’ve undoubtedly heard of ssh. But how does it work?
-SSH (secure shell) is a network protocol that allows two computers to connect securely over the internet. SSH uses encryption to prevent hackers from reading data sent between two connected devices.
-SSH is divided into three layers:
-The transport layer The connection layer The authentication layer During and after authentication, the transport layer establishes safe and secure communication between a client and a server.</description>
+      <description>&lt;p&gt;If you work in the IT industry, you’ve undoubtedly heard of ssh. But how does it work?&lt;br&gt;
+SSH (secure shell) is a network protocol that allows two computers to connect securely over the internet. SSH uses encryption to prevent hackers from reading data sent between two connected devices.&lt;br&gt;
+SSH is divided into three layers:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The transport layer&lt;/li&gt;
+&lt;li&gt;The connection layer&lt;/li&gt;
+&lt;li&gt;The authentication layer&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;During and after authentication, the transport layer establishes safe and secure communication between a client and a server. It is in charge of data encryption, decryption, and integrity assurance. It also provides data compression and caching, which helps to speed up data communication.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>If you work in the IT industry, you’ve undoubtedly heard of ssh. But how does it work?<br>
 SSH (secure shell) is a network protocol that allows two computers to connect securely over the internet. SSH uses encryption to prevent hackers from reading data sent between two connected devices.<br>
 SSH is divided into three layers:</p>
@@ -3322,9 +3466,10 @@ There are different ciphers that can be used for SSH depending on the applicatio
       <pubDate>Wed, 22 Feb 2023 21:23:38 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/selenium/</guid>
-      <description>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.
-In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.com/posts/python/)
-What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation.</description>
+      <description>&lt;p&gt;&lt;strong&gt;Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (&lt;a href=&#34;https://4rkal.com/posts/python/&#34;&gt;https://4rkal.com/posts/python/&lt;/a&gt;)&lt;/p&gt;
+&lt;h2 id=&#34;what-is-selenium&#34;&gt;What is selenium?&lt;/h2&gt;
+&lt;p&gt;Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. You can use selenium in multiple programming languages including JavaScript (Node.js), C#, Groovy, Java, Perl, PHP, Python, Ruby and Scala and with multiple web browsers including firefox, internet explorer, safary, opera, chrome and edge. Selenium can be very useful for web scraping, automating boring and manual tasks and so much more.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p><strong>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.</strong></p>
 <p>In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (<a href="https://4rkal.com/posts/python/">https://4rkal.com/posts/python/</a>)</p>
 <h2 id="what-is-selenium">What is selenium?</h2>
@@ -3458,10 +3603,12 @@ Read more about selenium here: <a href="https://selenium-python.readthedocs.io/"
       <pubDate>Tue, 21 Feb 2023 19:27:44 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/zeropointthree/</guid>
-      <description>Most people know that adding up 0.1 + 0.2 equals 0.3. However computers represent it as 0.30000000000000004 .
-Here is a screenshot of it in python3 Your first thought might be that this is just some kind of error. Well its not
-Why does this happen? Fractions can be represented precisely in the base 10 system (used by humans) if a prime factor of the base is used (10).
-2 and 5 are the prime factors of 10.</description>
+      <description>&lt;p&gt;&lt;strong&gt;Most people know that adding up 0.1 + 0.2 equals 0.3. However computers represent it as 0.30000000000000004 .&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Here is a screenshot of it in python3
+&lt;img loading=&#34;lazy&#34; src=&#34;https://4rkal.com/../assets/zeropointthree.png&#34; type=&#34;&#34; alt=&#34;0.1&amp;#43;0.2 in python&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;Your first thought might be that this is just some kind of error. Well its not&lt;/p&gt;
+&lt;h1 id=&#34;why-does-this-happen&#34;&gt;Why does this happen?&lt;/h1&gt;
+&lt;p&gt;Fractions can be represented precisely in the base 10 system (used by humans) if a prime factor of the base is used (10).&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p><strong>Most people know that adding up 0.1 + 0.2 equals 0.3. However computers represent it as 0.30000000000000004 .</strong></p>
 <p>Here is a screenshot of it in python3
 <img loading="lazy" src="/../assets/zeropointthree.png" type="" alt="0.1&#43;0.2 in python"  /></p>

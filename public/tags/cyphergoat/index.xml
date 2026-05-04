@@ -97,10 +97,10 @@ The web the website source code.</p>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Secure</span>())
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Static</span>(<span style="color:#e6db74">&#34;/static&#34;</span>, <span style="color:#e6db74">&#34;static&#34;</span>) <span style="color:#75715e">// Serves content from static folder.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Rest of the handlers
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Static</span>(<span style="color:#e6db74">&#34;/static&#34;</span>, <span style="color:#e6db74">&#34;static&#34;</span>) <span style="color:#75715e">// Serves content from static folder.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Rest of the handlers</span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="server">Server</h2>
 <p>On my server side I have a debian 12 vm running on proxmox.</p>
 <p>In my users home directory I have a folder with the following contents:</p>

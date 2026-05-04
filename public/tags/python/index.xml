@@ -191,9 +191,10 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
       <pubDate>Mon, 06 Mar 2023 20:52:42 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/python/</guid>
-      <description>Why you should use Python. Going over the basics of Python.
-In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&amp;rsquo;s start by explaining what coding is.
-What is coding? Coding means writing instructions for computers and a finished set of instructions is known as a program. Computer programs control everything from smartphones to space rockets.</description>
+      <description>&lt;p&gt;Why you should use Python. Going over the basics of Python.&lt;/p&gt;
+&lt;p&gt;In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&amp;rsquo;s start by explaining what coding is.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-coding&#34;&gt;What is coding?&lt;/h2&gt;
+&lt;p&gt;Coding means writing instructions for computers and a finished set of instructions is known as a program. Computer programs control everything from smartphones to space rockets.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Why you should use Python. Going over the basics of Python.</p>
 <p>In this course/article I will be talking about why someone should use Python. Later on, I will be tackling the basics of Python. But let&rsquo;s start by explaining what coding is.</p>
 <h2 id="what-is-coding">What is coding?</h2>
@@ -418,9 +419,10 @@ print(&#34;GG you found it&#34;)
       <pubDate>Wed, 22 Feb 2023 21:23:38 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/selenium/</guid>
-      <description>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.
-In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (https://4rkal.com/posts/python/)
-What is selenium? Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation.</description>
+      <description>&lt;p&gt;&lt;strong&gt;Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&amp;rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (&lt;a href=&#34;https://4rkal.com/posts/python/&#34;&gt;https://4rkal.com/posts/python/&lt;/a&gt;)&lt;/p&gt;
+&lt;h2 id=&#34;what-is-selenium&#34;&gt;What is selenium?&lt;/h2&gt;
+&lt;p&gt;Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. You can use selenium in multiple programming languages including JavaScript (Node.js), C#, Groovy, Java, Perl, PHP, Python, Ruby and Scala and with multiple web browsers including firefox, internet explorer, safary, opera, chrome and edge. Selenium can be very useful for web scraping, automating boring and manual tasks and so much more.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p><strong>Selenium is a very good skill to have as you can automate almost everything that you can do with a web browser.</strong></p>
 <p>In this tutorial, we’ll learn how to use Python and Selenium to automate a web browser. This is an updated version of my previous article which unfortunately doesn&rsquo;t work anymore. If you’re a complete beginner, read my python article to understand the basics. (<a href="https://4rkal.com/posts/python/">https://4rkal.com/posts/python/</a>)</p>
 <h2 id="what-is-selenium">What is selenium?</h2>

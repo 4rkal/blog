@@ -8,22 +8,52 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://4rkal.com/</loc>
-    <lastmod>2025-04-17T17:43:47+03:00</lastmod>
+    <lastmod>2026-05-04T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/bitcoin/</loc>
+    <lastmod>2026-05-04T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/crypto/</loc>
+    <lastmod>2026-05-04T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/lightning/</loc>
+    <lastmod>2026-05-04T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://4rkal.com/posts/</loc>
-    <lastmod>2025-04-17T17:43:47+03:00</lastmod>
+    <lastmod>2026-05-04T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/privacy/</loc>
+    <lastmod>2026-05-04T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/robosats/</loc>
+    <lastmod>2026-05-04T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/posts/p2p-2k/</loc>
+    <lastmod>2026-05-04T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://4rkal.com/tags/</loc>
+    <lastmod>2026-05-04T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://4rkal.com/posts/newsletter-spam/</loc>
     <lastmod>2025-04-17T17:43:47+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/crypto/</loc>
-    <lastmod>2025-03-12T18:32:54+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -33,11 +63,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://4rkal.com/posts/launching-cyphergoat/</loc>
-    <lastmod>2025-03-12T18:32:54+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/</loc>
     <lastmod>2025-03-12T18:32:54+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -108,11 +133,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://4rkal.com/posts/listmonk/</loc>
-    <lastmod>2024-08-23T11:19:17+03:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://4rkal.com/tags/privacy/</loc>
     <lastmod>2024-08-23T11:19:17+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>

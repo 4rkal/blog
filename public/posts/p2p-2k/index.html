@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Someone tried to steal €2k from me on a P2P crypto trade. It didn&#39;t work. | 4rkal&#39;s Dev Blog</title>
+<meta name="keywords" content="crypto, bitcoin, privacy, robosats, lightning">
+<meta name="description" content="Yesterday I got scammed on a P2P crypto trade. Or at least someone tried to. Here&rsquo;s what happened and how I managed to get Revolut to side with me.
+What happened
+I took a sell order on RoboSats for 3,110,649 sats (~0.031 BTC) in exchange for €2,100 EUR via Revolut. The buyer had listed the order, I took it, the trade went through normally, I confirmed the Revolut payment and released the Bitcoin.">
+<meta name="author" content="4rkal">
+<link rel="canonical" href="https://4rkal.com/posts/p2p-2k/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.7da7716a1f2d0725f74c6ae7f8d6adafc43aabe2b366b65bfbf433448e2a2001.css" integrity="sha256-fadxah8tByX3TGrn&#43;Natr8Q6q&#43;KzZrZb&#43;/QzRI4qIAE=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://4rkal.com/4rkal.png">
+<link rel="apple-touch-icon" href="https://4rkal.com/apple-touch-icon.png">
+<link rel="alternate" hreflang="en" href="https://4rkal.com/posts/p2p-2k/">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Someone tried to steal €2k from me on a P2P crypto trade. It didn&#39;t work. | 4rkal&#39;s Dev Blog" />
+<meta name="twitter:description" content="Yesterday I got scammed on a P2P crypto trade. Or at least someone tried to. Here&rsquo;s what happened and how I managed to get Revolut to side with me.
+What happened
+I took a sell order on RoboSats for 3,110,649 sats (~0.031 BTC) in exchange for €2,100 EUR via Revolut. The buyer had listed the order, I took it, the trade went through normally, I confirmed the Revolut payment and released the Bitcoin." />
+<meta property="og:title" content="Someone tried to steal €2k from me on a P2P crypto trade. It didn&#39;t work. | 4rkal&#39;s Dev Blog" />
+<meta property="og:description" content="Yesterday I got scammed on a P2P crypto trade. Or at least someone tried to. Here&rsquo;s what happened and how I managed to get Revolut to side with me.
+What happened
+I took a sell order on RoboSats for 3,110,649 sats (~0.031 BTC) in exchange for €2,100 EUR via Revolut. The buyer had listed the order, I took it, the trade went through normally, I confirmed the Revolut payment and released the Bitcoin." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://4rkal.com/posts/p2p-2k/" />
+    <meta property="og:image" content="https://4rkal.com/4rkal.png"/>
+<meta property="article:section" content="posts" />
+  <meta property="article:published_time" content="2026-05-04T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2026-05-04T00:00:00&#43;00:00" />
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://4rkal.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Someone tried to steal €2k from me on a P2P crypto trade. It didn't work.",
+      "item": "https://4rkal.com/posts/p2p-2k/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Someone tried to steal €2k from me on a P2P crypto trade. It didn't work. | 4rkal's Dev Blog",
+  "name": "Someone tried to steal €2k from me on a P2P crypto trade. It didn\u0027t work.",
+  "description": "Yesterday I got scammed on a P2P crypto trade. Or at least someone tried to. Here\u0026rsquo;s what happened and how I managed to get Revolut to side with me.\nWhat happened I took a sell order on RoboSats for 3,110,649 sats (~0.031 BTC) in exchange for €2,100 EUR via Revolut. The buyer had listed the order, I took it, the trade went through normally, I confirmed the Revolut payment and released the Bitcoin.\n",
+  "keywords": [
+    "crypto", "bitcoin", "privacy", "robosats", "lightning"
+  ],
+  "wordCount" : "725",
+  "inLanguage": "en",
+  "datePublished": "2026-05-04T00:00:00Z",
+  "dateModified": "2026-05-04T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "4rkal"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://4rkal.com/posts/p2p-2k/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "4rkal's Dev Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://4rkal.com/4rkal.png"
+    }
+  }
+}
+</script>
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+<script defer data-domain="4rkal.com" src="https://stats.4rkal.eu.org/js/script.js"></script>
+<link rel="me" href="https://mastodon.social/@4rkal">
+
+
+</head>
+
+<body class=" dark type-posts kind-page layout-" id="top"><script data-no-instant>
+function switchTheme(theme) {
+  switch (theme) {
+    case 'light':
+      document.body.classList.remove('dark');
+      break;
+    case 'dark':
+      document.body.classList.add('dark');
+      break;
+    
+    default:
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+      }
+  }
+}
+
+function isDarkTheme() {
+  return document.body.className.includes("dark");
+}
+
+function getPrefTheme() {
+  return localStorage.getItem("pref-theme");
+}
+
+function setPrefTheme(theme) {
+  switchTheme(theme)
+  localStorage.setItem("pref-theme", theme);
+}
+
+const toggleThemeCallbacks = {}
+toggleThemeCallbacks['main'] = (isDark) => {
+  
+  if (isDark) {
+    setPrefTheme('light');
+  } else {
+    setPrefTheme('dark');
+  }
+}
+
+
+
+
+window.addEventListener('toggle-theme', function() {
+  
+  const isDark = isDarkTheme()
+  for (const key in toggleThemeCallbacks) {
+    toggleThemeCallbacks[key](isDark)
+  }
+});
+
+
+function toggleThemeListener() {
+  
+  window.dispatchEvent(new CustomEvent('toggle-theme'));
+}
+
+</script>
+<script>
+  
+  (function() {
+    const defaultTheme = 'dark';
+    const prefTheme = getPrefTheme();
+    const theme = prefTheme ? prefTheme : defaultTheme;
+
+    switchTheme(theme);
+  })();
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://4rkal.com/" accesskey="h" title="4rkal&#39;s Dev Blog (Alt + H)">
+                    <img src="https://4rkal.com/4rkal_hu_20d90f0a898e8561.png" alt="logo" aria-label="logo"
+                        height="30" width="30">4rkal&#39;s Dev Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://4rkal.com/posts/" title="Posts" class="active"
+                >Posts
+                </a>
+            </li>
+            <li>
+                <a href="https://4rkal.com/about/" title="About"
+                >About
+                </a>
+            </li>
+            <li>
+                <a href="https://rb.gy/a6ylyh/" title="NEWSLETTER" target="_blank"
+                >NEWSLETTER<span class="external-link"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-external-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5" />
+  <line x1="10" y1="14" x2="20" y2="4" />
+  <polyline points="15 4 20 4 20 9" />
+</svg>
+</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://4rkal.com/search/" title="Search the site (Alt &#43; /)"data-no-instant accesskey=/
+                >Search
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main post">
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Someone tried to steal €2k from me on a P2P crypto trade. It didn&#39;t work.</h1>
+    <div class="post-meta"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>May 4, 2026</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="https://4rkal.com/tags/crypto/">Crypto</a><a href="https://4rkal.com/tags/bitcoin/">Bitcoin</a><a href="https://4rkal.com/tags/privacy/">Privacy</a><a href="https://4rkal.com/tags/robosats/">Robosats</a><a href="https://4rkal.com/tags/lightning/">Lightning</a></span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" style="user-select: text;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" style="user-select: text;"></path><polyline points="14 2 14 8 20 8" style="user-select: text;"></polyline><line x1="16" y1="13" x2="8" y2="13" style="user-select: text;"></line><line x1="16" y1="17" x2="8" y2="17" style="user-select: text;"></line><polyline points="10 9 9 9 8 9" style="user-select: text;"></polyline></svg>
+  <span>725 words</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 15"></polyline></svg>
+  <span>4 min</span></span>
+
+      
+      
+    </div>
+  </header> <div class="toc side right">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-happened" aria-label="What happened">What happened</a></li>
+                <li>
+                    <a href="#what-i-did" aria-label="What I did">What I did</a></li>
+                <li>
+                    <a href="#the-evidence-package" aria-label="The evidence package">The evidence package</a><ul>
+                        
+                <li>
+                    <a href="#template" aria-label="Template">Template</a></li></ul>
+                </li>
+                <li>
+                    <a href="#result" aria-label="Result">Result</a></li>
+                <li>
+                    <a href="#lessons" aria-label="Lessons">Lessons</a></li>
+                <li>
+                    <a href="#avoiding-p2p-altogether" aria-label="Avoiding P2P altogether">Avoiding P2P altogether</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>Yesterday I got scammed on a P2P crypto trade. Or at least someone tried to. Here&rsquo;s what happened and how I managed to get Revolut to side with me.</p>
+<h2 id="what-happened">What happened<a hidden class="anchor" aria-hidden="true" href="#what-happened">¶</a></h2>
+<p>I took a sell order on <a href="https://robosats.com">RoboSats</a> for 3,110,649 sats (~0.031 BTC) in exchange for €2,100 EUR via Revolut. The buyer had listed the order, I took it, the trade went through normally, I confirmed the Revolut payment and released the Bitcoin.</p>
+<p>A few hours later I got a Revolut notification: &ldquo;Verify your transaction.&rdquo; The buyer had filed a recall request on the €2,100 payment. Revolut froze my account pending review.</p>
+<p>Classic P2P chargeback fraud. The buyer received the Bitcoin and then tried to claw back the fiat.</p>
+<h2 id="what-i-did">What I did<a hidden class="anchor" aria-hidden="true" href="#what-i-did">¶</a></h2>
+<p>The first thing I did was move my Revolut balance out before the account got fully restricted (this was mostly done by accident but still). That turned out to be the right call Revolut can only chase your Revolut balance, not money that&rsquo;s already elsewhere.</p>
+<p>Then I went through Revolut&rsquo;s dispute flow. They asked for:</p>
+<ul>
+<li>Evidence of communication with the payer</li>
+<li>Evidence of the source of funds (cryptocurrency)</li>
+<li>A description of the payment</li>
+</ul>
+<p>The problem is RoboSats uses an ephemeral encrypted in-app chat. I had no screenshots of the conversation. Most people at this point would have almost nothing to submit.</p>
+<h2 id="the-evidence-package">The evidence package<a hidden class="anchor" aria-hidden="true" href="#the-evidence-package">¶</a></h2>
+<p>What saved me was the RoboSats trade contract JSON file. After every completed trade, RoboSats generates a contract file you can download. Mine contained:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coordinator&#34;</span>: <span style="color:#e6db74">&#34;Over the Moon&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;order_id&#34;</span>: ,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;currency&#34;</span>: <span style="color:#e6db74">&#34;EUR&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;maker&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sent_fiat&#34;</span>: <span style="color:#ae81ff">2100</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;payment_hash&#34;</span>: <span style="color:#e6db74">&#34;33af4009cfdb4cdace...&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;preimage&#34;</span>: <span style="color:#e6db74">&#34;51f63c31b7eb8c479a...&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;taker&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sent_sats&#34;</span>: <span style="color:#ae81ff">3110649</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;received_fiat&#34;</span>: <span style="color:#ae81ff">2100</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>preimage</code> is cryptographic proof the Lightning payment settled. It can only be revealed upon successful payment completion — it&rsquo;s mathematically impossible to fake.</p>
+<p>I put together a PDF declaration with:</p>
+<ul>
+<li>Full trade details (order ID, amounts, dates)</li>
+<li>The escrow note verbatim (which explicitly named the order ID and trade amount)</li>
+<li>The payment hash and preimage</li>
+<li>An explanation of how RoboSats escrow works</li>
+<li>A signed declaration that the payment was legitimate consideration for Bitcoin delivered</li>
+</ul>
+<p>I uploaded that PDF, a screenshot from my lightning wallet, a screenshot from robosats of the trade and a screenshot of the JSON contract to Revolut&rsquo;s evidence form. Revolut accepted the dispute within a few hours</p>
+<p>I can&rsquo;t know exactly what tipped it, but the evidence package was as strong as I could make it given the circumstances.</p>
+<h3 id="template">Template<a hidden class="anchor" aria-hidden="true" href="#template">¶</a></h3>
+<p>If this ever happens to you, I&rsquo;ve put together a ready-to-use PDF template, an exact copy of what I submitted. All the sections are pre-structured, you just fill in your trade details, paste in your payment hash and preimage from the JSON contract, sign it and upload it to your bank&rsquo;s dispute form.</p>
+<p><strong><a href="/robosats_dispute_template.pdf">Download the dispute template PDF here</a></strong></p>
+<p>Fields to fill in are clearly marked. The document covers:</p>
+<ul>
+<li>Party details (your name, buyer&rsquo;s name, payment tags)</li>
+<li>Full trade details (order ID, amounts, dates, payment method)</li>
+<li>Lightning escrow evidence (escrow note verbatim, amounts, fees)</li>
+<li>Cryptographic proof section (payment hash, preimage, contract timestamp)</li>
+<li>How RoboSats escrow works — explained for non-technical reviewers</li>
+<li>Signed declaration</li>
+</ul>
+<p>The most important fields are the <code>payment_hash</code> and <code>preimage</code> from your RoboSats JSON contract. Download that contract file before you close the order — it expires.</p>
+<h2 id="result">Result<a hidden class="anchor" aria-hidden="true" href="#result">¶</a></h2>
+<p>Account unfrozen, €2,100 stays mine.</p>
+<h2 id="lessons">Lessons<a hidden class="anchor" aria-hidden="true" href="#lessons">¶</a></h2>
+<p>A few things I&rsquo;ll do differently going forward:</p>
+<ul>
+<li><strong>Use SEPA/bank transfer instead of Revolut.</strong> Revolut payments can be recalled. SEPA Instant is much harder to reverse.</li>
+<li><strong>Always download the trade contract JSON</strong> before closing the RoboSats order. It takes one second and is your strongest evidence if something goes wrong.</li>
+<li><strong>Screenshot the in-trade chat</strong> before the trade closes. Even a single message showing the buyer agreed to the terms helps enormously.</li>
+<li><strong>Move funds out of Revolut</strong> before going through a dispute flow if you think it might go against you.</li>
+</ul>
+<p>Whatever ultimately swayed Revolut, having thorough documentation clearly didn&rsquo;t hurt. Most people submitting to these dispute flows have very little — putting together a proper evidence package at minimum gives you a fighting chance.</p>
+<hr>
+<h2 id="avoiding-p2p-altogether">Avoiding P2P altogether<a hidden class="anchor" aria-hidden="true" href="#avoiding-p2p-altogether">¶</a></h2>
+<p>If you&rsquo;re looking to avoid the P2P route entirely, I built <a href="https://cyphergoat.com">CypherGoat</a> — a non-custodial swap aggregator that compares rates across 20+ exchanges. It doesn&rsquo;t handle fiat, but for crypto-to-crypto swaps it&rsquo;s solid: no counterparty risk, funds go straight to your wallet.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+    <div class="comments-separator"></div>
+</article>
+    </main>
+    
+<footer class="footer">
+  <span>&copy; 2026 <a href="https://4rkal.com/">4rkal&#39;s Dev Blog</a></span><span style="display: inline-block; margin-left: 1em;">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+  </span>
+  <span style="display: inline-block; margin-left: 1em;">
+    <a href="https://newsletter.4rkal.com/subscription/form">SUBSCRIBE</a>
+  </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+    <path d="M12 6H0l6-6z" />
+  </svg>
+</a>
+
+<script>
+  (function() {
+     
+    const disableThemeToggle = '' == '1';
+    if (disableThemeToggle) {
+      return;
+    }
+
+    let button = document.getElementById("theme-toggle")
+    
+    button.removeEventListener('click', toggleThemeListener)
+    
+    button.addEventListener('click', toggleThemeListener)
+  })();
+</script>
+
+<script>
+  (function () {
+    let menu = document.getElementById('menu')
+    if (menu) {
+      menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+      menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+      }
+    }
+
+    const disableSmoothScroll = '' == '1';
+    const enableInstantClick = '' == '1';
+    
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || disableSmoothScroll || enableInstantClick) {
+      return;
+    }
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        var id = this.getAttribute("href").substr(1);
+        document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+          behavior: "smooth"
+        });
+        if (id === "top") {
+          history.replaceState(null, null, " ");
+        } else {
+          history.pushState(null, null, `#${id}`);
+        }
+      });
+    });
+  })();
+</script>
+<script>
+  var mybutton = document.getElementById("top-link");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+      mybutton.style.visibility = "visible";
+      mybutton.style.opacity = "1";
+    } else {
+      mybutton.style.visibility = "hidden";
+      mybutton.style.opacity = "0";
+    }
+  };
+</script>
+<script>
+  if (window.scrollListeners) {
+    
+    for (const listener of scrollListeners) {
+      window.removeEventListener('scroll', listener)
+    }
+  }
+  window.scrollListeners = []
+</script>
+
+
+
+<script src="/js/medium-zoom.min.js" data-no-instant
+></script>
+<script>
+  document.querySelectorAll('pre > code').forEach((codeblock) => {
+    const container = codeblock.parentNode.parentNode;
+
+    const copybutton = document.createElement('button');
+    copybutton.classList.add('copy-code');
+    copybutton.innerText = 'copy';
+
+    function copyingDone() {
+      copybutton.innerText = 'copied!';
+      setTimeout(() => {
+        copybutton.innerText = 'copy';
+      }, 2000);
+    }
+
+    copybutton.addEventListener('click', (cb) => {
+      if ('clipboard' in navigator) {
+        navigator.clipboard.writeText(codeblock.textContent);
+        copyingDone();
+        return;
+      }
+
+      const range = document.createRange();
+      range.selectNodeContents(codeblock);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      try {
+        document.execCommand('copy');
+        copyingDone();
+      } catch (e) { };
+      selection.removeRange(range);
+    });
+
+    if (container.classList.contains("highlight")) {
+      container.appendChild(copybutton);
+    } else if (container.parentNode.firstChild == container) {
+      
+    } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+      
+      codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+    } else {
+      
+      codeblock.parentNode.appendChild(copybutton);
+    }
+  });
+</script>
+
+
+
+
+<script>
+  
+  
+  (function() {
+    const enableTocScroll = '1' == '1'
+    if (!enableTocScroll) {
+      return
+    }
+    if (!document.querySelector('.toc')) {
+      console.log('no toc found, ignore toc scroll')
+      return
+    }
+    
+
+    
+    const scrollListeners = window.scrollListeners
+    const headings = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id]');
+    const activeClass = 'active';
+
+    
+    let activeHeading = headings[0];
+    getLinkByHeading(activeHeading).classList.add(activeClass);
+
+    const onScroll = () => {
+      const passedHeadings = [];
+      for (const h of headings) {
+        
+        if (getOffsetTop(h) < 5) {
+          passedHeadings.push(h)
+        } else {
+          break;
+        }
+      }
+      if (passedHeadings.length > 0) {
+        newActiveHeading = passedHeadings[passedHeadings.length - 1];
+      } else {
+        newActiveHeading = headings[0];
+      }
+      if (activeHeading != newActiveHeading) {
+        getLinkByHeading(activeHeading).classList.remove(activeClass);
+        activeHeading = newActiveHeading;
+        getLinkByHeading(activeHeading).classList.add(activeClass);
+      }
+    }
+
+    let timer = null;
+    const scrollListener = () => {
+      if (timer !== null) {
+        clearTimeout(timer)
+      }
+      timer = setTimeout(onScroll, 50)
+    }
+    window.addEventListener('scroll', scrollListener, false);
+    scrollListeners.push(scrollListener)
+
+    function getLinkByHeading(heading) {
+      const id = encodeURI(heading.getAttribute('id')).toLowerCase();
+      return document.querySelector(`.toc ul li a[href="#${id}"]`);
+    }
+
+    function getOffsetTop(heading) {
+      if (!heading.getClientRects().length) {
+        return 0;
+      }
+      let rect = heading.getBoundingClientRect();
+      return rect.top
+    }
+  })();
+  </script>
+
+</body>
+
+</html>

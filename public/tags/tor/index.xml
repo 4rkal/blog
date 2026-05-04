@@ -17,8 +17,9 @@
       <pubDate>Fri, 03 Mar 2023 23:03:40 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/tails/</guid>
-      <description>In this article we will talk about what tails is and how to install and more.
-What is tails? Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</description>
+      <description>&lt;p&gt;In this article we will talk about what tails is and how to install and more.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-tails&#34;&gt;What is tails?&lt;/h1&gt;
+&lt;p&gt;Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article we will talk about what tails is and how to install and more.</p>
 <h1 id="what-is-tails">What is tails?</h1>
 <p>Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</p>
@@ -76,8 +77,9 @@ After you have clicked on the windows logo you should be prompted with the requi
       <pubDate>Sat, 25 Feb 2023 20:56:02 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/torhs/</guid>
-      <description>In this article i will be showing you how to host your “dark web” aka Tor website for free.
-What is Tor? Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</description>
+      <description>&lt;p&gt;In this article i will be showing you how to host your “dark web” aka Tor website for free.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-tor&#34;&gt;What is Tor?&lt;/h1&gt;
+&lt;p&gt;Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article i will be showing you how to host your “dark web” aka Tor website for free.</p>
 <h1 id="what-is-tor">What is Tor?</h1>
 <p>Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</p>

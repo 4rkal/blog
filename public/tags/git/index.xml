@@ -17,9 +17,11 @@
       <pubDate>Mon, 19 Aug 2024 19:21:15 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/gitea/</guid>
-      <description>In this article I&amp;rsquo;ll walk you through how you can run your own gitea instance. But first
-What is gitea? Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my Le Potato and it barely uses any resources.
-Why use gitea (vs GitHub, GitLab etc) I started running my own Gitea instance because I wanted a private place to host my Obsidian notes.</description>
+      <description>&lt;p&gt;In this article I&amp;rsquo;ll walk you through how you can run your own gitea instance. But first&lt;/p&gt;
+&lt;h2 id=&#34;what-is-gitea&#34;&gt;What is gitea?&lt;/h2&gt;
+&lt;p&gt;Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my &lt;a href=&#34;https://libre.computer/products/aml-s905x-cc/&#34;&gt;Le Potato&lt;/a&gt; and it barely uses any resources.&lt;/p&gt;
+&lt;h2 id=&#34;why-use-gitea-vs-github-gitlab-etc&#34;&gt;Why use gitea (vs GitHub, GitLab etc)&lt;/h2&gt;
+&lt;p&gt;I started running my own Gitea instance because I wanted a private place to host my &lt;a href=&#34;https://obsidian.md&#34;&gt;Obsidian&lt;/a&gt; notes. I did not want to have them in a private GitHub repository since it&amp;rsquo;s not on my own hardware. GitLab is harder to spin up and has a lot of features that I do not need.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article I&rsquo;ll walk you through how you can run your own gitea instance. But first</p>
 <h2 id="what-is-gitea">What is gitea?</h2>
 <p>Gitea is a painless selfhosted Git service. It is written in Go and is extremely lightweight. I run a gitea instance on my <a href="https://libre.computer/products/aml-s905x-cc/">Le Potato</a> and it barely uses any resources.</p>

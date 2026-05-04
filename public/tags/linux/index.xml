@@ -63,10 +63,10 @@ The web the website source code.</p>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">Secure</span>())
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Static</span>(<span style="color:#e6db74">&#34;/static&#34;</span>, <span style="color:#e6db74">&#34;static&#34;</span>) <span style="color:#75715e">// Serves content from static folder.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Rest of the handlers
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Static</span>(<span style="color:#e6db74">&#34;/static&#34;</span>, <span style="color:#e6db74">&#34;static&#34;</span>) <span style="color:#75715e">// Serves content from static folder.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Rest of the handlers</span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="server">Server</h2>
 <p>On my server side I have a debian 12 vm running on proxmox.</p>
 <p>In my users home directory I have a folder with the following contents:</p>
@@ -548,8 +548,15 @@ The service type should be <code>HTTP</code> and the url should be <code>127.0.0
       <pubDate>Wed, 04 Oct 2023 19:17:04 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/onionssh/</guid>
-      <description>In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.
-Requirements: A computer &amp;ldquo;server&amp;rdquo; (running linux) A internet connection Another computer to connect to your server (running linux) Why? If you want to access your server without portforwarding in a extremely secure fashion you will want to follow this tutorial. You will be connecting to the server via tor which will make it harder for anyone to find the url of the server and ill show you how to setup keybased auth for even more security!</description>
+      <description>&lt;p&gt;In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.&lt;/p&gt;
+&lt;h2 id=&#34;requirements&#34;&gt;Requirements:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;A computer &amp;ldquo;server&amp;rdquo; (running linux)&lt;/li&gt;
+&lt;li&gt;A internet connection&lt;/li&gt;
+&lt;li&gt;Another computer to connect to your server (running linux)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;why&#34;&gt;Why?&lt;/h2&gt;
+&lt;p&gt;If you want to access your server without portforwarding in a extremely secure fashion you will want to follow this tutorial. You will be connecting to the server via tor which will make it harder for anyone to find the url of the server and ill show you how to setup keybased auth for even more security!&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article I will show you how I securely connect to my remote machines without having to configure port forwarding.</p>
 <h2 id="requirements">Requirements:</h2>
 <ol>
@@ -628,7 +635,8 @@ HiddenServicePort 22 127.0.0.1:22
       <pubDate>Mon, 06 Mar 2023 20:11:51 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/ventoy/</guid>
-      <description>Whats ventoy? Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .iso to the USB drive and boot from them directly.</description>
+      <description>&lt;h2 id=&#34;whats-ventoy&#34;&gt;Whats ventoy?&lt;/h2&gt;
+&lt;p&gt;Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .iso to the USB drive and boot from them directly. Ventoy will present the user with a boot menu to select one of these files.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="whats-ventoy">Whats ventoy?</h2>
 <p>Ventoy is a free and open-source utility used for writing image files such as .iso, .wim, .img, .vhd(x), and .efi files onto storage media to create bootable USB flash drives. Once Ventoy is installed onto a USB drive, there is no need to reformat the disk to update it with new installation files; it is enough to copy the .iso to the USB drive and boot from them directly. Ventoy will present the user with a boot menu to select one of these files.</p>
 <p>With ventoy, you don’t need to format the disk over and over, you just need to copy the ISO files to the USB drive and boot them directly.</p>
@@ -692,8 +700,16 @@ HiddenServicePort 22 127.0.0.1:22
       <pubDate>Sun, 05 Mar 2023 17:11:40 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/git/</guid>
-      <description>Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you&amp;rsquo;ll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.
-What You’ll Need A Computer for Your Server: Ideally running Linux (Debian is a solid choice). Internet Connection: Pretty essential for accessing your server remotely. Another Computer with Git Installed: This is what you&amp;rsquo;ll use to interact with your server.</description>
+      <description>&lt;p&gt;Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you&amp;rsquo;ll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.&lt;/p&gt;
+&lt;h3 id=&#34;what-youll-need&#34;&gt;What You’ll Need&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;A Computer for Your Server&lt;/strong&gt;: Ideally running Linux (Debian is a solid choice).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Internet Connection&lt;/strong&gt;: Pretty essential for accessing your server remotely.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Another Computer with Git Installed&lt;/strong&gt;: This is what you&amp;rsquo;ll use to interact with your server.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;step-by-step-setup-guide&#34;&gt;Step-by-Step Setup Guide&lt;/h3&gt;
+&lt;h4 id=&#34;1-install-git-on-your-server&#34;&gt;1. Install Git on Your Server&lt;/h4&gt;
+&lt;p&gt;First, you need to install Git on your server. Depending on your Linux distribution, use one of these commands:&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>Thinking about setting up your own Git server? There are plenty of perks to doing so instead of relying on platforms like GitHub. For starters, you&rsquo;ll have complete control over your code, ensuring it can’t be used for profit or deleted by anyone but you.</p>
 <h3 id="what-youll-need">What You’ll Need</h3>
 <ol>
@@ -794,8 +810,9 @@ What You’ll Need A Computer for Your Server: Ideally running Linux (Debian is 
       <pubDate>Fri, 03 Mar 2023 23:21:53 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/searx/</guid>
-      <description>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.
-What is searX? Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users.</description>
+      <description>&lt;p&gt;We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-searx&#34;&gt;What is searX?&lt;/h2&gt;
+&lt;p&gt;Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users. In order to do this, Searx does not provide the search engines from which it receives results with users’ IP addresses or search histories. Tracking cookies served by the search engines are blocked, preventing user-profiling-based results modification.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>We rely on google more and more, but it’s interesting to know how much data Google is now handling. Alphabet aka Google describes its extensive data collection practices in its privacy policy. The company stores an astounding quantity of data. An estimated 15 exabytes of YOUR data are stored by Google. Google is tracking your every move.</p>
 <h2 id="what-is-searx">What is searX?</h2>
 <p>Searx is a free and open-source metasearch engine, available under the GNU Affero General Public License version 3, with the aim of protecting the privacy of its users. In order to do this, Searx does not provide the search engines from which it receives results with users’ IP addresses or search histories. Tracking cookies served by the search engines are blocked, preventing user-profiling-based results modification.</p>
@@ -869,8 +886,9 @@ Now if you head to 127.0.0.1:8888 you should be able to see something like this
       <pubDate>Fri, 03 Mar 2023 23:03:40 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/tails/</guid>
-      <description>In this article we will talk about what tails is and how to install and more.
-What is tails? Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</description>
+      <description>&lt;p&gt;In this article we will talk about what tails is and how to install and more.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-tails&#34;&gt;What is tails?&lt;/h1&gt;
+&lt;p&gt;Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article we will talk about what tails is and how to install and more.</p>
 <h1 id="what-is-tails">What is tails?</h1>
 <p>Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.It connects to the Internet exclusively through the anonymity network Tor. The system is designed to be booted as a live DVD or live USB, and leaves no digital footprint on the machine unless explicitly told to do so.</p>
@@ -928,8 +946,9 @@ After you have clicked on the windows logo you should be prompted with the requi
       <pubDate>Sat, 25 Feb 2023 21:17:13 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/pihole/</guid>
-      <description>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&amp;rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.
-What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine.</description>
+      <description>&lt;p&gt;In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&amp;rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-pi-hole&#34;&gt;What is Pi-hole?&lt;/h1&gt;
+&lt;p&gt;Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine. Pi-hole has the ability to block traditional website advertisements as well as advertisements in unconventional places, such as smart TVs and mobile operating system advertisements.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article, I will show you how to set up Pi-hole. Pi-hole will allow you to block in-app ads, improve your network&rsquo;s performance, and monitor statistics. Pi-hole also allows you to create a VPN.</p>
 <h1 id="what-is-pi-hole">What is Pi-hole?</h1>
 <p>Pi-hole is a Linux network-level advertisement and Internet tracker blocking application that acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network. It is designed for low-power embedded devices with network capability, such as the Raspberry Pi, but can be installed on any Linux machine. Pi-hole has the ability to block traditional website advertisements as well as advertisements in unconventional places, such as smart TVs and mobile operating system advertisements.</p>
@@ -1025,8 +1044,9 @@ What is Pi-hole? Pi-hole is a Linux network-level advertisement and Internet tra
       <pubDate>Sat, 25 Feb 2023 21:08:47 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/sssh/</guid>
-      <description>SSH keys provide an extremely secure way of logging into your server.
-SSH Password Based VS Key Based Authentication Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts.</description>
+      <description>&lt;p&gt;SSH keys provide an extremely secure way of logging into your server.&lt;/p&gt;
+&lt;h1 id=&#34;ssh-password-based-vs-key-based-authentication&#34;&gt;SSH Password Based VS Key Based Authentication&lt;/h1&gt;
+&lt;p&gt;Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts. The solution to that is ssh key based authentication.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>SSH keys provide an extremely secure way of logging into your server.</p>
 <h1 id="ssh-password-based-vs-key-based-authentication">SSH Password Based VS Key Based Authentication</h1>
 <p>Clients can be authenticated by an SSH server in a variety of ways. The most basic is password authentication, which is simple to use but not particularly secure. The more advanced and secure way is via ssh keys.Brute-forcing a password-protected account is quite possible thanks to modern computing power and automated scripts. The solution to that is ssh key based authentication.</p>
@@ -1081,8 +1101,9 @@ Enter passphrase (empty for no passphrase):
       <pubDate>Sat, 25 Feb 2023 20:56:02 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/torhs/</guid>
-      <description>In this article i will be showing you how to host your “dark web” aka Tor website for free.
-What is Tor? Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</description>
+      <description>&lt;p&gt;In this article i will be showing you how to host your “dark web” aka Tor website for free.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-tor&#34;&gt;What is Tor?&lt;/h1&gt;
+&lt;p&gt;Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article i will be showing you how to host your “dark web” aka Tor website for free.</p>
 <h1 id="what-is-tor">What is Tor?</h1>
 <p>Tor — short for the Onion Routing project — is an open-source privacy network that enables anonymous web browsing. The worldwide Tor computer network uses secure, encrypted protocols to ensure that users’ online privacy is protected. Tor users’ digital data and communications are shielded using a layered approach that resembles the nested layers of an onion.</p>
@@ -1132,12 +1153,19 @@ What is Tor? Tor — short for the Onion Routing project — is an open-source p
       <pubDate>Sat, 25 Feb 2023 20:23:16 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/shwebsite/</guid>
-      <description>In this article i will show you how to self host your own website securely.
-Requirements A computer or microcomputer to host the website The computer needs to run linux An internet connection (Its pretty hard without one, trust me) Lets get started!
-Installation The first thing that we will have to do is setup our nginx site.
-We first have to be root
-sudo su
-If you dont have sudo installed try:</description>
+      <description>&lt;p&gt;In this article i will show you how to self host your own website securely.&lt;/p&gt;
+&lt;h1 id=&#34;requirements&#34;&gt;Requirements&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;A computer or microcomputer to host the website&lt;/li&gt;
+&lt;li&gt;The computer needs to run linux&lt;/li&gt;
+&lt;li&gt;An internet connection (Its pretty hard without one, trust me)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Lets get started!&lt;/p&gt;
+&lt;h1 id=&#34;installation&#34;&gt;Installation&lt;/h1&gt;
+&lt;p&gt;The first thing that we will have to do is setup our nginx site.&lt;/p&gt;
+&lt;p&gt;We first have to be root&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo su&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you dont have sudo installed try:&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article i will show you how to self host your own website securely.</p>
 <h1 id="requirements">Requirements</h1>
 <ol>
@@ -1231,9 +1259,16 @@ make install
       <pubDate>Sat, 25 Feb 2023 20:03:25 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/rpicamera/</guid>
-      <description>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.
-Requirements Raspberry pi or any other computer Web cam Any kind of debian based distro installed on the pi/computer Setup In this article we will be using the motion package (https://motion-project.github.io/)
-To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard.</description>
+      <description>&lt;p&gt;In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.&lt;/p&gt;
+&lt;h1 id=&#34;requirements&#34;&gt;Requirements&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Raspberry pi or any other computer&lt;/li&gt;
+&lt;li&gt;Web cam&lt;/li&gt;
+&lt;li&gt;Any kind of debian based distro installed on the pi/computer&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;setup&#34;&gt;Setup&lt;/h1&gt;
+&lt;p&gt;In this article we will be using the motion package (&lt;a href=&#34;https://motion-project.github.io/&#34;&gt;https://motion-project.github.io/&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;To get started power on your raspberry pi and ssh into the machine or just connect it to a monitor and a keyboard. Also connect your web cam to the raspberry pi usb port.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>In this article i will show you how to setup a raspberry pi security camera using motion. In the end of this article you will have a fully functioning security camera with a live feed and motion detection.</p>
 <h1 id="requirements">Requirements</h1>
 <ol>
@@ -1277,10 +1312,15 @@ This will enable us to access the stream from other computers.</p>
       <pubDate>Sat, 25 Feb 2023 19:36:25 +0300</pubDate>
       
       <guid>https://4rkal.com/posts/howsshworks/</guid>
-      <description>If you work in the IT industry, you’ve undoubtedly heard of ssh. But how does it work?
-SSH (secure shell) is a network protocol that allows two computers to connect securely over the internet. SSH uses encryption to prevent hackers from reading data sent between two connected devices.
-SSH is divided into three layers:
-The transport layer The connection layer The authentication layer During and after authentication, the transport layer establishes safe and secure communication between a client and a server.</description>
+      <description>&lt;p&gt;If you work in the IT industry, you’ve undoubtedly heard of ssh. But how does it work?&lt;br&gt;
+SSH (secure shell) is a network protocol that allows two computers to connect securely over the internet. SSH uses encryption to prevent hackers from reading data sent between two connected devices.&lt;br&gt;
+SSH is divided into three layers:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The transport layer&lt;/li&gt;
+&lt;li&gt;The connection layer&lt;/li&gt;
+&lt;li&gt;The authentication layer&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;During and after authentication, the transport layer establishes safe and secure communication between a client and a server. It is in charge of data encryption, decryption, and integrity assurance. It also provides data compression and caching, which helps to speed up data communication.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>If you work in the IT industry, you’ve undoubtedly heard of ssh. But how does it work?<br>
 SSH (secure shell) is a network protocol that allows two computers to connect securely over the internet. SSH uses encryption to prevent hackers from reading data sent between two connected devices.<br>
 SSH is divided into three layers:</p>
