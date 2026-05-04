@@ -100,4 +100,6 @@ Whatever ultimately swayed Revolut, having thorough documentation clearly didn't
 
 ## Avoiding P2P altogether
 
-If you're looking to avoid the P2P route entirely, I built [CypherGoat](https://cyphergoat.com) — a non-custodial swap aggregator that compares rates across 20+ exchanges. It doesn't handle fiat, but for crypto-to-crypto swaps it's solid: no counterparty risk, funds go straight to your wallet.
+If you’d rather avoid the P2P route entirely, I built CypherGoat — a non-custodial swap aggregator that compares rates across 20+ exchanges.
+
+It doesn’t handle fiat, but for crypto-to-crypto swaps it removes the direct counterparty risk you get with P2P (no dealing with individual buyers, chargebacks, etc.). Funds go straight to your wallet, though of course you’re still relying on the execution and reliability of the underlying providers.
